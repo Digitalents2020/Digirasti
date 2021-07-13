@@ -2,6 +2,8 @@
 
 -Pohja luotu Create React App:lla
 
-##TODO:
+## TODO:
+
 -MVP rautalankamalli frontista
+
 -Trellon käyttönotto (auttaa hahmottamaan seuraavat askeleet ja kaikki pysyvät ajantasalla siitä missä kaikki menee)
