@@ -1,5 +1,7 @@
 import React from 'react';
 
+//This file is just an example and for test purposes
+
 const Esimerkkitehtava1 = () => {
     return (
         <div>

@@ -3,6 +3,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Esimerkkitehtava1 from "./Esimerkkitehtava1";
 import Home from "./Home";
 
+//The Exercises can be added as their own files as demonstrated with the Esimerkkitehtava1
+//This is very barebones, but does the job for now
+//To create a new link to the nav bar, simply mimic the ones already there and use the name of your exercise file
+//Have questions? Ask away!
+
 const App = () => {
   return (
     <Router>
