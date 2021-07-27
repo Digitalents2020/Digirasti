@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Esimerkkitehtava1 from "./Esimerkkitehtava1";
+import Home from "./Home";
 
-function App() {
+//The Exercises can be added as their own files as demonstrated with the Esimerkkitehtava1
+//This is very barebones, but does the job for now
+//To create a new link to the nav bar, simply mimic the ones already there and use the name of your exercise file
+//Have questions? Ask away!
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div class="App">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">home</Link>
+            </li>
+            <li>
+              <Link to="/esimerkkitehtava1">Esimerkkitehtävä1</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="content">
+          <Switch>
+            <Route path="/esimerkkitehtava1">
+              <Esimerkkitehtava1 />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
