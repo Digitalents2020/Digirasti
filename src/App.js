@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Esimerkkitehtava1 from "./Esimerkkitehtava1";
 import Home from "./Home";
+import Kopiointi from "./Tehtävät/kopiointi";
 
 //The Exercises can be added as their own files as demonstrated with the Esimerkkitehtava1
 //This is very barebones, but does the job for now
@@ -11,7 +12,7 @@ import Home from "./Home";
 const App = () => {
   return (
     <Router>
-      <div class="App">
+      <div className="App">
         <nav>
           <ul>
             <li>
@@ -20,13 +21,19 @@ const App = () => {
             <li>
               <Link to="/esimerkkitehtava1">Esimerkkitehtävä1</Link>
             </li>
+            <li>
+              <Link to="kopiointi">Kopiointitehtävä</Link>
+            </li>
           </ul>
         </nav>
 
-        <div class="content">
+        <div className="content">
           <Switch>
             <Route path="/esimerkkitehtava1">
               <Esimerkkitehtava1 />
+            </Route>
+            <Route path="kopiointitehtävä">
+              <Kopiointi />
             </Route>
             <Route path="/">
               <Home />
