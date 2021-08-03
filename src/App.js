@@ -1,6 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Esimerkkitehtava1 from "./Esimerkkitehtava1";
+import Tehtava1 from "./Tehtävät/Tehtava1";
+import Tehtava2 from "./Tehtävät/Tehtava2";
 import Home from "./Home";
 import Kopiointi from "./Tehtävät/Kopiointi";
 import Tietosuoja from "./Tehtävät/Tietosuoja";
@@ -20,6 +22,12 @@ const App = () => {
               <Link to="/esimerkkitehtava1">Esimerkkitehtävä1</Link>
             </li>
             <li>
+              <Link to="/Tehtava1">Tehtävä 1</Link>
+            </li>
+            <li>
+              <Link to="/Tehtava2">Tehtävä 2</Link>
+            </li>
+            <li>
               <Link to="/kopiointi">Kopiointitehtävä</Link>
             </li>
             <li>
@@ -35,6 +43,12 @@ const App = () => {
           <Switch>
             <Route path="/esimerkkitehtava1">
               <Esimerkkitehtava1 />
+            </Route>
+            <Route path="/Tehtava1">
+              <Tehtava1 />
+            </Route>
+            <Route path="/Tehtava2">
+              <Tehtava2 />
             </Route>
             <Route path="/kopiointi">
               <Kopiointi />
