@@ -1,0 +1,103 @@
+import React, { useState } from 'react'
+
+
+
+/*  Jassen omia inside-muistiinpanoja harkittavaksi:
+
+    kun ensimmäisen numeron ottaa pois niin aika lähtee juoksemaan vai
+
+    samperin iso nappi "ALOITA" ja sitten tulee tekstikentät näkyviin ja aika alkaa
+
+    oikeaan alakulmaan tekstilaatikko josta näkyy info (eli aika ja numerot poistettu / jäljellä)
+    oikeaan yläkulmaan random-palauteviestejä kuten HYVÄ HYVÄ, JUURI NOIN
+
+    jonkinlainen triggeri kuten että numerot on poistettu niin popup että well done.
+    Niin että voi sulkea sen mutta ei ole pakko. Next-nappi jää talteen.
+
+*/
+
+
+const Button = ( props ) => {
+    return (
+      <button onClick={ props.handleClick }>
+      { props.label }
+      </button>
+    )
+  }
+
+const Tehtava1 = () => {
+    const [ counter, setCounter ] = useState('')
+
+    const Laskuri = ( props ) => {
+
+        setCounter( counter )
+    //    setTimeout( setCounter( counter ), 1000 )
+        console.log( "Tik..." )
+        return( 
+            <p>{counter}</p>
+        )
+    }
+
+    const nappifunktio = ( props ) => {
+        alert( "painoit sitten nappia" )
+    }
+    
+    const happening = () => {
+        console.log( "Tekstikenttä triggered" )
+    }
+
+    const Sivukomponentti1 = () => { 
+        return (
+          <div>
+            <p><br/></p>
+            <p>Tekstiin on eksynyt numeroita jotka eivät sinne kuulu.</p>
+            <p><br/></p>
+            <p><b>Ohje:</b> Liiku tekstissä nuolinäppäimillä ja poista tekstistä kaikki numerot.</p>
+            <p><br/></p>
+          </div>
+        )
+      }
+
+      const Sivukomponentti2 = () => { 
+          return (
+            <div>
+              <h3>Tee itse:</h3>
+              <input type="textarea" onChange={happening}></input>
+              <p><br/></p>
+            </div>
+          )
+        }
+
+        const Sivukomponentti3 = () => { 
+            return (
+              <div>
+                <Button handleClick={nappifunktio} label='ALOITA'/>
+                <p><br/></p>
+              </div>
+            )
+          }
+
+          const Aikalaskuri = () => { 
+              return (
+                <div>
+                  <p>Aikalaskuri: </p>
+                  <Laskuri value='{counter}'/>
+                  <br/>
+                </div>
+              )
+            }
+
+    
+    console.log( 'Sivu rendered' )
+
+    return (
+        <div>
+            <h1>Tehtävä 1</h1>
+            <Sivukomponentti1/>
+            <Sivukomponentti3/>
+            <Sivukomponentti2/>
+            <Aikalaskuri/>
+        </div>
+    )
+}
+ export default Tehtava1
