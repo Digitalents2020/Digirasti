@@ -7,6 +7,7 @@ import Home from "./Home";
 import Kopiointi from "./Tehtävät/Kopiointi/Kopiointi";
 import Tietosuoja from "./Tehtävät/Tietosuoja/Tietosuoja";
 import FallingGame from "./Tehtävät/Tippuvat kirjaimet/FallingGame";
+import Email from "./Tehtävät/Email/Email";
 
 //The Exercises can be added as their own files as demonstrated with the Esimerkkitehtava1
 //This is very barebones, but does the job for now
@@ -38,6 +39,9 @@ const App = () => {
               <Link to="/tippuvat_kirjaimet">Tippuvat kirjaimet</Link>
             </li>
             <li>
+              <Link to='/Email'>Sähköposti</Link>
+            </li>
+            <li>
               <Link to="/">home</Link>
             </li>
           </ul>
@@ -62,6 +66,9 @@ const App = () => {
             </Route>
             <Route path="/tippuvat_kirjaimet">
               <FallingGame />
+            </Route>
+            <Route path="/Email">
+              <Email />
             </Route>
             <Route exact path="/">
               <Home />
