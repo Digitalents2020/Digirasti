@@ -27,6 +27,19 @@ const Button = ( props ) => {
 
 const Tehtava1 = () => {
     const [ counter, setCounter ] = useState('')
+    const [ taskText, setTaskText ] = useState('')
+	
+	// Tekstit sitten omaksi tiedostokseen tehtäväkohtaisesti
+	const tehtavaTeksti = 'Teks4ti joka tä5hän on kirjoi4tettu on myös s5ama tek4sti mi555kä tä67ssä luke7e nyt.'
+	
+    const textareastyle = {
+        minHeight: '200px',
+		minWidth: '500px'
+    //    resize: 'none',
+    //    padding: '9px',
+    //    boxSizing: 'border-box',
+    //    fontSize: '15px'}
+    }
 
     const Laskuri = ( props ) => {
 
@@ -39,7 +52,8 @@ const Tehtava1 = () => {
     }
 
     const nappifunktio = ( props ) => {
-        alert( "painoit sitten nappia" )
+        //alert( "painoit sitten nappia" )
+		setTaskText( tehtavaTeksti )
     }
     
     const happening = () => {
@@ -62,7 +76,7 @@ const Tehtava1 = () => {
           return (
             <div>
               <h3>Tee itse:</h3>
-              <input type="textarea" onChange={happening}></input>
+              <textarea style={textareastyle} onChange={happening} value={taskText}></textarea>
               <p><br/></p>
             </div>
           )

@@ -22,6 +22,7 @@ const Tehtava2 = ( props ) => {
     const SivukomponenttiOhjeet = () => { 
         return (
             <div>
+			  <p><br/></p>
               <h3>Näppäimistöharjoituksia:</h3>
               <p>Kirjoita näppäimistöllä esimerkkitekstit</p>
               <p><br/></p>
@@ -31,6 +32,7 @@ const Tehtava2 = ( props ) => {
     const Sivukomponentti1 = () => {
         return (
             <div>
+			  <p>Tekstiä mitä voi kirjoittaa</p>
               <input type="textarea" onChange={happening}></input>
               <p><br/></p>
             </div>
@@ -40,6 +42,7 @@ const Tehtava2 = ( props ) => {
       const Sivukomponentti2 = () => { 
           return (
             <div>
+			  <p>Tekstiä mitä voi kirjoittaa</p>
               <textarea onChange={textareaHappening} ></textarea>
               <p><br/></p>
             </div>
@@ -49,8 +52,10 @@ const Tehtava2 = ( props ) => {
         const Sivukomponentti3 = () => { 
             return (
                 <div>
+				  <p>Tekstiä kirjoitettavaksi</p>
                   <input type="textarea" onChange={happening}></input>
                   <p><br/></p>
+				  <p>Vielä lisää tekstiä</p>
                   <textarea style={textareastyle} onChange={textareaHappening} ></textarea>
                 </div>
               )
@@ -58,7 +63,7 @@ const Tehtava2 = ( props ) => {
 
     return (
         <div>
-            <h2>Tehtävä 2</h2>
+            <h1>Tehtävä 2</h1>
             <SivukomponenttiOhjeet/>
             <Sivukomponentti1/>
             <Sivukomponentti2/>
