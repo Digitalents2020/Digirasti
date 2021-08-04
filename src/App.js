@@ -4,8 +4,8 @@ import Esimerkkitehtava1 from "./Esimerkkitehtava1";
 import Tehtava1 from "./Tehtävät/Tehtava1";
 import Tehtava2 from "./Tehtävät/Tehtava2";
 import Home from "./Home";
-import Kopiointi from "./Tehtävät/Kopiointi";
-import Tietosuoja from "./Tehtävät/Tietosuoja";
+import Kopiointi from "./Tehtävät/Kopiointi/Kopiointi";
+import Tietosuoja from "./Tehtävät/Tietosuoja/Tietosuoja";
 import FallingGame from "./Tehtävät/Tippuvat kirjaimet/FallingGame";
 
 //The Exercises can be added as their own files as demonstrated with the Esimerkkitehtava1
