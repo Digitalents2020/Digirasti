@@ -31,22 +31,22 @@ const Kopiointi = () => {
 
   const matchCheck = () => {
     if (copied.trim() === selectRandom.trim()) {
-      setAddText([
-      <>
-          Teksti on kopioitu oikein!
-      </>
-      ])
+      setAddText(
+      <div>
+        Teksti on kopioitu oikein!
+      </div>
+      )
     } else {
-      setAddText([
-      <>
-      Jokin meni pieleen, yritä uudestaan!
-      </>
-      ])
+      setAddText(
+      <div>
+        Jokin meni pieleen, yritä uudestaan!
+      </div>
+      )
     }
   }
   
   return (
-    <>
+    <div>
       <h2>Tekstin kopiointi</h2>
       <p>{selectRandom}</p>
       <br /> 
@@ -61,7 +61,7 @@ const Kopiointi = () => {
       </button>
       <br />
       <>{addText}</>
-    </>
+    </div>
   )
 }
 
