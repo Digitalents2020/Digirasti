@@ -1,7 +1,7 @@
 import React from "react";
 import "./FallingGame.css";
 import { useState } from "react";
-import Clock from "./Clock";
+import Counter from "./Clock";
 
 var letters = ["a","b","c","d","e","f","g","h","i",
                 "j","k","l","m","n","o","p","q","r",
@@ -10,16 +10,32 @@ var letters = ["a","b","c","d","e","f","g","h","i",
 
 var arrayOfLetters = [];
 var lettercount = 0;
-var firsttime = true;
+var pisteet = 0;
+var lives = 11;
+var vaikeusaste = 1000;
 
 function FallingGame() {
   const [state, setState] = useState("");
-  const [aloitus, setAloitus] = useState("");
+  const [aloitus, setAloitus] = useState(true);
 
-  function aloita() {
-    firsttime = false;
-    setAloitus("Aloitettu");
+  function aloita(a) {
+    vaikeusaste=a;
+    lettercount = 0;
+    arrayOfLetters = [];
+    pisteet=0;
+    lives=11;
+    setAloitus(false);
   }
+  
+  function vaihdaVaikeus() {
+    lettercount = 0;
+    arrayOfLetters = [];
+    pisteet=0;
+    lives=11;
+    setAloitus(true);
+  }
+
+
 
   const handler = (event) => {
     setState(event.key);
@@ -41,24 +57,31 @@ function FallingGame() {
     var index = arrayOfLetters.indexOf(state);
     if (arrayOfLetters.indexOf(state) >= 0) {
       arrayOfLetters.splice(index, 1);
-      lettercount = lettercount - 2;
+     lettercount--;
+     pisteet++;
+    }else{
+      lives--
     }
   }
 
   function tryAgain() {
     lettercount = 0;
     arrayOfLetters = [];
+    pisteet=0;
+    lives=11;
     setState("");
   }
 
-  if (firsttime === false) {
-    if (lettercount < 10) {
+  if (aloitus === false) {
+    if (lettercount < 10 && lives > 0) {
       return (
         <div className="falling">
           <div className="canvas">
-            <Clock letter={newLetter} />
+            <Counter letter={newLetter} arrayOfLetters={arrayOfLetters} vaikeus={vaikeusaste} />
             {cleanUpLetter()}
             <p>Key pressed is: {state}</p>
+            <p>Pisteet: {pisteet}</p>
+            <p>Elämät: {lives}</p>
             <input
               className="hide"
               onKeyPress={(e) => handler(e)}
@@ -82,6 +105,9 @@ function FallingGame() {
             <button className="try" onClick={tryAgain}>
               Yritä uudelleen
             </button>
+            <button className="try" onClick={vaihdaVaikeus}>
+              Vaihda vaikeusastetta
+            </button>
           </div>
         </div>
       );
@@ -90,9 +116,26 @@ function FallingGame() {
     return (
       <div className="falling">
         <div className="canvas">
-          <button className="startbtn" onClick={aloita}>
-            Aloita peli
+          <h1 className="otsikko">Tippuvat kirjaimet</h1>
+          <p>Tehtävänäsi on painaa näppäimistöstäsi samoja näppäimiä, jotka näet ruudulla.
+            <br />Väärää näppäintä painaessasi menetät elämän, jos elämät menevät nollaan häviät. 
+           <br /> Menetät myös elämän jos kirjaimet tippuvat alas asti. 
+           <br /> <br /> <b>Onnea peliin!</b>
+          </p>
+          <div><br /><b>Valitse vaikeusaste:</b>
+          <button className="startbtn" onClick={() => aloita(2000)}>
+            Helppo
           </button>
+          <button className="startbtn" onClick={() => aloita(1500)}>
+            Normaali
+          </button>
+          <button className="startbtn" onClick={() => aloita(800)}>
+            Vaikea
+          </button>
+          <button className="startbtn" onClick={() => aloita(500)}>
+            Mahdoton
+          </button>
+          </div>
         </div>
       </div>
     );
