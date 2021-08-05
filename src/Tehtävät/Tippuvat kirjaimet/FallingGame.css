@@ -30,7 +30,7 @@
   .try {
     background-color: #793013; 
     border: solid;
-    color: black;
+    color: white;
     padding: 10px 22px;
     margin-top: 3px;
     margin-right: 13%;
@@ -43,9 +43,10 @@
   .startbtn {
     background-color: #793013; 
     border: solid;
-    color: black;
+    color: white;
     padding: 10px 22px;
     margin-top: 250px;
+    margin-left: 10px;
     text-align: center;
     display: inline-block;
     font-size: 14px;
@@ -55,4 +56,8 @@
   
   .letters{
     text-shadow: 0 0 3px #FF0000;
+  }
+
+  .otsikko{
+    margin-top: 0px;
   }
