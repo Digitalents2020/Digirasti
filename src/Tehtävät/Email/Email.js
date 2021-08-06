@@ -5,7 +5,7 @@ const Email = () => {
 
     return (
         <div className="form-box">
-            <p>Tässä tehtävässä opetellaan sähköpostin lähettämisen perusteet. Tehtävänäsi on kirjoittaa pienimuotoinen työhakemus vastaanottajalle esimerkki.makkonen@testi-pesti.fi ja muistathan myös liittää CV:si sähköpostin liitteeksi!</p>
+            <p>Tässä tehtävässä opetellaan sähköpostin kirjoittamista ja liittetiedoston liittämistä. Tehtävänäsi on kirjoittaa pienimuotoinen työhakemus vastaanottajalle esimerkki.makkonen@testi-pesti.fi ja muistathan myös liittää CV:si sähköpostin liitteeksi!</p>
             <p>Ei huolta, kirjoittamasi hakemus ei oikeasti lähde mihinkään</p>
                 <h5>Sähköposti</h5>
                     <div className='field'>
