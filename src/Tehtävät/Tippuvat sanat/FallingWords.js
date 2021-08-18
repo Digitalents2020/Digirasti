@@ -150,7 +150,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <Timer word={newWord} arrayOfWords={arrayOfWords} difficulty={difficultySetting} />
             </div>
             <form onSubmit={cleanUpLetter}>
-              <input className="wordInput" id="wordInput" onChange={handler} autoFocus={true}/>
+              <input className="wordInput" id="wordInput" onChange={handler} autoFocus={true} onBlur={({ target }) => target.focus()}/>
              <button type="submit" className="hidebutton" ></button>
              </form>
             <div className="uiDiv">
