@@ -35,6 +35,9 @@
     height: 15vh;
 }
 
-.input submit {
-    width: 10px;
+Button {
+    min-width: 200px;
+    min-height: 50px;
+    padding: .5rem .8rem .5rem .8rem;
+    font-size: 20px;
 }
