@@ -1,7 +1,7 @@
 import React from "react";
 var readyForRender = true
 
-class Clock extends React.Component {
+class Timer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {date: new Date()};
@@ -31,16 +31,18 @@ class Clock extends React.Component {
       readyForRender = false
     return (
       <div>
-        {this.props.letter(true)}
+        {this.props.word(true)}
      </div>
     );
-  }else if (this.props.arrayOfLetters.length > 0){
+  }else if (this.props.arrayOfWords.length > 0){
     return  (<div>
-        {this.props.letter(false)}
+        {this.props.word(false)}
            </div>)
   }else
   return(
     <p className="empty">-</p>)
 }
 }
-export default Clock;
+
+
+export default Timer;

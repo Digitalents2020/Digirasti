@@ -1,24 +1,26 @@
 import React from "react";
-import "./FallingGame.css";
+import "./FallingWords.css";
 import { useState } from "react";
-import Clock from "./Clock";
+import Timer from "./Timer";
 import {AnimatePresence,motion} from "framer-motion"
 
-var letters = ["a","b","c","d","e","f","g","h","i",
-                "j","k","l","m","n","o","p","q","r",
-                "s","t","u","v","w","x","y","z","ä","ö",
+var words = ["juosta","laukata","hyppiä","iloita","olla",
+                "miettiä","ampua","juoda","keskustella",
+                "apu","koira","kissa","miksi","yksi","kalja"
+                ,"puro","auto","poika","tyttö","isä","äiti",
+                "joki","joskus","kisa","pilkki","onki",
               ];
 
-var arrayOfLetters = [ ];
+var arrayOfWords = [ ];
 var points = 0;
 var lives = 10;
 var difficultySetting = 2500;
 var location = 0
 var id = 10
-var letterToSearch = ''
+var wordToSearch = ''
 var firstTime = false
 
-function FallingGame() {
+function FallingWords() {
   const [state, setState] = useState("");
   const [start, setStart] = useState(true);
   // eslint-disable-next-line
@@ -28,7 +30,7 @@ function FallingGame() {
   //Sets starting values and change the state for rerender
   function startGame(difficulty) {
     difficultySetting=difficulty;
-    arrayOfLetters = [];
+    arrayOfWords = [];
     points=0;
     lives=10;
     setStart(false);
@@ -41,7 +43,7 @@ function FallingGame() {
 
 //takes back to starting screen, where player can change difficulty
   function changeDifficulty() {
-    arrayOfLetters = [];
+    arrayOfWords = [];
     points=0;
     lives=10;
     firstTime = true
@@ -51,16 +53,16 @@ function FallingGame() {
 
 
   const handler = (event) => {
-    setState(event.key);
+    setState(event.target.value);
   };
 
   /*Checks if the call for new letter is valid, if it is makes a new 
   letter, gives it a id and push it to the array. Everytime regardless
   if the call is valid returns all the existing letters in the array.*/
-  function newLetter(ready) {
+  function newWord(ready) {
     if (ready === true || firstTime === true) {
-      var num = Math.floor(Math.random() * letters.length);
-      var lett = letters[num];
+      var num = Math.floor(Math.random() * words.length);
+      var lett = words[num];
       firstTime = false
       if(id<99){
       id++
@@ -68,56 +70,61 @@ function FallingGame() {
         id = 10
       }
       lett = id + lett
-      arrayOfLetters.push(lett);
+      arrayOfWords.push(lett);
       ready=false
       setTimeout(function() {
         cleanFallenLetter(lett);
-    }, 6000)
+    }, 15000)
     } 
     if (lives > 0){
-      location = randomIntFromInterval(-400, 400)
+      location = randomIntFromInterval(-400, 370)
       return ( <AnimatePresence >
-      {arrayOfLetters.map((letter) =>
+      {arrayOfWords.map((letter) =>
         <motion.div key={letter}
         initial={{y:0, x:location}}
         animate={{y:490,
           transitionEnd:{display: "none"}}}
-        transition={{duration:6}}
-        className="letters">{letter.charAt(2)}
+        transition={{duration:15}}
+        className="letters">{letter.substring(2)}
         </motion.div>)}
        </AnimatePresence>)
     }else {
       setState("lost");
     }}
 
-
     /*Checks if the pressed letter(state) exist in the array
     and if it does removes the letter from the array and awards a point.
     Otherwise takes one live.*/
-  function cleanUpLetter() {
-    for(var i=0;i<arrayOfLetters.length;i++){
-      var container = arrayOfLetters[i]
-      if(container.charAt(2) === state){
-        letterToSearch = container
+  function cleanUpLetter(e) {
+    e.preventDefault();
+    for(var i=0;i<arrayOfWords.length;i++){
+      var container = arrayOfWords[i]
+      if(container.substring(2) === state){
+        wordToSearch = container
         break
       }
     }
-    var index = arrayOfLetters.indexOf(letterToSearch);
-    if (arrayOfLetters.indexOf(letterToSearch) >= 0) {
-      arrayOfLetters.splice(index, 1);
-      points++;
+    var index = arrayOfWords.indexOf(wordToSearch);
+    if (arrayOfWords.indexOf(wordToSearch) >= 0) {
+        arrayOfWords.splice(index, 1);
+      points = points + wordToSearch.length - 2;
+      document.getElementById('wordInput').value = ''
+      setState("")
     }else if (state !=="" && state !== "try"){
       lives--
+      document.getElementById('wordInput').value = ''
+      setState("")
     }
   }
+
 
     /*Removes letter from array. Is called when making new letter and
     contains 15sec timeout, so the letter is removed when letter hit the
     ground, if it still exist.*/
   function cleanFallenLetter(letter) {
-    var index = arrayOfLetters.indexOf(letter);
-    if (arrayOfLetters.indexOf(letter) >= 0) {
-      arrayOfLetters.splice(index, 1);
+    var index = arrayOfWords.indexOf(letter);
+    if (arrayOfWords.indexOf(letter) >= 0) {
+        arrayOfWords.splice(index, 1);
      lives--;
      setCleanFallen(letter)
     }}
@@ -125,20 +132,11 @@ function FallingGame() {
   
   /*Set values back to starting values*/
   function tryAgain() {
-    arrayOfLetters = [];
+    arrayOfWords = [];
     points=0;
     lives=10;
     firstTime = true
     setState("try");
-  }
-
-  /*clears the state after every render,
-   so it is possible to press same key more than once and remove
-   all the matching letters*/
-  function clearState() {
-    if (state!==""){
-    setState("");
-    }
   }
 
 /*If first render or coming to change difficulty, renders the start menu,
@@ -149,18 +147,16 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
         <div className="falling">
           <div className="canvas1">
             <div className="letterClass">
-            <Clock letter={newLetter} arrayOfLetters={arrayOfLetters} difficulty={difficultySetting} />
+            <Timer word={newWord} arrayOfWords={arrayOfWords} difficulty={difficultySetting} />
             </div>
-            {cleanUpLetter()}
+            <form onSubmit={cleanUpLetter}>
+              <input className="wordInput" id="wordInput" onChange={handler} autoFocus={true} onBlur={({ target }) => target.focus()}/>
+             <button type="submit" className="hidebutton" ></button>
+             </form>
+            <div className="uiDiv">
               <p className="ui">Pisteet: {points}</p>
               <p className="ui">Elämät: {lives}</p>
-            <input
-              className="hide"
-              onKeyPress={(e) => handler(e)}
-              autoFocus={true}
-              onBlur={({ target }) => target.focus()}
-            ></input>
-            {clearState()}
+              </div>
           </div>
         </div>
       );
@@ -172,18 +168,14 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <h1 className="pisteet">Pisteesi: {points}</h1>
             <p className="letters_lost">Valitettavasti elämäsi loppuivat!</p>
             </div>
-            <input
-              className="hide"
-              onKeyPress={(e) => handler(e)}
-              autoFocus={true}
-              onBlur={({ target }) => target.focus()}
-            ></input>
+            <div className="GameOverButtonsDiv">
             <button className="try" onClick={tryAgain}>
               Yritä uudelleen
             </button>
             <button className="try" onClick={changeDifficulty}>
               Vaihda vaikeusastetta
             </button>
+            </div>
           </div>
         </div>
       );
@@ -192,26 +184,27 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
     return (
       <div className="falling">
         <div className="canvas">
-          <h1 className="otsikko">Tippuvat kirjaimet</h1>
+          <h1 className="otsikko">Tippuvat sanat</h1>
           <div className="ohje">
             <h3 className="ohjetxt">Ohje:</h3>
-          <p>Tehtävänäsi on painaa näppäimistöstäsi samoja kirjaimia, jotka näet ruudulla.
-            <br />Väärää kirjainta painaessasi menetät elämän, jos elämät menevät nollaan häviät. 
-           <br /> Menetät myös elämän jos kirjaimet tippuvat alas asti. 
+          <p>Tehtävänäsi on kirjoittaa näppäimistölläso samoja sanoja, jotka näet ruudulla.
+            <br />Kirjoita sana sille varatulle kentälle ja paina näpäimistöstäsi ENTER painiketta.
+            <br />Väärän sanan kirjoittaessasi menetät elämän, jos elämät menevät nollaan häviät. 
+           <br /> Menetät myös elämän jos sanat tippuvat alas asti. 
            <br /> <br /> <b>Onnea peliin!</b>
           </p>
           </div>
           <div><br /><b>Valitse vaikeusaste:</b>
-          <button className="startbtn" onClick={() => startGame(2000)}>
+          <button className="startbtn" onClick={() => startGame(4000)}>
             Helppo
           </button>
-          <button className="startbtn" onClick={() => startGame(1500)}>
+          <button className="startbtn" onClick={() => startGame(2500)}>
             Normaali
           </button>
-          <button className="startbtn" onClick={() => startGame(800)}>
+          <button className="startbtn" onClick={() => startGame(1800)}>
             Vaikea
           </button>
-          <button className="startbtn" onClick={() => startGame(500)}>
+          <button className="startbtn" onClick={() => startGame(1500)}>
             Mahdoton
           </button>
           </div>
@@ -221,4 +214,4 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
   }
 }
 
-export default FallingGame;
+export default FallingWords;
