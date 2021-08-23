@@ -9,6 +9,7 @@ import Tietosuoja from "./Tehtävät/Tietosuoja/Tietosuoja";
 import FallingGame from "./Tehtävät/Tippuvat kirjaimet/FallingGame";
 import FallingWords from "./Tehtävät/Tippuvat sanat/FallingWords";
 import Email from "./Tehtävät/Email/Email";
+import Eform from "./Tehtävät/Eform/Eform";
 
 //The Exercises can be added as their own files as demonstrated with the Esimerkkitehtava1
 //This is very barebones, but does the job for now
@@ -49,6 +50,9 @@ const App = () => {
             <li>
               <Link to='/Email'>Sähköposti</Link>
             </li>
+            <li>
+              <Link to='/Eform'>Sähköisen lomakkeen täyttö</Link>
+            </li>
           </ul>
         </nav>
 
@@ -80,6 +84,9 @@ const App = () => {
             </Route>
             <Route path="/Email">
               <Email />
+            </Route>
+            <Route path="/Eform">
+              <Eform />
             </Route>
           </Switch>
         </div>
