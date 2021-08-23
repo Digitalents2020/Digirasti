@@ -20,7 +20,11 @@ const App = () => {
     <Router>
       <div className="App">
         <nav>
+          <h1>Digirastin tehtäväsivut</h1>
           <ul>
+            <li>
+              <Link to="/">Etusivu</Link>
+            </li>
             <li>
               <Link to="/esimerkkitehtava1">Esimerkkitehtävä1</Link>
             </li>
@@ -45,14 +49,14 @@ const App = () => {
             <li>
               <Link to='/Email'>Sähköposti</Link>
             </li>
-            <li>
-              <Link to="/">home</Link>
-            </li>
           </ul>
         </nav>
 
         <div className="content">
           <Switch>
+          <Route exact path="/">
+              <Home />
+            </Route>
             <Route path="/esimerkkitehtava1">
               <Esimerkkitehtava1 />
             </Route>
@@ -76,9 +80,6 @@ const App = () => {
             </Route>
             <Route path="/Email">
               <Email />
-            </Route>
-            <Route exact path="/">
-              <Home />
             </Route>
           </Switch>
         </div>
