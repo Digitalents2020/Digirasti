@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import './Kopiointi.css'
 
 const myArray = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nunc magna, pulvinar a neque nec, laoreet sodales dolor. Morbi lacinia luctus libero nec porta. Praesent a fringilla nisl. Fusce elementum molestie leo, vel tincidunt sem elementum vel. Morbi justo libero.",
-  "Sed et lacus quis justo ullamcorper fringilla. Quisque at mauris ac nisi maximus eleifend. Mauris tincidunt auctor dictum. Vivamus ut maximus metus, et bibendum lacus. Aenean pretium magna ipsum, non maximus tellus blandit nec. Maecenas sit amet mauris eget mauris.",
-  "Pellentesque fermentum imperdiet dui et hendrerit. Suspendisse ut enim a nibh bibendum mattis elementum at quam. Curabitur ac rutrum nibh. Pellentesque imperdiet, purus eu scelerisque volutpat, est velit rutrum turpis, vel dictum sem ligula vel ligula. Donec tellus nibh, pharetra."
+  "Helsingin työllisyyspalveluiden tavoitteena on edistää nykyistä tehokkaammin työttömien työnhakijoiden työllistymistä ja koulutukseen ohjautumista, sekä tuoda uusia ratkaisuja osaavan työvoiman saatavuuteen.",
+  "Suomalaisten digitaitojen tärkeys korostuu palveluiden muuttuessa sähköisiksi. On arvioitu, että noin neljänneksellä väestöstä olisi liian heikot digitaidot.",
+  "Helsingin kaupungin työllisyyspalveluiden toteuttama Digirasti-hanke tarjoaa helsinkiläisille työttömille työnhakuun keskittyvää digitaito-opetusta."
 ]
 
 // selects a random text from the array
@@ -48,12 +48,13 @@ const Kopiointi = () => {
   return (
     <div>
       <h2>Tekstin kopiointi</h2>
-      <p>{selectRandom}</p>
-      <br /> 
-      <p>Kopioi yllä oleva teksti alla olevaan tekstikenttään. Voit kopioida tekstiä maalaamalla sen ja joko painamalla pikanäppäimiä <strong>"Ctrl + C"</strong> samaan aikaan, tai painamalla hiiren oikee näppäintä ja valitsemalla <strong>"Kopioi"</strong> valikosta. Voit myös maalata tekstin ja vetää sen tekstikenttään.</p>
-      <input type="text" placeholder="Liitä teksti tähän" name="copied" onChange={handleChangeCopied} />
+      <p>Kopioi alla oleva teksti alla olevaan tekstikenttään. Voit kopioida tekstiä maalaamalla sen ja joko painamalla pikanäppäimiä <strong>"Ctrl + C"</strong> samaan aikaan, tai painamalla hiiren oikee näppäintä ja valitsemalla <strong>"Kopioi"</strong> valikosta. Voit myös maalata tekstin ja vetää sen tekstikenttään.</p>
+      <p>Tekstin maalaamisen tunnistaa siitä kun se on värjätty siniseksi.</p>
       <br />
-      <button onClick={() => {
+      <p>{selectRandom}</p>
+      <input type="text" className="input" placeholder="Liitä teksti tähän" name="copied" onChange={handleChangeCopied} />
+      <br />
+      <button style={{ marginBottom: "10px" }} onClick={() => {
         handleClick();
         matchCheck();
       }}>

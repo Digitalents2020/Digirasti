@@ -4,4 +4,15 @@ input {
   min-width: 50px;
   min-height: 30px;
   margin: 10px 0 10px 0;
+  text-align: center;
+}
+
+p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  line-height: 20px;
+}
+
+h2 {
+  margin-top: 20px;
 }
