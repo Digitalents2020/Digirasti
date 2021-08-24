@@ -1,10 +1,10 @@
-.falling {
+.fallingWords {
     text-align: center;
     background: white;
     min-height: 968px;
   }
 
-  .canvas {
+  .canvasWords {
     text-align: center;
     align-items: center;
     background: white;
@@ -14,7 +14,7 @@
     margin-left: 10%;
   }
 
-  .canvas1 {
+  .canvas1Words {
     text-align: center;
     align-items: center;
     background: white;
@@ -28,15 +28,15 @@
   }
 
 
-  .ohje {
+  .ohjeWords {
     border-width: 2px;
     padding: 5px;
   }
-  .ohjetxt {
+  .ohjetxtWords {
     color: blue;
   }
 
-  .letterClass{
+  .letterClassWords{
     text-align: center;
     align-items: center;
     background: white;
@@ -49,7 +49,7 @@
     border-color: blue;
   }
 
- .wordInput{
+ .wordInputWords{
     border-style: solid;
     border-width: 5px;
     border-color: blue;
@@ -57,28 +57,28 @@
     font-weight: 800;
  }
 
-.hidebutton{
+.hidebuttonWords{
     display: none;
 }
-  .letters{
+  .lettersWords{
     border-style: solid;
     letter-spacing: 3px;
     border-radius: 10px;
     position: absolute;
     margin: auto;
-    width: 25px;
+    width: 35px;
     border: 3px solid black;
     box-shadow: 5px 10px 5px #131111;
     padding: 10px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 25px;
+    font-weight: 700;
     display:inline-table;
     text-shadow: 0 0 3px #802e2e;
     background-color: rgb(196, 98, 33);
     color:white;
   }
 
-  .letters_lost{
+  .letters_lostWords{
     border-style: solid;
     letter-spacing: 3px;
     border-radius: 10px;
@@ -95,7 +95,7 @@
     color:blue;
   }
 
-  .ui{
+  .uiWords{
     display:inline-flex;
     padding-right: 20px;
     align-items: center;
@@ -109,17 +109,17 @@
     background-color: rgb(255, 255, 255);
   }
 
-  .uiDiv{
+  .uiDivWords{
      margin-right:17% ;
      
   }
 
-  .empty{
+  .emptyWords{
     margin: 0px;
     color:white;
   }
 
-  .try {
+  .tryWords{
     background-color: blue; 
     border: solid;
     color: white;
@@ -132,15 +132,15 @@
     cursor: pointer;
     border-radius: 12px;
   }
-  .try:hover {
+  .tryWords:hover {
     background-color: rgb(95, 99, 167);
   }
 
-  .GameOverButtonsDiv{
+  .GameOverButtonsDivWords{
     margin-left: 11%;
   }
   
-  .startbtn {
+  .startbtnWords {
     background-color: blue; 
     border: solid;
     color: white;
@@ -154,16 +154,16 @@
     border-radius: 12px; 
   }
 
-  .startbtn:hover {
+  .startbtnWords:hover {
     background-color: rgb(95, 99, 167);
   }
   
-  .otsikko{
+  .otsikkoWords{
     margin-top: 0px;
     color: blue;
   }
 
-  .pisteet{
+  .pisteetWords{
     color: blue;
   
   }
