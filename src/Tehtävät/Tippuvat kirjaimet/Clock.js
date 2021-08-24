@@ -43,6 +43,4 @@ class Clock extends React.Component {
     <p className="empty">-</p>)
 }
 }
-
-
 export default Clock;

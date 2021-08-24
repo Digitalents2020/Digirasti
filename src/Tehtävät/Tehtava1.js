@@ -1,22 +1,5 @@
 import React, { useState } from 'react'
 
-
-
-/*  Jassen omia inside-muistiinpanoja harkittavaksi:
-
-    kun ensimmäisen numeron ottaa pois niin aika lähtee juoksemaan vai
-
-    samperin iso nappi "ALOITA" ja sitten tulee tekstikentät näkyviin ja aika alkaa
-
-    oikeaan alakulmaan tekstilaatikko josta näkyy info (eli aika ja numerot poistettu / jäljellä)
-    oikeaan yläkulmaan random-palauteviestejä kuten HYVÄ HYVÄ, JUURI NOIN
-
-    jonkinlainen triggeri kuten että numerot on poistettu niin popup että well done.
-    Niin että voi sulkea sen mutta ei ole pakko. Next-nappi jää talteen.
-
-*/
-
-
 const Button = ( props ) => {
     return (
       <button onClick={ props.handleClick }>
@@ -29,22 +12,16 @@ const Tehtava1 = () => {
     const [ counter, setCounter ] = useState('')
     const [ taskText, setTaskText ] = useState('')
 	
-	// Tekstit sitten omaksi tiedostokseen tehtäväkohtaisesti
-	const tehtavaTeksti = 'Teks4ti joka tä5hän on kirjoi4tettu on myös s5ama tek4sti mi555kä tä67ssä luke7e nyt.'
+	  // 'Helsingin työllisyyspalveluiden tavoitteena on edistää nykyistä tehokkaammin työttömien työnhakijoiden työllistymistä ja koulutukseen ohjautumista, sekä tuoda uusia ratkaisuja osaavan työvoiman saatavuuteen.\n\nSuomalaisten digitaitojen tärkeys korostuu palveluiden muuttuessa sähköisiksi. On arvioitu, että noin neljänneksellä väestöstä olisi liian heikot digitaidot.\n\nHelsingin kaupungin työllisyyspalveluiden toteuttama Digirasti-hanke tarjoaa helsinkiläisille työttömille työnhakuun keskittyvää digitaito-opetusta.'
+	  const tehtavaTekstiCorrupted = 'H3el8singin työll4is3yyspalveluiden tavo8itteena on edist4ää nyk4yistä tehokka4ammin työt4tömien työnha34kijoiden työlli7sty3mistä ja koulutukseen ohjautumista, sekä tuoda uusia ratka7isuja osaa44van työ123voiman s6aatavuuteen.\n\nSuom7alaisten digitai4tojen tärkeys kor3ostuu p87alveluiden muuttu7essa sähköisiksi. On arvio44itu, että 3noin4 neljänn7eksellä väestöstä o6lisi lii9an heikot digitaidot.4\n\nHels8ingin kaupungin työllisyys45palve6luiden toteuttama Digirasti-567hanke tarjoaa helsink3iläisille työttö8mille työ4nha4kuun kesk3ittyvää digi5taito-ope9tusta.'
 	
     const textareastyle = {
-        minHeight: '200px',
-		minWidth: '500px'
-    //    resize: 'none',
-    //    padding: '9px',
-    //    boxSizing: 'border-box',
-    //    fontSize: '15px'}
+        minHeight: '220px',
+		    minWidth: '500px'
     }
 
-    const Laskuri = ( props ) => {
-
+    const Laskuri = ( ) => {
         setCounter( counter )
-    //    setTimeout( setCounter( counter ), 1000 )
         console.log( "Tik..." )
         return( 
             <p>{counter}</p>
@@ -52,19 +29,16 @@ const Tehtava1 = () => {
     }
 
     const nappifunktio = ( props ) => {
-        //alert( "painoit sitten nappia" )
-		setTaskText( tehtavaTeksti )
+		  setTaskText( tehtavaTekstiCorrupted )
     }
     
     const happening = () => {
-        console.log( "Tekstikenttä triggered" )
+      console.log( "Tekstikenttä triggered" )
     }
 
     const Sivukomponentti1 = () => { 
         return (
           <div>
-            <p><br/></p>
-            <p>Tekstiin on eksynyt numeroita jotka eivät sinne kuulu.</p>
             <p><br/></p>
             <p><b>Ohje:</b> Liiku tekstissä nuolinäppäimillä ja poista tekstistä kaikki numerot.</p>
             <p><br/></p>
@@ -75,7 +49,6 @@ const Tehtava1 = () => {
       const Sivukomponentti2 = () => { 
           return (
             <div>
-              <h3>Tee itse:</h3>
               <textarea style={textareastyle} onChange={happening} value={taskText}></textarea>
               <p><br/></p>
             </div>
@@ -100,9 +73,6 @@ const Tehtava1 = () => {
                 </div>
               )
             }
-
-    
-    console.log( 'Sivu rendered' )
 
     return (
         <div>

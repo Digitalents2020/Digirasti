@@ -1,49 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react'
 
-// Aaaaa
+const Button = ( props ) => {
+  return (
+    <button onClick={ props.handleClick }>
+    { props.label }
+    </button>
+  )
+}
 
-const Tehtava2 = ( props ) => {
+const Tehtava2 = () => {
+  const [demoMessage, setDemoMessage] = useState('')
 
-    const happening = () => {
-        console.log( "text activated" )
-    }
-    const textareaHappening = () => {
-        console.log( "textarea activated" )
-    }
     const textareastyle = {
-        maxHeight: '200px',
-        minHeight: '100px',
-    //    resize: 'none',
-    //    padding: '9px',
-    //    boxSizing: 'border-box',
-    //    fontSize: '15px'}
+        minHeight: '220px',
+		    minWidth: '500px'
     }
-
-    const SivukomponenttiOhjeet = () => { 
+    
+    const Sivukomponentti1 = () => { 
         return (
-            <div>
-			  <p><br/></p>
-              <h3>Näppäimistöharjoituksia:</h3>
-              <p>Kirjoita näppäimistöllä esimerkkitekstit</p>
-              <p><br/></p>
-            </div>
+          <div>
+            <p><br/></p>
+            <p><b>Ohje:</b>Kirjoita seuraava teksti alla olevaan kenttään. Teksti antaa sinulle vihjeitä, miten voit toimia, kun kirjoitat tekstiä.</p>
+            <p><br/></p>
+          </div>
         )
       }
-    const Sivukomponentti1 = () => {
+      
+      const alertDemo = () => {
+        alert( "Tällainen on oletus alert-ikkuna. Ruma mutta yleinen." )
+      }
+      const notificationDemo = () => {
+        if( demoMessage === '' )
+        setDemoMessage( "Tämä on erilainen ilmoitusikkuna." )
+        else {
+          setDemoMessage( '' )
+        }
+      }
+
+      const Notification = ({ message }) => {
+        if (message === '') {
+          return null
+        }
         return (
-            <div>
-			  <p>Tekstiä mitä voi kirjoittaa</p>
-              <input type="textarea" onChange={happening}></input>
-              <p><br/></p>
-            </div>
+          <div className="demoNotification">
+            {message}
+          </div>
         )
       }
 
       const Sivukomponentti2 = () => { 
           return (
             <div>
-			  <p>Tekstiä mitä voi kirjoittaa</p>
-              <textarea onChange={textareaHappening} ></textarea>
+              <textarea style={textareastyle}></textarea>
               <p><br/></p>
             </div>
           )
@@ -51,24 +59,25 @@ const Tehtava2 = ( props ) => {
 
         const Sivukomponentti3 = () => { 
             return (
-                <div>
-				  <p>Tekstiä kirjoitettavaksi</p>
-                  <input type="textarea" onChange={happening}></input>
-                  <p><br/></p>
-				  <p>Vielä lisää tekstiä</p>
-                  <textarea style={textareastyle} onChange={textareaHappening} ></textarea>
-                </div>
-              )
+              <div>
+                <Button handleClick={alertDemo} label='Alert'/>
+                <Button handleClick={notificationDemo} label='Ilmoitusikkuna'/>
+                <p><br/></p>
+                <Notification message={demoMessage}/>
+                <p><br/></p>
+                <p>Shift-näppäin on näppäimistön vasemmalla laidalla oleva näppäin, jossa on nuoli ylöspäin. Erikoismerkit ja isot kirjaimet saa painamalla Shiftiä ja kirjainta yhtä aikaa. Kun kirjoitat pitkää tekstiä tekstinkäsittelyohjelmalla, sinun ei tarvitse vaihtaa riviä painamalla Enteriä, vaan voit jatkaa kirjoittamista, vaikka rivin pääty lähestyy. Kun haluat vaihtaa kappaletta, voit painaa Enteriä, jolloin kappaleiden väliin tulee hieman tyhjää tilaa.</p>
+                <p>Tekstinkäsittelyohjelma hoitaa rivinvaihdon puolestasi. Saat tehtyä huutomerkin painamalla Shift-näppäintä ja numeroa 1 samaan aikaan!</p>
+                <p><br/></p>
+              </div>
+            )
           }
 
     return (
         <div>
             <h1>Tehtävä 2</h1>
-            <SivukomponenttiOhjeet/>
-            <Sivukomponentti1/>
-            <Sivukomponentti2/>
             <Sivukomponentti1/>
             <Sivukomponentti3/>
+            <Sivukomponentti2/>
         </div>
     )
 }
