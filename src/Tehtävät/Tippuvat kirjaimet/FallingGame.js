@@ -4,10 +4,30 @@ import { useState } from "react";
 import Clock from "./Clock";
 import {AnimatePresence,motion} from "framer-motion"
 
-var letters = ["a","b","c","d","e","f","g","h","i",
+
+var letters = ""; 
+var lettersPienet = ["a","b","c","d","e","f","g","h","i",
                 "j","k","l","m","n","o","p","q","r",
                 "s","t","u","v","w","x","y","z","ä","ö",
               ];
+
+var lettersMyosIsot = ["a","b","c","d","e","f","g","h","i",
+              "j","k","l","m","n","o","p","q","r",
+              "s","t","u","v","w","x","y","z","ä","ö",
+              "A","B","C","D","E","F","G","H","I",
+              "J","K","L","M","N","O","P","Q","R",
+              "S","T","U","V","W","X","Y","Z","Ä","Ö",
+            ];
+var lettersIsotJaErikois = ["a","b","c","d","e","f","g","h","i",
+            "j","k","l","m","n","o","p","q","r",
+            "s","t","u","v","w","x","y","z","ä","ö",
+            "A","B","C","D","E","F","G","H","I",
+            "J","K","L","M","N","O","P","Q","R",
+            "S","T","U","V","W","X","Y","Z","Ä","Ö",
+            "/","*","&","-",".",",","€","$","+","?",
+            "=","(",")",
+          ];
+
 
 var arrayOfLetters = [ ];
 var points = 0;
@@ -18,6 +38,7 @@ var id = 10
 var letterToSearch = ''
 var firstTime = false
 
+
 function FallingGame() {
   const [state, setState] = useState("");
   const [start, setStart] = useState(true);
@@ -27,7 +48,19 @@ function FallingGame() {
 
   //Sets starting values and change the state for rerender
   function startGame(difficulty) {
-    difficultySetting=difficulty;
+    if(difficulty==='helppo'){
+      difficultySetting = 3000
+      letters=lettersPienet
+    }else if(difficulty==='normaali'){
+      difficultySetting = 2500
+      letters=lettersPienet
+    }else if(difficulty==='vaikea'){
+      difficultySetting = 1500
+      letters=lettersMyosIsot
+    }else{
+       difficultySetting = 1500
+        letters=lettersIsotJaErikois
+    }
     arrayOfLetters = [];
     points=0;
     lives=10;
@@ -202,16 +235,16 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           </p>
           </div>
           <div><br /><b>Valitse vaikeusaste:</b>
-          <button className="startbtn" onClick={() => startGame(2000)}>
+          <button className="startbtn" onClick={() => startGame('helppo')}>
             Helppo
           </button>
-          <button className="startbtn" onClick={() => startGame(1500)}>
+          <button className="startbtn" onClick={() => startGame('normaali')}>
             Normaali
           </button>
-          <button className="startbtn" onClick={() => startGame(800)}>
+          <button className="startbtn" onClick={() => startGame('vaikea')}>
             Vaikea
           </button>
-          <button className="startbtn" onClick={() => startGame(500)}>
+          <button className="startbtn" onClick={() => startGame('mahdoton')}>
             Mahdoton
           </button>
           </div>
