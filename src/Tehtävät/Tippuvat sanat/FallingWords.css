@@ -8,8 +8,7 @@
     text-align: center;
     align-items: center;
     background: white;
-    min-height: 600px;
-    max-height: 600px;
+    height: 600px;
     max-width: 1200px;
     margin-left: 10%;
   }
@@ -18,10 +17,8 @@
     text-align: center;
     align-items: center;
     background: white;
-    min-height: 600px;
-    max-height: 600px;
-    max-width: 1200px;
-    min-width: 1200px;
+    height: 550px;
+    width: 1000px;
     margin-left: 10%;
     border-radius: 40px;
     padding-top: 35px;
@@ -33,28 +30,28 @@
     padding: 5px;
   }
   .ohjetxtWords {
-    color: blue;
+    color: #0000BF;
   }
 
   .letterClassWords{
     text-align: center;
     align-items: center;
     background: white;
-    min-height: 550px;
-    max-height: 550px;
-    max-width: 1000px;
+    height: 550px;
+    width: 1000px;
     margin-left: 8.5%;
     border-radius: 40px;
     border-style: solid;
-    border-color: blue;
+    border-color: #0000BF;
   }
 
  .wordInputWords{
     border-style: solid;
     border-width: 5px;
-    border-color: blue;
+    border-color: #0000BF;
     font-size: large;
     font-weight: 800;
+    margin-left:15% ;
  }
 
 .hidebuttonWords{
@@ -74,7 +71,7 @@
     font-weight: 700;
     display:inline-table;
     text-shadow: 0 0 3px #802e2e;
-    background-color: rgb(196, 98, 33);
+    background-color: #FD4F00;
     color:white;
   }
 
@@ -92,7 +89,7 @@
     font-size: 18px;
     font-weight: 800;
     background-color: rgb(255, 255, 255);
-    color:blue;
+    color:#0000BF;
   }
 
   .uiWords{
@@ -100,19 +97,15 @@
     padding-right: 20px;
     align-items: center;
     text-align: center;
-    margin-left: 20%;
+    margin-left: 15%;
     border-style: solid;
     border-radius: 3px;
     font-size: 18px;
     font-weight: 600;
-    color: blue;
+    color: #0000BF;
     background-color: rgb(255, 255, 255);
   }
 
-  .uiDivWords{
-     margin-right:17% ;
-     
-  }
 
   .emptyWords{
     margin: 0px;
@@ -120,7 +113,7 @@
   }
 
   .tryWords{
-    background-color: blue; 
+    background-color: #0000BF; 
     border: solid;
     color: white;
     padding: 10px 22px;
@@ -141,7 +134,7 @@
   }
   
   .startbtnWords {
-    background-color: blue; 
+    background-color: #0000BF; 
     border: solid;
     color: white;
     padding: 10px 22px;
@@ -160,10 +153,10 @@
   
   .otsikkoWords{
     margin-top: 0px;
-    color: blue;
+    color: #0000BF;
   }
 
   .pisteetWords{
-    color: blue;
+    color: #0000BF;
   
   }

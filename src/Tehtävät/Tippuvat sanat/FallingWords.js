@@ -16,7 +16,7 @@ var words = ["juosta","laukata","hyppiä","iloita","olla",
                 "pian","pii","pois","puu","päin","pää","rae",
                 "ruis","saos","se","seis","seos","siis","suo","suu",
                 "syy","syys","säe","sää","taas","tae","tai","taos",
-                "te","tee","teos","tie", "tiu","tuo","työ","täi",
+                "te","tee","teos","tie","tuo","työ","täi",
                 "vaan","vai","vain","voi","vyö","yö"
               ];
               
@@ -65,9 +65,9 @@ function FallingWords() {
     setState(event.target.value);
   };
 
-  /*Checks if the call for new letter is valid, if it is makes a new 
-  letter, gives it a id and push it to the array. Everytime regardless
-  if the call is valid returns all the existing letters in the array.*/
+  /*Checks if the call for new word is valid, if it is makes a new 
+  word, gives it a id and push it to the array. Everytime, regardless
+  if the call is valid, returns all the existing words in the array.*/
   function newWord(ready) {
     if (ready === true || firstTime === true) {
       var num = Math.floor(Math.random() * words.length);
@@ -196,7 +196,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           <h1 className="otsikkoWords">Tippuvat sanat</h1>
           <div className="ohjeWords">
             <h3 className="ohjetxtWords">Ohje:</h3>
-          <p>Tehtävänäsi on kirjoittaa näppäimistölläso samoja sanoja, jotka näet ruudulla.
+          <p>Tehtävänäsi on kirjoittaa näppäimistölläsi samoja sanoja, jotka näet ruudulla.
             <br />Kirjoita sana sille varatulle kentälle ja paina näpäimistöstäsi ENTER painiketta.
             <br />Väärän sanan kirjoittaessasi menetät elämän, jos elämät menevät nollaan häviät. 
            <br /> Menetät myös elämän jos sanat tippuvat alas asti. 
