@@ -1,10 +1,10 @@
-.falling {
+.fallingGame {
   text-align: center;
   background: white;
   min-height: 968px;
 }
 
-.canvas {
+.canvasGame {
   text-align: center;
   align-items: center;
   background: white;
@@ -14,28 +14,30 @@
   margin-left: 10%;
 }
 
-.canvas1 {
+.canvas1Game {
   text-align: center;
   align-items: center;
   background: white;
+  position: relative;
   min-height: 600px;
   max-height: 600px;
   max-width: 1200px;
+  min-width: 1200px;
   margin-left: 10%;
   border-radius: 40px;
   padding-top: 35px;
 }
 
 
-.ohje {
+.ohjeGame {
   border-width: 2px;
   padding: 5px;
 }
-.ohjetxt {
+.ohjetxtGame {
   color: blue;
 }
 
-.letterClass{
+.letterClassGame{
   text-align: center;
   align-items: center;
   background: white;
@@ -48,20 +50,20 @@
   border-color: blue;
 }
 
-.hide{
+.hideGame{
   opacity: 0
 }
-.letters{
+.lettersGame{
   border-style: solid;
   letter-spacing: 3px;
   border-radius: 10px;
   position: absolute;
   margin: auto;
-  width: 25px;
+  width: 35px;
   border: 3px solid black;
   box-shadow: 5px 10px 5px #131111;
   padding: 10px;
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 600;
   display:inline-table;
   text-shadow: 0 0 3px #802e2e;
@@ -69,7 +71,7 @@
   color:white;
 }
 
-.letters_lost{
+.letters_lostGame{
   border-style: solid;
   letter-spacing: 3px;
   border-radius: 10px;
@@ -86,7 +88,7 @@
   color:blue;
 }
 
-.ui{
+.uiGame{
   display:inline-flex;
   padding-right: 20px;
   align-items: center;
@@ -100,12 +102,12 @@
   background-color: rgb(255, 255, 255);
 }
 
-.empty{
+.emptyGame{
   margin: 0px;
   color:white;
 }
 
-.try {
+.tryGame {
   background-color: blue; 
   border: solid;
   color: white;
@@ -118,11 +120,11 @@
   cursor: pointer;
   border-radius: 12px;
 }
-.try:hover {
+.tryGame:hover {
   background-color: rgb(95, 99, 167);
 }
 
-.startbtn {
+.startbtnGame {
   background-color: blue; 
   border: solid;
   color: white;
@@ -136,16 +138,16 @@
   border-radius: 12px; 
 }
 
-.startbtn:hover {
+.startbtnGame:hover {
   background-color: rgb(95, 99, 167);
 }
 
-.otsikko{
+.otsikkoGame{
   margin-top: 0px;
   color: blue;
 }
 
-.pisteet{
+.pisteetGame{
   color: blue;
 
 }

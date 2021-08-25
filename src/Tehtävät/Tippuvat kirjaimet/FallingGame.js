@@ -4,10 +4,30 @@ import { useState } from "react";
 import Clock from "./Clock";
 import {AnimatePresence,motion} from "framer-motion"
 
-var letters = ["a","b","c","d","e","f","g","h","i",
+
+var letters = ""; 
+var lettersPienet = ["a","b","c","d","e","f","g","h","i",
                 "j","k","l","m","n","o","p","q","r",
                 "s","t","u","v","w","x","y","z","ä","ö",
               ];
+
+var lettersMyosIsot = ["a","b","c","d","e","f","g","h","i",
+              "j","k","l","m","n","o","p","q","r",
+              "s","t","u","v","w","x","y","z","ä","ö",
+              "A","B","C","D","E","F","G","H","I",
+              "J","K","L","M","N","O","P","Q","R",
+              "S","T","U","V","W","X","Y","Z","Ä","Ö",
+            ];
+var lettersIsotJaErikois = ["a","b","c","d","e","f","g","h","i",
+            "j","k","l","m","n","o","p","q","r",
+            "s","t","u","v","w","x","y","z","ä","ö",
+            "A","B","C","D","E","F","G","H","I",
+            "J","K","L","M","N","O","P","Q","R",
+            "S","T","U","V","W","X","Y","Z","Ä","Ö",
+            "/","*","&","-",".",",","€","$","+","?",
+            "=","(",")",
+          ];
+
 
 var arrayOfLetters = [ ];
 var points = 0;
@@ -18,6 +38,7 @@ var id = 10
 var letterToSearch = ''
 var firstTime = false
 
+
 function FallingGame() {
   const [state, setState] = useState("");
   const [start, setStart] = useState(true);
@@ -27,7 +48,19 @@ function FallingGame() {
 
   //Sets starting values and change the state for rerender
   function startGame(difficulty) {
-    difficultySetting=difficulty;
+    if(difficulty==='helppo'){
+      difficultySetting = 3000
+      letters=lettersPienet
+    }else if(difficulty==='normaali'){
+      difficultySetting = 2500
+      letters=lettersPienet
+    }else if(difficulty==='vaikea'){
+      difficultySetting = 1500
+      letters=lettersMyosIsot
+    }else{
+       difficultySetting = 1500
+        letters=lettersIsotJaErikois
+    }
     arrayOfLetters = [];
     points=0;
     lives=10;
@@ -83,7 +116,7 @@ function FallingGame() {
         animate={{y:490,
           transitionEnd:{display: "none"}}}
         transition={{duration:6}}
-        className="letters">{letter.charAt(2)}
+        className="lettersGame">{letter.charAt(2)}
         </motion.div>)}
        </AnimatePresence>)
     }else {
@@ -146,16 +179,16 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
   if (start === false) {
     if (lives > 0) {
       return (
-        <div className="falling">
-          <div className="canvas1">
-            <div className="letterClass">
+        <div className="fallingGame">
+          <div className="canvas1Game">
+            <div className="letterClassGame">
             <Clock letter={newLetter} arrayOfLetters={arrayOfLetters} difficulty={difficultySetting} />
             </div>
             {cleanUpLetter()}
-              <p className="ui">Pisteet: {points}</p>
-              <p className="ui">Elämät: {lives}</p>
+              <p className="uiGame">Pisteet: {points}</p>
+              <p className="uiGame">Elämät: {lives}</p>
             <input
-              className="hide"
+              className="hideGame"
               onKeyPress={(e) => handler(e)}
               autoFocus={true}
               onBlur={({ target }) => target.focus()}
@@ -166,22 +199,22 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
       );
     } else {
       return (
-        <div className="falling">
-          <div className="canvas1">
-          <div className="letterClass_lost">
-            <h1 className="pisteet">Pisteesi: {points}</h1>
-            <p className="letters_lost">Valitettavasti elämäsi loppuivat!</p>
+        <div className="fallingGame">
+          <div className="canvas1Game">
+          <div className="letterClass_lostGame">
+            <h1 className="pisteetGame">Pisteesi: {points}</h1>
+            <p className="letters_lostGame">Valitettavasti elämäsi loppuivat!</p>
             </div>
             <input
-              className="hide"
+              className="hideGame"
               onKeyPress={(e) => handler(e)}
               autoFocus={true}
               onBlur={({ target }) => target.focus()}
             ></input>
-            <button className="try" onClick={tryAgain}>
+            <button className="tryGame" onClick={tryAgain}>
               Yritä uudelleen
             </button>
-            <button className="try" onClick={changeDifficulty}>
+            <button className="tryGame" onClick={changeDifficulty}>
               Vaihda vaikeusastetta
             </button>
           </div>
@@ -190,11 +223,11 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
     }
   } else {
     return (
-      <div className="falling">
-        <div className="canvas">
-          <h1 className="otsikko">Tippuvat kirjaimet</h1>
-          <div className="ohje">
-            <h3 className="ohjetxt">Ohje:</h3>
+      <div className="fallingGame">
+        <div className="canvasGame">
+          <h1 className="otsikkoGame">Tippuvat kirjaimet</h1>
+          <div className="ohjeGame">
+            <h3 className="ohjetxtGame">Ohje:</h3>
           <p>Tehtävänäsi on painaa näppäimistöstäsi samoja kirjaimia, jotka näet ruudulla.
             <br />Väärää kirjainta painaessasi menetät elämän, jos elämät menevät nollaan häviät. 
            <br /> Menetät myös elämän jos kirjaimet tippuvat alas asti. 
@@ -202,16 +235,16 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           </p>
           </div>
           <div><br /><b>Valitse vaikeusaste:</b>
-          <button className="startbtn" onClick={() => startGame(2000)}>
+          <button className="startbtnGame" onClick={() => startGame('helppo')}>
             Helppo
           </button>
-          <button className="startbtn" onClick={() => startGame(1500)}>
+          <button className="startbtnGame" onClick={() => startGame('normaali')}>
             Normaali
           </button>
-          <button className="startbtn" onClick={() => startGame(800)}>
+          <button className="startbtnGame" onClick={() => startGame('vaikea')}>
             Vaikea
           </button>
-          <button className="startbtn" onClick={() => startGame(500)}>
+          <button className="startbtnGame" onClick={() => startGame('mahdoton')}>
             Mahdoton
           </button>
           </div>

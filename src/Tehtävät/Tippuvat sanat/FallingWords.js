@@ -85,7 +85,7 @@ function FallingWords() {
         animate={{y:490,
           transitionEnd:{display: "none"}}}
         transition={{duration:15}}
-        className="letters">{letter.substring(2)}
+        className="lettersWords">{letter.substring(2)}
         </motion.div>)}
        </AnimatePresence>)
     }else {
@@ -108,11 +108,11 @@ function FallingWords() {
     if (arrayOfWords.indexOf(wordToSearch) >= 0) {
         arrayOfWords.splice(index, 1);
       points = points + wordToSearch.length - 2;
-      document.getElementById('wordInput').value = ''
+      document.getElementById('wordInputWords').value = ''
       setState("")
     }else if (state !=="" && state !== "try"){
       lives--
-      document.getElementById('wordInput').value = ''
+      document.getElementById('wordInputWords').value = ''
       setState("")
     }
   }
@@ -144,35 +144,35 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
   if (start === false) {
     if (lives > 0) {
       return (
-        <div className="falling">
-          <div className="canvas1">
-            <div className="letterClass">
+        <div className="fallingWords">
+          <div className="canvas1Words">
+            <div className="letterClassWords">
             <Timer word={newWord} arrayOfWords={arrayOfWords} difficulty={difficultySetting} />
             </div>
             <form onSubmit={cleanUpLetter}>
-              <input className="wordInput" id="wordInput" onChange={handler} autoFocus={true} onBlur={({ target }) => target.focus()}/>
-             <button type="submit" className="hidebutton" ></button>
+              <input className="wordInputWords" id="wordInputWords" onChange={handler} autoFocus={true} onBlur={({ target }) => target.focus()}/>
+             <button type="submit" className="hidebuttonWords" ></button>
              </form>
-            <div className="uiDiv">
-              <p className="ui">Pisteet: {points}</p>
-              <p className="ui">Elämät: {lives}</p>
+            <div className="uiDivWords">
+              <p className="uiWords">Pisteet: {points}</p>
+              <p className="uiWords">Elämät: {lives}</p>
               </div>
           </div>
         </div>
       );
     } else {
       return (
-        <div className="falling">
-          <div className="canvas1">
-          <div className="letterClass_lost">
-            <h1 className="pisteet">Pisteesi: {points}</h1>
-            <p className="letters_lost">Valitettavasti elämäsi loppuivat!</p>
+        <div className="fallingWords">
+          <div className="canvas1Words">
+          <div className="letterClass_lostWords">
+            <h1 className="pisteetWords">Pisteesi: {points}</h1>
+            <p className="letters_lostWords">Valitettavasti elämäsi loppuivat!</p>
             </div>
-            <div className="GameOverButtonsDiv">
-            <button className="try" onClick={tryAgain}>
+            <div className="GameOverButtonsDivWords">
+            <button className="tryWords" onClick={tryAgain}>
               Yritä uudelleen
             </button>
-            <button className="try" onClick={changeDifficulty}>
+            <button className="tryWords" onClick={changeDifficulty}>
               Vaihda vaikeusastetta
             </button>
             </div>
@@ -182,11 +182,11 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
     }
   } else {
     return (
-      <div className="falling">
-        <div className="canvas">
-          <h1 className="otsikko">Tippuvat sanat</h1>
-          <div className="ohje">
-            <h3 className="ohjetxt">Ohje:</h3>
+      <div className="fallingWords">
+        <div className="canvasWords">
+          <h1 className="otsikkoWords">Tippuvat sanat</h1>
+          <div className="ohjeWords">
+            <h3 className="ohjetxtWords">Ohje:</h3>
           <p>Tehtävänäsi on kirjoittaa näppäimistölläso samoja sanoja, jotka näet ruudulla.
             <br />Kirjoita sana sille varatulle kentälle ja paina näpäimistöstäsi ENTER painiketta.
             <br />Väärän sanan kirjoittaessasi menetät elämän, jos elämät menevät nollaan häviät. 
@@ -195,16 +195,16 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           </p>
           </div>
           <div><br /><b>Valitse vaikeusaste:</b>
-          <button className="startbtn" onClick={() => startGame(4000)}>
+          <button className="startbtnWords" onClick={() => startGame(4000)}>
             Helppo
           </button>
-          <button className="startbtn" onClick={() => startGame(2500)}>
+          <button className="startbtnWords" onClick={() => startGame(2500)}>
             Normaali
           </button>
-          <button className="startbtn" onClick={() => startGame(1800)}>
+          <button className="startbtnWords" onClick={() => startGame(1800)}>
             Vaikea
           </button>
-          <button className="startbtn" onClick={() => startGame(1500)}>
+          <button className="startbtnWords" onClick={() => startGame(1500)}>
             Mahdoton
           </button>
           </div>
