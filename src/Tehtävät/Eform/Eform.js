@@ -21,7 +21,7 @@ const Email = () => {
       return (
         <div className="form-box">
           <p>
-            Tässä tehtävässä opetellaan Sähköisen lomakkeen. Sähköisiä lomakkeita on monenlaisia, mutta tässä harjoitellaan täyttämään mahdollisesti työnhaun yhteydessä vastaan tulevaa lomaketta.
+            Tässä tehtävässä opetellaan sähköisen lomakkeen täyttämistä ja lähettämistä. Sähköisiä lomakkeita on monenlaisia, mutta tässä harjoitellaan täyttämään mahdollisesti työnhaun yhteydessä vastaan tulevaa lomaketta.
           </p>
           <p>Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä mitään minnekkään</p>
           <h5>Hakulomake</h5>
@@ -68,6 +68,7 @@ const Email = () => {
       );
     }
 
+/*Here is the state if the button has been pressed*/
     return (
       <div className="form-box">
         <p>

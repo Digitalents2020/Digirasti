@@ -28,6 +28,7 @@ const Email = () => {
             työhakemus vastaanottajalle esimerkki.makkonen@testi-pesti.fi ja
             muistathan myös liittää CV:si sähköpostin liitteeksi!
           </p>
+          <p>Huomioitavaa: Joskus sähköpostien liitteen nappulassa on vain paperiliittimen eli klemmarin kuva, älä siis hätäänny, jos tässä tehtävässä käytettävää nappia ei tosielämän sähköposteista löydy.</p>
           <p>Ei huolta, kirjoittamasi hakemus ei oikeasti lähde mihinkään</p>
           <h5>Sähköposti</h5>
           <br></br>
@@ -49,10 +50,11 @@ const Email = () => {
       );
     }
 
+    /*Here is the state if the button has been pressed*/
     return (
       <div className="form-box">
         <p>
-          Hienoa! Näin kirjoitat ja lähetät sähköpostin! Voit nyt siirtyä
+          Hienoa! Näin kirjoitat ja lähetät sähköpostin ja lisäät siihen liitteen! Voit nyt siirtyä
           seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
         </p>
       </div>
