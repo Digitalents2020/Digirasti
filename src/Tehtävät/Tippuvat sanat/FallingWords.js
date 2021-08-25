@@ -9,8 +9,17 @@ var words = ["juosta","laukata","hyppiä","iloita","olla",
                 "apu","koira","kissa","miksi","yksi","kalja"
                 ,"puro","auto","poika","tyttö","isä","äiti",
                 "joki","joskus","kisa","pilkki","onki",
+                "ei","hai","he","hius","hän","häät","ien","ja","jae"
+                ,"jaosto","jo","jos","jää","koe","koi","kuin","kun",
+                "kuu","kyy","luo","luu","maa","me","mies",
+                "muu","myös","ne","niin","noin","nuo","nyt","näin",
+                "pian","pii","pois","puu","päin","pää","rae",
+                "ruis","saos","se","seis","seos","siis","suo","suu",
+                "syy","syys","säe","sää","taas","tae","tai","taos",
+                "te","tee","teos","tie", "tiu","tuo","työ","täi",
+                "vaan","vai","vain","voi","vyö","yö"
               ];
-
+              
 var arrayOfWords = [ ];
 var points = 0;
 var lives = 10;
