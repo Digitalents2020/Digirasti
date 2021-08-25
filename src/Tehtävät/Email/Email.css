@@ -38,6 +38,9 @@
 Button {
     min-width: 200px;
     min-height: 50px;
-    padding: .5rem .8rem .5rem .8rem;
+    padding: .5rem, .8rem, .5rem, .8rem,;
+    margin: .9vw;
     font-size: 20px;
+    background-color: #0618BB;
+    color: #ffffff;
 }
