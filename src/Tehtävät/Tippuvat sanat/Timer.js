@@ -19,10 +19,11 @@ class Timer extends React.Component {
   }
 
   tick() {
+    readyForRender = true
     this.setState({
       date: new Date()
     });    
-    readyForRender = true
+  
   }
   
   

@@ -9,8 +9,17 @@ var words = ["juosta","laukata","hyppiä","iloita","olla",
                 "apu","koira","kissa","miksi","yksi","kalja"
                 ,"puro","auto","poika","tyttö","isä","äiti",
                 "joki","joskus","kisa","pilkki","onki",
+                "ei","hai","he","hius","hän","häät","ien","ja","jae"
+                ,"jaosto","jo","jos","jää","koe","koi","kuin","kun",
+                "kuu","kyy","luo","luu","maa","me","mies",
+                "muu","myös","ne","niin","noin","nuo","nyt","näin",
+                "pian","pii","pois","puu","päin","pää","rae",
+                "ruis","saos","se","seis","seos","siis","suo","suu",
+                "syy","syys","säe","sää","taas","tae","tai","taos",
+                "te","tee","teos","tie","tuo","työ","täi",
+                "vaan","vai","vain","voi","vyö","yö"
               ];
-
+              
 var arrayOfWords = [ ];
 var points = 0;
 var lives = 10;
@@ -29,7 +38,19 @@ function FallingWords() {
 
   //Sets starting values and change the state for rerender
   function startGame(difficulty) {
-    difficultySetting=difficulty;
+    if(difficulty==='helppo'){
+      difficultySetting = 5000
+     
+    }else if(difficulty==='normaali'){
+      difficultySetting = 3500
+      
+    }else if(difficulty==='vaikea'){
+      difficultySetting = 2500
+     
+    }else{
+       difficultySetting = 1500
+      
+    }
     arrayOfWords = [];
     points=0;
     lives=10;
@@ -56,9 +77,9 @@ function FallingWords() {
     setState(event.target.value);
   };
 
-  /*Checks if the call for new letter is valid, if it is makes a new 
-  letter, gives it a id and push it to the array. Everytime regardless
-  if the call is valid returns all the existing letters in the array.*/
+  /*Checks if the call for new word is valid, if it is makes a new 
+  word, gives it a id and push it to the array. Everytime, regardless
+  if the call is valid, returns all the existing words in the array.*/
   function newWord(ready) {
     if (ready === true || firstTime === true) {
       var num = Math.floor(Math.random() * words.length);
@@ -187,7 +208,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           <h1 className="otsikkoWords">Tippuvat sanat</h1>
           <div className="ohjeWords">
             <h3 className="ohjetxtWords">Ohje:</h3>
-          <p>Tehtävänäsi on kirjoittaa näppäimistölläso samoja sanoja, jotka näet ruudulla.
+          <p>Tehtävänäsi on kirjoittaa näppäimistölläsi samoja sanoja, jotka näet ruudulla.
             <br />Kirjoita sana sille varatulle kentälle ja paina näpäimistöstäsi ENTER painiketta.
             <br />Väärän sanan kirjoittaessasi menetät elämän, jos elämät menevät nollaan häviät. 
            <br /> Menetät myös elämän jos sanat tippuvat alas asti. 
@@ -195,16 +216,16 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           </p>
           </div>
           <div><br /><b>Valitse vaikeusaste:</b>
-          <button className="startbtnWords" onClick={() => startGame(4000)}>
+          <button className="startbtnWords" onClick={() => startGame('helppo')}>
             Helppo
           </button>
-          <button className="startbtnWords" onClick={() => startGame(2500)}>
+          <button className="startbtnWords" onClick={() => startGame('normaali')}>
             Normaali
           </button>
-          <button className="startbtnWords" onClick={() => startGame(1800)}>
+          <button className="startbtnWords" onClick={() => startGame('vaikea')}>
             Vaikea
           </button>
-          <button className="startbtnWords" onClick={() => startGame(1500)}>
+          <button className="startbtnWords" onClick={() => startGame('mahdoton')}>
             Mahdoton
           </button>
           </div>
