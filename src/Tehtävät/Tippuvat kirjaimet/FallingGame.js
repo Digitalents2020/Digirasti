@@ -51,16 +51,16 @@ function FallingGame() {
   //Sets starting values and change the state for rerender
   function startGame(difficulty) {
     if(difficulty==='helppo'){
-      difficultySetting = 3000
+      difficultySetting = 4500
       letters=lettersPienet
     }else if(difficulty==='normaali'){
-      difficultySetting = 2500
+      difficultySetting = 3500
       letters=lettersPienet
     }else if(difficulty==='vaikea'){
-      difficultySetting = 1500
+      difficultySetting = 2500
       letters=lettersMyosIsot
     }else{
-       difficultySetting = 1500
+       difficultySetting = 2000
         letters=lettersIsotJaErikois
     }
     arrayOfLetters = [];
@@ -107,7 +107,7 @@ function FallingGame() {
       ready=false
       setTimeout(function() {
         cleanFallenLetter(lett);
-    }, 10000)
+    }, 10200)
     } 
     if (lives > 0){
       if(firefoxAgent){
@@ -120,8 +120,9 @@ function FallingGame() {
         <motion.div key={letter}
         initial={{y:0, x:location}}
         animate={{y:484,
-          transitionEnd:{display: "none"}}}
+          transitionEnd:{backgroundColor: "#D2042D"}}}
         transition={{duration:10}}
+        exit={{}}
         className="lettersGame">{letter.charAt(2)}
         </motion.div>)}
        </AnimatePresence>)

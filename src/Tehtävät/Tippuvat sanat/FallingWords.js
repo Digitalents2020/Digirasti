@@ -97,7 +97,7 @@ function FallingWords() {
       ready=false
       setTimeout(function() {
         cleanFallenLetter(lett);
-    }, 15000)
+    }, 15200)
     } 
     if (lives > 0){
       if(firefoxAgent){
@@ -110,7 +110,7 @@ function FallingWords() {
         <motion.div key={letter}
         initial={{y:0, x:location}}
         animate={{y:490,
-          transitionEnd:{display: "none"}}}
+          transitionEnd:{backgroundColor: "#D2042D"}}}
         transition={{duration:15}}
         className="lettersWords">{letter.substring(2)}
         </motion.div>)}

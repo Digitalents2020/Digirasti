@@ -124,7 +124,7 @@
     display: inline-block;
     font-size: 20px;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 25px; 
   }
   .tryWords:hover {
     background-color: rgb(95, 99, 167);
@@ -149,7 +149,7 @@
     display: inline-block;
     font-size: 20px;
     cursor: pointer;
-    border-radius: 12px; 
+    border-radius: 25px; 
   }
 
   .startbtnWords:hover {
