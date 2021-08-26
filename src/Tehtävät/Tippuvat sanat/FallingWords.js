@@ -38,7 +38,19 @@ function FallingWords() {
 
   //Sets starting values and change the state for rerender
   function startGame(difficulty) {
-    difficultySetting=difficulty;
+    if(difficulty==='helppo'){
+      difficultySetting = 5000
+     
+    }else if(difficulty==='normaali'){
+      difficultySetting = 3500
+      
+    }else if(difficulty==='vaikea'){
+      difficultySetting = 2500
+     
+    }else{
+       difficultySetting = 1500
+      
+    }
     arrayOfWords = [];
     points=0;
     lives=10;
@@ -204,16 +216,16 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           </p>
           </div>
           <div><br /><b>Valitse vaikeusaste:</b>
-          <button className="startbtnWords" onClick={() => startGame(4000)}>
+          <button className="startbtnWords" onClick={() => startGame('helppo')}>
             Helppo
           </button>
-          <button className="startbtnWords" onClick={() => startGame(2500)}>
+          <button className="startbtnWords" onClick={() => startGame('normaali')}>
             Normaali
           </button>
-          <button className="startbtnWords" onClick={() => startGame(1800)}>
+          <button className="startbtnWords" onClick={() => startGame('vaikea')}>
             Vaikea
           </button>
-          <button className="startbtnWords" onClick={() => startGame(1500)}>
+          <button className="startbtnWords" onClick={() => startGame('mahdoton')}>
             Mahdoton
           </button>
           </div>
