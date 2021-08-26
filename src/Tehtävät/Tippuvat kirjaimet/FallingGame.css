@@ -49,6 +49,16 @@
   border-color: #0000BF;
 }
 
+.gameEndLineGame{
+  height: 5px;
+  width: 81%;
+  margin-left: 14px;
+  margin-top: 540px;
+  border-radius: 20%;
+  background-color: #802e2e;
+  position: absolute;
+}
+
 .hideGame{
   opacity: 0
 }

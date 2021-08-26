@@ -119,7 +119,7 @@ function FallingGame() {
       {arrayOfLetters.map((letter) =>
         <motion.div key={letter}
         initial={{y:0, x:location}}
-        animate={{y:490,
+        animate={{y:484,
           transitionEnd:{display: "none"}}}
         transition={{duration:10}}
         className="lettersGame">{letter.charAt(2)}
@@ -188,7 +188,9 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
         <div className="fallingGame">
           <div className="canvas1Game">
             <div className="letterClassGame">
+            <div className="gameEndLineGame"/>
             <Clock letter={newLetter} arrayOfLetters={arrayOfLetters} difficulty={difficultySetting} />
+            
             </div>
             {cleanUpLetter()}
               <p className="uiGame">Pisteet: {points}</p>
