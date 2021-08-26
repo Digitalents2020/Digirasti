@@ -115,13 +115,18 @@
   margin-right: 13%;
   text-align: center;
   display: inline-block;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
   border-radius: 12px;
 }
 .tryGame:hover {
   background-color: rgb(95, 99, 167);
 }
+
+.vaikeusTekstiGame{
+  font-size: 20px;
+}
+
 
 .startbtnGame {
   background-color: #0000BF; 
@@ -132,7 +137,7 @@
   margin-left: 10px;
   text-align: center;
   display: inline-block;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
   border-radius: 12px; 
 }

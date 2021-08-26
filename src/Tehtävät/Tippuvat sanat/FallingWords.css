@@ -52,7 +52,7 @@
     border-color: #0000BF;
     font-size: large;
     font-weight: 800;
-    margin-left:15% ;
+    margin-left: 15%;
  }
 
 .hidebuttonWords{
@@ -122,7 +122,7 @@
     margin-right: 13%;
     text-align: center;
     display: inline-block;
-    font-size: 14px;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 12px;
   }
@@ -134,6 +134,10 @@
     margin-left: 11%;
   }
   
+  .vaikeusTekstiWords{
+    font-size: 20px;
+  }
+
   .startbtnWords {
     background-color: #0000BF; 
     border: solid;
@@ -143,7 +147,7 @@
     margin-left: 10px;
     text-align: center;
     display: inline-block;
-    font-size: 14px;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 12px; 
   }

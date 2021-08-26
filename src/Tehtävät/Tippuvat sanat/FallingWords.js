@@ -28,6 +28,8 @@ var location = 0
 var id = 10
 var wordToSearch = ''
 var firstTime = false
+let userAgentString = navigator.userAgent;
+let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 
 function FallingWords() {
   const [state, setState] = useState("");
@@ -98,7 +100,11 @@ function FallingWords() {
     }, 15000)
     } 
     if (lives > 0){
-      location = randomIntFromInterval(-400, 370)
+      if(firefoxAgent){
+        location = randomIntFromInterval(20, 800)
+      }else{
+      location = randomIntFromInterval(-380, 370)
+      }
       return ( <AnimatePresence >
       {arrayOfWords.map((letter) =>
         <motion.div key={letter}
@@ -215,7 +221,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
            <br /> <br /> <b>Onnea peliin!</b>
           </p>
           </div>
-          <div><br /><b>Valitse vaikeusaste:</b>
+          <div className="vaikeusTekstiWords"><br /><b>Valitse vaikeusaste:</b>
           <button className="startbtnWords" onClick={() => startGame('helppo')}>
             Helppo
           </button>

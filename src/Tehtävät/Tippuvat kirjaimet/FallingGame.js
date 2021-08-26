@@ -37,13 +37,15 @@ var location = 0
 var id = 10
 var letterToSearch = ''
 var firstTime = false
-
+let userAgentString = navigator.userAgent;
+let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 
 function FallingGame() {
   const [state, setState] = useState("");
   const [start, setStart] = useState(true);
   // eslint-disable-next-line
   const [cleanFallen, setCleanFallen] = useState("")
+  
   
 
   //Sets starting values and change the state for rerender
@@ -105,17 +107,21 @@ function FallingGame() {
       ready=false
       setTimeout(function() {
         cleanFallenLetter(lett);
-    }, 6000)
+    }, 10000)
     } 
     if (lives > 0){
+      if(firefoxAgent){
+        location = randomIntFromInterval(0, 800)
+      }else{
       location = randomIntFromInterval(-400, 400)
+      }
       return ( <AnimatePresence >
       {arrayOfLetters.map((letter) =>
         <motion.div key={letter}
         initial={{y:0, x:location}}
         animate={{y:490,
           transitionEnd:{display: "none"}}}
-        transition={{duration:6}}
+        transition={{duration:10}}
         className="lettersGame">{letter.charAt(2)}
         </motion.div>)}
        </AnimatePresence>)
@@ -234,7 +240,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
            <br /> <br /> <b>Onnea peliin!</b>
           </p>
           </div>
-          <div><br /><b>Valitse vaikeusaste:</b>
+          <div className="vaikeusTekstiGame"><br /><b>Valitse vaikeusaste:</b>
           <button className="startbtnGame" onClick={() => startGame('helppo')}>
             Helppo
           </button>
