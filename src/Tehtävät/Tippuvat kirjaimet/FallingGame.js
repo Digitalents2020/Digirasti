@@ -121,7 +121,7 @@ function FallingGame() {
         initial={{y:0, x:location}}
         animate={{y:484,
           transitionEnd:{backgroundColor: "#D2042D"}}}
-        transition={{duration:10}}
+        transition={{duration:10,ease:"linear"}}
         exit={{}}
         className="lettersGame">{letter.charAt(2)}
         </motion.div>)}
