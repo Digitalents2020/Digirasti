@@ -37,7 +37,8 @@ var location = 0
 var id = 10
 var letterToSearch = ''
 var firstTime = false
-
+let userAgentString = navigator.userAgent;
+let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 
 function FallingGame() {
   const [state, setState] = useState("");
@@ -45,20 +46,21 @@ function FallingGame() {
   // eslint-disable-next-line
   const [cleanFallen, setCleanFallen] = useState("")
   
+  
 
   //Sets starting values and change the state for rerender
   function startGame(difficulty) {
     if(difficulty==='helppo'){
-      difficultySetting = 3000
+      difficultySetting = 4500
       letters=lettersPienet
     }else if(difficulty==='normaali'){
-      difficultySetting = 2500
+      difficultySetting = 3500
       letters=lettersPienet
     }else if(difficulty==='vaikea'){
-      difficultySetting = 1500
+      difficultySetting = 2500
       letters=lettersMyosIsot
     }else{
-       difficultySetting = 1500
+       difficultySetting = 2000
         letters=lettersIsotJaErikois
     }
     arrayOfLetters = [];
@@ -105,17 +107,22 @@ function FallingGame() {
       ready=false
       setTimeout(function() {
         cleanFallenLetter(lett);
-    }, 6000)
+    }, 10200)
     } 
     if (lives > 0){
+      if(firefoxAgent){
+        location = randomIntFromInterval(0, 800)
+      }else{
       location = randomIntFromInterval(-400, 400)
+      }
       return ( <AnimatePresence >
       {arrayOfLetters.map((letter) =>
         <motion.div key={letter}
         initial={{y:0, x:location}}
-        animate={{y:490,
-          transitionEnd:{display: "none"}}}
-        transition={{duration:6}}
+        animate={{y:484,
+          transitionEnd:{backgroundColor: "#D2042D"}}}
+        transition={{duration:10}}
+        exit={{}}
         className="lettersGame">{letter.charAt(2)}
         </motion.div>)}
        </AnimatePresence>)
@@ -182,7 +189,9 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
         <div className="fallingGame">
           <div className="canvas1Game">
             <div className="letterClassGame">
+            <div className="gameEndLineGame"/>
             <Clock letter={newLetter} arrayOfLetters={arrayOfLetters} difficulty={difficultySetting} />
+            
             </div>
             {cleanUpLetter()}
               <p className="uiGame">Pisteet: {points}</p>
@@ -234,7 +243,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
            <br /> <br /> <b>Onnea peliin!</b>
           </p>
           </div>
-          <div><br /><b>Valitse vaikeusaste:</b>
+          <div className="vaikeusTekstiGame"><br /><b>Valitse vaikeusaste:</b>
           <button className="startbtnGame" onClick={() => startGame('helppo')}>
             Helppo
           </button>

@@ -49,6 +49,16 @@
   border-color: #0000BF;
 }
 
+.gameEndLineGame{
+  height: 5px;
+  width: 81%;
+  margin-left: 14px;
+  margin-top: 540px;
+  border-radius: 20%;
+  background-color: #802e2e;
+  position: absolute;
+}
+
 .hideGame{
   opacity: 0
 }
@@ -115,13 +125,18 @@
   margin-right: 13%;
   text-align: center;
   display: inline-block;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 25px; 
 }
 .tryGame:hover {
   background-color: rgb(95, 99, 167);
 }
+
+.vaikeusTekstiGame{
+  font-size: 20px;
+}
+
 
 .startbtnGame {
   background-color: #0000BF; 
@@ -132,9 +147,9 @@
   margin-left: 10px;
   text-align: center;
   display: inline-block;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
-  border-radius: 12px; 
+  border-radius: 25px; 
 }
 
 .startbtnGame:hover {
