@@ -126,7 +126,13 @@ function FallingWords() {
     e.preventDefault();
     for(var i=0;i<arrayOfWords.length;i++){
       var container = arrayOfWords[i]
-      if(container.substring(2) === state){
+      if(difficultySetting===5000){
+        var statecheck = state
+        statecheck = statecheck.toLocaleLowerCase()
+      }else{
+        var statecheck = state
+      }
+      if(container.substring(2) === statecheck){
         wordToSearch = container
         break
       }
@@ -136,14 +142,34 @@ function FallingWords() {
         arrayOfWords.splice(index, 1);
       points = points + wordToSearch.length - 2;
       document.getElementById('wordInputWords').value = ''
+      changeBorder(true)
       setState("")
     }else if (state !=="" && state !== "try"){
       lives--
       document.getElementById('wordInputWords').value = ''
+      changeBorder(false)
       setState("")
     }
   }
 
+
+  function changeBorder(trueOrfalse){
+    if(trueOrfalse===true){
+      if(document.getElementById('letterClassWords')!=null){
+        document.getElementById('letterClassWords').style.borderColor = '#009246' ; 
+        setTimeout(function() {
+            if(document.getElementById('letterClassWords')!=null){
+            document.getElementById('letterClassWords').style.borderColor = '#0000BF' ; }
+        }, 200)}
+      }else{
+        if(document.getElementById('letterClassWords')!=null){
+          document.getElementById('letterClassWords').style.borderColor = '#BD2719' ; 
+          setTimeout(function() {
+              if(document.getElementById('letterClassWords')!=null){
+              document.getElementById('letterClassWords').style.borderColor = '#0000BF' ; }
+          }, 200)}
+      }
+  }
 
     /*Removes letter from array. Is called when making new letter and
     contains 15sec timeout, so the letter is removed when letter hit the
@@ -173,7 +199,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
       return (
         <div className="fallingWords">
           <div className="canvas1Words">
-            <div className="letterClassWords">
+            <div className="letterClassWords" id="letterClassWords" style={{borderColor:'#0000BF'}}>
             <Timer word={newWord} arrayOfWords={arrayOfWords} difficulty={difficultySetting} />
             </div>
             <form onSubmit={cleanUpLetter}>
