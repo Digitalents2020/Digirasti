@@ -111,6 +111,20 @@
   background-color: rgb(255, 255, 255);
 }
 
+.vinkkiGame{
+  font-size: 18px;
+  font-weight: 600;
+  color: #BD2719;
+  margin: auto;
+  margin-top: 10px;
+  width: 30%;
+  padding: 10px;
+  border-color: #BD2719;
+  border-width: 5px;
+  border-style: inset;
+}
+
+
 .emptyGame{
   margin: 0px;
   color:white;

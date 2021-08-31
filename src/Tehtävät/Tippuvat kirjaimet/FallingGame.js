@@ -32,13 +32,14 @@ var lettersIsotJaErikois = ["a","b","c","d","e","f","g","h","i",
 var arrayOfLetters = [ ];
 var points = 0;
 var lives = 10;
-var difficultySetting = 2500;
+var difficultySetting = 4500;
 var location = 0
 var id = 10
 var letterToSearch = ''
 var firstTime = false
 let userAgentString = navigator.userAgent;
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
+var capslockpaalla = false
 
 function FallingGame() {
   const [state, setState] = useState("");
@@ -121,7 +122,7 @@ function FallingGame() {
         initial={{y:0, x:location}}
         animate={{y:484,
           transitionEnd:{backgroundColor: "#D2042D"}}}
-        transition={{duration:10}}
+        transition={{duration:10,ease:"linear"}}
         exit={{}}
         className="lettersGame">{letter.charAt(2)}
         </motion.div>)}
@@ -146,8 +147,37 @@ function FallingGame() {
     if (arrayOfLetters.indexOf(letterToSearch) >= 0) {
       arrayOfLetters.splice(index, 1);
       points++;
+      capslockpaalla = false
+
+      if( document.getElementById('letterClassGame')!=null){
+        document.getElementById('letterClassGame').style.borderColor = '#009246' ; 
+        setTimeout(function() {
+            if(document.getElementById('letterClassGame')!=null){
+            document.getElementById('letterClassGame').style.borderColor = '#0000BF' ; 
+        }
+        }, 200)
+      }
     }else if (state !=="" && state !== "try"){
       lives--
+      if((difficultySetting===4500 || difficultySetting===3500) && ((state.charCodeAt(0) >= 65 && state.charCodeAt(0) <= 90) || 
+      state.charCodeAt(0) === 197 || state.charCodeAt(0) === 196
+       || state.charCodeAt(0) === 214)){
+         capslockpaalla = true
+       }
+
+
+      if(document.getElementById('letterClassGame')!=null){
+          document.getElementById('letterClassGame').style.borderColor = '#BD2719' ; 
+          setTimeout(function() {
+              if(document.getElementById('letterClassGame')!=null){
+              document.getElementById('letterClassGame').style.borderColor = '#0000BF' ; }
+          }, 200)}
+    }
+  }
+
+  function capslockvaroitus(){
+    if(capslockpaalla){
+    return <div className="vinkkiGame" id="vinkkiGame">Laita Caps lock pois päältä</div>
     }
   }
 
@@ -188,12 +218,12 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
       return (
         <div className="fallingGame">
           <div className="canvas1Game">
-            <div className="letterClassGame">
+            <div className="letterClassGame" id="letterClassGame"  style={{borderColor:'#0000BF'}}>
             <div className="gameEndLineGame"/>
             <Clock letter={newLetter} arrayOfLetters={arrayOfLetters} difficulty={difficultySetting} />
-            
             </div>
             {cleanUpLetter()}
+            {capslockvaroitus()}
               <p className="uiGame">Pisteet: {points}</p>
               <p className="uiGame">Elämät: {lives}</p>
             <input
