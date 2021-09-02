@@ -179,3 +179,21 @@
   color: #0000BF;
 
 }
+
+.NextPrac{
+  background-color: #0000BF; 
+  border: solid;
+  color: white;
+  padding: 10px 22px;
+  margin-top: 250px;
+  margin-left: 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 25px; 
+  text-decoration: none;
+}
+.NextPrac:hover {
+  background-color: rgb(95, 99, 167);
+}
