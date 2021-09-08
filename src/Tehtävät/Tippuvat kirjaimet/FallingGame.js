@@ -3,6 +3,7 @@ import "./FallingGame.css";
 import { useState } from "react";
 import Clock from "./Clock";
 import {AnimatePresence,motion} from "framer-motion"
+import {Link } from "react-router-dom";
 
 
 var letters = ""; 
@@ -181,8 +182,8 @@ function FallingGame() {
     }
   }
 
-    /*Removes letter from array. Is called when making new letter and
-    contains 15sec timeout, so the letter is removed when letter hit the
+    /*Removes letter from array. Is called with timeout
+    when making new letter, so the letter is removed when it hits the
     ground, if it still exist.*/
   function cleanFallenLetter(letter) {
     var index = arrayOfLetters.indexOf(letter);
@@ -256,6 +257,9 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <button className="tryGame" onClick={changeDifficulty}>
               Vaihda vaikeusastetta
             </button>
+            <br/>
+            <Link to="/tippuvat_sanat" className="NextPrac"
+            role="button">Seuraava tehtävä</Link>
           </div>
         </div>
       );

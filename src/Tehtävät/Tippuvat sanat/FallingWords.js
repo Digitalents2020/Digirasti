@@ -3,6 +3,7 @@ import "./FallingWords.css";
 import { useState } from "react";
 import Timer from "./Timer";
 import {AnimatePresence,motion} from "framer-motion"
+import {Link } from "react-router-dom";
 
 var words = ["juosta","laukata","hyppiä","iloita","olla",
                 "miettiä","ampua","juoda","keskustella",
@@ -30,6 +31,7 @@ var wordToSearch = ''
 var firstTime = false
 let userAgentString = navigator.userAgent;
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
+var statecheck = ""
 
 function FallingWords() {
   const [state, setState] = useState("");
@@ -127,10 +129,10 @@ function FallingWords() {
     for(var i=0;i<arrayOfWords.length;i++){
       var container = arrayOfWords[i]
       if(difficultySetting===5000){
-        var statecheck = state
+         statecheck = state
         statecheck = statecheck.toLocaleLowerCase()
       }else{
-        var statecheck = state
+       statecheck = state
       }
       if(container.substring(2) === statecheck){
         wordToSearch = container
@@ -228,6 +230,9 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <button className="tryWords" onClick={changeDifficulty}>
               Vaihda vaikeusastetta
             </button>
+            <br/>
+            <Link to="/Email" className="NextPrac"
+            role="button">Seuraava tehtävä</Link>
             </div>
           </div>
         </div>
