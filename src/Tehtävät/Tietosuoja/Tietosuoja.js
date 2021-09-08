@@ -3,16 +3,32 @@ import * as Survey from 'survey-react'
 import "survey-react/survey.css";
 import './Tietosuoja.css'
 
+
+
+/* 
+
+No idea how CSS works in SurveyJS, under are some ways I could apply colors, but I haven't found a way to change the CSS itself, e.g. center text. Will continue to work on it.
+
+*/
+
+var defaultThemeColors = Survey
+  .StylesManager
+  .ThemeColors["default"]
+  defaultThemeColors["$main-color"] = "#0618BB"
+  defaultThemeColors["$header-color"] = "#0618BB"
+  defaultThemeColors["$body-container-background-color"] = "#0618BB"
+  defaultThemeColors["$text-color"] = "black"
+
 Survey
   .StylesManager
-  .applyTheme("winterstone")
+  .applyTheme()
 
 var json = {
   title: "Tietosuojakysely",
   showProgressBar: "bottom",
   firstPageIsStarted: true,
   startSurveryText: "Aloita kysely",
-  pages : [
+  pages: [
     {
       questions: [
         {
@@ -30,7 +46,10 @@ var json = {
             "Tietoturva tarkoittaa turvalliseksi luokiteltua tietoa.", "Tietoturva tarkoittaa yrityksen tai palveluntarjoajan tietojen suojaamista ulkopuolisilta."
           ],
           "correctAnswer": "Tietoturva tarkoittaa yrityksen tai palveluntarjoajan tietojen suojaamista ulkopuolisilta."
-        },
+        }
+      ]
+    },  {
+      questions: [
         {
           type: "radiogroup",
           name: "kysymys_2",
@@ -39,8 +58,11 @@ var json = {
             "Tietosuoja tarkoittaa paikkaa, jossa tieto pysyy suojassa muilta.", "Tietosuoja tarkoittaa toimenpiteitä, joilla pyritään varmistamaan henkilötietojen asianmukainen käsittely ja yksityisyyden säilyminen."
           ],
           "correctAnswer": "Tietosuoja tarkoittaa toimenpiteitä, joilla pyritään varmistamaan henkilötietojen asianmukainen käsittely ja yksityisyyden säilyminen."
-        },
-        {
+        }
+      ]
+      }, {
+        questions: [
+          {
           type: "radiogroup",
           name: "kysymys_3",
           title: "Minun täytyy itse huolehtia tietosuojastani.",
@@ -48,8 +70,11 @@ var json = {
             "Kyllä.", "Ei."
           ],
           "correctAnswer": "Kyllä."
-        },
-        {
+        }
+      ]
+      }, {
+        questions: [
+          {
           type: "radiogroup",
           name: "kysymys_4",
           title: "Pari eri salasanaa riittää kaikille eri käyttäjätileille (esim. sähköpostiin, sosiaalisen median kanaville, foorumeille, työnhaun sivustoille jne).",
@@ -57,8 +82,11 @@ var json = {
             "Kyllä", "Ei"
           ],
           "correctAnswer": "Ei"
-        },
-        {
+        }
+      ]
+      }, {
+        questions: [
+          {
           type: "radiogroup",
           name: "kysymys_5",
           title: "Pankkivirkailija pyytää sinulta sähköpostilla käyttäjätunnusta ja salasanaa pankkipalveluun, jotta hän voi tehdä sinulle ylimääräisen talletuksen. Voitko antaa ne?",
@@ -66,7 +94,7 @@ var json = {
             "Kyllä", "Ei"
           ],
           "correctAnswer": "Ei"
-        },
+        }
       ]
     }
   ],
@@ -75,12 +103,11 @@ var json = {
 
 const survey = new Survey.Model(json);
 
-
 const Tietosuoja = () => {
 
   return (
     <>
-      <Survey.Survey 
+      <Survey.Survey
         model={survey}
       />
     </>
