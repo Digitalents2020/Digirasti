@@ -1,69 +1,74 @@
 import React, { useState } from 'react'
 import './Kopiointi.css'
-
 const myArray = [
   "Helsingin työllisyyspalveluiden tavoitteena on edistää nykyistä tehokkaammin työttömien työnhakijoiden työllistymistä ja koulutukseen ohjautumista, sekä tuoda uusia ratkaisuja osaavan työvoiman saatavuuteen.",
   "Suomalaisten digitaitojen tärkeys korostuu palveluiden muuttuessa sähköisiksi. On arvioitu, että noin neljänneksellä väestöstä olisi liian heikot digitaidot.",
   "Helsingin kaupungin työllisyyspalveluiden toteuttama Digirasti-hanke tarjoaa helsinkiläisille työttömille työnhakuun keskittyvää digitaito-opetusta."
 ]
-
-// selects a random text from the array
-
-const selectRandom = 
-  myArray[Math.floor(Math.random() * myArray.length)]
-
 // used to set states from the input field. 
-
 const Kopiointi = () => {
   const [ copied, setCopied ] = useState('')
-  const [ copiedText, setCopiedText ] = useState([]);
-  const [ addText, setAddText ] = useState('')
+  const [ secondCopied, setSecondCopied ] = useState('')
+  const [ addText, setText ] = useState('')
+  const [ secondText, setSecondText] = useState('')
 
-  const handleChangeCopied = e => {
-    setCopied(e.target.value);
-  }
 
-  const handleClick = e => {
-    setCopiedText([...copiedText, { copied : copied}])
-  }
-
-  // checks if the copied text in the input field matches with the randomly selected text, trims any whitespace left in the field.
-
-  const matchCheck = () => {
-    if (copied.trim() === selectRandom.trim()) {
-      setAddText(
+  const Right = () => {
+    return (
       <div>
         Teksti on kopioitu oikein!
       </div>
-      )
-    } else {
-      setAddText(
-      <div>
-        Jokin meni pieleen, yritä uudestaan!
-      </div>
-      )
-    }
+    )
   }
-  
+  const Wrong = () => {
+    return (
+      <div>
+        Jokin meni pieleen, yritä uudestaan.
+      </div>
+    )
+  }
   return (
     <div>
       <h2>Tekstin kopiointi</h2>
-      <p>Kopioi alla oleva teksti alla olevaan tekstikenttään. Voit kopioida tekstiä maalaamalla sen ja joko painamalla pikanäppäimiä <strong>"Ctrl + C"</strong> samaan aikaan, tai painamalla hiiren oikee näppäintä ja valitsemalla <strong>"Kopioi"</strong> valikosta. Voit myös maalata tekstin ja vetää sen tekstikenttään.</p>
       <p>Tekstin maalaamisen tunnistaa siitä kun se on värjätty siniseksi.</p>
+      <p>Kopioi alla oleva teksti alla olevaan tekstikenttään. Voit kopioida tekstiä maalaamalla sen ja joko painamalla pikanäppäimiä <strong>"Ctrl + C"</strong> samaan aikaan, tai painamalla hiiren oikee näppäintä ja valitsemalla <strong>"Kopioi"</strong> valikosta. Voit myös maalata tekstin ja vetää sen tekstikenttään.</p>
       <br />
-      <p>{selectRandom}</p>
-      <input type="text" className="input" placeholder="Liitä teksti tähän" name="copied" onChange={handleChangeCopied} />
+      <p>{myArray[0]}</p>
+      <input type="text" className="input" placeholder="Liitä teksti tähän" name="copied" onChange={e => setCopied(e.target.value)} />
       <br />
       <button style={{ marginBottom: "10px" }} onClick={() => {
-        handleClick();
-        matchCheck();
+        if (copied.trim() === myArray[0]) {
+          setText(
+            <Right />
+          )
+        } else {
+          setText(
+            <Wrong />
+          )
+        }
       }}>
         Palautus
       </button>
       <br />
       <>{addText}</>
+      <p>Toinen kopioitava teksti, kopioi alla oleva teksti tekstikenttään.</p>
+      <br />
+      <p>{myArray[1]}</p>
+      <input type="text" className="input" placeholder="Liitä teksti tähän" name="secondCopied" onChange={e => setSecondCopied(e.target.value)} />
+      <br />
+      <button style={{ marginBottom: "10px" }} onClick={() => {
+        if (secondCopied.toString() === myArray[1]) {
+          setSecondText(
+            <Right />
+          )
+        } else {
+          setSecondText(
+            <Wrong />
+          )
+        }
+      }}>Palautus</button>
+      <>{secondText}</>
     </div>
   )
 }
-
 export default Kopiointi;
