@@ -1,91 +1,125 @@
 import React, { useState } from "react";
 import "./Eform.css";
+import Form from "./Form";
 
-const Button = ({ handleClick, text }) => (
-  <button onClick={handleClick}> {text} </button>
-);
+const Eform = () => {
+  const [submitted, setSubmitted] = useState(false);
 
-/*This state change part was done by following the mooc.fi fullstack tutorial. But the gist of it is that we have an array that aps a "p" (for pressed) in to the array*/
-const Email = () => {
-  const [right, setRight] = useState(0);
-  const [allClicks, setAll] = useState([]);
-
-  const handleRightClick = () => {
-    setAll(allClicks.concat("p"));
-    setRight(right + 1);
+  const [newFirstName, setFirstName] = useState("");
+  const handleFirstNameChange = (event) => {
+    setFirstName(event.target.value);
   };
 
-/*Here we check wether the array is empty and we remain on this state, or if there is an item, we switch state to the next one*/  
-  const History = (props) => {
-    if (props.allClicks.length === 0) {
-      return (
-        <div className="form-box">
-          <p>
-            Tässä tehtävässä opetellaan sähköisen lomakkeen täyttämistä ja lähettämistä. Sähköisiä lomakkeita on monenlaisia, mutta tässä harjoitellaan täyttämään mahdollisesti työnhaun yhteydessä vastaan tulevaa lomaketta.
-          </p>
-          <p>Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä mitään minnekkään</p>
-          <h5>Hakulomake</h5>
-          <br></br>
-          <div className="field">
-            <form>
-              <label>Etunimi</label>
-              <input type="text"></input>
-              <label>Sukunimi</label>
-              <input type="text"></input>
-              <label>Sähköposti</label>
-              <input type="text"></input>
-              <label>Puhelinnumero</label>
-              <input type="text"></input>
-              <label>Työkokemus 1</label>
-              <textarea></textarea>
-              <label>Työkokemus 2</label>
-              <textarea></textarea>
-              <label>Korkein koulutusaste</label>
-              <select className='degree'>
-                  <option>Valitse koulutusaste...</option>
-                  <option>Kansakoulu</option>
-                  <option>Peruskoulu</option>
-                  <option>Ammattikoulu</option>
-                  <option>Opisto</option>
-                  <option>Ylioppilastutkinto</option>
-                  <option>Alempi korkeakoulututkinto</option>
-                  <option>Ylempi korkeakoulututkinto</option>
-                  <option>Ei mikään näistä (Selitä alempana tarkemmin)</option>
-              </select>
-              <br></br>
-              <label>Tutkintonimike</label>
-              <input type="text"></input>
-              <br></br>
-              <label>Kerro kolmella lauseella, millainen työntekijä olisit</label>
-              <textarea></textarea>
-              <label>Lataa liite</label>
-              <input type="file"></input>
-              <Button handleClick={handleRightClick} text="Lähetä" />
-            </form>
-            <br></br>
-          </div>
-        </div>
-      );
-    }
+  const [newLastName, setLastName] = useState("");
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
+  };
 
-/*Here is the state if the button has been pressed*/
+  const [newEmail, setEmail] = useState("");
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const [newNumber, setNumber] = useState("");
+  const handleNumberChange = (event) => {
+    setNumber(event.target.value);
+  };
+
+  const [newWork1, setWork1] = useState("");
+  const handleWork1Change = (event) => {
+    setWork1(event.target.value);
+  };
+
+  const [newWork2, setWork2] = useState("");
+  const handleWork2Change = (event) => {
+    setWork2(event.target.value);
+  };
+
+  const [newDegree, setDegree] = useState("");
+  const handleDegreeChange = (event) => {
+    setDegree(event.target.value);
+  };
+
+  const [newDegreeName, setDegreeName] = useState("");
+  const handleDegreeNameChange = (event) => {
+    setDegreeName(event.target.value);
+  };
+
+  const [newAbout, setAbout] = useState("");
+  const handleAboutChange = (event) => {
+    setAbout(event.target.value);
+  };
+
+  const submitForm = (event) => {
+    event.preventDefault();
+    const allFields = [
+      newFirstName,
+      newLastName,
+      newEmail,
+      newNumber,
+      newWork1,
+      newWork2,
+      newDegree,
+      newDegreeName,
+      newAbout,
+    ];
+    if (allFields.every((field) => field !== "")) {
+      setSubmitted(true);
+    } else {
+      alert("Tarkistathan että olet täyttänyt kaikki kentät");
+    }
+  };
+
+  if (submitted) {
     return (
       <div className="form-box">
         <p>
-          Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen! Voit nyt siirtyä
-          seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
+          Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen! Voit nyt
+          siirtyä seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
         </p>
       </div>
     );
-  };
+  }
 
   return (
-    <div>
-      <div>
-        <History allClicks={allClicks} />
+    <div className="form-box">
+      <p>
+        Tässä tehtävässä opetellaan sähköisen lomakkeen täyttämistä ja
+        lähettämistä. Sähköisiä lomakkeita on monenlaisia, mutta tässä
+        harjoitellaan täyttämään mahdollisesti työnhaun yhteydessä vastaan
+        tulevaa lomaketta.
+      </p>
+      <p>
+        Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä mitään minnekkään
+      </p>
+      <h5>Hakulomake</h5>
+      <br></br>
+      <div className="field">
+        <Form
+          newFirstName={newFirstName}
+          handleFirstNameChange={handleFirstNameChange}
+          newLastName={newLastName}
+          handleLastNameChange={handleLastNameChange}
+          newEmail={newEmail}
+          handleEmailChange={handleEmailChange}
+          newNumber={newNumber}
+          handleNumberChange={handleNumberChange}
+          newWork1={newWork1}
+          handleWork1Change={handleWork1Change}
+          newWork2={newWork2}
+          handleWork2Change={handleWork2Change}
+          newDegree={newDegree}
+          handleDegreeChange={handleDegreeChange}
+          newDegreeName={newDegreeName}
+          handleDegreeNameChange={handleDegreeNameChange}
+          newAbout={newAbout}
+          handleAboutChange={handleAboutChange}
+          submitForm={submitForm}
+        />
+        <br></br>
       </div>
     </div>
   );
 };
 
-export default Email;
+export default Eform;
