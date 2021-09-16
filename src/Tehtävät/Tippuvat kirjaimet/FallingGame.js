@@ -122,7 +122,7 @@ function FallingGame() {
         <motion.div key={letter}
         initial={{y:0, x:location}}
         animate={{y:484,
-          transitionEnd:{backgroundColor: "#D2042D"}}}
+          transitionEnd:{backgroundColor: "#BD2719"}}}
         transition={{duration:10,ease:"linear"}}
         exit={{}}
         className="lettersGame">{letter.charAt(2)}
@@ -154,7 +154,7 @@ function FallingGame() {
         document.getElementById('letterClassGame').style.borderColor = '#009246' ; 
         setTimeout(function() {
             if(document.getElementById('letterClassGame')!=null){
-            document.getElementById('letterClassGame').style.borderColor = '#0000BF' ; 
+            document.getElementById('letterClassGame').style.borderColor = '#9FC9EB' ; 
         }
         }, 200)
       }
@@ -171,7 +171,7 @@ function FallingGame() {
           document.getElementById('letterClassGame').style.borderColor = '#BD2719' ; 
           setTimeout(function() {
               if(document.getElementById('letterClassGame')!=null){
-              document.getElementById('letterClassGame').style.borderColor = '#0000BF' ; }
+              document.getElementById('letterClassGame').style.borderColor = '#9FC9EB' ; }
           }, 200)}
     }
   }
@@ -218,48 +218,44 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
     if (lives > 0) {
       return (
         <div className="fallingGame">
-          <div className="canvas1Game">
-            <div className="letterClassGame" id="letterClassGame"  style={{borderColor:'#0000BF'}}>
-            <div className="gameEndLineGame"/>
-            <Clock letter={newLetter} arrayOfLetters={arrayOfLetters} difficulty={difficultySetting} />
+          <div className="canvasGame">
+            <h1 className="otsikkoWords">Tippuvat kirjaimet</h1>
+            <div className="containerBlockGame">
+              <div className="letterClassGame" id="letterClassGame">
+              <div className="gameEndLineGame"/>
+              <Clock letter={newLetter} arrayOfLetters={arrayOfLetters} difficulty={difficultySetting} />
+              </div>
+              {cleanUpLetter()}
+              {capslockvaroitus()}
+              <div className="uiDivGame">
+                <p className="uiGame">Pisteet: {points}</p>
+                <p className="uiGame">Elämät: {lives}</p>
+              </div>
             </div>
-            {cleanUpLetter()}
-            {capslockvaroitus()}
-              <p className="uiGame">Pisteet: {points}</p>
-              <p className="uiGame">Elämät: {lives}</p>
-            <input
-              className="hideGame"
-              onKeyPress={(e) => handler(e)}
-              autoFocus={true}
-              onBlur={({ target }) => target.focus()}
-            ></input>
-            {clearState()}
+            <input className="hideGame" onKeyPress={(e) => handler(e)} autoFocus={true} onBlur={({ target }) => target.focus()}></input>
+              {clearState()}
           </div>
         </div>
       );
     } else {
       return (
         <div className="fallingGame">
-          <div className="canvas1Game">
-          <div className="letterClass_lostGame">
-            <h1 className="pisteetGame">Pisteesi: {points}</h1>
-            <p className="letters_lostGame">Valitettavasti elämäsi loppuivat!</p>
+          <div className="canvasGame">
+          <h1 className="otsikkoWords">Tippuvat kirjaimet</h1>
+          <div className="containerBlockGame">
+            <div className="letterClass_lostGame">
+              <h3 className="letters_lostGame">Valitettavasti elämäsi loppuivat!</h3>
+              <h1 className="pisteetGame">Pisteesi: {points}</h1>
             </div>
-            <input
-              className="hideGame"
-              onKeyPress={(e) => handler(e)}
-              autoFocus={true}
-              onBlur={({ target }) => target.focus()}
-            ></input>
             <button className="tryGame" onClick={tryAgain}>
               Yritä uudelleen
             </button>
             <button className="tryGame" onClick={changeDifficulty}>
               Vaihda vaikeusastetta
             </button>
-            <br/>
+            </div>
             <Link to="/tippuvat_sanat" className="NextPrac"
-            role="button">Seuraava tehtävä</Link>
+              role="button">Seuraava tehtävä</Link>
           </div>
         </div>
       );
@@ -270,26 +266,26 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
         <div className="canvasGame">
           <h1 className="otsikkoGame">Tippuvat kirjaimet</h1>
           <div className="ohjeGame">
-            <h3 className="ohjetxtGame">Ohje:</h3>
-          <p>Tehtävänäsi on painaa näppäimistöstäsi samoja kirjaimia, jotka näet ruudulla.
-            <br />Väärää kirjainta painaessasi menetät elämän, jos elämät menevät nollaan häviät. 
-           <br /> Menetät myös elämän jos kirjaimet tippuvat alas asti. 
-           <br /> <br /> <b>Onnea peliin!</b>
-          </p>
+            <h2 className="ohjetxtGame">Ohje:</h2>
+            <p>Tehtävänäsi on painaa näppäimistöstäsi samoja kirjaimia, jotka näet ruudulla. 
+            Väärää kirjainta painaessasi menetät elämän, jos elämät menevät nollaan häviät. 
+            Menetät myös elämän jos kirjaimet tippuvat alas asti. <strong>Onnea peliin!</strong>
+            </p>
           </div>
-          <div className="vaikeusTekstiGame"><br /><b>Valitse vaikeusaste:</b>
-          <button className="startbtnGame" onClick={() => startGame('helppo')}>
-            Helppo
-          </button>
-          <button className="startbtnGame" onClick={() => startGame('normaali')}>
-            Normaali
-          </button>
-          <button className="startbtnGame" onClick={() => startGame('vaikea')}>
-            Vaikea
-          </button>
-          <button className="startbtnGame" onClick={() => startGame('mahdoton')}>
-            Mahdoton
-          </button>
+          <div className="vaikeusTekstiGame">
+            <b>Valitse vaikeusaste:</b><br />
+            <button className="startbtnGame" onClick={() => startGame('helppo')}>
+              Helppo
+            </button>
+            <button className="startbtnGame" onClick={() => startGame('normaali')}>
+              Normaali
+            </button>
+            <button className="startbtnGame" onClick={() => startGame('vaikea')}>
+              Vaikea
+            </button>
+            <button className="startbtnGame" onClick={() => startGame('mahdoton')}>
+              Mahdoton
+            </button>
           </div>
         </div>
       </div>

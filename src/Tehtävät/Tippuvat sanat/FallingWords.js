@@ -112,7 +112,7 @@ function FallingWords() {
         <motion.div key={letter}
         initial={{y:0, x:location}}
         animate={{y:490,
-          transitionEnd:{backgroundColor: "#D2042D"}}}
+          transitionEnd:{backgroundColor: "#BD2719"}}}
         transition={{duration:15}}
         className="lettersWords">{letter.substring(2)}
         </motion.div>)}
@@ -161,14 +161,14 @@ function FallingWords() {
         document.getElementById('letterClassWords').style.borderColor = '#009246' ; 
         setTimeout(function() {
             if(document.getElementById('letterClassWords')!=null){
-            document.getElementById('letterClassWords').style.borderColor = '#0000BF' ; }
+            document.getElementById('letterClassWords').style.borderColor = '#9FC9EB' ; }
         }, 200)}
       }else{
         if(document.getElementById('letterClassWords')!=null){
           document.getElementById('letterClassWords').style.borderColor = '#BD2719' ; 
           setTimeout(function() {
               if(document.getElementById('letterClassWords')!=null){
-              document.getElementById('letterClassWords').style.borderColor = '#0000BF' ; }
+              document.getElementById('letterClassWords').style.borderColor = '#9FC9EB' ; }
           }, 200)}
       }
   }
@@ -199,41 +199,45 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
   if (start === false) {
     if (lives > 0) {
       return (
-        <div className="fallingWords">
-          <div className="canvas1Words">
-            <div className="letterClassWords" id="letterClassWords" style={{borderColor:'#0000BF'}}>
-            <Timer word={newWord} arrayOfWords={arrayOfWords} difficulty={difficultySetting} />
-            </div>
-            <form onSubmit={cleanUpLetter}>
-              <input className="wordInputWords" id="wordInputWords" onChange={handler} autoFocus={true} onBlur={({ target }) => target.focus()}/>
-             <button type="submit" className="hidebuttonWords" ></button>
-             </form>
-            <div className="uiDivWords">
-              <p className="uiWords">Pisteet: {points}</p>
-              <p className="uiWords">Elämät: {lives}</p>
+        <div className="fallingWords">         
+          <div className="canvasWords">
+            <h1 className="otsikkoWords">Tippuvat sanat</h1>
+            <div className="containerBlockWords">
+              <div className="letterClassWords" id="letterClassWords">
+                <Timer word={newWord} arrayOfWords={arrayOfWords} difficulty={difficultySetting} />
               </div>
+              <div className="uiDivWords">
+                <p className="uiWords">Pisteet: {points}</p>
+                <p className="uiWords">Elämät: {lives}</p>
+                <form onSubmit={cleanUpLetter}>
+                <input className="wordInputWords" id="wordInputWords" onChange={handler} autoFocus={true} onBlur={({ target }) => target.focus()}/>
+                <button type="submit" className="hidebuttonWords" ></button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       );
     } else {
       return (
         <div className="fallingWords">
-          <div className="canvas1Words">
-          <div className="letterClass_lostWords">
-            <h1 className="pisteetWords">Pisteesi: {points}</h1>
-            <p className="letters_lostWords">Valitettavasti elämäsi loppuivat!</p>
+          <div className="canvasWords">
+            <h1 className="otsikkoWords">Tippuvat sanat</h1>
+            <div className="containerBlockWords">
+              <div className="letterClass_lostWords">
+                <h3 className="letters_lostWords">Valitettavasti elämäsi loppuivat!</h3>
+                <h2 className="pisteetWords">Pisteesi: {points}</h2>
+              </div>
+              <div className="GameOverButtonsDivWords">
+                <button className="tryWords" onClick={tryAgain}>
+                  Yritä uudelleen
+                </button>
+                <button className="tryWords" onClick={changeDifficulty}>
+                  Vaihda vaikeusastetta
+                </button>
+              </div>
             </div>
-            <div className="GameOverButtonsDivWords">
-            <button className="tryWords" onClick={tryAgain}>
-              Yritä uudelleen
-            </button>
-            <button className="tryWords" onClick={changeDifficulty}>
-              Vaihda vaikeusastetta
-            </button>
-            <br/>
-            <Link to="/Email" className="NextPrac"
-            role="button">Seuraava tehtävä</Link>
-            </div>
+            <Link to="/Email" className="NextPrac" role="button">Seuraava tehtävä</Link>
           </div>
         </div>
       );
@@ -244,27 +248,27 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
         <div className="canvasWords">
           <h1 className="otsikkoWords">Tippuvat sanat</h1>
           <div className="ohjeWords">
-            <h3 className="ohjetxtWords">Ohje:</h3>
-          <p>Tehtävänäsi on kirjoittaa näppäimistölläsi samoja sanoja, jotka näet ruudulla.
-            <br />Kirjoita sana sille varatulle kentälle ja paina näpäimistöstäsi ENTER painiketta.
-            <br />Väärän sanan kirjoittaessasi menetät elämän, jos elämät menevät nollaan häviät. 
-           <br /> Menetät myös elämän jos sanat tippuvat alas asti. 
-           <br /> <br /> <b>Onnea peliin!</b>
-          </p>
+            <h2 className="ohjetxtWords">Ohje:</h2>
+            <p>Tehtävänäsi on kirjoittaa näppäimistölläsi samoja sanoja, jotka näet ruudulla.
+            Kirjoita sana sille varatulle kentälle ja paina näpäimistöstäsi ENTER painiketta.
+            Väärän sanan kirjoittaessasi menetät elämän, jos elämät menevät nollaan häviät. 
+            Menetät myös elämän jos sanat tippuvat alas asti. <strong>Onnea peliin!</strong>
+            </p>
           </div>
-          <div className="vaikeusTekstiWords"><br /><b>Valitse vaikeusaste:</b>
-          <button className="startbtnWords" onClick={() => startGame('helppo')}>
-            Helppo
-          </button>
-          <button className="startbtnWords" onClick={() => startGame('normaali')}>
-            Normaali
-          </button>
-          <button className="startbtnWords" onClick={() => startGame('vaikea')}>
-            Vaikea
-          </button>
-          <button className="startbtnWords" onClick={() => startGame('mahdoton')}>
-            Mahdoton
-          </button>
+          <div className="vaikeusTekstiWords">
+            <b>Valitse vaikeusaste:</b><br />
+            <button className="startbtnWords" onClick={() => startGame('helppo')}>
+              Helppo
+            </button>
+            <button className="startbtnWords" onClick={() => startGame('normaali')}>
+              Normaali
+            </button>
+            <button className="startbtnWords" onClick={() => startGame('vaikea')}>
+              Vaikea
+            </button>
+            <button className="startbtnWords" onClick={() => startGame('mahdoton')}>
+              Mahdoton
+            </button>
           </div>
         </div>
       </div>
