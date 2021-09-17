@@ -167,3 +167,17 @@
     width: 600px;
     margin: 10px;
   }
+
+  
+.vinkkiWords{
+  font-size: 18px;
+  font-weight: 600;
+  color: #BD2719;
+  margin: auto;
+  margin-top: 10px;
+  width: 30%;
+  padding: 10px;
+  border-color: #BD2719;
+  border-width: 5px;
+  border-style: solid;
+}
