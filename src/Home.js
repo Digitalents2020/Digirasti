@@ -4,26 +4,16 @@ import './Home.css';
 const Home = () => {
     return (
         <div>
-            <h1 class="title">
+            <h1 className="title">
                 Etusivu
             </h1>
-            <div class="text-block">
-                <p>Suspendisse at neque at neque rhoncus facilisis ut eu ligula. Maecenas tempus odio nec eros maximus rhoncus. 
-                Pellentesque mollis non libero sed elementum. Mauris pharetra arcu et malesuada fermentum.                     
-                Duis porttitor dolor id elementum iaculis. Vestibulum at arcu sed lectus euismod ultricies eu in libero. 
-                Duis a convallis sapien. Proin finibus nisi vel massa blandit euismod. 
-                Curabitur tristique feugiat quam, quis feugiat libero iaculis nec. Donec sed sapien lectus. 
-                Aenean molestie vitae metus at mattis. Phasellus mauris nulla, tempus eget rutrum in, malesuada ac nibh. 
-                Integer at feugiat enim. Suspendisse potenti.</p>
-                <br></br>
-                <p>Suspendisse at neque at neque rhoncus facilisis ut eu ligula. Maecenas tempus odio nec eros maximus rhoncus. 
-                Pellentesque mollis non libero sed elementum. Mauris pharetra arcu et malesuada fermentum.                     
-                Duis porttitor dolor id elementum iaculis. Vestibulum at arcu sed lectus euismod ultricies eu in libero. 
-                Duis a convallis sapien. Proin finibus nisi vel massa blandit euismod. 
-                Curabitur tristique feugiat quam, quis feugiat libero iaculis nec. Donec sed sapien lectus. 
-                Aenean molestie vitae metus at mattis. Phasellus mauris nulla, tempus eget rutrum in, malesuada ac nibh. 
-                Integer at feugiat enim. Suspendisse potenti.</p>
-            </div>
+            <div className="text-block">
+                <p>Tervetuloa Digirasti-palveluun!</p>
+				<br></br>
+                <p>Täällä voit harjoitella tietojenkäsittelyyn tarvittavia taitoja. Sivun vasemmasta laidasta löydät listan eri tehtävistä. Nämä tekstit ovat linkkejä, joiden avulla voit navigoida sivustolla eri tehtäviin. Siirry tehtävään siirtämällä hiiren kursori tehtävän linkin päälle ja klikkaamalla sitä hiiren vasemmalla painikkeella.</p>
+				<br></br>
+                <p>Pääset milloin vain takaisin tälle sivulle painamalla "Etusivu"-linkkiä vasemmassa laidassa. Onnea harjoitteluun!</p>
+			</div>
         </div>
     )
 }
