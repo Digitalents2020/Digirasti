@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "./Home";
 import Tehtava1 from "./Tehtävät/Tehtava1";
 import Tehtava2 from "./Tehtävät/Tehtava2";
-import Home from "./Home";
 import Kopiointi from "./Tehtävät/Kopiointi/Kopiointi";
 import Tietosuoja from "./Tehtävät/Tietosuoja/Tietosuoja";
 import FallingGame from "./Tehtävät/Tippuvat kirjaimet/FallingGame";
@@ -20,10 +20,10 @@ const App = () => {
               <Link to="/">Etusivu</Link>
             </li>
             <li>
-              <Link to="/Tehtava1">Tehtävä 1</Link>
+              <Link to="/Tehtava1">Editointitehtävä</Link>
             </li>
             <li>
-              <Link to="/Tehtava2">Tehtävä 2</Link>
+              <Link to="/Tehtava2">Kirjoitustehtävä</Link>
             </li>
             <li>
               <Link to="/kopiointi">Kopiointitehtävä</Link>
