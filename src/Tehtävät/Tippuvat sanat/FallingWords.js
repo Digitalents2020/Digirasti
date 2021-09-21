@@ -31,7 +31,7 @@ var wordToSearch = ''
 var firstTime = false
 let userAgentString = navigator.userAgent;
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
-var statecheck = ""
+var capslockpaalla = false
 
 function FallingWords() {
   const [state, setState] = useState("");
@@ -110,16 +110,34 @@ function FallingWords() {
       return ( <AnimatePresence >
       {arrayOfWords.map((letter) =>
         <motion.div key={letter}
+        id={letter}
         initial={{y:0, x:location}}
-        animate={{y:490,
+        animate={{y:497,
           transitionEnd:{backgroundColor: "#BD2719"}}}
-        transition={{duration:15}}
+        transition={{duration:15,ease:"linear"}}
         className="lettersWords">{letter.substring(2)}
         </motion.div>)}
        </AnimatePresence>)
     }else {
       setState("lost");
     }}
+
+
+
+    function stopAndFlashGreen(wordToSearch, left, top){
+      var div = document.createElement('div');
+      div.id = wordToSearch;
+      div.innerHTML = wordToSearch.substring(2)
+      div.className = "lettersWords"
+      div.style.backgroundColor = '#009246'
+      div.style.left = left + "px"
+      div.style.top = top + "px"
+      document.getElementById('letterClassWords').appendChild(div);
+     setTimeout(function() {
+      var myobj = document.getElementById(wordToSearch);
+      myobj.remove();
+    }, 200)
+    }
 
     /*Checks if the pressed letter(state) exist in the array
     and if it does removes the letter from the array and awards a point.
@@ -128,20 +146,20 @@ function FallingWords() {
     e.preventDefault();
     for(var i=0;i<arrayOfWords.length;i++){
       var container = arrayOfWords[i]
-      if(difficultySetting===5000){
-         statecheck = state
-        statecheck = statecheck.toLocaleLowerCase()
-      }else{
-       statecheck = state
-      }
-      if(container.substring(2) === statecheck){
+      if(container.substring(2) === state){
         wordToSearch = container
         break
       }
     }
     var index = arrayOfWords.indexOf(wordToSearch);
     if (arrayOfWords.indexOf(wordToSearch) >= 0) {
-        arrayOfWords.splice(index, 1);
+      var element = document.getElementById(wordToSearch)
+      var rect = element.getBoundingClientRect();
+      var top = rect.y
+      var left = rect.x
+      stopAndFlashGreen(wordToSearch,left,top)
+      capslockpaalla = false
+      arrayOfWords.splice(index, 1);
       points = points + wordToSearch.length - 2;
       document.getElementById('wordInputWords').value = ''
       changeBorder(true)
@@ -149,12 +167,25 @@ function FallingWords() {
     }else if (state !=="" && state !== "try"){
       lives--
       document.getElementById('wordInputWords').value = ''
+      var length = state.length -1
+      if((difficultySetting===5000 || difficultySetting===3500) && ((state.charCodeAt(0) >= 65 && state.charCodeAt(0) <= 90) || 
+      state.charCodeAt(0) === 197 || state.charCodeAt(0) === 196 || state.charCodeAt(0) === 214 || (state.charCodeAt(length) >= 65 && state.charCodeAt(length) <= 90) 
+      || state.charCodeAt(length) === 197 || state.charCodeAt(length) === 196 || state.charCodeAt(length) === 214)){
+         capslockpaalla = true
+       }
       changeBorder(false)
       setState("")
     }
   }
 
+  /*checks if Caps Lock is on and gives a reminder to turn it off*/
+  function capslockvaroitus(){
+    if(capslockpaalla){
+    return <div className="vinkkiWords" id="vinkkiWords">Laita Caps lock pois päältä</div>
+    }
+  }
 
+  
   function changeBorder(trueOrfalse){
     if(trueOrfalse===true){
       if(document.getElementById('letterClassWords')!=null){
@@ -206,6 +237,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
               <div className="letterClassWords" id="letterClassWords">
                 <Timer word={newWord} arrayOfWords={arrayOfWords} difficulty={difficultySetting} />
               </div>
+              {capslockvaroitus()}
               <div className="uiDivWords">
                 <p className="uiWords">Pisteet: {points}</p>
                 <p className="uiWords">Elämät: {lives}</p>

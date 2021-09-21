@@ -120,8 +120,9 @@ function FallingGame() {
       return ( <AnimatePresence >
       {arrayOfLetters.map((letter) =>
         <motion.div key={letter}
+        id={letter}
         initial={{y:0, x:location}}
-        animate={{y:484,
+        animate={{y:497,
           transitionEnd:{backgroundColor: "#BD2719"}}}
         transition={{duration:10,ease:"linear"}}
         exit={{}}
@@ -132,6 +133,21 @@ function FallingGame() {
       setState("lost");
     }}
 
+
+function stopAndFlashGreen(letterToSearch, left, top){
+  var div = document.createElement('div');
+  div.id = letterToSearch;
+  div.innerHTML = letterToSearch.charAt(2)
+  div.className = "lettersGame"
+  div.style.backgroundColor = '#009246'
+  div.style.left = left + "px"
+  div.style.top = top + "px"
+  document.getElementById('letterClassGame').appendChild(div);
+ setTimeout(function() {
+  var myobj = document.getElementById(letterToSearch);
+  myobj.remove();
+}, 200)
+}
 
     /*Checks if the pressed letter(state) exist in the array
     and if it does removes the letter from the array and awards a point.
@@ -146,9 +162,16 @@ function FallingGame() {
     }
     var index = arrayOfLetters.indexOf(letterToSearch);
     if (arrayOfLetters.indexOf(letterToSearch) >= 0) {
-      arrayOfLetters.splice(index, 1);
+      var element = document.getElementById(letterToSearch)
+      var rect = element.getBoundingClientRect();
+      var top = rect.y
+      var left = rect.x
+      stopAndFlashGreen(letterToSearch,left,top)
+    }
+    if (arrayOfLetters.indexOf(letterToSearch) >= 0) {
       points++;
       capslockpaalla = false
+      arrayOfLetters.splice(index, 1)
 
       if( document.getElementById('letterClassGame')!=null){
         document.getElementById('letterClassGame').style.borderColor = '#009246' ; 
@@ -176,6 +199,8 @@ function FallingGame() {
     }
   }
 
+
+/*checks if Caps Lock is on and gives a reminder to turn it off*/
   function capslockvaroitus(){
     if(capslockpaalla){
     return <div className="vinkkiGame" id="vinkkiGame">Laita Caps lock pois päältä</div>
@@ -222,7 +247,6 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <h1 className="otsikkoWords">Tippuvat kirjaimet</h1>
             <div className="containerBlockGame">
               <div className="letterClassGame" id="letterClassGame">
-              <div className="gameEndLineGame"/>
               <Clock letter={newLetter} arrayOfLetters={arrayOfLetters} difficulty={difficultySetting} />
               </div>
               {cleanUpLetter()}
