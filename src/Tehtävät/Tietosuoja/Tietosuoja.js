@@ -1,23 +1,13 @@
 import React from 'react'
 import * as Survey from 'survey-react'
-import "survey-react/survey.css";
+// import "survey-react/survey.css";
 import './Tietosuoja.css'
 
-
-
-/* 
-
-No idea how CSS works in SurveyJS, under are some ways I could apply colors, but I haven't found a way to change the CSS itself, e.g. center text. Will continue to work on it.
-
-*/
 
 var defaultThemeColors = Survey
   .StylesManager
   .ThemeColors["default"]
-  defaultThemeColors["$main-color"] = "#0618BB"
-  defaultThemeColors["$header-color"] = "#0618BB"
-  defaultThemeColors["$body-container-background-color"] = "#0618BB"
-  defaultThemeColors["$text-color"] = "black"
+  defaultThemeColors["$text-color"] = "#000000"
 
 Survey
   .StylesManager
@@ -102,15 +92,16 @@ var json = {
 };
 
 const survey = new Survey.Model(json);
+survey.locale = "fi";
 
 const Tietosuoja = () => {
 
   return (
-    <>
+    <div className="survey">
       <Survey.Survey
         model={survey}
       />
-    </>
+    </div>
   )
 }
 
