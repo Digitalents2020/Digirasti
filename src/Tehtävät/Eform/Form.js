@@ -78,6 +78,9 @@ const Form = ({
         <option>Ei mikään näistä (Selitä alempana tarkemmin)</option>
       </select>
       <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <label htmlFor="DegreeName">Tutkintonimike</label>
       <input
         id="DegreeName"
