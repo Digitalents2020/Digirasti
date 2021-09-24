@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Eform.css";
+import "../Email/common-form.css";
 import Form from "./Form";
 
 const Eform = () => {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Email.css";
+import "./common-form.css";
 
 const recipient = "esimerkki.makkonen@example.com";
 
