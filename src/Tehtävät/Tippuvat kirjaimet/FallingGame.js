@@ -88,6 +88,7 @@ function FallingGame() {
 
 
   const handler = (event) => {
+    event.preventDefault();
     setState(event.key);
   };
 
@@ -140,8 +141,9 @@ function stopAndFlashGreen(letterToSearch, left, top){
   div.innerHTML = letterToSearch.charAt(2)
   div.className = "lettersGame"
   div.style.backgroundColor = '#009246'
+  var scrolledFromTop = window.pageYOffset
   div.style.left = left + "px"
-  div.style.top = top + "px"
+  div.style.top = top + scrolledFromTop + "px"
   document.getElementById('letterClassGame').appendChild(div);
  setTimeout(function() {
   var myobj = document.getElementById(letterToSearch);
@@ -256,7 +258,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
                 <p className="uiGame">Elämät: {lives}</p>
               </div>
             </div>
-            <input className="hideGame" onKeyPress={(e) => handler(e)} autoFocus={true} onBlur={({ target }) => target.focus()}></input>
+            <input className="hideGame" onKeyPress={(e) => handler(e)} autoFocus={true} onBlur={({ target }) => target.focus({preventScroll:true})}></input>
               {clearState()}
           </div>
         </div>
