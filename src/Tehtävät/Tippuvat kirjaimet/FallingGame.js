@@ -41,6 +41,8 @@ var firstTime = false
 let userAgentString = navigator.userAgent;
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 var capslockpaalla = false
+var animLenght = 10
+var timeoutLenght = 10200
 
 function FallingGame() {
   const [state, setState] = useState("");
@@ -108,9 +110,16 @@ function FallingGame() {
       lett = id + lett
       arrayOfLetters.push(lett);
       ready=false
+
+      if(points%2===0 && points > 0 && animLenght > 1 && timeoutLenght > 1200){
+        animLenght = animLenght - 1
+        timeoutLenght = timeoutLenght - 1000
+      }
+
+      console.log(timeoutLenght)
       setTimeout(function() {
         cleanFallenLetter(lett);
-    }, 10200)
+    }, timeoutLenght)
     } 
     if (lives > 0){
       if(firefoxAgent){
@@ -118,6 +127,7 @@ function FallingGame() {
       }else{
       location = randomIntFromInterval(-400, 400)
       }
+      console.log(animLenght)
       return ( <AnimatePresence >
       {arrayOfLetters.map((letter) =>
         <motion.div key={letter}
@@ -125,7 +135,7 @@ function FallingGame() {
         initial={{y:0, x:location}}
         animate={{y:497,
           transitionEnd:{backgroundColor: "#BD2719"}}}
-        transition={{duration:10,ease:"linear"}}
+        transition={{duration:animLenght,ease:"linear"}}
         exit={{}}
         className="lettersGame">{letter.charAt(2)}
         </motion.div>)}

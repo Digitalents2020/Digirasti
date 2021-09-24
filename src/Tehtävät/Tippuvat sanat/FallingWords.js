@@ -32,6 +32,8 @@ var firstTime = false
 let userAgentString = navigator.userAgent;
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 var capslockpaalla = false
+var animLenght = 15
+var timeoutLenght = 15200
 
 function FallingWords() {
   const [state, setState] = useState("");
@@ -98,9 +100,16 @@ function FallingWords() {
       lett = id + lett
       arrayOfWords.push(lett);
       ready=false
+
+      if(points%2===0 && points > 0 && animLenght > 3 && timeoutLenght > 3200){
+        animLenght = animLenght - 1
+        timeoutLenght = timeoutLenght - 1000
+      }
+
+      console.log(timeoutLenght)
       setTimeout(function() {
         cleanFallenLetter(lett);
-    }, 15200)
+    }, timeoutLenght)
     } 
     if (lives > 0){
       if(firefoxAgent){
@@ -108,6 +117,7 @@ function FallingWords() {
       }else{
       location = randomIntFromInterval(-380, 370)
       }
+      console.log(animLenght)
       return ( <AnimatePresence >
       {arrayOfWords.map((letter) =>
         <motion.div key={letter}
@@ -115,7 +125,7 @@ function FallingWords() {
         initial={{y:0, x:location}}
         animate={{y:497,
           transitionEnd:{backgroundColor: "#BD2719"}}}
-        transition={{duration:15,ease:"linear"}}
+        transition={{duration:animLenght,ease:"linear"}}
         className="lettersWords">{letter.substring(2)}
         </motion.div>)}
        </AnimatePresence>)
