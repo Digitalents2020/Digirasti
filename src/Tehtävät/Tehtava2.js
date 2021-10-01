@@ -37,8 +37,7 @@ const Tehtava2 = () => {
       return (
         <div>
           <p><br/></p>
-          <p>Shift-näppäin on näppäimistön vasemmalla laidalla oleva näppäin, jossa on nuoli ylöspäin. Erikoismerkit ja isot kirjaimet saa painamalla Shiftiä ja kirjainta yhtä aikaa. Kun kirjoitat pitkää tekstiä tekstinkäsittelyohjelmalla, sinun ei tarvitse vaihtaa riviä painamalla Enteriä, vaan voit jatkaa kirjoittamista, vaikka rivin pääty lähestyy. Kun haluat vaihtaa kappaletta, voit painaa Enteriä, jolloin kappaleiden väliin tulee hieman tyhjää tilaa.</p>
-          <p>Tekstinkäsittelyohjelma hoitaa rivinvaihdon puolestasi. Saat tehtyä huutomerkin painamalla Shift-näppäintä ja numeroa 1 samaan aikaan!</p>
+          <p>Tässä tehtävässä harjoittelen kirjoittamaan tietokoneen näppäimistöllä. Opin käyttämään isoja ja pieniä kirjaimia sekä erikoismerkkejä! Kun olen oppinut kirjoittamaan tietokoneella sujuvasti, voin kirjoittaa työhakemuksen minua kiinnostavaan työpaikkaan. Mistä saisin apua ansioluettelon tekemiseen?</p>
           <p><br/></p>
         </div>
       )
