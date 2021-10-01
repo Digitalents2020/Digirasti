@@ -1,0 +1,45 @@
+.dragObject{
+    height: 40px;
+    width: 40px;
+    border-radius: 25%;
+    position: absolute;
+}
+
+.dragObject1{
+    height: 40px;
+    width: 40px;
+    margin-left: 50px;
+    border-radius: 25%;
+    position: absolute;
+}
+.dragObject2{
+    height: 40px;
+    width: 40px;
+    margin-left: 100px;
+    border-radius: 25%;
+    position: absolute;
+}
+.dragObject3{
+    height: 40px;
+    width: 40px;
+    margin-left: 150px;
+    border-radius: 25%;
+    position: absolute;
+}
+
+.canvas{
+    height: 500px;
+    width: 500px;
+    margin-left: 100px;
+    margin-top: 50px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+}
+.basket1{
+    height: 100px;
+    width: 100px;
+    transform: translate3d(400px, 400px, 0px);
+    position: absolute;
+}
+
