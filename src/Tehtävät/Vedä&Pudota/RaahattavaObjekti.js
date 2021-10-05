@@ -5,14 +5,21 @@ export default function RaahattavaObjekti(props){
   console.log(props.int)
       if(props.int===0){
        return(
-        <motion.div className={props.className} id={props.id} drag 
+        <motion.div className={props.className} id={props.id} drag
           dragConstraints={props.constraintsRef}
-          dragElastic={false} dragMomentum={false}
+          dragElastic={false} dragMomentum={false} style={{cursor: "grab"}}
           onDragEnd={
             (event) => props.pysahdys(props.className,props.keyNum)
           }>
         </motion.div>)
       }else{
-          return <div></div>
+        return(
+        <motion.div className={props.className} id={props.id} drag={false}
+        dragConstraints={props.constraintsRef}
+        dragElastic={false} dragMomentum={false} style={{cursor: "auto"}}
+        onDragEnd={
+          (event) => props.pysahdys(props.className,props.keyNum)
+        }>
+      </motion.div>)
       }
 }
