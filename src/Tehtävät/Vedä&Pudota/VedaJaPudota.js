@@ -35,7 +35,7 @@ export default function DragAndDrop(){
               setState(state+1)
           }
         }
-if(eka === 1 & toka === 1 & kolmas === 1 & neljas === 1){
+if(eka + toka + kolmas + neljas === 4){
   alert('Onneksi Olkoon Voitit!!!')
 }
 return(
