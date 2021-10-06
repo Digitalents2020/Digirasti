@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function RaahattavaObjekti(props){
   console.log(props.int)
-      if(props.int===0){
+      if(props.int===0 || (props.className === "dragObject8" || props.className === "dragObject9" || props.className === "dragObject10")){
        return(
         <motion.div className={props.className} id={props.id} drag
           dragConstraints={props.constraintsRef}

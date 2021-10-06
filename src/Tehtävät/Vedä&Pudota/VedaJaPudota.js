@@ -13,6 +13,9 @@ var neljas = 0
 var viides = 0
 var kuudes = 0
 var seiska = 0
+var kasi = 0
+var ysi = 0
+var kymppi = 0
 
 export default function DragAndDrop(){
     const [state, setState] = useState(0);
@@ -23,7 +26,7 @@ export default function DragAndDrop(){
         var left=dragObject.getBoundingClientRect().left - (window.innerWidth/4) - 100;
         var top=dragObject.getBoundingClientRect().top - 50;
         console.log(left,top,keyNum)
-          if((left>=380 & left<=480) & (top>=400 & top <=480)){
+          if((left>=420& left<=490) & (top>=620 & top <=680)){
               if(keyNum==="1"){
                 eka = 1
                 alert('Omena lisätty koriin')
@@ -38,22 +41,40 @@ export default function DragAndDrop(){
                 alert('Omena lisätty koriin')
               }else if(keyNum==="5"){
                 viides = 1
-                alert('Päärynä ei kuulu koriin')
+                alert('Päärynä lisätty koriin')
               }else if(keyNum==="6"){
                 kuudes = 1
-                alert('Päärynä ei kuulu koriin')
+                alert('Päärynä lisätty koriin')
               }else if(keyNum==="7"){
                 seiska = 1
-                alert('Päärynä ei kuulu koriin')
+                alert('Päärynä lisätty koriin')
+              }else if(keyNum==="8"){
+                kasi = 1
+                alert('Porkkana ei kuulu koriin')
+              }else if(keyNum==="9"){
+                ysi = 1
+                alert('Porkkana ei kuulu koriin')
+              }else if(keyNum==="10"){
+                kymppi = 1
+                alert('Porkkana ei kuulu koriin')
               }
-              console.log(eka,toka,kolmas,neljas)
+              console.log(eka,toka,kolmas,neljas,viides,kuudes,seiska)
               setState(state+1)
-          }
+          }else{
+            if(keyNum==="8" & kasi===1){
+              kasi = 0
+              alert('Porkkana poistettu korista')
+            }else if(keyNum==="9" & ysi===1){
+              ysi = 0
+              alert('Porkkana poistettu korista')
+            }else if(keyNum==="10" & kymppi===1){
+              kymppi = 0
+              alert('Porkkana poistettu korista')
+          }setState(state+1) }
         }
 
     function nextPract(){
-          if(eka + toka + kolmas + neljas === 4 & 
-            viides + kuudes + seiska === 0){
+          if(eka + toka + kolmas + neljas + viides + kuudes + seiska === 7 & kasi + ysi + kymppi === 0){
               alert('Onneksi Olkoon Voitit!!!')
             return (
               <Link to="/Email" className="NextPrac" role="button" onClick={ClearVariables()}>Seuraava tehtävä</Link>
@@ -62,17 +83,26 @@ export default function DragAndDrop(){
         }
 
       function ClearVariables(){
-        eka = 0
+        eka = 0 
         toka = 0
         kolmas = 0
-       neljas = 0
+        neljas = 0
         viides = 0
         kuudes = 0
         seiska = 0
+        kasi = 0
+        ysi = 0
+        kymppi = 0
        }
 
 return(
-    <div>
+    <div className ="dragCont">
+       <h1 className="headlineDrag">Vedä Ja Pudota</h1>
+       <div className="ohjeDrag">
+            <h2 className="ohjetxtDrag">Ohje:</h2>
+            <p>Tehtävänäsi on raahata kaikki <strong>hedelmät</strong> koriin.
+            </p>
+          </div>
       {console.log("yhteensä", eka+toka+kolmas+neljas)}
       <motion.div ref={constraintsRef} className="canvas">
         <div className="basket1" >
@@ -81,19 +111,25 @@ return(
           </div>
         </div>
         <RaahattavaObjekti pysahdys={pysahdys} int={eka} constraintsRef={constraintsRef}
-          className="dragObject" id="dragObject" keyNum="1" />
+          className="dragObject1" id="dragObject1" keyNum="1" />
         <RaahattavaObjekti pysahdys={pysahdys} int={toka} constraintsRef={constraintsRef}
-          className="dragObject1" id="dragObject1" keyNum="2" />
+          className="dragObject2" id="dragObject2" keyNum="2" />
         <RaahattavaObjekti pysahdys={pysahdys} int={kolmas} constraintsRef={constraintsRef}
-          className="dragObject2" id="dragObject2" keyNum="3" />
+          className="dragObject3" id="dragObject3" keyNum="3" />
         <RaahattavaObjekti pysahdys={pysahdys} int={neljas} constraintsRef={constraintsRef}
-          className="dragObject3" id="dragObject3" keyNum="4" />
+          className="dragObject4" id="dragObject4" keyNum="4" />
         <RaahattavaObjekti pysahdys={pysahdys} int={viides} constraintsRef={constraintsRef}
-          className="dragObject4" id="dragObject4" keyNum="5" />
+          className="dragObject5" id="dragObject5" keyNum="5" />
         <RaahattavaObjekti pysahdys={pysahdys} int={kuudes} constraintsRef={constraintsRef}
-          className="dragObject5" id="dragObject5" keyNum="6" />
+          className="dragObject6" id="dragObject6" keyNum="6" />
         <RaahattavaObjekti pysahdys={pysahdys} int={seiska} constraintsRef={constraintsRef}
-          className="dragObject6" id="dragObject6" keyNum="7" />
+          className="dragObject7" id="dragObject7" keyNum="7" />
+        <RaahattavaObjekti pysahdys={pysahdys} int={kasi} constraintsRef={constraintsRef}
+          className="dragObject8" id="dragObject8" keyNum="8" />
+        <RaahattavaObjekti pysahdys={pysahdys} int={ysi} constraintsRef={constraintsRef}
+          className="dragObject9" id="dragObject9" keyNum="9" />
+        <RaahattavaObjekti pysahdys={pysahdys} int={kymppi} constraintsRef={constraintsRef}
+          className="dragObject10" id="dragObject10" keyNum="10" />
         </motion.div>
       {nextPract()}
     </div>
