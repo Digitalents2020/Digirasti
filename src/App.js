@@ -21,10 +21,10 @@ const App = () => {
               <Link to="/">Etusivu</Link>
             </li>
             <li>
-              <Link to="/Tehtava1">Editointitehtävä</Link>
+              <Link to="/Tehtava2">Kirjoitustehtävä</Link>
             </li>
             <li>
-              <Link to="/Tehtava2">Kirjoitustehtävä</Link>
+              <Link to="/Tehtava1">Editointitehtävä</Link>
             </li>
             <li>
               <Link to="/kopiointi">Kopiointitehtävä</Link>
