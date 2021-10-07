@@ -40,7 +40,7 @@ class Clock extends React.Component {
            </div>)
   }else
   return(
-    <p className="emptyGame">-</p>)
+    <div className="emptyGame"></div>)
 }
 }
 export default Clock;

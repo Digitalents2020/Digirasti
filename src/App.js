@@ -7,6 +7,7 @@ import Kopiointi from "./Tehtävät/Kopiointi/Kopiointi";
 import Tietosuoja from "./Tehtävät/Tietosuoja/Tietosuoja";
 import FallingGame from "./Tehtävät/Tippuvat kirjaimet/FallingGame";
 import FallingWords from "./Tehtävät/Tippuvat sanat/FallingWords";
+import DragAndDrop from "./Tehtävät/Vedä&Pudota/VedaJaPudota";
 import Email from "./Tehtävät/Email/Email";
 import Eform from "./Tehtävät/Eform/Eform";
 
@@ -21,10 +22,10 @@ const App = () => {
               <Link to="/">Etusivu</Link>
             </li>
             <li>
-              <Link to="/Tehtava1">Editointitehtävä</Link>
+              <Link to="/Tehtava2">Kirjoitustehtävä</Link>
             </li>
             <li>
-              <Link to="/Tehtava2">Kirjoitustehtävä</Link>
+              <Link to="/Tehtava1">Editointitehtävä</Link>
             </li>
             <li>
               <Link to="/kopiointi">Kopiointitehtävä</Link>
@@ -37,6 +38,9 @@ const App = () => {
             </li>
             <li>
               <Link to="/tippuvat_sanat">Tippuvat sanat</Link>
+            </li>
+            <li>
+              <Link to="/veda_ja_pudota">Vedä ja pudota</Link>
             </li>
             <li>
               <Link to='/Email'>Sähköposti</Link>
@@ -69,6 +73,9 @@ const App = () => {
             </Route>
             <Route path="/tippuvat_sanat">
               <FallingWords />
+            </Route>
+            <Route path="/veda_ja_pudota">
+            <DragAndDrop />
             </Route>
             <Route path="/Email">
               <Email />

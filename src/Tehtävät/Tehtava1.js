@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import {Link } from "react-router-dom"
+import "./Tehtava1.css"
 
 const Button = ( props ) => {
   return (
@@ -88,16 +90,15 @@ const Tehtava1 = () => {
 
     const Sivukomponentti1 = () => { 
       return (
-        <div>
-          <p><br/></p>
-          <p><b>Ohje:</b> Liiku tekstissä nuolinäppäimillä ja poista tekstistä kaikki numerot.</p>
-          <p><br/></p>
+        <div className="fallingGame">
+        <div className="canvasGame">
+          <h1 className="otsikkoGame">Editointitehtävä</h1>
+          <div className="ohjeGame">
+            <h2 className="ohjetxtGame">Ohje:</h2>
+            <p>Liiku tekstissä nuolinäppäimillä ja poista tekstistä kaikki numerot.</p>
+          </div>
         </div>
-      )
-    }
-
-    const Sivukomponentti2 = () => { 
-      return (
+        
         <div>
           <Button handleClick={ testinappi1 } label="Testinappi: oikein" value="correct"/>
           <Button handleClick={ testinappi2 } label="Testinappi: sinne päin" value="about"/>
@@ -106,17 +107,19 @@ const Tehtava1 = () => {
           <p/>
           <textarea style={textareastyle} onChange={textChangeEvent} value={taskText}></textarea>
           <p><br/></p>
-          <Button handleClick={ tarkistusFunktio } label="Tarkista tulos" value="validateResult"/>
-          <Button handleClick={ aloitusAlustaFunktio } label="Aloita alusta" value="reset"/>
+          <Button className="startbtnGame" handleClick={ tarkistusFunktio } label="Tarkista tulos" value="validateResult"/>
+          <Button className="startbtnGame" handleClick={ aloitusAlustaFunktio } label="Aloita alusta" value="reset"/>
           </div>
+      </div>
       )
     }
 
     return (
         <div>
-            <h1>Editointitehtävä</h1>
             <Sivukomponentti1/>
-            <Sivukomponentti2/>
+
+            <Link to="/Tehtava2" className="NextPrac"
+              role="button">Seuraava tehtävä</Link>
         </div>
     )
 }

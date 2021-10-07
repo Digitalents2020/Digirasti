@@ -111,7 +111,7 @@ function FallingGame() {
       arrayOfLetters.push(lett);
       ready=false
 
-      if(points%2===0 && points > 0 && animLenght > 1 && timeoutLenght > 1200){
+      if(points%20===0 && points > 0 && animLenght > 1 && timeoutLenght > 1200){
         animLenght = animLenght - 1
         timeoutLenght = timeoutLenght - 1000
       }

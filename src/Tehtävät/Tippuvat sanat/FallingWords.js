@@ -281,7 +281,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
                 </button>
               </div>
             </div>
-            <Link to="/Email" className="NextPrac" role="button">Seuraava tehtävä</Link>
+            <Link to="/veda_ja_pudota" className="NextPrac" role="button">Seuraava tehtävä</Link>
           </div>
         </div>
       );

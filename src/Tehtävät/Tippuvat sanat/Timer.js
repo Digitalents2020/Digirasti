@@ -41,7 +41,7 @@ class Timer extends React.Component {
            </div>)
   }else
   return(
-    <p className="emptyWords">-</p>)
+    <div className="emptyWords"></div>)
 }
 }
 
