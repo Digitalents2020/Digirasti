@@ -25,8 +25,10 @@ export default function DragAndDrop(){
         const dragObject = document.getElementById(dragOb);
         var left=dragObject.getBoundingClientRect().left - (window.innerWidth/4) - 100;
         var top=dragObject.getBoundingClientRect().top - 50;
-        console.log(left,top,keyNum)
-          if((left>=420& left<=490) & (top>=620 & top <=680)){
+        const basket = document.getElementById('basket1');
+        var topBasket = basket.getBoundingClientRect().top;
+        console.log(left,top,keyNum,topBasket)
+          if((left >= 435 & left <= 590) & ((top >= topBasket-50) & (top <= topBasket+150))){
               if(keyNum==="1"){
                 eka = 1
                 alert('Omena lisätty koriin')
@@ -105,7 +107,7 @@ return(
           </div>
       {console.log("yhteensä", eka+toka+kolmas+neljas)}
       <motion.div ref={constraintsRef} className="canvas">
-        <div className="basket1" >
+        <div className="basket1" id="basket1">
           <div id="basketImg" width="100" 
             height="100">
           </div>
