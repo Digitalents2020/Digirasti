@@ -10,19 +10,19 @@
   }
 
 .canvas{
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 600px;
     margin-left: 100px;
     margin-top: 50px;
     background-image: url("Pictures/tree.png");
     background-size: cover;
 }
 .basket1{
-    height: 100px;
-    width: 120px;
-    transform: translate3d(380px, 400px, 0px);
+    height: 130px;
+    width: 200px;
+    transform: translate3d(400px, 470px, 0px);
     position: absolute;
-    background-image: url("Pictures/sb.png");
+    background-image: url("Pictures/basket.png");
     background-size: cover;
 }
 
@@ -54,8 +54,8 @@
 .dragObject1{
     height: 52px;
     width: 45px;
-    margin-left: 50px;
-    margin-top: 170px;
+    margin-left: 80px;
+    margin-top: 220px;
     border-radius: 25%;
     position: absolute;
     background-image: url("Pictures/apple.png");
@@ -65,7 +65,7 @@
 .dragObject2{
     height: 52px;
     width: 45px;
-    margin-left: 75px;
+    margin-left: 95px;
     margin-top: 50px;
     border-radius: 25%;
     position: absolute;
@@ -75,7 +75,7 @@
 .dragObject3{
     height: 52px;
     width: 45px;
-    margin-left: 200px;
+    margin-left: 250px;
     margin-top: 135px;
     border-radius: 25%;
     position: absolute;
@@ -85,8 +85,8 @@
 .dragObject4{
     height: 52px;
     width: 45px;
-    margin-left: 300px;
-    margin-top: 35px;
+    margin-left: 350px;
+    margin-top: 55px;
     border-radius: 25%;
     position: absolute;
     background-image: url("Pictures/apple.png");
@@ -107,8 +107,8 @@
 .dragObject6{
     height: 52px;
     width: 45px;
-    margin-left: 290px;
-    margin-top: 240px;
+    margin-left: 350px;
+    margin-top: 260px;
     border-radius: 25%;
     position: absolute;
     background-image: url("Pictures/Pear.png");
@@ -118,8 +118,8 @@
 .dragObject7{
     height: 52px;
     width: 45px;
-    margin-left: 380px;
-    margin-top: 150px;
+    margin-left: 450px;
+    margin-top: 170px;
     border-radius: 25%;
     position: absolute;
     background-image: url("Pictures/Pear.png");
@@ -129,7 +129,7 @@
 .dragObject8{
     height: 52px;
     width: 45px;
-    margin-left: 115px;
+    margin-left: 155px;
     margin-top: 130px;
     border-radius: 25%;
     position: absolute;
@@ -139,7 +139,7 @@
 .dragObject9{
     height: 52px;
     width: 45px;
-    margin-left: 175px;
+    margin-left: 225px;
     margin-top: 230px;
     border-radius: 25%;
     position: absolute;
@@ -150,7 +150,7 @@
 .dragObject10{
     height: 52px;
     width: 45px;
-    margin-left: 300px;
+    margin-left: 350px;
     margin-top: 150px;
     border-radius: 25%;
     position: absolute;
