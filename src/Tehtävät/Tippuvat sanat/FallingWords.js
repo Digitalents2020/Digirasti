@@ -142,7 +142,8 @@ function FallingWords() {
       div.className = "lettersWords"
       div.style.backgroundColor = '#009246'
       var scrolledFromTop = window.pageYOffset
-      div.style.left = left + "px"
+      var scrolledFromLeft = window.pageXOffset
+      div.style.left = left + scrolledFromLeft + "px"
       div.style.top = top + scrolledFromTop + "px"
       document.getElementById('letterClassWords').appendChild(div);
      setTimeout(function() {
@@ -254,7 +255,8 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
                 <p className="uiWords">Pisteet: {points}</p>
                 <p className="uiWords">Elämät: {lives}</p>
                 <form onSubmit={cleanUpLetter}>
-                <input className="wordInputWords" id="wordInputWords" onChange={handler} autoFocus={true} onBlur={({ target }) => target.focus({preventScroll:true})}/>
+                <input className="wordInputWords" id="wordInputWords" onChange={handler} autoFocus={true} onBlur={({ target }) => setTimeout(
+                  function () {target.focus({preventScroll:true})},2)}/>
                 <button type="submit" className="hidebuttonWords" ></button>
                 </form>
               </div>
