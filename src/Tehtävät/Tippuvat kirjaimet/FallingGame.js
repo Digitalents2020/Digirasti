@@ -152,7 +152,8 @@ function stopAndFlashGreen(letterToSearch, left, top){
   div.className = "lettersGame"
   div.style.backgroundColor = '#009246'
   var scrolledFromTop = window.pageYOffset
-  div.style.left = left + "px"
+  var scrolledFromLeft= window.pageXOffset
+  div.style.left = left + scrolledFromLeft + "px"
   div.style.top = top + scrolledFromTop + "px"
   document.getElementById('letterClassGame').appendChild(div);
  setTimeout(function() {
@@ -230,7 +231,6 @@ function stopAndFlashGreen(letterToSearch, left, top){
      setCleanFallen(letter)
     }}
 
-  
   /*Set values back to starting values*/
   function tryAgain() {
     arrayOfLetters = [];
@@ -268,7 +268,8 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
                 <p className="uiGame">Elämät: {lives}</p>
               </div>
             </div>
-            <input className="hideGame" onKeyPress={(e) => handler(e)} autoFocus={true} onBlur={({ target }) => target.focus({preventScroll:true})}></input>
+            <input className="hideGame" id="hideGame" onKeyPress={(e) => handler(e)} autoFocus={true}  onBlur={({ target }) => setTimeout(
+                  function () {target.focus({preventScroll:true})},2)}></input>
               {clearState()}
           </div>
         </div>
