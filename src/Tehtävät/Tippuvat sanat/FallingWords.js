@@ -254,7 +254,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
               <div className="uiDivWords">
                 <p className="uiWords">Pisteet: {points}</p>
                 <p className="uiWords">Elämät: {lives}</p>
-                <form onSubmit={cleanUpLetter}>
+                <form onSubmit={cleanUpLetter} autocomplete="off">
                 <input className="wordInputWords" id="wordInputWords" onChange={handler} autoFocus={true} onBlur={({ target }) => setTimeout(
                   function () {target.focus({preventScroll:true})},2)}/>
                 <button type="submit" className="hidebuttonWords" ></button>

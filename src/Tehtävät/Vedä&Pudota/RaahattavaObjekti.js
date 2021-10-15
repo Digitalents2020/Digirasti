@@ -19,7 +19,7 @@ export default function RaahattavaObjekti(props){
         var condPos = 400 + (10 * (props.keyNum*2))
         console.log("condPos =", condPos)
         return(
-        <motion.div className={props.className} id={props.id} style={{marginLeft:condPos, marginTop:480}}>
-      </motion.div>)
+        <div className={props.className} id={props.id} style={{marginLeft:condPos, marginTop:480}}>
+      </div>)
       }
 }

@@ -23,13 +23,14 @@ export default function DragAndDrop(){
     const constraintsRef = useRef(null)
 
     function pysahdys(dragOb,keyNum){
-        const dragObject = document.getElementById(dragOb);
-        var left=dragObject.getBoundingClientRect().left - (window.innerWidth/4) - 100;
-        var top=dragObject.getBoundingClientRect().top - 50;
-        const basket = document.getElementById('basket1');
-        var topBasket = basket.getBoundingClientRect().top;
-        console.log(left,top,keyNum,topBasket)
-          if((left >= 435 & left <= 590) & ((top >= topBasket-50) & (top <= topBasket+150))){
+      const basket = document.getElementById('basket1');
+      var topBasket = basket.getBoundingClientRect().top;
+      var leftBasket = basket.getBoundingClientRect().left;
+      const dragObject = document.getElementById(dragOb);
+      var left=dragObject.getBoundingClientRect().left
+      var top=dragObject.getBoundingClientRect().top;
+      console.log(top,left,keyNum,'topB',topBasket,'leftB',leftBasket)
+        if(((left >= leftBasket) & left <= (leftBasket + 180)) & ((top >= topBasket) & (top <= topBasket+100))){
               if(keyNum==="1"){
                 eka = 1
                 all++
@@ -103,6 +104,7 @@ export default function DragAndDrop(){
         kasi = 0
         ysi = 0
         kymppi = 0
+        all = 0
        }
 
        /*function victory(){

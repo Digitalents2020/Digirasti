@@ -16,6 +16,7 @@
 
 .hideGame {
   opacity: 0;
+  cursor: default;
 }
 
 .letterClassGame{
