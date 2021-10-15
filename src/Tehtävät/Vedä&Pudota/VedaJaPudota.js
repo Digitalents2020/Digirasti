@@ -16,6 +16,7 @@ var seiska = 0
 var kasi = 0
 var ysi = 0
 var kymppi = 0
+var all = 0
 
 export default function DragAndDrop(){
     const [state, setState] = useState(0);
@@ -31,24 +32,31 @@ export default function DragAndDrop(){
           if((left >= 435 & left <= 590) & ((top >= topBasket-50) & (top <= topBasket+150))){
               if(keyNum==="1"){
                 eka = 1
+                all++
                 alert('Omena lisätty koriin')
               }else if(keyNum==="2"){
                 toka = 1
+                all++
                 alert('Omena lisätty koriin')
               }else if(keyNum==="3"){
                 kolmas = 1
+                all++
                 alert('Omena lisätty koriin')
               }else if(keyNum==="4"){
                 neljas = 1
+                all++
                 alert('Omena lisätty koriin')
               }else if(keyNum==="5"){
                 viides = 1
+                all++
                 alert('Päärynä lisätty koriin')
               }else if(keyNum==="6"){
                 kuudes = 1
+                all++
                 alert('Päärynä lisätty koriin')
               }else if(keyNum==="7"){
                 seiska = 1
+                all++
                 alert('Päärynä lisätty koriin')
               }else if(keyNum==="8"){
                 kasi = 1
@@ -76,7 +84,7 @@ export default function DragAndDrop(){
         }
 
     function nextPract(){
-          if(eka + toka + kolmas + neljas + viides + kuudes + seiska === 7 & kasi + ysi + kymppi === 0){
+          if(all === 7 & kasi + ysi + kymppi === 0){
               alert('Onneksi Olkoon Voitit!!!')
             return (
               <Link to="/Email" className="NextPrac" role="button" onClick={ClearVariables()}>Seuraava tehtävä</Link>
@@ -97,6 +105,15 @@ export default function DragAndDrop(){
         kymppi = 0
        }
 
+       /*function victory(){
+        {victory()}
+         if(all===7){
+          return(
+        <motion.div initial={{scale:1}} className="victoryClass"
+        animate={{ rotate: 360, scale: 5 }}
+        transition={{ duration: 2 }} />)}
+       }*/
+
 return(
     <div className ="dragCont">
        <h1 className="headlineDrag">Vedä Ja Pudota</h1>
@@ -113,19 +130,19 @@ return(
           </div>
         </div>
         <RaahattavaObjekti pysahdys={pysahdys} int={eka} constraintsRef={constraintsRef}
-          className="dragObject1" id="dragObject1" keyNum="1" />
+          className="dragObject1" id="dragObject1" keyNum="1" all={all}/>
         <RaahattavaObjekti pysahdys={pysahdys} int={toka} constraintsRef={constraintsRef}
-          className="dragObject2" id="dragObject2" keyNum="2" />
+          className="dragObject2" id="dragObject2" keyNum="2" all={all}/>
         <RaahattavaObjekti pysahdys={pysahdys} int={kolmas} constraintsRef={constraintsRef}
-          className="dragObject3" id="dragObject3" keyNum="3" />
+          className="dragObject3" id="dragObject3" keyNum="3" all={all}/>
         <RaahattavaObjekti pysahdys={pysahdys} int={neljas} constraintsRef={constraintsRef}
-          className="dragObject4" id="dragObject4" keyNum="4" />
+          className="dragObject4" id="dragObject4" keyNum="4" all={all}/>
         <RaahattavaObjekti pysahdys={pysahdys} int={viides} constraintsRef={constraintsRef}
-          className="dragObject5" id="dragObject5" keyNum="5" />
+          className="dragObject5" id="dragObject5" keyNum="5" all={all}/>
         <RaahattavaObjekti pysahdys={pysahdys} int={kuudes} constraintsRef={constraintsRef}
-          className="dragObject6" id="dragObject6" keyNum="6" />
+          className="dragObject6" id="dragObject6" keyNum="6" all={all}/>
         <RaahattavaObjekti pysahdys={pysahdys} int={seiska} constraintsRef={constraintsRef}
-          className="dragObject7" id="dragObject7" keyNum="7" />
+          className="dragObject7" id="dragObject7" keyNum="7" all={all}/>
         <RaahattavaObjekti pysahdys={pysahdys} int={kasi} constraintsRef={constraintsRef}
           className="dragObject8" id="dragObject8" keyNum="8" />
         <RaahattavaObjekti pysahdys={pysahdys} int={ysi} constraintsRef={constraintsRef}

@@ -9,6 +9,16 @@
     margin: 20px 30px 10px;
   }
 
+  /*.victoryClass{
+    height: 100px;
+    width: 100px;
+    margin-left: 35%;
+    margin-top: -500px;
+    position: absolute;
+    background-image: url("Pictures/apple.png");
+    background-size: cover;
+  }*/
+
 .canvas{
     height: 600px;
     width: 600px;
