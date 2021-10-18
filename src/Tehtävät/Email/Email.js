@@ -75,12 +75,14 @@ const Email = () => {
             type="text"
             value={newHeader}
             onChange={handleHeaderChange}
+            className={newHeader ? "" : "red-border"}
           ></input>
           <label>Viesti</label>
           <textarea
             type="text"
             value={newMessage}
             onChange={handleMessageChange}
+            className={newMessage ? "" : "red-border"}
           ></textarea>
           <label>Lataa liite</label>
           <input type="file"></input>

@@ -27,6 +27,7 @@ const Form = ({
         value={newFirstName}
         onChange={handleFirstNameChange}
         type="text"
+        required
       ></input>
       <label htmlFor="LastName">Sukunimi</label>
       <input
@@ -34,6 +35,7 @@ const Form = ({
         value={newLastName}
         onChange={handleLastNameChange}
         type="text"
+        required
       ></input>
       <label htmlFor="Email">Sähköposti</label>
       <input
@@ -41,6 +43,7 @@ const Form = ({
         value={newEmail}
         onChange={handleEmailChange}
         type="email"
+        required
       ></input>
       <label htmlFor="Number">Puhelinnumero</label>
       <input
@@ -48,18 +51,21 @@ const Form = ({
         value={newNumber}
         onChange={handleNumberChange}
         type="text"
+        required
       ></input>
       <label htmlFor="Work1">Työkokemus 1</label>
       <textarea
         id="Work1"
         value={newWork1}
         onChange={handleWork1Change}
+        required
       ></textarea>
       <label htmlFor="Work2">Työkokemus 2</label>
       <textarea
         id="Work2"
         value={newWork2}
         onChange={handleWork2Change}
+        required
       ></textarea>
       <label htmlFor="Degree">Korkein koulutusaste</label>
       <select
@@ -87,6 +93,7 @@ const Form = ({
         value={newDegreeName}
         onChange={handleDegreeNameChange}
         type="text"
+        required
       ></input>
       <br></br>
       <label htmlFor="About">
@@ -96,6 +103,7 @@ const Form = ({
         id="About"
         value={newAbout}
         onChange={handleAboutChange}
+        required
       ></textarea>
       <label htmlFor="Attachment">Lataa liite</label>
       <input id="Attachment" type="file"></input>

@@ -3,6 +3,10 @@
   padding: 5rem;
 }
 
+.red-border {
+  border-color: red;
+}
+
 .form-box h5 {
   font-size: 20px;
   text-align: left;
