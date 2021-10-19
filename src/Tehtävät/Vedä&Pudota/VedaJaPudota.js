@@ -34,31 +34,24 @@ export default function DragAndDrop(){
               if(keyNum==="1"){
                 eka = 1
                 all++
-                alert('Omena lisätty koriin')
               }else if(keyNum==="2"){
                 toka = 1
                 all++
-                alert('Omena lisätty koriin')
               }else if(keyNum==="3"){
                 kolmas = 1
                 all++
-                alert('Omena lisätty koriin')
               }else if(keyNum==="4"){
                 neljas = 1
                 all++
-                alert('Omena lisätty koriin')
               }else if(keyNum==="5"){
                 viides = 1
                 all++
-                alert('Päärynä lisätty koriin')
               }else if(keyNum==="6"){
                 kuudes = 1
                 all++
-                alert('Päärynä lisätty koriin')
               }else if(keyNum==="7"){
                 seiska = 1
                 all++
-                alert('Päärynä lisätty koriin')
               }else if(keyNum==="8"){
                 kasi = 1
                 alert('Porkkana ei kuulu koriin')
@@ -86,9 +79,8 @@ export default function DragAndDrop(){
 
     function nextPract(){
           if(all === 7 & kasi + ysi + kymppi === 0){
-              alert('Onneksi Olkoon Voitit!!!')
             return (
-              <Link to="/Email" className="NextPrac" role="button" onClick={ClearVariables()}>Seuraava tehtävä</Link>
+              <Link to="/Email" id="ToTheNext" className="NextPrac" role="button" onClick={ClearVariables()}>Seuraava tehtävä</Link>
             )
           }
         }
@@ -105,16 +97,55 @@ export default function DragAndDrop(){
         ysi = 0
         kymppi = 0
         all = 0
+        setTimeout(
+          function (){
+        document.getElementById('ToTheNext').focus()
+          },2)
        }
 
-       /*function victory(){
-        {victory()}
+       function victory(){
+        
+        
          if(all===7){
           return(
-        <motion.div initial={{scale:1}} className="victoryClass"
-        animate={{ rotate: 360, scale: 5 }}
-        transition={{ duration: 2 }} />)}
-       }*/
+          <div>
+        <motion.div initial={{y:-100, x:500, opacity:0}} className="victoryClass"
+        animate={{ opacity:1,scale:[0.5,1,0.5] }}
+        transition={{ duration: 3, delay:3, repeat: Infinity,
+         opacity:{repeat:0, delay:3}}}
+         />
+          <motion.div initial={{opacity:0,y:0,x:300}} className="victoryClass"
+        animate={{ opacity:1,scale:[0.5,1,0.5] }}
+        transition={{ duration: 3,delay:3, repeat: Infinity,
+          opacity:{repeat:0, delay:3} }}
+         />
+          <motion.div initial={{opacity:0,y:-100, x:100}} className="victoryClass"
+        animate={{ opacity:1,scale:[0.5,1,0.5] }}
+        transition={{ duration: 3,delay:3, repeat: Infinity,
+          opacity:{repeat:0, delay:3} }}
+         /> 
+          <motion.div initial={{y:400, x:540}} className="victoryClassFire"
+        animate={{ y:-10, transitionEnd:{
+          display:"none"
+        }}}
+        transition={{ duration: 3}}
+         />
+          <motion.div initial={{y:400,x:340}} className="victoryClassFire"
+        animate={{ y:90, transitionEnd:{
+          display:"none"
+        } }}
+        transition={{ duration: 3 }}
+         />
+          <motion.div initial={{y:400, x:140}} className="victoryClassFire"
+        animate={{ y:-10, transitionEnd:{
+          display:"none"
+        }}}
+        transition={{ duration: 3 }}
+         />
+         </div>)
+      }
+       }
+
 
 return(
     <div className ="dragCont">
@@ -152,6 +183,7 @@ return(
         <RaahattavaObjekti pysahdys={pysahdys} int={kymppi} constraintsRef={constraintsRef}
           className="dragObject10" id="dragObject10" keyNum="10" />
         </motion.div>
+        {victory()}
       {nextPract()}
     </div>
 )

@@ -9,15 +9,25 @@
     margin: 20px 30px 10px;
   }
 
-  /*.victoryClass{
-    height: 100px;
-    width: 100px;
-    margin-left: 35%;
+  .victoryClass{
+    height: 200px;
+    width: 200px;
+    margin-left: auto;
     margin-top: -500px;
     position: absolute;
-    background-image: url("Pictures/apple.png");
+    background-image: url("Pictures/Explode.png");
     background-size: cover;
-  }*/
+  }
+  
+  .victoryClassFire{
+    height: 120px;
+    width: 120px;
+    margin-left: auto;
+    margin-top: -500px;
+    position: absolute;
+    background-image: url("Pictures/Firework.png");
+    background-size: cover;
+  }
 
 .canvas{
     height: 600px;

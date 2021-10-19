@@ -133,7 +133,7 @@ function FallingGame() {
         <motion.div key={letter}
         id={letter}
         initial={{y:0, x:location}}
-        animate={{y:497,
+        animate={{y:502,
           transitionEnd:{backgroundColor: "#BD2719"}}}
         transition={{duration:animLenght,ease:"linear"}}
         exit={{}}
@@ -216,7 +216,7 @@ function stopAndFlashGreen(letterToSearch, left, top){
 /*checks if Caps Lock is on and gives a reminder to turn it off*/
   function capslockvaroitus(){
     if(capslockpaalla){
-    return <div className="vinkkiGame" id="vinkkiGame">Laita Caps lock pois päältä</div>
+    return <div className="vinkkiGame" id="vinkkiGame">Laita Caps Lock pois päältä</div>
     }
   }
 

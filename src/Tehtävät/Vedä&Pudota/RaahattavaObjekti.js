@@ -7,6 +7,7 @@ export default function RaahattavaObjekti(props){
        return(
         <motion.div className={props.className} id={props.id} drag
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+          whileHover={{ scale: 1.2 }}
           dragElastic={1} dragMomentum={false} style={{cursor: "grab"}}
           onDragStart={
             (event, info) => console.log(info.point.x, info.point.y)

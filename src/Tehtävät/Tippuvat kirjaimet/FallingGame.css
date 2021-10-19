@@ -31,7 +31,7 @@
 
 .lettersGame {
   text-align: center;
-  border-style: solid;
+  border-style: none;
   letter-spacing: 3px;
   border-radius: 10px;
   position: absolute;
