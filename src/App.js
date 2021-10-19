@@ -49,6 +49,8 @@ const App = () => {
               <Link to='/Eform'>Sähköisen lomakkeen täyttö</Link>
             </li>
           </ul>
+          <div className="aalto-form">
+          </div>
         </nav>
 
         <div className="content">
