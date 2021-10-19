@@ -67,9 +67,9 @@ const Form = ({
         onChange={handleWork2Change}
         required
       ></textarea>
-      <label htmlFor="Degree">Korkein koulutusaste</label>
+      <label htmlFor="degree">Korkein koulutusaste</label>
       <select
-        className="Degree"
+        className="degree"
         value={newDegree}
         onChange={handleDegreeChange}
       >
@@ -83,13 +83,9 @@ const Form = ({
         <option>Ylempi korkeakoulututkinto</option>
         <option>Ei mikään näistä (Selitä alempana tarkemmin)</option>
       </select>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <label htmlFor="DegreeName">Tutkintonimike</label>
+      <label htmlFor="degreeName">Tutkintonimike</label>
       <input
-        id="DegreeName"
+        id="degreeName"
         value={newDegreeName}
         onChange={handleDegreeNameChange}
         type="text"

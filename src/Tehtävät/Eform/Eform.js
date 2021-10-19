@@ -83,16 +83,17 @@ const Eform = () => {
 
   return (
     <div className="form-box">
-      <p>
+      <h5 className="exercise-header">Sähköinen lomake</h5>
+      <p className="instructions">
+        <h2 className="instruction-header">Ohje:</h2>
+        <b></b>
         Tässä tehtävässä opetellaan sähköisen lomakkeen täyttämistä ja
         lähettämistä. Sähköisiä lomakkeita on monenlaisia, mutta tässä
         harjoitellaan täyttämään mahdollisesti työnhaun yhteydessä vastaan
-        tulevaa lomaketta.
+        tulevaa lomaketta. Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä
+        mitään minnekkään!
       </p>
-      <p>
-        Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä mitään minnekkään
-      </p>
-      <h5>Hakulomake</h5>
+      <h2 className="little-header">Hakulomake</h2>
       <br></br>
       <div className="field">
         <Form
