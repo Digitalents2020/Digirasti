@@ -26,6 +26,11 @@ export default function DragAndDrop(){
       const basket = document.getElementById('basket1');
       var topBasket = basket.getBoundingClientRect().top;
       var leftBasket = basket.getBoundingClientRect().left;
+
+      const rabbit = document.getElementById('rabbit');
+      var topRabbit = rabbit.getBoundingClientRect().top;
+      var leftRabbit = rabbit.getBoundingClientRect().left;
+
       const dragObject = document.getElementById(dragOb);
       var left=dragObject.getBoundingClientRect().left
       var top=dragObject.getBoundingClientRect().top;
@@ -53,32 +58,37 @@ export default function DragAndDrop(){
                 seiska = 1
                 all++
               }else if(keyNum==="8"){
-                kasi = 1
+               
                 alert('Porkkana ei kuulu koriin')
               }else if(keyNum==="9"){
-                ysi = 1
+              
                 alert('Porkkana ei kuulu koriin')
               }else if(keyNum==="10"){
-                kymppi = 1
+                
                 alert('Porkkana ei kuulu koriin')
               }
               console.log(eka,toka,kolmas,neljas,viides,kuudes,seiska)
               setState(state+1)
-          }else{
-            if(keyNum==="8" & kasi===1){
-              kasi = 0
-              alert('Porkkana poistettu korista')
-            }else if(keyNum==="9" & ysi===1){
-              ysi = 0
-              alert('Porkkana poistettu korista')
-            }else if(keyNum==="10" & kymppi===1){
-              kymppi = 0
-              alert('Porkkana poistettu korista')
-          }setState(state+1) }
+          }else if(((left >= leftRabbit) & left <= (leftRabbit + 70)) & ((top >= topRabbit) & (top <= topRabbit+100))){
+            if(keyNum==="8"){
+               kasi = 1
+               all++
+              alert('OUJEE')
+            }else if(keyNum==="9"){
+              ysi = 1
+              all++
+              alert('OUJEE')
+            }else if(keyNum==="10"){
+              kymppi = 1
+              all++
+              alert('OUJEE')
+            }
+            setState(state+1)
+          }
         }
 
     function nextPract(){
-          if(all === 7 & kasi + ysi + kymppi === 0){
+          if(all === 10){
             return (
               <Link to="/Email" id="ToTheNext" className="NextPrac" role="button" onClick={ClearVariables()}>Seuraava tehtävä</Link>
             )
@@ -104,63 +114,59 @@ export default function DragAndDrop(){
        }
 
        function victory(){
-        
-        
-         if(all===7){
-          return(
-          <div>
-        <motion.div initial={{y:-100, x:500, opacity:0}} className="victoryClass"
-        animate={{ opacity:1,scale:[0.5,1,0.5] }}
-        transition={{ duration: 3, delay:3, repeat: Infinity,
-         opacity:{repeat:0, delay:3}}}
-         />
-          <motion.div initial={{opacity:0,y:0,x:300}} className="victoryClass"
-        animate={{ opacity:1,scale:[0.5,1,0.5] }}
-        transition={{ duration: 3,delay:3, repeat: Infinity,
-          opacity:{repeat:0, delay:3} }}
-         />
-          <motion.div initial={{opacity:0,y:-100, x:100}} className="victoryClass"
-        animate={{ opacity:1,scale:[0.5,1,0.5] }}
-        transition={{ duration: 3,delay:3, repeat: Infinity,
-          opacity:{repeat:0, delay:3} }}
-         /> 
-          <motion.div initial={{y:400, x:540}} className="victoryClassFire"
-        animate={{ y:-10, transitionEnd:{
-          display:"none"
-        }}}
-        transition={{ duration: 3}}
-         />
-          <motion.div initial={{y:400,x:340}} className="victoryClassFire"
-        animate={{ y:90, transitionEnd:{
-          display:"none"
-        } }}
-        transition={{ duration: 3 }}
-         />
-          <motion.div initial={{y:400, x:140}} className="victoryClassFire"
-        animate={{ y:-10, transitionEnd:{
-          display:"none"
-        }}}
-        transition={{ duration: 3 }}
-         />
-         </div>)
-      }
-       }
+         if(all===10){
+            return(
+              <div>
+                <motion.div initial={{y:-100, x:500, opacity:0}} className="victoryClass"
+                animate={{ opacity:1,scale:[0.5,1,0.5] }}
+                transition={{ duration: 3, delay:3, repeat: Infinity,
+                opacity:{repeat:0, delay:3}}}
+                />
+                  <motion.div initial={{opacity:0,y:0,x:300}} className="victoryClass"
+                animate={{ opacity:1,scale:[0.5,1,0.5] }}
+                transition={{ duration: 3,delay:3, repeat: Infinity,
+                  opacity:{repeat:0, delay:3} }}
+                />
+                  <motion.div initial={{opacity:0,y:-100, x:100}} className="victoryClass"
+                animate={{ opacity:1,scale:[0.5,1,0.5] }}
+                transition={{ duration: 3,delay:3, repeat: Infinity,
+                  opacity:{repeat:0, delay:3} }}
+                /> 
+                  <motion.div initial={{y:400, x:540}} className="victoryClassFire"
+                animate={{ y:-10, transitionEnd:{
+                  display:"none"
+                }}}
+                transition={{ duration: 3}}
+                />
+                  <motion.div initial={{y:400,x:340}} className="victoryClassFire"
+                animate={{ y:90, transitionEnd:{
+                  display:"none"
+                } }}
+                transition={{ duration: 3 }}
+                />
+                  <motion.div initial={{y:400, x:140}} className="victoryClassFire"
+                animate={{ y:-10, transitionEnd:{
+                  display:"none"
+                }}}
+                transition={{ duration: 3 }}
+                />
+              </div>)
+        }
+          }
 
 
-return(
+  return(
     <div className ="dragCont">
-       <h1 className="headlineDrag">Vedä Ja Pudota</h1>
-       <div className="ohjeDrag">
-            <h2 className="ohjetxtDrag">Ohje:</h2>
-            <p>Tehtävänäsi on raahata kaikki <strong>hedelmät</strong> koriin.
-            </p>
-          </div>
+      <h1 className="headlineDrag">Vedä Ja Pudota</h1>
+      <div className="ohjeDrag">
+        <h2 className="ohjetxtDrag">Ohje:</h2>
+        <p>Tehtävänäsi on raahata kaikki <strong>hedelmät</strong> koriin ja syöttää <strong>juurekset</strong> jänikselle.</p>
+      </div>
       {console.log("yhteensä", eka+toka+kolmas+neljas)}
       <motion.div ref={constraintsRef} className="canvas">
         <div className="basket1" id="basket1">
-          <div id="basketImg" width="100" 
-            height="100">
-          </div>
+        </div>
+        <div className="rabbit" id="rabbit">
         </div>
         <RaahattavaObjekti pysahdys={pysahdys} int={eka} constraintsRef={constraintsRef}
           className="dragObject1" id="dragObject1" keyNum="1" all={all}/>
@@ -182,9 +188,9 @@ return(
           className="dragObject9" id="dragObject9" keyNum="9" />
         <RaahattavaObjekti pysahdys={pysahdys} int={kymppi} constraintsRef={constraintsRef}
           className="dragObject10" id="dragObject10" keyNum="10" />
-        </motion.div>
-        {victory()}
+      </motion.div>
+      {victory()}
       {nextPract()}
     </div>
-)
+  )
 }

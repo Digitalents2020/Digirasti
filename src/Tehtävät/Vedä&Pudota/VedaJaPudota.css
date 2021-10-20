@@ -46,6 +46,16 @@
     background-size: cover;
 }
 
+.rabbit{
+    height: 130px;
+    width: 130px;
+    transform: translate3d(50px, 470px, 0px);
+    position: absolute;
+    background-image: url("Pictures/rabbit.png");
+    background-size: cover;
+}
+
+
 .headlineDrag{
     display: block;
   padding: 10px;
