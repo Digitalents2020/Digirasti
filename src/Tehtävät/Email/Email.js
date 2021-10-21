@@ -46,7 +46,10 @@ const Email = () => {
 
   return (
     <div className="form-box">
-      <p>
+      <h5 className="exercise-header">Sähköposti</h5>
+      <p className="instructions">
+        <h2 className="instruction-header">Ohje:</h2>
+        <b></b>
         Tässä tehtävässä opetellaan sähköpostin kirjoittamista ja
         liittetiedoston liittämistä. Sähköpostissa on aina kolme eri osaa:
         Vastaanottaja, aihe ja itse viesti. Joskus tarpeen on neljäs osa joka on
@@ -54,13 +57,12 @@ const Email = () => {
         vastaanottajalle {recipient} ja muistathan myös liittää CV:si
         sähköpostin liitteeksi!
       </p>
-      <p>
+      <p className="instructions">
         Huomioitavaa: Joskus sähköpostien liitteen nappulassa on vain
         paperiliittimen eli klemmarin kuva, älä siis hätäänny, jos tässä
-        tehtävässä käytettävää nappia ei tosielämän sähköposteista löydy.
+        tehtävässä käytettävää nappia ei tosielämän sähköposteista löydy. Ei
+        huolta, kirjoittamasi hakemus ei oikeasti lähde mihinkään!
       </p>
-      <p>Ei huolta, kirjoittamasi hakemus ei oikeasti lähde mihinkään</p>
-      <h5>Sähköposti</h5>
       <br></br>
       <div className="field">
         <form onSubmit={submitMessage}>
@@ -75,18 +77,19 @@ const Email = () => {
             type="text"
             value={newHeader}
             onChange={handleHeaderChange}
+            className={newHeader}
           ></input>
           <label>Viesti</label>
           <textarea
             type="text"
             value={newMessage}
             onChange={handleMessageChange}
+            className={newMessage}
           ></textarea>
           <label>Lataa liite</label>
           <input type="file"></input>
           <button type="submit">Lähetä</button>
         </form>
-        <br></br>
       </div>
     </div>
   );
