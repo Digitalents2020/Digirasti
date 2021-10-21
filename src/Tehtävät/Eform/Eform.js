@@ -66,10 +66,13 @@ const Eform = () => {
   if (submitted) {
     return (
       <div className="form-box">
-        <p>
-          Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen! Voit nyt
-          siirtyä seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
-        </p>
+        <div className="success">
+          <h2 className="little-header">Onnistuit!</h2>
+          <p>
+            Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen! Voit nyt
+            siirtyä seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
+          </p>
+        </div>
       </div>
     );
   }

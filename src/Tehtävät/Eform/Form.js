@@ -31,7 +31,9 @@ const Form = ({
         onChange={handleFirstNameChange}
         type="text"
       />
-      {errors.FirstName?.type === "required" && "Etunimi on pakollinen tieto"}
+      {errors.FirstName?.type === "required" && (
+        <p className="error-message">Etunimi on pakollinen tieto</p>
+      )}
       <label htmlFor="LastName">Sukunimi *</label>
       <input
         {...register("LastName", { required: true })}
@@ -40,7 +42,9 @@ const Form = ({
         onChange={handleLastNameChange}
         type="text"
       ></input>
-      {errors.LastName?.type === "required" && "Sukunimi on pakollinen tieto"}
+      {errors.LastName?.type === "required" && (
+        <p className="error-message">Sukunimi on pakollinen tieto</p>
+      )}
       <label htmlFor="Email">Sähköposti *</label>
       <input
         {...register("Email", { required: true })}
@@ -49,8 +53,9 @@ const Form = ({
         onChange={handleEmailChange}
         type="email"
       ></input>
-      {errors.Email?.type === "required" &&
-        "Sähköpostiosoite on pakollinen tieto"}
+      {errors.Email?.type === "required" && (
+        <p className="error-message">Sähköpostiosoite on pakollinen tieto</p>
+      )}
       <label htmlFor="Number">Puhelinnumero *</label>
       <input
         {...register("Number", { required: true })}
@@ -59,8 +64,9 @@ const Form = ({
         onChange={handleNumberChange}
         type="text"
       ></input>
-      {errors.Number?.type === "required" &&
-        "Puhelinnumero on pakollinen tieto"}
+      {errors.Number?.type === "required" && (
+        <p className="error-message">Puhelinnumero on pakollinen tieto</p>
+      )}
       <label htmlFor="Work1">Työkokemus 1</label>
       <textarea
         id="Work1"
@@ -89,9 +95,9 @@ const Form = ({
         <option>Ylempi korkeakoulututkinto</option>
         <option>Ei mikään näistä (Selitä alempana tarkemmin)</option>
       </select>
-      <label htmlFor="degreeName">Tutkintonimike</label>
+      <label htmlFor="degree-name">Tutkintonimike</label>
       <input
-        id="degreeName"
+        id="degree-name"
         value={newDegreeName}
         onChange={handleDegreeNameChange}
         type="text"
@@ -106,7 +112,9 @@ const Form = ({
         value={newAbout}
         onChange={handleAboutChange}
       ></textarea>
-      {errors.Number?.type === "required" && "Esittely on pakollinen tieto"}
+      {errors.Number?.type === "required" && (
+        <p className="error-message">Esittely on pakollinen tieto</p>
+      )}
       <label htmlFor="Attachment">Lataa liite</label>
       <input id="Attachment" type="file"></input>
       <button type="submit">Lähetä</button>

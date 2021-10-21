@@ -36,11 +36,14 @@ const Email = () => {
   if (submitted) {
     return (
       <div className="form-box">
-        <p>
-          Hienoa! Näin kirjoitat ja lähetät sähköpostin ja lisäät siihen
-          liitteen! Voit nyt siirtyä seuraavaan tehtävään tai odottaa ohjaajan
-          antamia ohjeita
-        </p>
+        <div className="success">
+          <h2 className="little-header">Onnistuit!</h2>
+          <p>
+            Hienoa! Näin kirjoitat ja lähetät sähköpostin ja lisäät siihen
+            liitteen! Voit nyt siirtyä seuraavaan tehtävään tai odottaa ohjaajan
+            antamia ohjeita
+          </p>
+        </div>
       </div>
     );
   }
@@ -75,8 +78,11 @@ const Email = () => {
             value={newRecipient}
             onChange={handleRecipientChange}
           />
-          {errors.Vastaanottaja?.type === "required" &&
-            "Vastaanottajaa ei voi jättää tyhjäksi!"}
+          {errors.Vastaanottaja?.type === "required" && (
+            <p className="error-message">
+              Vastaanottajaa ei voi jättää tyhjäksi
+            </p>
+          )}
           <label>Aihe</label>
           <input
             {...register("Aihe", { required: true })}
@@ -85,8 +91,9 @@ const Email = () => {
             onChange={handleHeaderChange}
             className={newHeader}
           />
-          {errors.Aihe?.type === "required" &&
-            "Aihetta ei voi jättää tyhjäksi!"}
+          {errors.Aihe?.type === "required" && (
+            <p className="error-message">Aihetta ei voi jättää tyhjäksi</p>
+          )}
           <label>Viesti</label>
           <textarea
             {...register("Viesti", { required: true })}
@@ -95,8 +102,11 @@ const Email = () => {
             onChange={handleMessageChange}
             className={newMessage}
           />
-          {errors.Viesti?.type === "required" &&
-            "Viestikenttää ei voi jättää tyhjäksi!"}
+          {errors.Viesti?.type === "required" && (
+            <p className="error-message">
+              Viestikenttää ei voi jättää tyhjäksi
+            </p>
+          )}
           <label>Lataa liite</label>
           <input type="file"></input>
           <button type="submit">Lähetä</button>
