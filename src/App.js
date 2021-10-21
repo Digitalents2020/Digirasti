@@ -16,6 +16,8 @@ const App = () => {
     <Router>
       <div className="App">
         <nav>
+          <div className="aalto-form">
+          </div>
           <h1>Digirastin tehtäväsivut</h1>
           <ul>
             <li>
@@ -49,8 +51,6 @@ const App = () => {
               <Link to='/Eform'>Sähköisen lomakkeen täyttö</Link>
             </li>
           </ul>
-          <div className="aalto-form">
-          </div>
         </nav>
 
         <div className="content">

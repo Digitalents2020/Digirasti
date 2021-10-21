@@ -20,7 +20,7 @@ body {
 nav {
   /* position: sticky; */
   width: 25vw;
-  height: 100%;
+  min-height: 100%;
   background-color: #0618bb;
   color: #ffffff;
 }
@@ -54,10 +54,9 @@ a:active {
   width: 100%;
   height: 30px;
   background-image: url("aalto.svg");
-  position: absolute;
-  display: inline-block;
+  position: fixed;
   right: 25vw;
-  background-repeat: repeat-y;
+  background-repeat: repeat-x;
 }
 
 .content {
