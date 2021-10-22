@@ -16,8 +16,7 @@ const App = () => {
     <Router>
       <div className="App">
         <nav>
-          <div className="aalto-form">
-          </div>
+          <div className="aalto-element" />
           <h1>Digirastin tehtäväsivut</h1>
           <ul>
             <li>
