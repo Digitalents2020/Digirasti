@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../Email/common-form.css";
+import { useForm } from "react-hook-form";
 import Form from "./Form";
 
 const Eform = () => {
@@ -50,33 +51,28 @@ const Eform = () => {
     setAbout(event.target.value);
   };
 
-  const submitForm = (event) => {
-    event.preventDefault();
-    const allFields = [
-      newFirstName,
-      newLastName,
-      newEmail,
-      newNumber,
-      newWork1,
-      newWork2,
-      newDegree,
-      newDegreeName,
-      newAbout,
-    ];
-    if (allFields.every((field) => field !== "")) {
-      setSubmitted(true);
-    } else {
-      alert("Tarkistathan että olet täyttänyt kaikki kentät");
-    }
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    criteriaMode: "all",
+  });
+
+  const submitForm = () => {
+    setSubmitted(true);
   };
 
   if (submitted) {
     return (
       <div className="form-box">
-        <p>
-          Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen! Voit nyt
-          siirtyä seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
-        </p>
+        <div className="success">
+          <h2 className="little-header">Onnistuit!</h2>
+          <p>
+            Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen! Voit nyt
+            siirtyä seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
+          </p>
+        </div>
       </div>
     );
   }
@@ -84,15 +80,17 @@ const Eform = () => {
   return (
     <div className="form-box">
       <h5 className="exercise-header">Sähköinen lomake</h5>
-      <p className="instructions">
+      <div className="instructions">
         <h2 className="instruction-header">Ohje:</h2>
-        <b></b>
-        Tässä tehtävässä opetellaan sähköisen lomakkeen täyttämistä ja
-        lähettämistä. Sähköisiä lomakkeita on monenlaisia, mutta tässä
-        harjoitellaan täyttämään mahdollisesti työnhaun yhteydessä vastaan
-        tulevaa lomaketta. Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä
-        mitään minnekkään!
-      </p>
+        <p>
+          Tässä tehtävässä opetellaan sähköisen lomakkeen täyttämistä ja
+          lähettämistä. Sähköisiä lomakkeita on monenlaisia, mutta tässä
+          harjoitellaan täyttämään mahdollisesti työnhaun yhteydessä vastaan
+          tulevaa lomaketta. Huomaathan, että tähdellä merkityt kentät ovat
+          pakollisia. Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä
+          mitään minnekkään!
+        </p>
+      </div>
       <h2 className="little-header">Hakulomake</h2>
       <br></br>
       <div className="field">
@@ -115,7 +113,9 @@ const Eform = () => {
           handleDegreeNameChange={handleDegreeNameChange}
           newAbout={newAbout}
           handleAboutChange={handleAboutChange}
-          submitForm={submitForm}
+          submitForm={handleSubmit(submitForm)}
+          register={register}
+          errors={errors}
         />
         <br></br>
       </div>

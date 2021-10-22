@@ -30,7 +30,7 @@ textarea {
   text-align: left;
 }
 
-.degreeName {
+.degree-name {
   text-align: left;
 }
 
@@ -90,4 +90,19 @@ Button {
 button:hover {
   background-color: #000000;
   color: #ffffff;
+}
+
+.error-message {
+  color: #fd4f00;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.success {
+  display: block;
+  padding: 40px;
+  margin: 10px 0;
+  text-align: left;
+  background-color: #ffffff;
+  color: #000000;
 }
