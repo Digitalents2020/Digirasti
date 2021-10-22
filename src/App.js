@@ -4,7 +4,7 @@ import Home from "./Home";
 import Tehtava1 from "./Tehtävät/Tehtava1";
 import Tehtava2 from "./Tehtävät/Tehtava2";
 import Kopiointi from "./Tehtävät/Kopiointi/Kopiointi";
-import Tietosuoja from "./Tehtävät/Tietosuoja/Tietosuoja";
+import Tietosuoja from "./Tehtävät/Tietosuoja/Tietosuoja1";
 import FallingGame from "./Tehtävät/Tippuvat kirjaimet/FallingGame";
 import FallingWords from "./Tehtävät/Tippuvat sanat/FallingWords";
 import DragAndDrop from "./Tehtävät/Vedä&Pudota/VedaJaPudota";
