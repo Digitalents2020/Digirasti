@@ -17,6 +17,8 @@ const Email = () => {
     criteriaMode: "all",
   });
 
+  //CriteriaMode all means that all validation checks are on
+
   const handleRecipientChange = (event) => {
     setRecipient(event.target.value);
   };
@@ -33,6 +35,8 @@ const Email = () => {
     setSubmitted(true);
   };
 
+  //If form is submited succesfully the "success" message below is rendered
+
   if (submitted) {
     return (
       <div className="form-box">
@@ -47,6 +51,11 @@ const Email = () => {
       </div>
     );
   }
+
+  //Form validation is made by using React Hook Form library
+
+  //{...register("Vastaanottaja", { required: true })} The Register handles the input and the required is a tag for the validation
+  //{errors.Vastaanottaja?.type === "required" && (<p className="error-message"> Vastaanottajaa ei voi jättää tyhjäksi </p>
 
   return (
     <div className="form-box">
