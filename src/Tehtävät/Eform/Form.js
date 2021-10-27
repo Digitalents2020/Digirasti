@@ -1,3 +1,5 @@
+// The form for eform exercise is constructed here as its own separate module
+
 const Form = ({
   newFirstName,
   handleFirstNameChange,

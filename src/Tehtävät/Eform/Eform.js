@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Email/common-form.css";
 import { useForm } from "react-hook-form";
 import Form from "./Form";
+//form is imported from its own separate module
 
 const Eform = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -51,6 +52,9 @@ const Eform = () => {
     setAbout(event.target.value);
   };
 
+  //The Register handles the input and the "required: true" is for validation and error purposes.
+  //The "CriteriaMode: all" below means that all errors for the field are displayed at once
+
   const {
     register,
     formState: { errors },
@@ -62,6 +66,8 @@ const Eform = () => {
   const submitForm = () => {
     setSubmitted(true);
   };
+
+  //If form is submited succesfully the "success" message below is rendered
 
   if (submitted) {
     return (

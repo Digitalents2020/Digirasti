@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import "./common-form.css";
+//React Form Hook library documentation: https://github.com/react-hook-form/react-hook-form
 
+//The hard coded fake email addres
 const recipient = "esimerkki.makkonen@example.com";
 
 const Email = () => {
@@ -17,7 +19,7 @@ const Email = () => {
     criteriaMode: "all",
   });
 
-  //CriteriaMode all means that all validation checks are on
+  //The above "CriteriaMode: all" means that all errors for the field are displayed at once
 
   const handleRecipientChange = (event) => {
     setRecipient(event.target.value);
@@ -54,8 +56,8 @@ const Email = () => {
 
   //Form validation is made by using React Hook Form library
 
-  //{...register("Vastaanottaja", { required: true })} The Register handles the input and the required is a tag for the validation
-  //{errors.Vastaanottaja?.type === "required" && (<p className="error-message"> Vastaanottajaa ei voi jättää tyhjäksi </p>
+  //{...register("Vastaanottaja", { required: true })} The Register handles the input and the "required: true" is for validation and error purposes.
+  //{errors.Vastaanottaja?.type === "required" && (<p className="error-message"> Vastaanottajaa ei voi jättää tyhjäksi </p> In this part we define the type of error and an error message for it, in this case the field cannot be left empty.
 
   return (
     <div className="form-box">
