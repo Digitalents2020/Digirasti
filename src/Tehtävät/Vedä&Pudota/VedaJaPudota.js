@@ -73,15 +73,12 @@ export default function DragAndDrop(){
             if(keyNum==="8"){
                kasi = 1
                all++
-              alert('OUJEE')
             }else if(keyNum==="9"){
               ysi = 1
               all++
-              alert('OUJEE')
             }else if(keyNum==="10"){
               kymppi = 1
               all++
-              alert('OUJEE')
             }
             setState(state+1)
           }
