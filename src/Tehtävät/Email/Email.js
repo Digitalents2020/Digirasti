@@ -12,6 +12,7 @@ const Email = () => {
   const [newHeader, setHeader] = useState("");
   const [newMessage, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [attached, setAttached] = useState(false);
   const {
     register,
     formState: { errors },
@@ -34,7 +35,10 @@ const Email = () => {
     setMessage(event.target.value);
   };
 
-  const submitMessage = () => {
+  const submitMessage = (data) => {
+    if (data.Attachment.length !== 0) {
+      setAttached(true);
+    }
     setSubmitted(true);
   };
 
@@ -50,6 +54,13 @@ const Email = () => {
             liitteen! Voit nyt siirtyä seuraavaan tehtävään tai odottaa ohjaajan
             antamia ohjeita
           </p>
+          {!attached && (
+            <p>
+              ...Mutta sinulta taisi unohtua liitetiedosto. Ei hätää, voit
+              halutessasi yrittää uudelleen tai klikata "seuraava tehtävä"
+              painiketta.
+            </p>
+          )}
         </div>
         <Link to="/Eform" className="NextPrac" role="button">
           Seuraava tehtävä
@@ -123,7 +134,7 @@ const Email = () => {
             </p>
           )}
           <label>Lataa liite</label>
-          <input type="file"></input>
+          <input {...register("Attachment")} type="file"></input>
           <button type="submit">Lähetä</button>
         </form>
       </div>
