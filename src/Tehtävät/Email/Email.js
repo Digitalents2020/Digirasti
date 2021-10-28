@@ -4,13 +4,7 @@ import { useForm } from "react-hook-form";
 import "./common-form.css";
 //React Form Hook library documentation: https://github.com/react-hook-form/react-hook-form
 
-//The hard coded fake email addres
-const recipient = "esimerkki.makkonen@example.com";
-
 const Email = () => {
-  const [newRecipient, setRecipient] = useState("");
-  const [newHeader, setHeader] = useState("");
-  const [newMessage, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [attached, setAttached] = useState(false);
   const {
@@ -22,18 +16,6 @@ const Email = () => {
   });
 
   //The above "CriteriaMode: all" means that all errors for the field are displayed at once
-
-  const handleRecipientChange = (event) => {
-    setRecipient(event.target.value);
-  };
-
-  const handleHeaderChange = (event) => {
-    setHeader(event.target.value);
-  };
-
-  const handleMessageChange = (event) => {
-    setMessage(event.target.value);
-  };
 
   const submitMessage = (data) => {
     if (data.Attachment.length !== 0) {
@@ -84,8 +66,8 @@ const Email = () => {
           liittetiedoston liittämistä. Sähköpostissa on aina kolme eri osaa:
           Vastaanottaja, aihe ja itse viesti. Joskus tarpeen on neljäs osa joka
           on liitetiedosto. Tehtävänäsi on kirjoittaa pienimuotoinen työhakemus
-          vastaanottajalle {recipient} ja muistathan myös liittää CV:si
-          sähköpostin liitteeksi!{" "}
+          vastaanottajalle esimerkki.makkonen@example.com ja muistathan myös
+          liittää CV:si sähköpostin liitteeksi!
         </p>
       </div>
       <p className="instructions">
@@ -99,35 +81,28 @@ const Email = () => {
         <form onSubmit={handleSubmit(submitMessage)}>
           <label>Vastaanottaja</label>
           <input
-            {...register("Vastaanottaja", { required: true })}
-            type="email"
-            value={newRecipient}
-            onChange={handleRecipientChange}
+            {...register("Vastaanottaja", {
+              required: true,
+              pattern: /esimerkki\.makkonen@example\.com/,
+            })}
           />
+          {errors.Vastaanottaja?.type === "pattern" && (
+            <p className="error-message">
+              Tarkistathan kirjoittamasi osoitteen
+            </p>
+          )}
           {errors.Vastaanottaja?.type === "required" && (
             <p className="error-message">
               Vastaanottajaa ei voi jättää tyhjäksi
             </p>
           )}
           <label>Aihe</label>
-          <input
-            {...register("Aihe", { required: true })}
-            type="text"
-            value={newHeader}
-            onChange={handleHeaderChange}
-            className={newHeader}
-          />
+          <input {...register("Aihe", { required: true })} type="text" />
           {errors.Aihe?.type === "required" && (
             <p className="error-message">Aihetta ei voi jättää tyhjäksi</p>
           )}
           <label>Viesti</label>
-          <textarea
-            {...register("Viesti", { required: true })}
-            type="text"
-            value={newMessage}
-            onChange={handleMessageChange}
-            className={newMessage}
-          />
+          <textarea {...register("Viesti", { required: true })} type="text" />
           {errors.Viesti?.type === "required" && (
             <p className="error-message">
               Viestikenttää ei voi jättää tyhjäksi
