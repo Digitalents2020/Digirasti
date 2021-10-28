@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Email/common-form.css";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import Form from "./Form";
 //form is imported from its own separate module
 
@@ -79,6 +80,9 @@ const Eform = () => {
             siirtyä seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
           </p>
         </div>
+        <Link to="/Tehtava1" className="NextPrac" role="button">
+          Seuraava tehtävä
+        </Link>
       </div>
     );
   }

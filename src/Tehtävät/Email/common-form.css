@@ -88,6 +88,25 @@ textarea {
   padding-bottom: 10px;
 }
 
+.NextPrac {
+  background-color: #9fc9eb;
+  border-style: none;
+  color: #000000;
+  padding: 10px 22px;
+  margin-top: 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+.NextPrac:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 select {
   display: block;
   padding: 0.5rem;

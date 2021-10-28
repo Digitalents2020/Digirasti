@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./common-form.css";
 //React Form Hook library documentation: https://github.com/react-hook-form/react-hook-form
@@ -50,6 +51,9 @@ const Email = () => {
             antamia ohjeita
           </p>
         </div>
+        <Link to="/Eform" className="NextPrac" role="button">
+          Seuraava tehtävä
+        </Link>
       </div>
     );
   }
