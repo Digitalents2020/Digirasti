@@ -123,7 +123,7 @@ function FallingWords() {
         <motion.div key={letter}
         id={letter}
         initial={{y:0, x:location}}
-        animate={{y:497,
+        animate={{y:502,
           transitionEnd:{backgroundColor: "#BD2719"}}}
         transition={{duration:animLenght,ease:"linear"}}
         className="lettersWords">{letter.substring(2)}
@@ -194,7 +194,7 @@ function FallingWords() {
   /*checks if Caps Lock is on and gives a reminder to turn it off*/
   function capslockvaroitus(){
     if(capslockpaalla){
-    return <div className="vinkkiWords" id="vinkkiWords">Laita Caps lock pois päältä</div>
+    return <div className="vinkkiWords" id="vinkkiWords">Laita Caps Lock pois päältä</div>
     }
   }
 
@@ -254,7 +254,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
               <div className="uiDivWords">
                 <p className="uiWords">Pisteet: {points}</p>
                 <p className="uiWords">Elämät: {lives}</p>
-                <form onSubmit={cleanUpLetter}>
+                <form onSubmit={cleanUpLetter} autocomplete="off">
                 <input className="wordInputWords" id="wordInputWords" onChange={handler} autoFocus={true} onBlur={({ target }) => setTimeout(
                   function () {target.focus({preventScroll:true})},2)}/>
                 <button type="submit" className="hidebuttonWords" ></button>
