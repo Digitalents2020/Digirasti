@@ -24,6 +24,7 @@ const Email = () => {
     setSubmitted(true);
   };
 
+  //Try again button reloads the page back to its original state
   function refreshPage() {
     window.location.reload();
   }
