@@ -24,6 +24,10 @@ const Email = () => {
     setSubmitted(true);
   };
 
+  function refreshPage() {
+    window.location.reload();
+  }
+
   //If form is submited succesfully the "success" message below is rendered
 
   if (submitted) {
@@ -36,12 +40,19 @@ const Email = () => {
             liitteen! Voit nyt siirtyä seuraavaan tehtävään tai odottaa ohjaajan
             antamia ohjeita
           </p>
+          <br></br>
           {!attached && (
-            <p>
-              ...Mutta sinulta taisi unohtua liitetiedosto. Ei hätää, voit
-              halutessasi yrittää uudelleen tai klikata "seuraava tehtävä"
-              painiketta.
-            </p>
+            <>
+              <h2 className="little-header">...Mutta</h2>
+              <p>
+                Sinulta taisi unohtua liitetiedosto. Ei hätää, voit halutessasi
+                yrittää uudelleen tai klikata "seuraava tehtävä" painiketta.
+              </p>
+              <button className="NextPrac" type="button" onClick={refreshPage}>
+                {" "}
+                <span>Yritä uudelleen</span>{" "}
+              </button>
+            </>
           )}
         </div>
         <Link to="/Eform" className="NextPrac" role="button">
