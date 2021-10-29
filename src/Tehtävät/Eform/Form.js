@@ -1,3 +1,5 @@
+// The form for eform exercise is constructed here as its own separate module
+
 const Form = ({
   newFirstName,
   handleFirstNameChange,
@@ -116,7 +118,7 @@ const Form = ({
         <p className="error-message">Esittely on pakollinen tieto</p>
       )}
       <label htmlFor="Attachment">Lataa liite</label>
-      <input id="Attachment" type="file"></input>
+      <input {...register("Attachment")} type="file"></input>
       <button type="submit">Lähetä</button>
     </form>
   );

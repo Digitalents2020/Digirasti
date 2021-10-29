@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "../Email/common-form.css";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import Form from "./Form";
+//form is imported from its own separate module
 
 const Eform = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -51,6 +53,11 @@ const Eform = () => {
     setAbout(event.target.value);
   };
 
+  const [attached, setAttached] = useState(false);
+
+  //The Register handles the input and the "required: true" is for validation and error purposes.
+  //The "CriteriaMode: all" below means that all errors for the field are displayed at once
+
   const {
     register,
     formState: { errors },
@@ -59,9 +66,19 @@ const Eform = () => {
     criteriaMode: "all",
   });
 
-  const submitForm = () => {
+  const submitForm = (data) => {
+    if (data.Attachment.length !== 0) {
+      setAttached(true);
+    }
     setSubmitted(true);
   };
+
+  //Try again button reloads the page back to its original state
+  function refreshPage() {
+    window.location.reload();
+  }
+
+  //If form is submited succesfully the "success" message below is rendered
 
   if (submitted) {
     return (
@@ -72,7 +89,24 @@ const Eform = () => {
             Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen! Voit nyt
             siirtyä seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
           </p>
+          <br></br>
+          {!attached && (
+            <>
+              <h2 className="little-header">...Mutta</h2>
+              <p>
+                Sinulta taisi unohtua liitetiedosto. Ei hätää, voit halutessasi
+                yrittää uudelleen tai klikata "seuraava tehtävä" painiketta.
+              </p>
+              <button className="NextPrac" type="button" onClick={refreshPage}>
+                {" "}
+                <span>Yritä uudelleen</span>{" "}
+              </button>
+            </>
+          )}
         </div>
+        <Link to="/Tehtava1" className="NextPrac" role="button">
+          Seuraava tehtävä
+        </Link>
       </div>
     );
   }

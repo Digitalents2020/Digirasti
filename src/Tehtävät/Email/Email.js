@@ -1,14 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./common-form.css";
-
-const recipient = "esimerkki.makkonen@example.com";
+//React Form Hook library documentation: https://github.com/react-hook-form/react-hook-form
 
 const Email = () => {
-  const [newRecipient, setRecipient] = useState("");
-  const [newHeader, setHeader] = useState("");
-  const [newMessage, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [attached, setAttached] = useState(false);
   const {
     register,
     formState: { errors },
@@ -17,21 +15,21 @@ const Email = () => {
     criteriaMode: "all",
   });
 
-  const handleRecipientChange = (event) => {
-    setRecipient(event.target.value);
-  };
+  //The above "CriteriaMode: all" means that all errors for the field are displayed at once
 
-  const handleHeaderChange = (event) => {
-    setHeader(event.target.value);
-  };
-
-  const handleMessageChange = (event) => {
-    setMessage(event.target.value);
-  };
-
-  const submitMessage = () => {
+  const submitMessage = (data) => {
+    if (data.Attachment.length !== 0) {
+      setAttached(true);
+    }
     setSubmitted(true);
   };
+
+  //Try again button reloads the page back to its original state
+  function refreshPage() {
+    window.location.reload();
+  }
+
+  //If form is submited succesfully the "success" message below is rendered
 
   if (submitted) {
     return (
@@ -43,10 +41,32 @@ const Email = () => {
             liitteen! Voit nyt siirtyä seuraavaan tehtävään tai odottaa ohjaajan
             antamia ohjeita
           </p>
+          <br></br>
+          {!attached && (
+            <>
+              <h2 className="little-header">...Mutta</h2>
+              <p>
+                Sinulta taisi unohtua liitetiedosto. Ei hätää, voit halutessasi
+                yrittää uudelleen tai klikata "seuraava tehtävä" painiketta.
+              </p>
+              <button className="NextPrac" type="button" onClick={refreshPage}>
+                {" "}
+                <span>Yritä uudelleen</span>{" "}
+              </button>
+            </>
+          )}
         </div>
+        <Link to="/Eform" className="NextPrac" role="button">
+          Seuraava tehtävä
+        </Link>
       </div>
     );
   }
+
+  //Form validation is made by using React Hook Form library
+
+  //{...register("Vastaanottaja", { required: true })} The Register handles the input and the "required: true" is for validation and error purposes.
+  //{errors.Vastaanottaja?.type === "required" && (<p className="error-message"> Vastaanottajaa ei voi jättää tyhjäksi </p> In this part we define the type of error and an error message for it, in this case the field cannot be left empty.
 
   return (
     <div className="form-box">
@@ -58,8 +78,8 @@ const Email = () => {
           liittetiedoston liittämistä. Sähköpostissa on aina kolme eri osaa:
           Vastaanottaja, aihe ja itse viesti. Joskus tarpeen on neljäs osa joka
           on liitetiedosto. Tehtävänäsi on kirjoittaa pienimuotoinen työhakemus
-          vastaanottajalle {recipient} ja muistathan myös liittää CV:si
-          sähköpostin liitteeksi!{" "}
+          vastaanottajalle esimerkki.makkonen@example.com ja muistathan myös
+          liittää CV:si sähköpostin liitteeksi!
         </p>
       </div>
       <p className="instructions">
@@ -73,42 +93,35 @@ const Email = () => {
         <form onSubmit={handleSubmit(submitMessage)}>
           <label>Vastaanottaja</label>
           <input
-            {...register("Vastaanottaja", { required: true })}
-            type="email"
-            value={newRecipient}
-            onChange={handleRecipientChange}
+            {...register("Vastaanottaja", {
+              required: true,
+              pattern: /esimerkki\.makkonen@example\.com/,
+            })}
           />
+          {errors.Vastaanottaja?.type === "pattern" && (
+            <p className="error-message">
+              Tarkistathan kirjoittamasi osoitteen
+            </p>
+          )}
           {errors.Vastaanottaja?.type === "required" && (
             <p className="error-message">
               Vastaanottajaa ei voi jättää tyhjäksi
             </p>
           )}
           <label>Aihe</label>
-          <input
-            {...register("Aihe", { required: true })}
-            type="text"
-            value={newHeader}
-            onChange={handleHeaderChange}
-            className={newHeader}
-          />
+          <input {...register("Aihe", { required: true })} type="text" />
           {errors.Aihe?.type === "required" && (
             <p className="error-message">Aihetta ei voi jättää tyhjäksi</p>
           )}
           <label>Viesti</label>
-          <textarea
-            {...register("Viesti", { required: true })}
-            type="text"
-            value={newMessage}
-            onChange={handleMessageChange}
-            className={newMessage}
-          />
+          <textarea {...register("Viesti", { required: true })} type="text" />
           {errors.Viesti?.type === "required" && (
             <p className="error-message">
               Viestikenttää ei voi jättää tyhjäksi
             </p>
           )}
           <label>Lataa liite</label>
-          <input type="file"></input>
+          <input {...register("Attachment")} type="file"></input>
           <button type="submit">Lähetä</button>
         </form>
       </div>
