@@ -110,7 +110,8 @@ function FallingGame() {
       lett = id + lett
       arrayOfLetters.push(lett);
       ready=false
-
+   
+      //Every 20 points, shortens the falling time by 1 sec
       if(points%20===0 && points > 0 && animLenght > 1 && timeoutLenght > 1200){
         animLenght = animLenght - 1
         timeoutLenght = timeoutLenght - 1000
@@ -145,6 +146,8 @@ function FallingGame() {
     }}
 
 
+/*Creates new letter div based on the letter that was deleted from the array, also sets the div's background color to green.
+Gets also the position from the deleted letter. After timeout removes the new div*/
 function stopAndFlashGreen(letterToSearch, left, top){
   var div = document.createElement('div');
   div.id = letterToSearch;
@@ -175,6 +178,7 @@ function stopAndFlashGreen(letterToSearch, left, top){
     }
     var index = arrayOfLetters.indexOf(letterToSearch);
     if (arrayOfLetters.indexOf(letterToSearch) >= 0) {
+      //Gets position of the rightly typed letter that exist in the array, then calls stopAndFlashGreen() function.
       var element = document.getElementById(letterToSearch)
       var rect = element.getBoundingClientRect();
       var top = rect.y
@@ -186,6 +190,8 @@ function stopAndFlashGreen(letterToSearch, left, top){
       capslockpaalla = false
       arrayOfLetters.splice(index, 1)
 
+      /*Changes the border to reflect if the typed letter exist on the array, to green if it does.
+      After short timeout changes it back to blue*/
       if( document.getElementById('letterClassGame')!=null){
         document.getElementById('letterClassGame').style.borderColor = '#009246' ; 
         setTimeout(function() {
@@ -196,13 +202,16 @@ function stopAndFlashGreen(letterToSearch, left, top){
       }
     }else if (state !=="" && state !== "try"){
       lives--
+         /*If typed letter doesnt exist and difficulty is easy or normal,
+       checks if capslock is on and sets the caplockpaalla var to true if it is*/
       if((difficultySetting===4500 || difficultySetting===3500) && ((state.charCodeAt(0) >= 65 && state.charCodeAt(0) <= 90) || 
       state.charCodeAt(0) === 197 || state.charCodeAt(0) === 196
        || state.charCodeAt(0) === 214)){
          capslockpaalla = true
        }
 
-
+    /*Changes the border to reflect if the typed letter exist on the array, to red if it doesnt.
+      After short timeout changes it back to blue*/
       if(document.getElementById('letterClassGame')!=null){
           document.getElementById('letterClassGame').style.borderColor = '#BD2719' ; 
           setTimeout(function() {

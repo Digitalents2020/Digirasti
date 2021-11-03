@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import './VedaJaPudota.css';
-import { useState, useRef } from "react";
+import { useState } from "react";
 import RaahattavaObjekti from './RaahattavaObjekti';
 import {Link } from "react-router-dom";
 
-
+//Creates win condition variables
 var eka = 0
 var toka = 0
 var kolmas = 0
@@ -20,21 +20,24 @@ var all = 0
 
 export default function DragAndDrop(){
     const [state, setState] = useState(0);
-    const constraintsRef = useRef(null)
 
+    /*When draggable object is released, get position of the released object, basket and rabbit. If the positions match and the object is 
+    right, then it changes the variable that belongs to the object.*/
     function pysahdys(dragOb,keyNum){
+      //Get position of the basket
       const basket = document.getElementById('basket1');
       var topBasket = basket.getBoundingClientRect().top;
       var leftBasket = basket.getBoundingClientRect().left;
 
+      //Get position of the rabbit
       const rabbit = document.getElementById('rabbit');
       var topRabbit = rabbit.getBoundingClientRect().top;
       var leftRabbit = rabbit.getBoundingClientRect().left;
 
+      //Get position of the dragged object
       const dragObject = document.getElementById(dragOb);
       var left=dragObject.getBoundingClientRect().left
       var top=dragObject.getBoundingClientRect().top;
-      console.log(top,left,keyNum,'topB',topBasket,'leftB',leftBasket)
         if(((left >= leftBasket) & left <= (leftBasket + 180)) & ((top >= topBasket) & (top <= topBasket+100))){
               if(keyNum==="1"){
                 eka = 1
@@ -84,6 +87,7 @@ export default function DragAndDrop(){
           }
         }
 
+        //Checks if win conditions are met, if they are, calls ClearVariables() function
     function nextPract(){
           if(all === 10){
             return (
@@ -92,6 +96,7 @@ export default function DragAndDrop(){
           }
         }
 
+        // Set all variables to 0. Also after very short timeout put focus to the appearing button
       function ClearVariables(){
         eka = 0 
         toka = 0
@@ -110,6 +115,7 @@ export default function DragAndDrop(){
           },2)
        }
 
+       //If win conditions are met, creates fireworks and after 3 sec creates explosion.
        function victory(){
          if(all===10){
             return(
@@ -151,7 +157,8 @@ export default function DragAndDrop(){
         }
           }
 
-
+  /*Returns 10 draggable objects and non-draggable rabbit, tree and basket. 
+  Also calls functions that have win condition checks inside them.*/
   return(
     <div className ="dragCont">
       <h1 className="headlineDrag">Vedä Ja Pudota</h1>
@@ -160,30 +167,30 @@ export default function DragAndDrop(){
         <p>Tehtävänäsi on raahata kaikki <strong>hedelmät</strong> koriin ja syöttää <strong>juurekset</strong> jänikselle.</p>
       </div>
       {console.log("yhteensä", eka+toka+kolmas+neljas)}
-      <motion.div ref={constraintsRef} className="canvas">
+      <motion.div className="canvas">
         <div className="basket1" id="basket1">
         </div>
         <div className="rabbit" id="rabbit">
         </div>
-        <RaahattavaObjekti pysahdys={pysahdys} int={eka} constraintsRef={constraintsRef}
-          className="dragObject1" id="dragObject1" keyNum="1" all={all}/>
-        <RaahattavaObjekti pysahdys={pysahdys} int={toka} constraintsRef={constraintsRef}
-          className="dragObject2" id="dragObject2" keyNum="2" all={all}/>
-        <RaahattavaObjekti pysahdys={pysahdys} int={kolmas} constraintsRef={constraintsRef}
-          className="dragObject3" id="dragObject3" keyNum="3" all={all}/>
-        <RaahattavaObjekti pysahdys={pysahdys} int={neljas} constraintsRef={constraintsRef}
-          className="dragObject4" id="dragObject4" keyNum="4" all={all}/>
-        <RaahattavaObjekti pysahdys={pysahdys} int={viides} constraintsRef={constraintsRef}
-          className="dragObject5" id="dragObject5" keyNum="5" all={all}/>
-        <RaahattavaObjekti pysahdys={pysahdys} int={kuudes} constraintsRef={constraintsRef}
-          className="dragObject6" id="dragObject6" keyNum="6" all={all}/>
-        <RaahattavaObjekti pysahdys={pysahdys} int={seiska} constraintsRef={constraintsRef}
-          className="dragObject7" id="dragObject7" keyNum="7" all={all}/>
-        <RaahattavaObjekti pysahdys={pysahdys} int={kasi} constraintsRef={constraintsRef}
+        <RaahattavaObjekti pysahdys={pysahdys} int={eka} 
+          className="dragObject1" id="dragObject1" keyNum="1" />
+        <RaahattavaObjekti pysahdys={pysahdys} int={toka} 
+          className="dragObject2" id="dragObject2" keyNum="2" />
+        <RaahattavaObjekti pysahdys={pysahdys} int={kolmas} 
+          className="dragObject3" id="dragObject3" keyNum="3" />
+        <RaahattavaObjekti pysahdys={pysahdys} int={neljas}
+          className="dragObject4" id="dragObject4" keyNum="4" />
+        <RaahattavaObjekti pysahdys={pysahdys} int={viides} 
+          className="dragObject5" id="dragObject5" keyNum="5" />
+        <RaahattavaObjekti pysahdys={pysahdys} int={kuudes} 
+          className="dragObject6" id="dragObject6" keyNum="6" />
+        <RaahattavaObjekti pysahdys={pysahdys} int={seiska} 
+          className="dragObject7" id="dragObject7" keyNum="7" />
+        <RaahattavaObjekti pysahdys={pysahdys} int={kasi} 
           className="dragObject8" id="dragObject8" keyNum="8" />
-        <RaahattavaObjekti pysahdys={pysahdys} int={ysi} constraintsRef={constraintsRef}
+        <RaahattavaObjekti pysahdys={pysahdys} int={ysi}
           className="dragObject9" id="dragObject9" keyNum="9" />
-        <RaahattavaObjekti pysahdys={pysahdys} int={kymppi} constraintsRef={constraintsRef}
+        <RaahattavaObjekti pysahdys={pysahdys} int={kymppi} 
           className="dragObject10" id="dragObject10" keyNum="10" />
       </motion.div>
       {victory()}

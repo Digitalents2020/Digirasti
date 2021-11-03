@@ -78,7 +78,7 @@ function FallingWords() {
     setState("try")
   }
 
-
+//Sets state to reflect the typed word
   const handler = (event) => {
     event.preventDefault();
     setState(event.target.value);
@@ -101,7 +101,8 @@ function FallingWords() {
       arrayOfWords.push(lett);
       ready=false
 
-      if(points%2===0 && points > 0 && animLenght > 3 && timeoutLenght > 3200){
+        //Every 40 points, shortens the falling time by 1 sec
+      if(points%40===0 && points > 0 && animLenght > 3 && timeoutLenght > 3200){
         animLenght = animLenght - 1
         timeoutLenght = timeoutLenght - 1000
       }
@@ -134,7 +135,8 @@ function FallingWords() {
     }}
 
 
-
+/*Creates new word div based on the word that was deleted from the array, also sets the div's background color to green.
+    Gets also the position from the deleted word. After timeout removes the new div*/
     function stopAndFlashGreen(wordToSearch, left, top){
       var div = document.createElement('div');
       div.id = wordToSearch;
@@ -152,7 +154,7 @@ function FallingWords() {
     }, 200)
     }
 
-    /*Checks if the pressed letter(state) exist in the array
+    /*Checks if the typed word(state) exist in the array
     and if it does removes the letter from the array and awards a point.
     Otherwise takes one live.*/
   function cleanUpLetter(e) {
@@ -166,6 +168,7 @@ function FallingWords() {
     }
     var index = arrayOfWords.indexOf(wordToSearch);
     if (arrayOfWords.indexOf(wordToSearch) >= 0) {
+      //Gets position of the rightly typed word that exist in the array, then calls stopAndFlashGreen() function.
       var element = document.getElementById(wordToSearch)
       var rect = element.getBoundingClientRect();
       var top = rect.y
@@ -181,6 +184,8 @@ function FallingWords() {
       lives--
       document.getElementById('wordInputWords').value = ''
       var length = state.length -1
+      /*If typed word doesnt exist and difficulty is easy or normal,
+       checks if capslock is on and sets the caplockpaalla var to true if it is*/
       if((difficultySetting===5000 || difficultySetting===3500) && ((state.charCodeAt(0) >= 65 && state.charCodeAt(0) <= 90) || 
       state.charCodeAt(0) === 197 || state.charCodeAt(0) === 196 || state.charCodeAt(0) === 214 || (state.charCodeAt(length) >= 65 && state.charCodeAt(length) <= 90) 
       || state.charCodeAt(length) === 197 || state.charCodeAt(length) === 196 || state.charCodeAt(length) === 214)){
@@ -191,14 +196,15 @@ function FallingWords() {
     }
   }
 
-  /*checks if Caps Lock is on and gives a reminder to turn it off*/
+  /*checks if capslockpaalla var is true and gives a reminder to turn Caps Lock off*/
   function capslockvaroitus(){
     if(capslockpaalla){
     return <div className="vinkkiWords" id="vinkkiWords">Laita Caps Lock pois päältä</div>
     }
   }
 
-  
+  /*Changes the border to reflect if the typed word exist on the array, to green if it does and red if it doesnt. 
+  After short timeout changes it back to blue*/
   function changeBorder(trueOrfalse){
     if(trueOrfalse===true){
       if(document.getElementById('letterClassWords')!=null){
@@ -217,15 +223,15 @@ function FallingWords() {
       }
   }
 
-    /*Removes letter from array. Is called when making new letter and
-    contains 15sec timeout, so the letter is removed when letter hit the
+    /*Removes word from array. Is called when making new word and
+    contains 15sec timeout, so the word is removed when it hits the
     ground, if it still exist.*/
-  function cleanFallenLetter(letter) {
-    var index = arrayOfWords.indexOf(letter);
-    if (arrayOfWords.indexOf(letter) >= 0) {
+  function cleanFallenLetter(word) {
+    var index = arrayOfWords.indexOf(word);
+    if (arrayOfWords.indexOf(word) >= 0) {
         arrayOfWords.splice(index, 1);
      lives--;
-     setCleanFallen(letter)
+     setCleanFallen(word)
     }}
 
   
