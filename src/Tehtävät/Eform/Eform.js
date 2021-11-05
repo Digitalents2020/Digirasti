@@ -94,8 +94,9 @@ const Eform = () => {
             <>
               <h2 className="little-header">...Mutta</h2>
               <p>
-                Sinulta taisi unohtua liitetiedosto. Ei hätää, voit halutessasi
-                yrittää uudelleen tai klikata "seuraava tehtävä" painiketta.
+                Sinulta taisi unohtua liitetiedosto. Ei hätää, voit silti
+                halutessasi yrittää uudelleen tai klikata "seuraava tehtävä"
+                painiketta.
               </p>
               <button className="NextPrac" type="button" onClick={refreshPage}>
                 {" "}
