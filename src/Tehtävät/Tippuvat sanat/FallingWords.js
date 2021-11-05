@@ -5,13 +5,35 @@ import Timer from "./Timer";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-var words = [
+var words = "";
+var wordsEasy = [
   "juosta","laukata", "hyppiä","iloita","olla","miettiä","ampua","juoda","keskustella","apu","koira","kissa","miksi","yksi",
   "kalja", "puro","auto","poika","tyttö","isä","äiti","joki","joskus","kisa","pilkki","onki","ei","hai","he","hius","hän",
   "häät","ien","ja","jae","jaosto","jo","jos","jää","koe","koi","kuin","kun","kuu","kyy","luo","luu","maa","me","mies","muu",
   "myös","ne","niin","noin","nuo","nyt","näin","pian","pii","pois","puu","päin","pää","rae","ruis","saos","se","seis","seos",
   "siis","suo","suu","syy","syys","säe","sää","taas","tae","tai","taos","te","tee","teos","tie","tuo","työ",
   "täi","vaan","vai","vain","voi","vyö","yö",
+];
+
+var wordsHard = [
+  "Aamutähti", "aamuvirkku","aamuvuoro","Aaltoviiva","aakkoset","absoluutti","adventti","Afrikka","aiheuttaja","aikuistua","aistikas",
+  "aivoriihi","Aivastaa","aivopähkinä","Aaltokuvio","alikersantti","alitajunta","alijäämä","alennus","allekirjoittaa","ALV","Laiskistua",
+  "anemia","anniskelu","appiukko","anoppi","BMW","Banaani","Bataatti","Bakteeri","bambu","baretti","barista","Betoni","biljardi","biojäte",
+  "Boakäärme","budjetti","buffetti","Celsius","Curry","Costa Rica","Datanomi","Delfiini","desibeli","Diktaattori","diplomaatti","dippikastike",
+  "dobermanni","DNA-testi","dopingtesti","duunari","edamjuusto","Edellytys","eettisyys","Eduskunta","demonstroida","design","devaaja",
+  "digitaalinen","dokumentoida","domino","dynamiitti","dramaattinen","elohopea","eliökunta","eläinperäinen","eläinrakas","emulaattori",
+  "epäreilu","Etelä-Korea","Etikkahappo","Fanaattinen","Flegmaattisuus","fyysinen","Galaksi","geeniterapia","gratinoida","haaskalintu",
+  "haastemies","Haarapääsky","hajaantuminen","heilahdus","Hedelmöittyä","Hektinen","helikopteri","hieskoivu","Hopeahäät","hopeakaivos",
+  "ihailtavasti","ihmeellisyys","Ikipäiviksi","ikkunalauta","imperialismi","Jakojäännös","Jengiläinen","jokainen","Jongleerata",
+  "Jälkiuuni","Jyrkänne","Kaalinkerä","Kaatopaikka","Kiharrin","Kirkollisvero","Kolikonheitto","Kullanmuru","Kvanttikemia","käpristellä",
+  "laillistaa","lakritsijuuri","Legioona","lennonjohto","lohkolämmitin","Lottovoitto","lumimyrsky","lähimaksu","lämmityslaite","Maakellari",
+  "Maakreivi","Magneetti","Moninainen","Menneisyys","Mökki","Märkätila","Näkymätön","Nälkäinen","Neilikka","näennäisesti","Nuolisade",
+  "Naiivi","Nälkälakko","Nautinto","Olematon","Oikeamielinen","Odotusaika","Olemassaolo","Oleskelulupa","Ompelukone","Opettaminen",
+  "Päällikkö","Painepesuri","Palautustölkki","Pallogrilli","Pelastusvene","Perkolaattori","Piispanhattu","Pikkutarkka","Poliisivoimat",
+  "Rikollisuus","Rakastua","Radiotaajuus","Raivokohtaus","Rettelöitsijä","rikkidioksidi","Romutuspalkkio","Rullalauta","Saapuminen",
+  "Sairaalassa","Seinäkello","Siirappinen","Sekajäte","Säälittävä","Sörnäinen","tahdittomuus","Tekohampaat","Terveystieto","Täsmätieto",
+  "Taistelu","Terminaattori","Tietyömaa","Uhmakkuus","Uimarengas","Ulkoilma","Urakoitsija","Uuttera","Vaakataso","Vaalikausi","Velkavankeus",
+  "verikoe","Verovirkailija","Viittomakieli",""
 ];
 
 var arrayOfWords = [];
@@ -38,12 +60,16 @@ function FallingWords() {
   function startGame(difficulty) {
     if (difficulty === "helppo") {
       difficultySetting = 5000;
+      words = wordsEasy;
     } else if (difficulty === "normaali") {
       difficultySetting = 3500;
+      words = wordsEasy;
     } else if (difficulty === "vaikea") {
-      difficultySetting = 2500;
+      difficultySetting = 3000;
+      words = wordsHard;
     } else {
-      difficultySetting = 1500;
+      difficultySetting = 2500;
+      words = wordsHard;
     }
     arrayOfWords = [];
     points = 0;
@@ -107,9 +133,17 @@ function FallingWords() {
     }
     if (lives > 0) {
       if (firefoxAgent) {
+        if(difficultySetting <= 3000){
+          location = randomIntFromInterval(20, 750);
+        }else{
         location = randomIntFromInterval(20, 800);
+        }
       } else {
+        if(difficultySetting <= 3000){
+          location = randomIntFromInterval(-380, 260);
+        }else{
         location = randomIntFromInterval(-380, 370);
+        }
       }
       console.log(animLenght);
       return (
