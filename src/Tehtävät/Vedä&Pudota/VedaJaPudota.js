@@ -70,7 +70,6 @@ export default function DragAndDrop(){
                 
                 alert('Porkkana ei kuulu koriin')
               }
-              console.log(eka,toka,kolmas,neljas,viides,kuudes,seiska)
               setState(state+1)
           }else if(((left >= leftRabbit) & left <= (leftRabbit + 70)) & ((top >= topRabbit) & (top <= topRabbit+100))){
             if(keyNum==="8"){
@@ -166,7 +165,6 @@ export default function DragAndDrop(){
         <h2 className="ohjetxtDrag">Ohje:</h2>
         <p>Tehtävänäsi on raahata kaikki <strong>hedelmät</strong> koriin ja syöttää <strong>juurekset</strong> jänikselle.</p>
       </div>
-      {console.log("yhteensä", eka+toka+kolmas+neljas)}
       <motion.div className="canvas">
         <div className="basket1" id="basket1">
         </div>
