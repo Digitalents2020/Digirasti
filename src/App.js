@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home";
-import Tehtava1 from "./Tehtävät/Tehtava1";
-import Tehtava2 from "./Tehtävät/Tehtava2";
+import Tehtava1 from "./Tehtävät/Editointi/Tehtava1";
+import Tehtava2 from "./Tehtävät/Kirjoitus/Tehtava2";
 import Kopiointi from "./Tehtävät/Kopiointi/Kopiointi";
 import Tietosuoja from "./Tehtävät/Tietosuoja/Tietosuoja";
 import FallingGame from "./Tehtävät/Tippuvat kirjaimet/FallingGame";
@@ -16,6 +16,7 @@ const App = () => {
     <Router>
       <div className="App">
         <nav>
+          <div className="aalto-element" />
           <h1>Digirastin tehtäväsivut</h1>
           <ul>
             <li>

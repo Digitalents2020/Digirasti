@@ -9,6 +9,26 @@
     margin: 20px 30px 10px;
   }
 
+  .victoryClass{
+    height: 200px;
+    width: 200px;
+    margin-left: auto;
+    margin-top: -500px;
+    position: absolute;
+    background-image: url("Pictures/Explode.png");
+    background-size: cover;
+  }
+  
+  .victoryClassFire{
+    height: 120px;
+    width: 120px;
+    margin-left: auto;
+    margin-top: -500px;
+    position: absolute;
+    background-image: url("Pictures/Firework.png");
+    background-size: cover;
+  }
+
 .canvas{
     height: 600px;
     width: 600px;
@@ -25,6 +45,16 @@
     background-image: url("Pictures/basket.png");
     background-size: cover;
 }
+
+.rabbit{
+    height: 130px;
+    width: 130px;
+    transform: translate3d(50px, 470px, 0px);
+    position: absolute;
+    background-image: url("Pictures/rabbit.png");
+    background-size: cover;
+}
+
 
 .headlineDrag{
     display: block;

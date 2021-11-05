@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "../Email/common-form.css";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import Form from "./Form";
+//form is imported from its own separate module
 
 const Eform = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -50,49 +53,79 @@ const Eform = () => {
     setAbout(event.target.value);
   };
 
-  const submitForm = (event) => {
-    event.preventDefault();
-    const allFields = [
-      newFirstName,
-      newLastName,
-      newEmail,
-      newNumber,
-      newWork1,
-      newWork2,
-      newDegree,
-      newDegreeName,
-      newAbout,
-    ];
-    if (allFields.every((field) => field !== "")) {
-      setSubmitted(true);
-    } else {
-      alert("Tarkistathan että olet täyttänyt kaikki kentät");
+  const [attached, setAttached] = useState(false);
+
+  //The Register handles the input and the "required: true" is for validation and error purposes.
+  //The "CriteriaMode: all" below means that all errors for the field are displayed at once
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    criteriaMode: "all",
+  });
+
+  const submitForm = (data) => {
+    if (data.Attachment.length !== 0) {
+      setAttached(true);
     }
+    setSubmitted(true);
   };
+
+  //Try again button reloads the page back to its original state
+  function refreshPage() {
+    window.location.reload();
+  }
+
+  //If form is submited succesfully the "success" message below is rendered
 
   if (submitted) {
     return (
       <div className="form-box">
-        <p>
-          Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen! Voit nyt
-          siirtyä seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
-        </p>
+        <div className="success">
+          <h2 className="little-header">Onnistuit!</h2>
+          <p>
+            Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen! Voit nyt
+            siirtyä seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
+          </p>
+          <br></br>
+          {!attached && (
+            <>
+              <h2 className="little-header">...Mutta</h2>
+              <p>
+                Sinulta taisi unohtua liitetiedosto. Ei hätää, voit halutessasi
+                yrittää uudelleen tai klikata "seuraava tehtävä" painiketta.
+              </p>
+              <button className="NextPrac" type="button" onClick={refreshPage}>
+                {" "}
+                <span>Yritä uudelleen</span>{" "}
+              </button>
+            </>
+          )}
+        </div>
+        <Link to="/Tehtava1" className="NextPrac" role="button">
+          Seuraava tehtävä
+        </Link>
       </div>
     );
   }
 
   return (
     <div className="form-box">
-      <p>
-        Tässä tehtävässä opetellaan sähköisen lomakkeen täyttämistä ja
-        lähettämistä. Sähköisiä lomakkeita on monenlaisia, mutta tässä
-        harjoitellaan täyttämään mahdollisesti työnhaun yhteydessä vastaan
-        tulevaa lomaketta.
-      </p>
-      <p>
-        Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä mitään minnekkään
-      </p>
-      <h5>Hakulomake</h5>
+      <h5 className="exercise-header">Sähköinen lomake</h5>
+      <div className="instructions">
+        <h2 className="instruction-header">Ohje:</h2>
+        <p>
+          Tässä tehtävässä opetellaan sähköisen lomakkeen täyttämistä ja
+          lähettämistä. Sähköisiä lomakkeita on monenlaisia, mutta tässä
+          harjoitellaan täyttämään mahdollisesti työnhaun yhteydessä vastaan
+          tulevaa lomaketta. Huomaathan, että tähdellä merkityt kentät ovat
+          pakollisia. Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä
+          mitään minnekkään!
+        </p>
+      </div>
+      <h2 className="little-header">Hakulomake</h2>
       <br></br>
       <div className="field">
         <Form
@@ -114,7 +147,9 @@ const Eform = () => {
           handleDegreeNameChange={handleDegreeNameChange}
           newAbout={newAbout}
           handleAboutChange={handleAboutChange}
-          submitForm={submitForm}
+          submitForm={handleSubmit(submitForm)}
+          register={register}
+          errors={errors}
         />
         <br></br>
       </div>

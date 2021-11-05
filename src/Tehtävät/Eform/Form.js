@@ -1,3 +1,5 @@
+// The form for eform exercise is constructed here as its own separate module
+
 const Form = ({
   newFirstName,
   handleFirstNameChange,
@@ -18,37 +20,55 @@ const Form = ({
   newAbout,
   handleAboutChange,
   submitForm,
+  register,
+  errors,
 }) => {
   return (
     <form onSubmit={submitForm}>
-      <label htmlFor="FirstName">Etunimi</label>
+      <label htmlFor="FirstName">Etunimi *</label>
       <input
+        {...register("FirstName", { required: true })}
         id="FirstName"
         value={newFirstName}
         onChange={handleFirstNameChange}
         type="text"
-      ></input>
-      <label htmlFor="LastName">Sukunimi</label>
+      />
+      {errors.FirstName?.type === "required" && (
+        <p className="error-message">Etunimi on pakollinen tieto</p>
+      )}
+      <label htmlFor="LastName">Sukunimi *</label>
       <input
+        {...register("LastName", { required: true })}
         id="LastName"
         value={newLastName}
         onChange={handleLastNameChange}
         type="text"
       ></input>
-      <label htmlFor="Email">Sähköposti</label>
+      {errors.LastName?.type === "required" && (
+        <p className="error-message">Sukunimi on pakollinen tieto</p>
+      )}
+      <label htmlFor="Email">Sähköposti *</label>
       <input
+        {...register("Email", { required: true })}
         id="Email"
         value={newEmail}
         onChange={handleEmailChange}
         type="email"
       ></input>
-      <label htmlFor="Number">Puhelinnumero</label>
+      {errors.Email?.type === "required" && (
+        <p className="error-message">Sähköpostiosoite on pakollinen tieto</p>
+      )}
+      <label htmlFor="Number">Puhelinnumero *</label>
       <input
+        {...register("Number", { required: true })}
         id="Number"
         value={newNumber}
         onChange={handleNumberChange}
         type="text"
       ></input>
+      {errors.Number?.type === "required" && (
+        <p className="error-message">Puhelinnumero on pakollinen tieto</p>
+      )}
       <label htmlFor="Work1">Työkokemus 1</label>
       <textarea
         id="Work1"
@@ -61,9 +81,9 @@ const Form = ({
         value={newWork2}
         onChange={handleWork2Change}
       ></textarea>
-      <label htmlFor="Degree">Korkein koulutusaste</label>
+      <label htmlFor="degree">Korkein koulutusaste</label>
       <select
-        className="Degree"
+        className="degree"
         value={newDegree}
         onChange={handleDegreeChange}
       >
@@ -77,28 +97,28 @@ const Form = ({
         <option>Ylempi korkeakoulututkinto</option>
         <option>Ei mikään näistä (Selitä alempana tarkemmin)</option>
       </select>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <label htmlFor="DegreeName">Tutkintonimike</label>
+      <label htmlFor="degree-name">Tutkintonimike</label>
       <input
-        id="DegreeName"
+        id="degree-name"
         value={newDegreeName}
         onChange={handleDegreeNameChange}
         type="text"
       ></input>
       <br></br>
       <label htmlFor="About">
-        Kerro kolmella lauseella, millainen työntekijä olisit
+        Kerro kolmella lauseella, millainen työntekijä olisit *
       </label>
       <textarea
+        {...register("About", { required: true })}
         id="About"
         value={newAbout}
         onChange={handleAboutChange}
       ></textarea>
+      {errors.Number?.type === "required" && (
+        <p className="error-message">Esittely on pakollinen tieto</p>
+      )}
       <label htmlFor="Attachment">Lataa liite</label>
-      <input id="Attachment" type="file"></input>
+      <input {...register("Attachment")} type="file"></input>
       <button type="submit">Lähetä</button>
     </form>
   );

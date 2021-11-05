@@ -133,7 +133,7 @@ function FallingGame() {
         <motion.div key={letter}
         id={letter}
         initial={{y:0, x:location}}
-        animate={{y:497,
+        animate={{y:502,
           transitionEnd:{backgroundColor: "#BD2719"}}}
         transition={{duration:animLenght,ease:"linear"}}
         exit={{}}
@@ -152,7 +152,8 @@ function stopAndFlashGreen(letterToSearch, left, top){
   div.className = "lettersGame"
   div.style.backgroundColor = '#009246'
   var scrolledFromTop = window.pageYOffset
-  div.style.left = left + "px"
+  var scrolledFromLeft= window.pageXOffset
+  div.style.left = left + scrolledFromLeft + "px"
   div.style.top = top + scrolledFromTop + "px"
   document.getElementById('letterClassGame').appendChild(div);
  setTimeout(function() {
@@ -215,7 +216,7 @@ function stopAndFlashGreen(letterToSearch, left, top){
 /*checks if Caps Lock is on and gives a reminder to turn it off*/
   function capslockvaroitus(){
     if(capslockpaalla){
-    return <div className="vinkkiGame" id="vinkkiGame">Laita Caps lock pois päältä</div>
+    return <div className="vinkkiGame" id="vinkkiGame">Laita Caps Lock pois päältä</div>
     }
   }
 
@@ -230,7 +231,6 @@ function stopAndFlashGreen(letterToSearch, left, top){
      setCleanFallen(letter)
     }}
 
-  
   /*Set values back to starting values*/
   function tryAgain() {
     arrayOfLetters = [];
@@ -268,7 +268,8 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
                 <p className="uiGame">Elämät: {lives}</p>
               </div>
             </div>
-            <input className="hideGame" onKeyPress={(e) => handler(e)} autoFocus={true} onBlur={({ target }) => target.focus({preventScroll:true})}></input>
+            <input className="hideGame" id="hideGame" onKeyPress={(e) => handler(e)} autoFocus={true}  onBlur={({ target }) => setTimeout(
+                  function () {target.focus({preventScroll:true})},2)}></input>
               {clearState()}
           </div>
         </div>
