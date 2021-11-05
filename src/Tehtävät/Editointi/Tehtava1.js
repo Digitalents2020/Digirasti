@@ -31,7 +31,7 @@ const Tehtava1 = () => {
     
     const textChangeEvent = ( event ) => {
       if( event.target.value === '' ) {
-        alert( "Upsista, poistit kaiken tekstin. Näin ei pitänyt tehdä!\n\n *DEMO:* Tekstin voi joko poistaa tai olla poistamatta. \n Pienempi harmi ehkä jos ei poista.")
+        alert( "Ups, poistit kaiken tekstin. Näin ei pitänyt tehdä!" )
       }
       else {
         setTaskText( event.target.value )
@@ -50,7 +50,7 @@ const Tehtava1 = () => {
 
     const testinappi3 = () => {
       setTaskText( "" )
-      alert( "Upsista, poistit kaiken tekstin. Näin ei pitänyt tehdä!\n\n *DEMO:* Tekstin voi joko poistaa tai olla poistamatta. \n Pienempi harmi ehkä jos ei poista." )
+      alert( "Ups, poistit kaiken tekstin. Näin ei pitänyt tehdä!" )
     }
 
     const testinappi4 = () => {
@@ -90,11 +90,11 @@ const Tehtava1 = () => {
 
     const Sivukomponentti1 = () => { 
       return (
-        <div className="fallingGame">
-        <div className="canvasGame">
-          <h1 className="otsikkoGame">Editointitehtävä</h1>
-          <div className="ohjeGame">
-            <h2 className="ohjetxtGame">Ohje:</h2>
+        <div className="mainPageFrame">
+        <div className="innerPageFrame">
+          <h1 className="pageHeaderFrame">Editointitehtävä</h1>
+          <div className="pageInfoFrame">
+            <h2 className="pageInfoTextHeader">Ohje:</h2>
             <p>Liiku tekstissä nuolinäppäimillä ja poista tekstistä kaikki numerot.</p>
           </div>
         </div>
@@ -107,8 +107,8 @@ const Tehtava1 = () => {
           <p/>
           <textarea style={textareastyle} onChange={textChangeEvent} value={taskText}></textarea>
           <p><br/></p>
-          <Button className="startbtnGame" handleClick={ tarkistusFunktio } label="Tarkista tulos" value="validateResult"/>
-          <Button className="startbtnGame" handleClick={ aloitusAlustaFunktio } label="Aloita alusta" value="reset"/>
+          <Button className="actionButton" handleClick={ tarkistusFunktio } label="Tarkista tulos" value="validateResult"/>
+          <Button className="actionButton" handleClick={ aloitusAlustaFunktio } label="Aloita alusta" value="reset"/>
           </div>
       </div>
       )
