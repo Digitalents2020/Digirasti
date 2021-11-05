@@ -33,7 +33,8 @@ var wordsHard = [
   "Rikollisuus","Rakastua","Radiotaajuus","Raivokohtaus","Rettelöitsijä","rikkidioksidi","Romutuspalkkio","Rullalauta","Saapuminen",
   "Sairaalassa","Seinäkello","Siirappinen","Sekajäte","Säälittävä","Sörnäinen","tahdittomuus","Tekohampaat","Terveystieto","Täsmätieto",
   "Taistelu","Terminaattori","Tietyömaa","Uhmakkuus","Uimarengas","Ulkoilma","Urakoitsija","Uuttera","Vaakataso","Vaalikausi","Velkavankeus",
-  "verikoe","Verovirkailija","Viittomakieli",""
+  "verikoe","Verovirkailija","Viittomakieli","Vuokravakuus","Väestönkasvu","Yritys","Yksilöllisyys","Yleisurheilija","yöperhonen","Zoomi",
+  "Äkkipikainen","Äimänkäkenä","Ärsyyntyä","Äyskäröinti","Ääntenlasku","Öljyntuotanto","Öykkäröidä","Öljyvoimala","Öyhöttäjä"
 ];
 
 var arrayOfWords = [];
