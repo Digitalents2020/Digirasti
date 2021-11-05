@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function RaahattavaObjekti(props){
-  console.log(props.int)
+  /*if variable that is created and appointed to the div is 0 return draggable object, if it is 1 creates non draggable div and 
+  positions it inside the basket. If draggable objects classname ends with 8,9, or 10 and variable is 1 hides the div.*/
       if(props.int===0){
         return(
           <motion.div className={props.className} id={props.id} drag
@@ -18,7 +19,6 @@ export default function RaahattavaObjekti(props){
           </motion.div>)
       }else{
           var condPos = 400 + (10 * (props.keyNum*2))
-          console.log("condPos =", condPos)
           return(
             <div className={props.className} id={props.id} style={{marginLeft:condPos, marginTop:480}}>
             </div>)}
