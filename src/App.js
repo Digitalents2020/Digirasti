@@ -4,6 +4,7 @@ import Home from "./Home";
 import Tehtava1 from "./Tehtävät/Tehtava1";
 import Tehtava2 from "./Tehtävät/Tehtava2";
 import Kopiointi from "./Tehtävät/Kopiointi/Kopiointi";
+import Tietoturva from "./Tehtävät/Tietoturva/tietoturva";
 import Tietosuoja from "./Tehtävät/Tietosuoja/Tietosuoja";
 import FallingGame from "./Tehtävät/Tippuvat kirjaimet/FallingGame";
 import FallingWords from "./Tehtävät/Tippuvat sanat/FallingWords";
@@ -32,6 +33,9 @@ const App = () => {
               <Link to="/kopiointi">Kopiointitehtävä</Link>
             </li>
             <li>
+              <Link to="/tietoturva">Tietoturvatehtävä</Link>
+            </li>
+            <li>
               <Link to="/tietosuoja">Tietosuojatehtävä</Link>
             </li>
             <li>
@@ -44,17 +48,17 @@ const App = () => {
               <Link to="/veda_ja_pudota">Vedä ja pudota</Link>
             </li>
             <li>
-              <Link to='/Email'>Sähköposti</Link>
+              <Link to="/Email">Sähköposti</Link>
             </li>
             <li>
-              <Link to='/Eform'>Sähköisen lomakkeen täyttö</Link>
+              <Link to="/Eform">Sähköinen lomake</Link>
             </li>
           </ul>
         </nav>
 
         <div className="content">
           <Switch>
-          <Route exact path="/">
+            <Route exact path="/">
               <Home />
             </Route>
             <Route path="/Tehtava1">
@@ -66,6 +70,9 @@ const App = () => {
             <Route path="/kopiointi">
               <Kopiointi />
             </Route>
+            <Route path="/tietoturva">
+              <Tietoturva />
+            </Route>
             <Route path="/tietosuoja">
               <Tietosuoja />
             </Route>
@@ -76,7 +83,7 @@ const App = () => {
               <FallingWords />
             </Route>
             <Route path="/veda_ja_pudota">
-            <DragAndDrop />
+              <DragAndDrop />
             </Route>
             <Route path="/Email">
               <Email />
