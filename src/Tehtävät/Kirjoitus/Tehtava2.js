@@ -8,7 +8,7 @@ const Tehtava2 = () => {
 
   const textareastyle = {
       minHeight: '100px',
-      minWidth: '95%'
+      minWidth: '100%'
   }
 
   setTimeout(() => {
@@ -27,20 +27,19 @@ const Tehtava2 = () => {
   
   const Sivukomponentti1 = () => { 
     return (
-      <div className="fallingGame">
-        <div className="canvasGame">
-          <h1 className="otsikkoGame">Kirjoitustehtävä</h1>
-          <div className="ohjeGame">
-            <h2 className="ohjetxtGame">Ohje:</h2>
+      <div className="mainPageFrame">
+        <div className="innerPageFrame">
+          <h1 className="pageHeaderFrame">Kirjoitustehtävä</h1>
+          <div className="pageInfoFrame">
+            <h2 className="pageInfoTextHeader">Ohje:</h2>
             <p>Kirjoita seuraava teksti alla olevaan kenttään. Teksti antaa sinulle vihjeitä, miten voit toimia, kun kirjoitat tekstiä.</p>
           </div>
-          <div className="ohjeGame">
-          <p>Tässä tehtävässä harjoittelen kirjoittamaan tietokoneen näppäimistöllä. Opin käyttämään isoja ja pieniä kirjaimia sekä erikoismerkkejä! Kun olen oppinut kirjoittamaan tietokoneella sujuvasti, voin kirjoittaa työhakemuksen minua kiinnostavaan työpaikkaan. Mistä saisin apua ansioluettelon tekemiseen?</p>
-          </div>
-          <div>
-            <textarea style={textareastyle} onChange={textChangeEvent} value={taskText}></textarea>
-            <p><br/></p>
-          </div>
+          <div className="pageInfoFrame">
+            <p>Tässä tehtävässä harjoittelen kirjoittamaan tietokoneen näppäimistöllä. Opin käyttämään isoja ja pieniä kirjaimia sekä erikoismerkkejä! Kun olen oppinut kirjoittamaan tietokoneella sujuvasti, voin kirjoittaa työhakemuksen minua kiinnostavaan työpaikkaan. Mistä saisin apua ansioluettelon tekemiseen?</p>
+		    <div className="textAreaContainer">
+              <textarea style={textareastyle} onChange={textChangeEvent} value={taskText}></textarea>
+            </div>		  
+		  </div>
         </div>
       </div>
       )
@@ -49,7 +48,6 @@ const Tehtava2 = () => {
     return (
         <div>
             <Sivukomponentti1/>
-
             <Link to="/kopiointi" className="NextPrac"
               role="button">Seuraava tehtävä</Link>
         </div>
