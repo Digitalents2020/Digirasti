@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import {Link } from "react-router-dom"
+import React, { useState }from 'react'
+import { Link } from "react-router-dom"
 import "./Tehtava2.css"
 
 const Tehtava2 = () => {
   const [ counter, setCounter ] = useState( 0 )
+  const [ taskTimer, countTaskTimer ] = useState( '00:00' )
   const [ taskText, setTaskText ] = useState('')
 
   const textareastyle = {
@@ -19,10 +20,23 @@ const Tehtava2 = () => {
     setCounter( counter + 1 )
   }
   
+  const aikatulosfunktio = () => {
+	let minutes = Math.floor( counter / 60 );
+	let seconds = counter - minutes * 60;
+	if( seconds < 10 ) seconds = "0" + seconds
+	
+	let resultTime = minutes + ":" + seconds	
+	countTaskTimer( resultTime )
+  }
+
   const textChangeEvent = ( event ) => {
-    alert( `Hienoa, olet tehnyt tämän tehtävän onnistuneesti!\nVoit nyt jatkaa seuraavaan tehtävään.\n\nSulkeaksesi tämän ilmoituksen, paina OK-painiketta.` )
-    console.log( "Tekstikenttä triggered" )
     setTaskText( event.target.value )
+	aikatulosfunktio()
+	
+	let correctValue = 'Tässä tehtävässä harjoittelen kirjoittamaan tietokoneen näppäimistöllä. Opin käyttämään isoja ja pieniä kirjaimia sekä erikoismerkkejä! Kun olen oppinut kirjoittamaan tietokoneella sujuvasti, voin kirjoittaa työhakemuksen minua kiinnostavaan työpaikkaan. Mistä saisin apua ansioluettelon tekemiseen?'
+	if( event.target.value === correctValue ) {
+		alert( `Hienoa, olet tehnyt tämän tehtävän onnistuneesti!\nAikaa sinulla tähän tehtävään meni ${taskTimer}.\n\nVoit nyt jatkaa seuraavaan tehtävään.\nSulkeaksesi tämän ilmoituksen, paina OK-painiketta.` )
+	}
   }
   
   const Sivukomponentti1 = () => { 
@@ -37,20 +51,20 @@ const Tehtava2 = () => {
           <div className="pageInfoFrame">
             <p>Tässä tehtävässä harjoittelen kirjoittamaan tietokoneen näppäimistöllä. Opin käyttämään isoja ja pieniä kirjaimia sekä erikoismerkkejä! Kun olen oppinut kirjoittamaan tietokoneella sujuvasti, voin kirjoittaa työhakemuksen minua kiinnostavaan työpaikkaan. Mistä saisin apua ansioluettelon tekemiseen?</p>
 		    <div className="textAreaContainer">
-              <textarea style={textareastyle} onChange={textChangeEvent} value={taskText}></textarea>
+              <textarea style={textareastyle} onChange={textChangeEvent} value={taskText} placeholder='Klikkaa tähän aloittaaksesi kirjoittamisen' />
             </div>		  
 		  </div>
         </div>
       </div>
       )
     }
-    
+
     return (
         <div>
             <Sivukomponentti1/>
-            <Link to="/kopiointi" className="NextPrac"
+            <Link to="/Tehtava1" className="NextPrac"
               role="button">Seuraava tehtävä</Link>
         </div>
     )
-}
- export default Tehtava2
+  }
+  export default Tehtava2
