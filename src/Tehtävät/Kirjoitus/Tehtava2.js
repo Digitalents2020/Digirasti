@@ -32,16 +32,16 @@ const Tehtava2 = () => {
   const textChangeEvent = ( event ) => {
     setTaskText( event.target.value )
 	aikatulosfunktio()
-	
+ 
 	let correctValue = 'Tässä tehtävässä harjoittelen kirjoittamaan tietokoneen näppäimistöllä. Opin käyttämään isoja ja pieniä kirjaimia sekä erikoismerkkejä! Kun olen oppinut kirjoittamaan tietokoneella sujuvasti, voin kirjoittaa työhakemuksen minua kiinnostavaan työpaikkaan. Mistä saisin apua ansioluettelon tekemiseen?'
 	if( event.target.value === correctValue ) {
 		alert( `Hienoa, olet tehnyt tämän tehtävän onnistuneesti!\nAikaa sinulla tähän tehtävään meni ${taskTimer}.\n\nVoit nyt jatkaa seuraavaan tehtävään.\nSulkeaksesi tämän ilmoituksen, paina OK-painiketta.` )
 	}
   }
   
-  const Sivukomponentti1 = () => { 
     return (
-      <div className="mainPageFrame">
+        <div>
+            <div className="mainPageFrame">
         <div className="innerPageFrame">
           <h1 className="pageHeaderFrame">Kirjoitustehtävä</h1>
           <div className="pageInfoFrame">
@@ -56,15 +56,9 @@ const Tehtava2 = () => {
 		  </div>
         </div>
       </div>
-      )
-    }
-
-    return (
-        <div>
-            <Sivukomponentti1/>
             <Link to="/Tehtava1" className="NextPrac"
               role="button">Seuraava tehtävä</Link>
-        </div>
-    )
+        </div>)
+    
   }
   export default Tehtava2
