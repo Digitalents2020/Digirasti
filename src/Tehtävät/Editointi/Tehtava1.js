@@ -73,9 +73,10 @@ import "./Tehtava1.css"
         }
     }
 
-    const Sivukomponentti1 = () => { 
-      return (
-        <div className="mainPageFrame">
+
+    return (
+        <div>
+                 <div className="mainPageFrame">
         <div className="innerPageFrame">
           <h1 className="pageHeaderFrame">Editointitehtävä</h1>
           <div className="pageInfoFrame">
@@ -90,12 +91,6 @@ import "./Tehtava1.css"
           <Button className="actionButton" handleClick={ aloitusAlustaFunktio } label="Aloita alusta" value="reset" />
           </div>
       </div>
-      )
-    }
-
-    return (
-        <div>
-            <Sivukomponentti1/>
             <Link to="/kopiointi" className="NextPrac"
               role="button">Seuraava tehtävä</Link>
         </div>
