@@ -16,7 +16,7 @@ import "./Tehtava1.css"
     const [ taskText, setTaskText ] = useState('Helsi8ngin työllisyys4palveluiden tavoittee5na on edistää1 nykyis9tä tehokkaam1min työ3ttömien työnhaki7joiden työllistym9istä ja koulutuks0een ohjaut4umista, sekä tuoda uu6sia ratkai2suja os1aavan työvoiman saatavu8uteen.\n\nSuomal3aisten digitaitojen tärkeys kor6ostuu palveluiden muuttue7ssa s2ähköisiksi. On arvioitu, että noin 7neljänneksellä väestöstä olisi liian heikot digitaido345t.\n\nHelsingin kaupungin työllisyys6palveluiden 7toteuttama Digirasti-hanke tarjoaa helsinkiläisille50 työttö9mille työnhakuun keskittyvää digitaito-opetusta.')
 
     const textareastyle = {
-		minHeight: '100px',
+		minHeight: '150px',
         minWidth: '100%'
     }
 
