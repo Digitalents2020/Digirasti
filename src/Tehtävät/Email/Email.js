@@ -46,9 +46,8 @@ const Email = () => {
             <>
               <h2 className="little-header">...Mutta</h2>
               <p>
-                Sinulta taisi unohtua liitetiedosto. Ei hätää, voit silti
-                halutessasi yrittää uudelleen tai klikata "seuraava tehtävä"
-                painiketta.
+                Sinulta unohtui liitetiedosto. Ei hätää, voit halutessasi
+                yrittää uudelleen tai klikata "Seuraava tehtävä" painiketta.
               </p>
               <button className="NextPrac" type="button" onClick={refreshPage}>
                 {" "}
@@ -75,12 +74,15 @@ const Email = () => {
       <div className="instructions">
         <h2 className="instruction-header">Ohje:</h2>
         <p>
-          Tässä tehtävässä opetellaan sähköpostin kirjoittamista ja
-          liittetiedoston liittämistä. Sähköpostissa on aina kolme eri osaa:
-          Vastaanottaja, aihe ja itse viesti. Joskus tarpeen on neljäs osa joka
-          on liitetiedosto. Tehtävänäsi on kirjoittaa pienimuotoinen työhakemus
-          vastaanottajalle esimerkki.makkonen@example.com ja muistathan myös
-          liittää CV:si sähköpostin liitteeksi!
+          Tehtävässä harjoitellaan sähköpostiviestin kirjoittamista ja
+          liitetiedoston liittämistä sähköpostiviestiin. Sähköpostissa on aina:
+          Vastaanottaja, aihe ja viesti. Sähköpostiviestiin voi laittaa myös
+          liitetiedoston. Tehtävänäsi on kirjoittaa pienimuotoinen työhakemus.
+          Vastaanottaja: esimerkki.makkonen@example.com Aihe: Työhakemus
+          avoimeen tehtävään Viesti: Aloita viesti tervehdyksellä. Kerro mitä
+          viesti koskee. Kerro myös, että CV on liitteenä. Laita viestiin
+          lopputervehdys ja oma nimesi. Liitä CV:si sähköpostin liitteeksi. Ei
+          huolta, viestisi ei lähde oikeasti mihinkään. Tämä on vain harjoitus.
         </p>
       </div>
       <p className="instructions">

@@ -51,7 +51,7 @@ const App = () => {
               <Link to="/Email">Sähköposti</Link>
             </li>
             <li>
-              <Link to="/Eform">Sähköinen lomake</Link>
+              <Link to="/Eform">Sähköinen hakulomake</Link>
             </li>
           </ul>
         </nav>

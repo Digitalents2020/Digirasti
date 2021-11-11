@@ -84,23 +84,20 @@ const Eform = () => {
     return (
       <div className="form-box">
         <div className="success">
-          <h2 className="little-header">Onnistuit!</h2>
-          <p>
-            Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen! Voit nyt
-            siirtyä seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
-          </p>
+          <h2 className="little-header">
+            Sähköinen hakulomake lähetetty onnistuneesti
+          </h2>
+          <p>Hienoa!</p>
           <br></br>
           {!attached && (
             <>
               <h2 className="little-header">...Mutta</h2>
               <p>
-                Sinulta taisi unohtua liitetiedosto. Ei hätää, voit silti
-                halutessasi yrittää uudelleen tai klikata "seuraava tehtävä"
-                painiketta.
+                Sinulta unohtui liitetiedosto. Ei hätää, voit halutessasi
+                yrittää uudelleen tai klikata "Siirry etusivulle" painiketta.
               </p>
               <button className="NextPrac" type="button" onClick={refreshPage}>
-                {" "}
-                <span>Yritä uudelleen</span>{" "}
+                <span>Yritä uudelleen</span>
               </button>
             </>
           )}
@@ -114,16 +111,16 @@ const Eform = () => {
 
   return (
     <div className="form-box">
-      <h5 className="exercise-header">Sähköinen lomake</h5>
+      <h5 className="exercise-header">Sähköinen hakulomake</h5>
       <div className="instructions">
         <h2 className="instruction-header">Ohje:</h2>
         <p>
-          Tässä tehtävässä opetellaan sähköisen lomakkeen täyttämistä ja
-          lähettämistä. Sähköisiä lomakkeita on monenlaisia, mutta tässä
-          harjoitellaan täyttämään mahdollisesti työnhaun yhteydessä vastaan
-          tulevaa lomaketta. Huomaathan, että tähdellä merkityt kentät ovat
-          pakollisia. Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä
-          mitään minnekkään!
+          Tehtävässä opetellaan sähköisen lomakkeen täyttämistä ja lähettämistä.
+          Sähköisiä lomakkeita on monenlaisia, mutta tässä harjoitellaan
+          täyttämään mahdollisesti työnhaun yhteydessä vastaan tulevaa
+          lomaketta. Huomaathan, että tähdellä merkityt kentät ovat pakollisia.
+          Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä mitään
+          minnekkään!
         </p>
       </div>
       <h2 className="little-header">Hakulomake</h2>
