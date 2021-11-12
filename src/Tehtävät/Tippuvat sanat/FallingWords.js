@@ -383,9 +383,9 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <p>
             Kirjoita näppäimistölläsi sama sana, joka tippuu alaspäin ruudulla.
             Kirjoita sana sille varattuun kenttään ja paina näppäimistöstäsi <strong>ENTER</strong> painiketta.
-            Ole tarkkana: Menetät yhden yrityksen kirjoittaessasi sanan väärin tai jos sana ehtii tippua loppuun asti.
+            <br/><br/>Ole tarkkana: Menetät yhden yrityksen kirjoittaessasi sanan väärin tai jos sana ehtii tippua loppuun asti.
             Yritysten loppuessa peli päättyy. 
-            <strong> Onnea peliin!</strong>
+            <br/><br/> <strong> Onnea peliin!</strong>
             </p>
           </div>
           <div className="vaikeusTekstiWords">

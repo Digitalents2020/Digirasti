@@ -164,7 +164,7 @@ export default function DragAndDrop(){
       <div className="ohjeDrag">
         <h2 className="ohjetxtDrag">Ohje:</h2>
         <p>Tehtävänäsi on raahata kaikki <strong>hedelmät</strong> koriin ja syöttää <strong>porkkanat</strong> jänikselle.
-        Raahaus: Valitse hiiren vasemmalla painikkeella raahattava kohde, pidä painike pohjassa ja liikuta hiirtä samanaikaisesti.</p>
+        <br/><br/>Raahaus: Valitse hiiren vasemmalla painikkeella raahattava kohde, pidä painike pohjassa ja liikuta hiirtä samanaikaisesti.</p>
       </div>
       <motion.div className="canvas">
         <div className="basket1" id="basket1">

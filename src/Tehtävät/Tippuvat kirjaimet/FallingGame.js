@@ -356,9 +356,9 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             Paina näppäimistöstäsi niitä kirjaimia, jotka tippuvat alaspäin ruudulla.
             Menetät yhden yrityksen painaessasi väärää kirjainta tai jos kirjain ehtii tippua loppuun asti.
             Yritysten loppuessa peli päättyy.
-            Huomaathan, että pelissä on sekä pieniä että isoja kirjaimia.
+            <br/><br/> Huomaathan, että pelissä on sekä pieniä että isoja kirjaimia.
             Yritä olla nopea, ettei kirjain ehdi tippua alas asti!
-            <strong> Onnea peliin!</strong>
+            <br/><br/><strong> Onnea peliin!</strong>
             </p>
           </div>
           <div className="vaikeusTekstiGame">
