@@ -54,10 +54,10 @@ function FallingGame() {
       difficultySetting = 3500;
       letters = lettersPienet;
     } else if (difficulty === "vaikea") {
-      difficultySetting = 2500;
+      difficultySetting = 2000;
       letters = lettersMyosIsot;
     } else {
-      difficultySetting = 2000;
+      difficultySetting = 1500;
       letters = lettersIsotJaErikois;
     }
     arrayOfLetters = [];

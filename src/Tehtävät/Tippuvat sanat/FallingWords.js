@@ -60,10 +60,10 @@ function FallingWords() {
   //Sets starting values and change the state for rerender
   function startGame(difficulty) {
     if (difficulty === "helppo") {
-      difficultySetting = 5000;
+      difficultySetting = 6000;
       words = wordsEasy;
     } else if (difficulty === "normaali") {
-      difficultySetting = 3500;
+      difficultySetting = 5000;
       words = wordsEasy;
     } else if (difficulty === "vaikea") {
       difficultySetting = 3000;
@@ -134,13 +134,13 @@ function FallingWords() {
     }
     if (lives > 0) {
       if (firefoxAgent) {
-        if(difficultySetting <= 3000){
+        if(difficultySetting <= 4500){
           location = randomIntFromInterval(20, 750);
         }else{
         location = randomIntFromInterval(20, 800);
         }
       } else {
-        if(difficultySetting <= 3000){
+        if(difficultySetting <= 4500){
           location = randomIntFromInterval(-380, 260);
         }else{
         location = randomIntFromInterval(-380, 370);
