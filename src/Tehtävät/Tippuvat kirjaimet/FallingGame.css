@@ -14,11 +14,6 @@
   margin: 20px 30px 10px;
 }
 
-.hideGame {
-  opacity: 0;
-  cursor: default;
-}
-
 .letterClassGame{
   display: inline-block;
   background: #FFFFFF;
@@ -138,6 +133,13 @@
 .uiDivGame {
   display: flex;
   justify-content: center;
+}
+
+
+.hideGame {
+  opacity: 0;
+  cursor: default;
+  width: 0px;
 }
 
 .uiGame {

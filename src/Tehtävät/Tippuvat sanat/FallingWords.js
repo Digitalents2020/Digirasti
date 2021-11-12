@@ -48,6 +48,7 @@ var firstTime = false;
 let userAgentString = navigator.userAgent;
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 var capslockpaalla = false;
+var lap = 0;
 var animLenght = 15;
 var timeoutLenght = 15200;
 
@@ -117,14 +118,10 @@ function FallingWords() {
       ready = false;
 
       //Every 40 points, shortens the falling time by 1 sec
-      if (
-        points % 40 === 0 &&
-        points > 0 &&
-        animLenght > 3 &&
-        timeoutLenght > 3200
-      ) {
+      if ((points > 30 && lap === 0) || (points > 60 && lap === 1) || (points > 90 && lap === 2) || (points > 120 && lap === 3) || (points > 150 && lap === 4)) {
         animLenght = animLenght - 1;
         timeoutLenght = timeoutLenght - 1000;
+        lap++
       }
 
       console.log(timeoutLenght);
