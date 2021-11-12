@@ -76,6 +76,9 @@ function FallingWords() {
     arrayOfWords = [];
     points = 0;
     lives = 10;
+    lap = 0;
+    animLenght = 15;
+    timeoutLenght = 15200;
     setStart(false);
   }
 
@@ -90,6 +93,9 @@ function FallingWords() {
     points = 0;
     lives = 10;
     firstTime = true;
+    lap = 0;
+    animLenght = 15;
+    timeoutLenght = 15200;
     setStart(true);
     setState("try");
   }
@@ -294,6 +300,9 @@ function FallingWords() {
     points = 0;
     lives = 10;
     firstTime = true;
+    lap = 0;
+    animLenght = 15;
+    timeoutLenght = 15200;
     setState("try");
   }
 

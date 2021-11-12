@@ -64,6 +64,9 @@ function FallingGame() {
     arrayOfLetters = [];
     points = 0;
     lives = 10;
+    lap = 0;
+    animLenght = 10;
+    timeoutLenght = 10200;
     setStart(false);
   }
 
@@ -261,6 +264,9 @@ Gets also the position from the deleted letter. After timeout removes the new di
     arrayOfLetters = [];
     points = 0;
     lives = 10;
+    lap = 0;
+    animLenght = 10;
+    timeoutLenght = 10200;
     firstTime = true;
     setState("try");
   }
@@ -283,7 +289,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           <div className="canvasGame">
             <h1 className="otsikkoWords">Tippuvat kirjaimet</h1>
             <div className="containerBlockGame">
-              <div className="letterClassGame" id="letterClassGame">
+              <div className="letterClassGame" id="letterClassGame" >
                 <Clock
                   letter={newLetter}
                   arrayOfLetters={arrayOfLetters}
