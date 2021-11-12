@@ -297,7 +297,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
               {capslockvaroitus()}
               <div className="uiDivGame">
                 <p className="uiGame">Pisteet: {points}</p>
-                <p className="uiGame">Elämät: {lives}</p>
+                <p className="uiGame">Yritykset: {lives}</p>
               </div>
             </div>
             <input
@@ -349,10 +349,12 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           <div className="ohjeGame">
             <h2 className="ohjetxtGame">Ohje:</h2>
             <p>
-              Tehtävänäsi on painaa näppäimistöstäsi samoja kirjaimia, jotka
-              näet ruudulla. Väärää kirjainta painaessasi menetät elämän, jos
-              elämät menevät nollaan häviät. Menetät myös elämän jos kirjaimet
-              tippuvat alas asti. <strong>Onnea peliin!</strong>
+            Paina näppäimistöstäsi niitä kirjaimia, jotka tippuvat alaspäin ruudulla.
+            Menetät yhden yrityksen painaessasi väärää kirjainta tai jos kirjain ehtii tippua loppuun asti.
+            Yritysten loppuessa peli päättyy.
+            Huomaathan, että pelissä on sekä pieniä että isoja kirjaimia.
+            Yritä olla nopea, ettei kirjain ehdi tippua alas asti!
+            <strong> Onnea peliin!</strong>
             </p>
           </div>
           <div className="vaikeusTekstiGame">

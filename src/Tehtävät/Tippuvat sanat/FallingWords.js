@@ -319,7 +319,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
               {capslockvaroitus()}
               <div className="uiDivWords">
                 <p className="uiWords">Pisteet: {points}</p>
-                <p className="uiWords">Elämät: {lives}</p>
+                <p className="uiWords">Yritykset: {lives}</p>
                 <form onSubmit={cleanUpLetter} autocomplete="off">
                   <input
                     className="wordInputWords"
@@ -375,12 +375,11 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           <div className="ohjeWords">
             <h2 className="ohjetxtWords">Ohje:</h2>
             <p>
-              Tehtävänäsi on kirjoittaa näppäimistölläsi samoja sanoja, jotka
-              näet ruudulla. Kirjoita sana sille varatulle kentälle ja paina
-              näpäimistöstäsi ENTER painiketta. Väärän sanan kirjoittaessasi
-              menetät elämän, jos elämät menevät nollaan häviät. Menetät myös
-              elämän jos sanat tippuvat alas asti.{" "}
-              <strong>Onnea peliin!</strong>
+            Kirjoita näppäimistölläsi sama sana, joka tippuu alaspäin ruudulla.
+            Kirjoita sana sille varattuun kenttään ja paina näppäimistöstäsi <strong>ENTER</strong> painiketta.
+            Ole tarkkana: Menetät yhden yrityksen kirjoittaessasi sanan väärin tai jos sana ehtii tippua loppuun asti.
+            Yritysten loppuessa peli päättyy. 
+            <strong> Onnea peliin!</strong>
             </p>
           </div>
           <div className="vaikeusTekstiWords">
