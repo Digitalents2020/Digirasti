@@ -14,11 +14,6 @@
   margin: 20px 30px 10px;
 }
 
-.hideGame {
-  opacity: 0;
-  cursor: default;
-}
-
 .letterClassGame{
   display: inline-block;
   background: #FFFFFF;
@@ -38,8 +33,9 @@
   margin: auto;
   width: 35px;
   padding: 10px;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 700;
+  font-family: 'Oxygen';
   display: inline-table;
   background-color: #FD4F00;
   color: #FFFFFF;
@@ -137,6 +133,13 @@
 .uiDivGame {
   display: flex;
   justify-content: center;
+}
+
+
+.hideGame {
+  opacity: 0;
+  cursor: default;
+  width: 0px;
 }
 
 .uiGame {

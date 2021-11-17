@@ -36,6 +36,7 @@ var firstTime = false;
 let userAgentString = navigator.userAgent;
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 var capslockpaalla = false;
+var lap = 0;
 var animLenght = 10;
 var timeoutLenght = 10200;
 
@@ -54,15 +55,18 @@ function FallingGame() {
       difficultySetting = 3500;
       letters = lettersPienet;
     } else if (difficulty === "vaikea") {
-      difficultySetting = 2500;
+      difficultySetting = 2000;
       letters = lettersMyosIsot;
     } else {
-      difficultySetting = 2000;
+      difficultySetting = 1500;
       letters = lettersIsotJaErikois;
     }
     arrayOfLetters = [];
     points = 0;
     lives = 10;
+    lap = 0;
+    animLenght = 10;
+    timeoutLenght = 10200;
     setStart(false);
   }
 
@@ -103,15 +107,11 @@ function FallingGame() {
       arrayOfLetters.push(lett);
       ready = false;
 
-      //Every 20 points, shortens the falling time by 1 sec
-      if (
-        points % 20 === 0 &&
-        points > 0 &&
-        animLenght > 1 &&
-        timeoutLenght > 1200
-      ) {
+      //Every 10 points, shortens the falling time by 1 sec
+      if ((points > 10 && lap === 0) || (points > 20 && lap === 1) || (points > 30 && lap === 2) || (points > 40 && lap === 3) || (points > 50 && lap === 4)) {
         animLenght = animLenght - 1;
         timeoutLenght = timeoutLenght - 1000;
+        lap++
       }
 
       console.log(timeoutLenght);
@@ -264,6 +264,9 @@ Gets also the position from the deleted letter. After timeout removes the new di
     arrayOfLetters = [];
     points = 0;
     lives = 10;
+    lap = 0;
+    animLenght = 10;
+    timeoutLenght = 10200;
     firstTime = true;
     setState("try");
   }
@@ -286,7 +289,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           <div className="canvasGame">
             <h1 className="otsikkoWords">Tippuvat kirjaimet</h1>
             <div className="containerBlockGame">
-              <div className="letterClassGame" id="letterClassGame">
+              <div className="letterClassGame" id="letterClassGame" >
                 <Clock
                   letter={newLetter}
                   arrayOfLetters={arrayOfLetters}
@@ -297,10 +300,8 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
               {capslockvaroitus()}
               <div className="uiDivGame">
                 <p className="uiGame">Pisteet: {points}</p>
-                <p className="uiGame">Elämät: {lives}</p>
-              </div>
-            </div>
-            <input
+                <p className="uiGame">Yritykset: {lives}</p>
+                <input
               className="hideGame"
               id="hideGame"
               onKeyPress={(e) => handler(e)}
@@ -311,6 +312,9 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
                 }, 2)
               }
             ></input>
+              </div>
+            </div>
+      
             {clearState()}
           </div>
         </div>
@@ -349,10 +353,12 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           <div className="ohjeGame">
             <h2 className="ohjetxtGame">Ohje:</h2>
             <p>
-              Tehtävänäsi on painaa näppäimistöstäsi samoja kirjaimia, jotka
-              näet ruudulla. Väärää kirjainta painaessasi menetät elämän, jos
-              elämät menevät nollaan häviät. Menetät myös elämän jos kirjaimet
-              tippuvat alas asti. <strong>Onnea peliin!</strong>
+            Paina näppäimistöstäsi niitä kirjaimia, jotka tippuvat alaspäin ruudulla.
+            Menetät yhden yrityksen painaessasi väärää kirjainta tai jos kirjain ehtii tippua loppuun asti.
+            Yritysten loppuessa peli päättyy.
+            Huomaathan, että pelissä on sekä pieniä että isoja kirjaimia.
+            Yritä olla nopea, ettei kirjain ehdi tippua alas asti!
+            <strong> Onnea peliin!</strong>
             </p>
           </div>
           <div className="vaikeusTekstiGame">

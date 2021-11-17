@@ -5,13 +5,36 @@ import Timer from "./Timer";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-var words = [
+var words = "";
+var wordsEasy = [
   "juosta","laukata", "hyppiä","iloita","olla","miettiä","ampua","juoda","keskustella","apu","koira","kissa","miksi","yksi",
   "kalja", "puro","auto","poika","tyttö","isä","äiti","joki","joskus","kisa","pilkki","onki","ei","hai","he","hius","hän",
   "häät","ien","ja","jae","jaosto","jo","jos","jää","koe","koi","kuin","kun","kuu","kyy","luo","luu","maa","me","mies","muu",
   "myös","ne","niin","noin","nuo","nyt","näin","pian","pii","pois","puu","päin","pää","rae","ruis","saos","se","seis","seos",
   "siis","suo","suu","syy","syys","säe","sää","taas","tae","tai","taos","te","tee","teos","tie","tuo","työ",
   "täi","vaan","vai","vain","voi","vyö","yö",
+];
+
+var wordsHard = [
+  "Aamutähti", "aamuvirkku","aamuvuoro","Aaltoviiva","aakkoset","absoluutti","adventti","Afrikka","aiheuttaja","aikuistua","aistikas",
+  "aivoriihi","Aivastaa","aivopähkinä","Aaltokuvio","alikersantti","alitajunta","alijäämä","alennus","allekirjoittaa","ALV","Laiskistua",
+  "anemia","anniskelu","appiukko","anoppi","BMW","Banaani","Bataatti","Bakteeri","bambu","baretti","barista","Betoni","biljardi","biojäte",
+  "Boakäärme","budjetti","buffetti","Celsius","Curry","Costa Rica","Datanomi","Delfiini","desibeli","Diktaattori","diplomaatti","dippikastike",
+  "dobermanni","DNA-testi","dopingtesti","duunari","edamjuusto","Edellytys","eettisyys","Eduskunta","demonstroida","design","devaaja",
+  "digitaalinen","dokumentoida","domino","dynamiitti","dramaattinen","elohopea","eliökunta","eläinperäinen","eläinrakas","emulaattori",
+  "epäreilu","Etelä-Korea","Etikkahappo","Fanaattinen","Flegmaattisuus","fyysinen","Galaksi","geeniterapia","gratinoida","haaskalintu",
+  "haastemies","Haarapääsky","hajaantuminen","heilahdus","Hedelmöittyä","Hektinen","helikopteri","hieskoivu","Hopeahäät","hopeakaivos",
+  "ihailtavasti","ihmeellisyys","Ikipäiviksi","ikkunalauta","imperialismi","Jakojäännös","Jengiläinen","jokainen","Jongleerata",
+  "Jälkiuuni","Jyrkänne","Kaalinkerä","Kaatopaikka","Kiharrin","Kirkollisvero","Kolikonheitto","Kullanmuru","Kvanttikemia","käpristellä",
+  "laillistaa","lakritsijuuri","Legioona","lennonjohto","lohkolämmitin","Lottovoitto","lumimyrsky","lähimaksu","lämmityslaite","Maakellari",
+  "Maakreivi","Magneetti","Moninainen","Menneisyys","Mökki","Märkätila","Näkymätön","Nälkäinen","Neilikka","näennäisesti","Nuolisade",
+  "Naiivi","Nälkälakko","Nautinto","Olematon","Oikeamielinen","Odotusaika","Olemassaolo","Oleskelulupa","Ompelukone","Opettaminen",
+  "Päällikkö","Painepesuri","Palautustölkki","Pallogrilli","Pelastusvene","Perkolaattori","Piispanhattu","Pikkutarkka","Poliisivoimat",
+  "Rikollisuus","Rakastua","Radiotaajuus","Raivokohtaus","Rettelöitsijä","rikkidioksidi","Romutuspalkkio","Rullalauta","Saapuminen",
+  "Sairaalassa","Seinäkello","Siirappinen","Sekajäte","Säälittävä","Sörnäinen","tahdittomuus","Tekohampaat","Terveystieto","Täsmätieto",
+  "Taistelu","Terminaattori","Tietyömaa","Uhmakkuus","Uimarengas","Ulkoilma","Urakoitsija","Uuttera","Vaakataso","Vaalikausi","Velkavankeus",
+  "verikoe","Verovirkailija","Viittomakieli","Vuokravakuus","Väestönkasvu","Yritys","Yksilöllisyys","Yleisurheilija","yöperhonen","Zoomi",
+  "Äkkipikainen","Äimänkäkenä","Ärsyyntyä","Äyskäröinti","Ääntenlasku","Öljyntuotanto","Öykkäröidä","Öljyvoimala","Öyhöttäjä"
 ];
 
 var arrayOfWords = [];
@@ -25,6 +48,7 @@ var firstTime = false;
 let userAgentString = navigator.userAgent;
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 var capslockpaalla = false;
+var lap = 0;
 var animLenght = 15;
 var timeoutLenght = 15200;
 
@@ -37,17 +61,24 @@ function FallingWords() {
   //Sets starting values and change the state for rerender
   function startGame(difficulty) {
     if (difficulty === "helppo") {
-      difficultySetting = 5000;
+      difficultySetting = 6000;
+      words = wordsEasy;
     } else if (difficulty === "normaali") {
-      difficultySetting = 3500;
+      difficultySetting = 5000;
+      words = wordsEasy;
     } else if (difficulty === "vaikea") {
-      difficultySetting = 2500;
+      difficultySetting = 3000;
+      words = wordsHard;
     } else {
-      difficultySetting = 1500;
+      difficultySetting = 2500;
+      words = wordsHard;
     }
     arrayOfWords = [];
     points = 0;
     lives = 10;
+    lap = 0;
+    animLenght = 15;
+    timeoutLenght = 15200;
     setStart(false);
   }
 
@@ -62,6 +93,9 @@ function FallingWords() {
     points = 0;
     lives = 10;
     firstTime = true;
+    lap = 0;
+    animLenght = 15;
+    timeoutLenght = 15200;
     setStart(true);
     setState("try");
   }
@@ -90,14 +124,10 @@ function FallingWords() {
       ready = false;
 
       //Every 40 points, shortens the falling time by 1 sec
-      if (
-        points % 40 === 0 &&
-        points > 0 &&
-        animLenght > 3 &&
-        timeoutLenght > 3200
-      ) {
+      if ((points > 30 && lap === 0) || (points > 60 && lap === 1) || (points > 90 && lap === 2) || (points > 120 && lap === 3) || (points > 150 && lap === 4)) {
         animLenght = animLenght - 1;
         timeoutLenght = timeoutLenght - 1000;
+        lap++
       }
 
       console.log(timeoutLenght);
@@ -107,9 +137,17 @@ function FallingWords() {
     }
     if (lives > 0) {
       if (firefoxAgent) {
+        if(difficultySetting <= 4500){
+          location = randomIntFromInterval(20, 750);
+        }else{
         location = randomIntFromInterval(20, 800);
+        }
       } else {
+        if(difficultySetting <= 4500){
+          location = randomIntFromInterval(-380, 260);
+        }else{
         location = randomIntFromInterval(-380, 370);
+        }
       }
       console.log(animLenght);
       return (
@@ -262,6 +300,9 @@ function FallingWords() {
     points = 0;
     lives = 10;
     firstTime = true;
+    lap = 0;
+    animLenght = 15;
+    timeoutLenght = 15200;
     setState("try");
   }
 
@@ -284,7 +325,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
               {capslockvaroitus()}
               <div className="uiDivWords">
                 <p className="uiWords">Pisteet: {points}</p>
-                <p className="uiWords">Elämät: {lives}</p>
+                <p className="uiWords">Yritykset: {lives}</p>
                 <form onSubmit={cleanUpLetter} autocomplete="off">
                   <input
                     className="wordInputWords"
@@ -340,12 +381,11 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           <div className="ohjeWords">
             <h2 className="ohjetxtWords">Ohje:</h2>
             <p>
-              Tehtävänäsi on kirjoittaa näppäimistölläsi samoja sanoja, jotka
-              näet ruudulla. Kirjoita sana sille varatulle kentälle ja paina
-              näpäimistöstäsi ENTER painiketta. Väärän sanan kirjoittaessasi
-              menetät elämän, jos elämät menevät nollaan häviät. Menetät myös
-              elämän jos sanat tippuvat alas asti.{" "}
-              <strong>Onnea peliin!</strong>
+            Kirjoita näppäimistölläsi sama sana, joka tippuu alaspäin ruudulla.
+            Kirjoita sana sille varattuun kenttään ja paina näppäimistöstäsi <strong>ENTER</strong> painiketta.
+            Ole tarkkana: Menetät yhden yrityksen kirjoittaessasi sanan väärin tai jos sana ehtii tippua loppuun asti.
+            Yritysten loppuessa peli päättyy. 
+            <strong> Onnea peliin!</strong>
             </p>
           </div>
           <div className="vaikeusTekstiWords">
