@@ -39,7 +39,7 @@ var wordsHard = [
 
 var arrayOfWords = [];
 var points = 0;
-var lives = 10;
+var lives = 5;
 var difficultySetting = 2500;
 var location = 0;
 var id = 10;
@@ -75,7 +75,7 @@ function FallingWords() {
     }
     arrayOfWords = [];
     points = 0;
-    lives = 10;
+    lives = 5;
     lap = 0;
     animLenght = 15;
     timeoutLenght = 15200;
@@ -91,7 +91,7 @@ function FallingWords() {
   function changeDifficulty() {
     arrayOfWords = [];
     points = 0;
-    lives = 10;
+    lives = 5;
     firstTime = true;
     lap = 0;
     animLenght = 15;
@@ -298,7 +298,7 @@ function FallingWords() {
   function tryAgain() {
     arrayOfWords = [];
     points = 0;
-    lives = 10;
+    lives = 5;
     firstTime = true;
     lap = 0;
     animLenght = 15;
@@ -315,7 +315,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           <div className="canvasWords">
             <h1 className="otsikkoWords">Tippuvat sanat</h1>
             <div className="containerBlockWords">
-              <div className="letterClassWords" id="letterClassWords">
+              <div className="letterClassWords" id="letterClassWords" style={{borderColor:"#9FC9EB"}}>
                 <Timer
                   word={newWord}
                   arrayOfWords={arrayOfWords}
@@ -332,6 +332,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
                     id="wordInputWords"
                     onChange={handler}
                     autoFocus={true}
+                    placeholder="Paina ENTER tarkistaaksesi sanan"
                     onBlur={({ target }) =>
                       setTimeout(function () {
                         target.focus({ preventScroll: true });

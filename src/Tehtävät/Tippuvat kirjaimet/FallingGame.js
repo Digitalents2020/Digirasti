@@ -27,7 +27,7 @@ var lettersIsotJaErikois = [
 
 var arrayOfLetters = [];
 var points = 0;
-var lives = 10;
+var lives = 5;
 var difficultySetting = 4500;
 var location = 0;
 var id = 10;
@@ -63,7 +63,7 @@ function FallingGame() {
     }
     arrayOfLetters = [];
     points = 0;
-    lives = 10;
+    lives = 5;
     lap = 0;
     animLenght = 10;
     timeoutLenght = 10200;
@@ -79,7 +79,7 @@ function FallingGame() {
   function changeDifficulty() {
     arrayOfLetters = [];
     points = 0;
-    lives = 10;
+    lives = 5;
     firstTime = true;
     setStart(true);
     setState("try");
@@ -263,7 +263,7 @@ Gets also the position from the deleted letter. After timeout removes the new di
   function tryAgain() {
     arrayOfLetters = [];
     points = 0;
-    lives = 10;
+    lives = 5;
     lap = 0;
     animLenght = 10;
     timeoutLenght = 10200;
@@ -280,6 +280,23 @@ Gets also the position from the deleted letter. After timeout removes the new di
     }
   }
 
+  function winMaybe(){
+    if(points>4){
+      return(
+        <div>
+          <div className="winning">Onneksi olkoon sait vaadittavat 50 pistettä! Voit jatkaa pelaamista tai siirtyä seuraavaan tehtävään
+          </div>
+        <Link to="/tippuvat_sanat" className="NextPrac" role="button"> 
+              Seuraava tehtävä
+            </Link>
+            {window.scrollTo({
+            top:1800
+          })}
+            </div>
+      )
+    }
+  }
+
   /*If first render or coming to change difficulty, renders the start menu,
 otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
   if (start === false) {
@@ -289,7 +306,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
           <div className="canvasGame">
             <h1 className="otsikkoWords">Tippuvat kirjaimet</h1>
             <div className="containerBlockGame">
-              <div className="letterClassGame" id="letterClassGame" >
+              <div className="letterClassGame" id="letterClassGame" style={{borderColor:"#9FC9EB"}}>
                 <Clock
                   letter={newLetter}
                   arrayOfLetters={arrayOfLetters}
@@ -313,9 +330,11 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
               }
             ></input>
               </div>
+              {winMaybe()}
             </div>
       
             {clearState()}
+            
           </div>
         </div>
       );
