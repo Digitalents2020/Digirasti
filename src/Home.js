@@ -7,8 +7,7 @@ const Home = () => {
 		  <div className="innerPageFrame">
 			  <h1 className="pageHeaderFrame">Etusivu</h1>
 			  <div className="pageInfoFrame">
-			    <h2 className="pageInfoTextHeader"></h2>
-			    <p>Tervetuloa Digirasti-palveluun!</p>
+			    <h2 className="pageInfoTextHeader"><p>Tervetuloa Digirasti-palveluun!</p></h2>
 			    <br></br>
 			    <p>Täällä voit harjoitella tietojenkäsittelyyn tarvittavia taitoja. Sivun vasemmasta laidasta löydät listan eri tehtävistä. Nämä tekstit ovat linkkejä, joiden avulla voit navigoida sivustolla eri tehtäviin. Siirry tehtävään siirtämällä hiiren kursori tehtävän linkin päälle ja klikkaamalla sitä hiiren vasemmalla painikkeella.</p>
 			    <br></br>
