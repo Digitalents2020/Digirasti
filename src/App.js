@@ -5,7 +5,6 @@ import Tehtava1 from "./Tehtävät/Editointi/Tehtava1";
 import Tehtava2 from "./Tehtävät/Kirjoitus/Tehtava2";
 import Kopiointi from "./Tehtävät/Kopiointi/Kopiointi";
 import Tietoturva from "./Tehtävät/Tietoturva/tietoturva";
-import Tietosuoja from "./Tehtävät/Tietosuoja/Tietosuoja";
 import FallingGame from "./Tehtävät/Tippuvat kirjaimet/FallingGame";
 import FallingWords from "./Tehtävät/Tippuvat sanat/FallingWords";
 import DragAndDrop from "./Tehtävät/Vedä&Pudota/VedaJaPudota";
@@ -34,9 +33,6 @@ const App = () => {
             </li>
             <li>
               <Link to="/tietoturva">Tietoturvatehtävä</Link>
-            </li>
-            <li>
-              <Link to="/tietosuoja">Tietosuojatehtävä</Link>
             </li>
             <li>
               <Link to="/tippuvat_kirjaimet">Tippuvat kirjaimet</Link>
@@ -72,9 +68,6 @@ const App = () => {
             </Route>
             <Route path="/tietoturva">
               <Tietoturva />
-            </Route>
-            <Route path="/tietosuoja">
-              <Tietosuoja />
             </Route>
             <Route path="/tippuvat_kirjaimet">
               <FallingGame />
