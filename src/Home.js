@@ -1,7 +1,6 @@
 import React from 'react';
 import './Home.css';
-import { Link, Component } from "react-router-dom"
-import ReactPlayer from 'react-player'
+import { Link } from "react-router-dom"
 import Video1 from "./Resources/ctrlv_ctrlc.mp4"
 import Video2 from "./Resources/email_anim.mp4"
 import Video3 from "./Resources/mouse_copy.mp4"
