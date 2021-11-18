@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./Tehtava1.css"
 
   const Button = ( props ) => {
@@ -39,7 +39,7 @@ import "./Tehtava1.css"
     
     const textChangeEvent = ( event ) => {
       if( event.target.value === '' ) {
-        alert( "Ups, poistit kaiken tekstin. Näin ei pitänyt tehdä!" )
+        alert( `Ups, poistit kaiken tekstin. Näin ei pitänyt tehdä!` )
       }
       else {
         setTaskText( event.target.value )
@@ -60,39 +60,37 @@ import "./Tehtava1.css"
         else {
           numeronTarkistusFunktio( taskText )
         }
-		console.log( counter ) 
     }
 
     const numeronTarkistusFunktio = ( param ) => {
         let numero = param.match(/\d+/g)
         if( numero === null) {
-          alert( "Hienoa, poistit kaikki numerot. Ikävä kyllä poistit myös muutakin.\n\n Yritä uudelleen ja poista vain numerot!" )
+          alert( `Hienoa, poistit kaikki numerot. Ikävä kyllä poistit myös muutakin.\nYritä uudelleen ja poista vain numerot!\n\nAikaa sinulla tähän tehtävään on mennyt ${taskTimer}.` )
         }
         else {
-          alert( "Numeroita on vielä jäljellä, jatka poistamista!")
+          alert( `Numeroita on vielä jäljellä, jatka poistamista!\n\nAikaa sinulla tähän tehtävään on mennyt ${taskTimer}.`)
         }
     }
 
-
     return (
         <div>
-                 <div className="mainPageFrame">
-        <div className="innerPageFrame">
-          <h1 className="pageHeaderFrame">Editointitehtävä</h1>
-          <div className="pageInfoFrame">
-            <h2 className="pageInfoTextHeader">Ohje:</h2>
-            <p>Liiku tekstissä nuolinäppäimillä ja poista tekstistä kaikki numerot.</p>
-          </div>
-        </div>
-        <div>
-          <p/>
-          <textarea style={textareastyle} onChange={textChangeEvent} value={taskText} ></textarea>
-          <Button className="actionButton" handleClick={ tarkistusFunktio } label="Tarkista tulos" value="validateResult" />
-          <Button className="actionButton" handleClick={ aloitusAlustaFunktio } label="Aloita alusta" value="reset" />
-          </div>
-      </div>
-            <Link to="/kopiointi" className="NextPrac"
-              role="button">Seuraava tehtävä</Link>
+          <div className="mainPageFrame">
+			<div className="innerPageFrame">
+			  <h1 className="pageHeaderFrame">Editointitehtävä</h1>
+			  <div className="pageInfoFrame">
+				<h2 className="pageInfoTextHeader">Ohje:</h2>
+				<p>Liiku tekstissä nuolinäppäimillä ja poista tekstistä kaikki numerot.</p>
+			  </div>
+			</div>
+			<div>
+			  <p/>
+			  <textarea style={textareastyle} onChange={textChangeEvent} value={taskText} ></textarea>
+			  <Button className="actionButton" handleClick={ tarkistusFunktio } label="Tarkista tulos" value="validateResult" />
+			  <Button className="actionButton" handleClick={ aloitusAlustaFunktio } label="Aloita alusta" value="reset" />
+			</div>
+		  </div>
+          <Link to="/kopiointi" className="NextPrac"
+            role="button">Seuraava tehtävä</Link>
         </div>
     )
   }

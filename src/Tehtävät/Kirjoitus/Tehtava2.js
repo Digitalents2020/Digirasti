@@ -2,6 +2,14 @@ import React, { useState }from 'react'
 import { Link } from "react-router-dom"
 import "./Tehtava2.css"
 
+  const Button = ( props ) => {
+    return (
+      <button onClick={ props.handleClick }>
+      { props.label }
+      </button>
+    )
+  }
+
 const Tehtava2 = () => {
   const [ counter, setCounter ] = useState( 0 )
   const [ taskTimer, countTaskTimer ] = useState( '00:00' )
@@ -39,26 +47,33 @@ const Tehtava2 = () => {
 	}
   }
   
+  const aloitusAlustaFunktio = () => {
+    if (window.confirm( `Oletko varma että haluat aloittaa alusta?` )) {
+      setTaskText( "" )
+	}
+  }
+
+  
     return (
         <div>
-            <div className="mainPageFrame">
-        <div className="innerPageFrame">
-          <h1 className="pageHeaderFrame">Kirjoitustehtävä</h1>
-          <div className="pageInfoFrame">
-            <h2 className="pageInfoTextHeader">Ohje:</h2>
-            <p>Kirjoita seuraava teksti alla olevaan kenttään. Teksti antaa sinulle vihjeitä, miten voit toimia, kun kirjoitat tekstiä.</p>
-          </div>
-          <div className="pageInfoFrame">
-            <p>Tässä tehtävässä harjoittelen kirjoittamaan tietokoneen näppäimistöllä. Opin käyttämään isoja ja pieniä kirjaimia sekä erikoismerkkejä! Kun olen oppinut kirjoittamaan tietokoneella sujuvasti, voin kirjoittaa työhakemuksen minua kiinnostavaan työpaikkaan. Mistä saisin apua ansioluettelon tekemiseen?</p>
-		    <div className="textAreaContainer">
-              <textarea style={textareastyle} onChange={textChangeEvent} value={taskText} placeholder='Klikkaa tähän aloittaaksesi kirjoittamisen' />
-            </div>		  
+          <div className="mainPageFrame">
+			<div className="innerPageFrame">
+			  <h1 className="pageHeaderFrame">Kirjoitustehtävä</h1>
+			  <div className="pageInfoFrame">
+				<h2 className="pageInfoTextHeader">Ohje:</h2>
+				<p>Kirjoita seuraava teksti alla olevaan kenttään. Teksti antaa sinulle vihjeitä, miten voit toimia, kun kirjoitat tekstiä.</p>
+			  </div>
+			  <div className="pageInfoFrame">
+				<p>Tässä tehtävässä harjoittelen kirjoittamaan tietokoneen näppäimistöllä. Opin käyttämään isoja ja pieniä kirjaimia sekä erikoismerkkejä! Kun olen oppinut kirjoittamaan tietokoneella sujuvasti, voin kirjoittaa työhakemuksen minua kiinnostavaan työpaikkaan. Mistä saisin apua ansioluettelon tekemiseen?</p>
+				<div className="textAreaContainer">
+				  <textarea style={textareastyle} onChange={textChangeEvent} value={taskText} placeholder='Klikkaa tähän aloittaaksesi kirjoittamisen' />
+				</div>	  
+			  </div>
+			  <Button className="actionButton" handleClick={ aloitusAlustaFunktio } label="Aloita alusta" value="reset" />
+			</div>
+			<Link to="/Tehtava1" className="NextPrac"
+				  role="button">Seuraava tehtävä</Link>
 		  </div>
-        </div>
-      </div>
-            <Link to="/Tehtava1" className="NextPrac"
-              role="button">Seuraava tehtävä</Link>
         </div>)
-    
   }
   export default Tehtava2
