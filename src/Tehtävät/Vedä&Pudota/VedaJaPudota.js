@@ -62,13 +62,13 @@ export default function DragAndDrop(){
                 all++
               }else if(keyNum==="8"){
                
-                alert('Porkkana ei kuulu koriin')
+                alert('Porkkana ei kuulu koriin!')
               }else if(keyNum==="9"){
               
-                alert('Porkkana ei kuulu koriin')
+                alert('Porkkana ei kuulu koriin!')
               }else if(keyNum==="10"){
                 
-                alert('Porkkana ei kuulu koriin')
+                alert('Porkkana ei kuulu koriin!')
               }
               setState(state+1)
           }else if(((left >= leftRabbit) & left <= (leftRabbit + 70)) & ((top >= topRabbit) & (top <= topRabbit+100))){
@@ -82,19 +82,19 @@ export default function DragAndDrop(){
               kymppi = 1
               all++
             }else if(keyNum==="1"){
-              alert('Jänis ei pidä hedelmistä')
+              alert('Jänis ei pidä hedelmistä!')
             }else if(keyNum==="2"){
-              alert('Jänis ei pidä hedelmistä')
+              alert('Jänis ei pidä hedelmistä!')
             }else if(keyNum==="3"){
-              alert('Jänis ei pidä hedelmistä')
+              alert('Jänis ei pidä hedelmistä!')
             }else if(keyNum==="4"){
-              alert('Jänis ei pidä hedelmistä')
+              alert('Jänis ei pidä hedelmistä!')
             }else if(keyNum==="5"){
-              alert('Jänis ei pidä hedelmistä')
+              alert('Jänis ei pidä hedelmistä!')
             }else if(keyNum==="6"){
-              alert('Jänis ei pidä hedelmistä')
+              alert('Jänis ei pidä hedelmistä!')
             }else if(keyNum==="7"){
-              alert('Jänis ei pidä hedelmistä')
+              alert('Jänis ei pidä hedelmistä!')
             }
             setState(state+1)
           }

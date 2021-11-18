@@ -306,10 +306,19 @@ function FallingWords() {
     setState("try");
   }
 
+  function winnerOrLoserCheck(){
+    if(lives===0){
+      return "Valitettavasti yrityksesi loppuivat, voit yrittää uudelleen, vaihtaa vaikeusastetta tai siirtyä seuraavaan tehtävään"
+    }else if(points>=150){
+      return "Onneksi olkoon, sait vaaditut 150 pistettä, voit yrittää uudelleen toisella vaikeusasteella tai siirtyä seuraavaan tehtävään"
+    }
+  }
+
+
   /*If first render or coming to change difficulty, renders the start menu,
 otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
   if (start === false) {
-    if (lives > 0) {
+    if (lives > 0 && points < 150) {
       return (
         <div className="fallingWords">
           <div className="canvasWords">
@@ -354,7 +363,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <div className="containerBlockWords">
               <div className="letterClass_lostWords">
                 <h3 className="letters_lostWords">
-                  Valitettavasti elämäsi loppuivat!
+                  {winnerOrLoserCheck()}
                 </h3>
                 <h2 className="pisteetWords">Pisteesi: {points}</h2>
               </div>

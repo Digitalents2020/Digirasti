@@ -119,7 +119,7 @@ function FallingGame() {
         cleanFallenLetter(lett);
       }, timeoutLenght);
     }
-    if (lives > 0) {
+    if (lives > 0 && points<50) {
       if (firefoxAgent) {
         location = randomIntFromInterval(0, 800);
       } else {
@@ -280,27 +280,19 @@ Gets also the position from the deleted letter. After timeout removes the new di
     }
   }
 
-  function winMaybe(){
-    if(points>4){
-      return(
-        <div>
-          <div className="winning">Onneksi olkoon sait vaadittavat 50 pistettä! Voit jatkaa pelaamista tai siirtyä seuraavaan tehtävään
-          </div>
-        <Link to="/tippuvat_sanat" className="NextPrac" role="button"> 
-              Seuraava tehtävä
-            </Link>
-            {window.scrollTo({
-            top:1800
-          })}
-            </div>
-      )
+  function winOrLose(){
+    if(lives===0){
+      return "Valitettavasti yrityksesi loppuivat, voit yrittää uudelleen, vaihtaa vaikeusastetta tai siirtyä seuraavaan tehtävään"
+    }else if(points >= 50){
+      return "Onneksi olkoon, sait vaaditut 50 pistettä, voit yrittää uudelleen toisella vaikeusasteella tai siirtyä seuraavaan tehtävään"
     }
   }
+
 
   /*If first render or coming to change difficulty, renders the start menu,
 otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
   if (start === false) {
-    if (lives > 0) {
+    if (lives > 0 && points < 50) {
       return (
         <div className="fallingGame">
           <div className="canvasGame">
@@ -330,11 +322,8 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
               }
             ></input>
               </div>
-              {winMaybe()}
             </div>
-      
             {clearState()}
-            
           </div>
         </div>
       );
@@ -346,7 +335,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <div className="containerBlockGame">
               <div className="letterClass_lostGame">
                 <h3 className="letters_lostGame">
-                  Valitettavasti elämäsi loppuivat!
+                  {winOrLose()}
                 </h3>
                 <h1 className="pisteetGame">Pisteesi: {points}</h1>
               </div>
