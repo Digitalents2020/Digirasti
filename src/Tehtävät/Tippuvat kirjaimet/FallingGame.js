@@ -27,7 +27,7 @@ var lettersIsotJaErikois = [
 
 var arrayOfLetters = [];
 var points = 0;
-var lives = 10;
+var lives = 5;
 var difficultySetting = 4500;
 var location = 0;
 var id = 10;
@@ -63,7 +63,7 @@ function FallingGame() {
     }
     arrayOfLetters = [];
     points = 0;
-    lives = 10;
+    lives = 5;
     lap = 0;
     animLenght = 10;
     timeoutLenght = 10200;
@@ -79,7 +79,7 @@ function FallingGame() {
   function changeDifficulty() {
     arrayOfLetters = [];
     points = 0;
-    lives = 10;
+    lives = 5;
     firstTime = true;
     setStart(true);
     setState("try");
@@ -119,7 +119,7 @@ function FallingGame() {
         cleanFallenLetter(lett);
       }, timeoutLenght);
     }
-    if (lives > 0) {
+    if (lives > 0 && points<50) {
       if (firefoxAgent) {
         location = randomIntFromInterval(0, 800);
       } else {
@@ -263,7 +263,7 @@ Gets also the position from the deleted letter. After timeout removes the new di
   function tryAgain() {
     arrayOfLetters = [];
     points = 0;
-    lives = 10;
+    lives = 5;
     lap = 0;
     animLenght = 10;
     timeoutLenght = 10200;
@@ -280,16 +280,25 @@ Gets also the position from the deleted letter. After timeout removes the new di
     }
   }
 
+  function winOrLose(){
+    if(lives===0){
+      return "Valitettavasti yrityksesi loppuivat, voit yrittää uudelleen, vaihtaa vaikeusastetta tai siirtyä seuraavaan tehtävään"
+    }else if(points >= 50){
+      return "Onneksi olkoon, sait vaaditut 50 pistettä, voit yrittää uudelleen toisella vaikeusasteella tai siirtyä seuraavaan tehtävään"
+    }
+  }
+
+
   /*If first render or coming to change difficulty, renders the start menu,
 otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
   if (start === false) {
-    if (lives > 0) {
+    if (lives > 0 && points < 50) {
       return (
         <div className="fallingGame">
           <div className="canvasGame">
             <h1 className="otsikkoWords">Tippuvat kirjaimet</h1>
             <div className="containerBlockGame">
-              <div className="letterClassGame" id="letterClassGame" >
+              <div className="letterClassGame" id="letterClassGame" style={{borderColor:"#9FC9EB"}}>
                 <Clock
                   letter={newLetter}
                   arrayOfLetters={arrayOfLetters}
@@ -314,7 +323,6 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             ></input>
               </div>
             </div>
-      
             {clearState()}
           </div>
         </div>
@@ -327,7 +335,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <div className="containerBlockGame">
               <div className="letterClass_lostGame">
                 <h3 className="letters_lostGame">
-                  Valitettavasti elämäsi loppuivat!
+                  {winOrLose()}
                 </h3>
                 <h1 className="pisteetGame">Pisteesi: {points}</h1>
               </div>
@@ -356,9 +364,9 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             Paina näppäimistöstäsi niitä kirjaimia, jotka tippuvat alaspäin ruudulla.
             Menetät yhden yrityksen painaessasi väärää kirjainta tai jos kirjain ehtii tippua loppuun asti.
             Yritysten loppuessa peli päättyy.
-            Huomaathan, että pelissä on sekä pieniä että isoja kirjaimia.
+            <br/><br/> Huomaathan, että pelissä on sekä pieniä että isoja kirjaimia.
             Yritä olla nopea, ettei kirjain ehdi tippua alas asti!
-            <strong> Onnea peliin!</strong>
+            <br/><br/><strong> Onnea peliin!</strong>
             </p>
           </div>
           <div className="vaikeusTekstiGame">

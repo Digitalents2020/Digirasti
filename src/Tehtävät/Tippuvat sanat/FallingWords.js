@@ -39,7 +39,7 @@ var wordsHard = [
 
 var arrayOfWords = [];
 var points = 0;
-var lives = 10;
+var lives = 5;
 var difficultySetting = 2500;
 var location = 0;
 var id = 10;
@@ -75,7 +75,7 @@ function FallingWords() {
     }
     arrayOfWords = [];
     points = 0;
-    lives = 10;
+    lives = 5;
     lap = 0;
     animLenght = 15;
     timeoutLenght = 15200;
@@ -91,7 +91,7 @@ function FallingWords() {
   function changeDifficulty() {
     arrayOfWords = [];
     points = 0;
-    lives = 10;
+    lives = 5;
     firstTime = true;
     lap = 0;
     animLenght = 15;
@@ -298,7 +298,7 @@ function FallingWords() {
   function tryAgain() {
     arrayOfWords = [];
     points = 0;
-    lives = 10;
+    lives = 5;
     firstTime = true;
     lap = 0;
     animLenght = 15;
@@ -306,16 +306,25 @@ function FallingWords() {
     setState("try");
   }
 
+  function winnerOrLoserCheck(){
+    if(lives===0){
+      return "Valitettavasti yrityksesi loppuivat, voit yrittää uudelleen, vaihtaa vaikeusastetta tai siirtyä seuraavaan tehtävään"
+    }else if(points>=150){
+      return "Onneksi olkoon, sait vaaditut 150 pistettä, voit yrittää uudelleen toisella vaikeusasteella tai siirtyä seuraavaan tehtävään"
+    }
+  }
+
+
   /*If first render or coming to change difficulty, renders the start menu,
 otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
   if (start === false) {
-    if (lives > 0) {
+    if (lives > 0 && points < 150) {
       return (
         <div className="fallingWords">
           <div className="canvasWords">
             <h1 className="otsikkoWords">Tippuvat sanat</h1>
             <div className="containerBlockWords">
-              <div className="letterClassWords" id="letterClassWords">
+              <div className="letterClassWords" id="letterClassWords" style={{borderColor:"#9FC9EB"}}>
                 <Timer
                   word={newWord}
                   arrayOfWords={arrayOfWords}
@@ -332,6 +341,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
                     id="wordInputWords"
                     onChange={handler}
                     autoFocus={true}
+                    placeholder="Paina ENTER tarkistaaksesi sanan"
                     onBlur={({ target }) =>
                       setTimeout(function () {
                         target.focus({ preventScroll: true });
@@ -353,7 +363,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <div className="containerBlockWords">
               <div className="letterClass_lostWords">
                 <h3 className="letters_lostWords">
-                  Valitettavasti elämäsi loppuivat!
+                  {winnerOrLoserCheck()}
                 </h3>
                 <h2 className="pisteetWords">Pisteesi: {points}</h2>
               </div>
@@ -383,9 +393,9 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <p>
             Kirjoita näppäimistölläsi sama sana, joka tippuu alaspäin ruudulla.
             Kirjoita sana sille varattuun kenttään ja paina näppäimistöstäsi <strong>ENTER</strong> painiketta.
-            Ole tarkkana: Menetät yhden yrityksen kirjoittaessasi sanan väärin tai jos sana ehtii tippua loppuun asti.
+            <br/><br/>Ole tarkkana: Menetät yhden yrityksen kirjoittaessasi sanan väärin tai jos sana ehtii tippua loppuun asti.
             Yritysten loppuessa peli päättyy. 
-            <strong> Onnea peliin!</strong>
+            <br/><br/> <strong> Onnea peliin!</strong>
             </p>
           </div>
           <div className="vaikeusTekstiWords">

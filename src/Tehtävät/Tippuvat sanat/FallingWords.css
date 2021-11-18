@@ -168,6 +168,12 @@
     margin: 10px;
   }
 
+  .wordInputWords::placeholder {
+    color: lightgray;
+    font-size: smaller;
+    opacity: 1;
+  }
+
   
 .vinkkiWords{
   font-size: 18px;

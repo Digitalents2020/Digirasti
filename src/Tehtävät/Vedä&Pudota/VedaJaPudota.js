@@ -62,13 +62,13 @@ export default function DragAndDrop(){
                 all++
               }else if(keyNum==="8"){
                
-                alert('Porkkana ei kuulu koriin')
+                alert('Porkkana ei kuulu koriin!')
               }else if(keyNum==="9"){
               
-                alert('Porkkana ei kuulu koriin')
+                alert('Porkkana ei kuulu koriin!')
               }else if(keyNum==="10"){
                 
-                alert('Porkkana ei kuulu koriin')
+                alert('Porkkana ei kuulu koriin!')
               }
               setState(state+1)
           }else if(((left >= leftRabbit) & left <= (leftRabbit + 70)) & ((top >= topRabbit) & (top <= topRabbit+100))){
@@ -81,6 +81,20 @@ export default function DragAndDrop(){
             }else if(keyNum==="10"){
               kymppi = 1
               all++
+            }else if(keyNum==="1"){
+              alert('Jänis ei pidä hedelmistä!')
+            }else if(keyNum==="2"){
+              alert('Jänis ei pidä hedelmistä!')
+            }else if(keyNum==="3"){
+              alert('Jänis ei pidä hedelmistä!')
+            }else if(keyNum==="4"){
+              alert('Jänis ei pidä hedelmistä!')
+            }else if(keyNum==="5"){
+              alert('Jänis ei pidä hedelmistä!')
+            }else if(keyNum==="6"){
+              alert('Jänis ei pidä hedelmistä!')
+            }else if(keyNum==="7"){
+              alert('Jänis ei pidä hedelmistä!')
             }
             setState(state+1)
           }
@@ -164,7 +178,7 @@ export default function DragAndDrop(){
       <div className="ohjeDrag">
         <h2 className="ohjetxtDrag">Ohje:</h2>
         <p>Tehtävänäsi on raahata kaikki <strong>hedelmät</strong> koriin ja syöttää <strong>porkkanat</strong> jänikselle.
-        Raahaus: Valitse hiiren vasemmalla painikkeella raahattava kohde, pidä painike pohjassa ja liikuta hiirtä samanaikaisesti.</p>
+        <br/><br/>Raahaus: Valitse hiiren vasemmalla painikkeella raahattava kohde, pidä painike pohjassa ja liikuta hiirtä samanaikaisesti.</p>
       </div>
       <motion.div className="canvas">
         <div className="basket1" id="basket1">
