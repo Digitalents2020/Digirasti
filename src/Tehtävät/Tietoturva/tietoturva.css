@@ -1,8 +1,4 @@
 .answer {
-  padding: 0.5rem;
-  margin: 1rem;
-  min-width: 600px;
-  border: 0;
   font-size: 20px;
   text-align: left;
 }
@@ -11,7 +7,6 @@ Button {
   background-color: #0000bf;
   color: #ffffff;
   padding: 10px 22px;
-  margin: 40px 10px;
   text-align: center;
   display: inline-block;
   font-size: 20px;
@@ -58,13 +53,11 @@ button:hover {
   margin: 1rem;
   border: 0;
   font-size: 20px;
-  text-align: left;
 }
 
 .form-grid label {
-  text-align: left;
   font-size: 18px;
-  margin: 0, 2rem, 2rem, 0;
+  margin: 0 2rem 2rem 0;
 }
 
 .form-grid textarea {
@@ -73,6 +66,18 @@ button:hover {
 
 .form-grid ul {
   list-style-type: none;
+}
+
+.form-grid h3 {
+  margin: 2rem 0 0 0;
+}
+
+.form-grid-content {
+  padding: 40px;
+  margin: 10px 0;
+  text-align: left;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .instructions {
@@ -112,15 +117,6 @@ button:hover {
 .NextPrac:hover {
   background-color: #000000;
   color: #ffffff;
-}
-
-.form-grid radio {
-  padding: 0.5rem;
-  margin: 1rem;
-  min-width: 600px;
-  border: 0;
-  font-size: 20px;
-  text-align: left;
 }
 
 .success {

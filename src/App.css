@@ -10,7 +10,6 @@ body {
 
 .App {
   min-height: 100%;
-  text-align: center;
   display: grid;
   grid-template-columns: 25vw auto;
   grid-auto-rows: minmax(100vh, auto);

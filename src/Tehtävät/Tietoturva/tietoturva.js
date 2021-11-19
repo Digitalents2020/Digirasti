@@ -74,7 +74,7 @@ const Tietoturva = () => {
           <p>Kysymys 4: B koska x</p>
           <p>Kysymys 5: B koska x</p>
         </div>
-        <Link to="/Eform" className="NextPrac" role="button">
+        <Link to="/tippuvat_kirjaimet" className="NextPrac" role="button">
           Seuraava tehtävä
         </Link>
       </div>
@@ -90,9 +90,7 @@ const Tietoturva = () => {
           Tässä kyselyssä vastaat viiteen tietoturvaan liittyvään kysymykseen.
         </p>
       </div>
-      <br></br>
-      <br></br>
-      <div className="form-grid">
+      <div className="form-grid-content">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h3>Mitä tietoturvalla tarkoitetaan?</h3>
           <ul>
