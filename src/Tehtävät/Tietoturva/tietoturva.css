@@ -1,9 +1,4 @@
 .answer {
-  display: block;
-  padding: 0.5rem;
-  margin: 1rem;
-  min-width: 600px;
-  border: 0;
   font-size: 20px;
   text-align: left;
 }
@@ -12,7 +7,6 @@ Button {
   background-color: #0000bf;
   color: #ffffff;
   padding: 10px 22px;
-  margin: 40px 10px;
   text-align: center;
   display: inline-block;
   font-size: 20px;
@@ -42,7 +36,6 @@ button:hover {
 }
 
 .exercise-header {
-  display: block;
   padding: 10px;
   background-color: #9fc9eb;
   color: #000000;
@@ -50,35 +43,44 @@ button:hover {
   text-align: center;
 }
 
-.form-box {
+.form-grid {
   margin-top: 10px;
   padding: 20px;
 }
 
-.form-box input {
-  display: block;
+.form-grid input {
   padding: 0.5rem;
   margin: 1rem;
-  min-width: 600px;
   border: 0;
   font-size: 20px;
-  text-align: right;
 }
 
-.form-box label {
-  display: block;
-  text-align: left;
-  font-weight: bold;
-  font-size: 20px;
-  margin: 0, 0, 2rem, 0;
+.form-grid label {
+  font-size: 18px;
+  margin: 0 2rem 2rem 0;
 }
 
-.form-box textarea {
+.form-grid textarea {
   height: 15rem;
 }
 
+.form-grid ul {
+  list-style-type: none;
+}
+
+.form-grid h3 {
+  margin: 2rem 0 0 0;
+}
+
+.form-grid-content {
+  padding: 40px;
+  margin: 10px 0;
+  text-align: left;
+  background-color: #ffffff;
+  color: #000000;
+}
+
 .instructions {
-  display: block;
   padding: 40px;
   margin: 10px 0;
   text-align: left;
@@ -117,18 +119,7 @@ button:hover {
   color: #ffffff;
 }
 
-.form-box radio {
-  display: block;
-  padding: 0.5rem;
-  margin: 1rem;
-  min-width: 600px;
-  border: 0;
-  font-size: 20px;
-  text-align: left;
-}
-
 .success {
-  display: block;
   padding: 40px;
   margin: 10px 0;
   text-align: left;
