@@ -186,25 +186,25 @@ export default function DragAndDrop(){
         <div className="rabbit" id="rabbit">
         </div>
         <RaahattavaObjekti pysahdys={pysahdys} int={eka} 
-          className="dragObject1" id="dragObject1" keyNum="1" />
+          className="dragObject apple" id="dragObject1" keyNum="1" left="80px" top="220px"/>
         <RaahattavaObjekti pysahdys={pysahdys} int={toka} 
-          className="dragObject2" id="dragObject2" keyNum="2" />
+          className="dragObject apple" id="dragObject2" keyNum="2" left="95px" top="50px"/>
         <RaahattavaObjekti pysahdys={pysahdys} int={kolmas} 
-          className="dragObject3" id="dragObject3" keyNum="3" />
+          className="dragObject apple" id="dragObject3" keyNum="3" left="250px" top="135px"/>
         <RaahattavaObjekti pysahdys={pysahdys} int={neljas}
-          className="dragObject4" id="dragObject4" keyNum="4" />
+          className="dragObject apple" id="dragObject4" keyNum="4" left="350px" top="55px"/>
         <RaahattavaObjekti pysahdys={pysahdys} int={viides} 
-          className="dragObject5" id="dragObject5" keyNum="5" />
+          className="dragObject pear" id="dragObject5" keyNum="5" left="200px" top="35px"/>
         <RaahattavaObjekti pysahdys={pysahdys} int={kuudes} 
-          className="dragObject6" id="dragObject6" keyNum="6" />
+          className="dragObject pear" id="dragObject6" keyNum="6" left="350px" top="260px"/>
         <RaahattavaObjekti pysahdys={pysahdys} int={seiska} 
-          className="dragObject7" id="dragObject7" keyNum="7" />
+          className="dragObject pear" id="dragObject7" keyNum="7" left="450px" top="170px"/>
         <RaahattavaObjekti pysahdys={pysahdys} int={kasi} 
-          className="dragObject8" id="dragObject8" keyNum="8" />
+          className="dragObject carrot" id="dragObject8" keyNum="8" left="155px" top="130px"/>
         <RaahattavaObjekti pysahdys={pysahdys} int={ysi}
-          className="dragObject9" id="dragObject9" keyNum="9" />
+          className="dragObject carrot" id="dragObject9" keyNum="9" left="225px" top="230px"/>
         <RaahattavaObjekti pysahdys={pysahdys} int={kymppi} 
-          className="dragObject10" id="dragObject10" keyNum="10" />
+          className="dragObject carrot" id="dragObject10" keyNum="10" left="350px" top="150px"/>
       </motion.div>
       {victory()}
       {nextPract()}

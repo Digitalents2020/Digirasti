@@ -81,14 +81,11 @@
   }
 
 
-.dragObject1{
+.dragObject{
     height: 52px;
     width: 45px;
-    margin-left: 80px;
-    margin-top: 220px;
     border-radius: 25%;
     position: absolute;
-    background-image: url("Pictures/apple.png");
     background-size: cover;
     -webkit-filter: drop-shadow(2px 1px 0 white)
     drop-shadow(-1px 1px 0 white)
@@ -99,174 +96,12 @@
     drop-shadow(1px -1px 0 white)
     drop-shadow(-1px -1px 0 white);
 }
-
-.dragObject2{
-    height: 52px;
-    width: 45px;
-    margin-left: 95px;
-    margin-top: 50px;
-    border-radius: 25%;
-    position: absolute;
+.apple{
     background-image: url("Pictures/apple.png");
-    background-size: cover;
-    -webkit-filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-    filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
 }
-.dragObject3{
-    height: 52px;
-    width: 45px;
-    margin-left: 250px;
-    margin-top: 135px;
-    border-radius: 25%;
-    position: absolute;
-    background-image: url("Pictures/apple.png");
-    background-size: cover;
-    -webkit-filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-    filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-}
-.dragObject4{
-    height: 52px;
-    width: 45px;
-    margin-left: 350px;
-    margin-top: 55px;
-    border-radius: 25%;
-    position: absolute;
-    background-image: url("Pictures/apple.png");
-    background-size: cover;
-    -webkit-filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-    filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-}
-
-.dragObject5{
-    height: 52px;
-    width: 45px;
-    margin-left: 200px;
-    margin-top: 35px;
-    border-radius: 25%;
-    position: absolute;
+.pear{
     background-image: url("Pictures/Pear.png");
-    background-size: cover;
-    -webkit-filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-    filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
 }
-
-.dragObject6{
-    height: 52px;
-    width: 45px;
-    margin-left: 350px;
-    margin-top: 260px;
-    border-radius: 25%;
-    position: absolute;
-    background-image: url("Pictures/Pear.png");
-    background-size: cover; 
-    -webkit-filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-    filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-}
-
-.dragObject7{
-    height: 52px;
-    width: 45px;
-    margin-left: 450px;
-    margin-top: 170px;
-    border-radius: 25%;
-    position: absolute;
-    background-image: url("Pictures/Pear.png");
-    background-size: cover; 
-    -webkit-filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-    filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-}
-
-.dragObject8{
-    height: 52px;
-    width: 45px;
-    margin-left: 155px;
-    margin-top: 130px;
-    border-radius: 25%;
-    position: absolute;
+.carrot{
     background-image: url("Pictures/carrot.png");
-    background-size: cover;
-    -webkit-filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-    filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
 }
-
-.dragObject9{
-    height: 52px;
-    width: 45px;
-    margin-left: 225px;
-    margin-top: 230px;
-    border-radius: 25%;
-    position: absolute;
-    background-image: url("Pictures/carrot.png");
-    background-size: cover;
-    -webkit-filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-    filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-}
-
-.dragObject10{
-    height: 52px;
-    width: 45px;
-    margin-left: 350px;
-    margin-top: 150px;
-    border-radius: 25%;
-    position: absolute;
-    background-image: url("Pictures/carrot.png");
-    background-size: cover;
-    -webkit-filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-    filter: drop-shadow(2px 1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-}
-
-
