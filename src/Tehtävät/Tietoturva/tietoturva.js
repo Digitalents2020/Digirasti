@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import "../../App.css";
+import "./tietoturva.css";
 //React Form Hook library documentation: https://github.com/react-hook-form/react-hook-form
 
 const Tietoturva = () => {
@@ -74,7 +74,7 @@ const Tietoturva = () => {
           <p>Kysymys 4: B koska x</p>
           <p>Kysymys 5: B koska x</p>
         </div>
-        <Link to="/Eform" className="nextPracButton" role="button">
+        <Link to="/tippuvat_kirjaimet" className="NextPrac" role="button">
           Seuraava tehtävä
         </Link>
       </div>
@@ -82,112 +82,164 @@ const Tietoturva = () => {
   }
 
   return (
-    <div className="form-box">
-      <h2 className="pageHeader">Tietoturvatehtävä</h2>
+    <div className="form-grid">
+      <h1 className="exercise-header">Tietoturvakysely</h1>
       <div className="instructions">
         <h2 className="instruction-header">Ohje:</h2>
         <p>
-          Tässä kyselyssä Vastaat viiteen tietoturvaan liittyvään kysymykseen.
+          Tässä kyselyssä vastaat viiteen tietoturvaan liittyvään kysymykseen.
         </p>
       </div>
-      <br></br>
-      <br></br>
-      <div className="field">
+      <div className="form-grid-content">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label>Mitä tietoturvalla tarkoitetaan?</label>
-          <p className="answer">
-            Tietoturva tarkoittaa turvalliseksi luokiteltua tietoa.
-          </p>
-          <input
-            {...register("kysymys1", { required: true })}
-            name="kysymys1"
-            type="radio"
-            value="A"
-          />
-          <p className="answer">
-            Tietoturva tarkoittaa yrityksen tai palveluntarjoajan tietojen
-            suojaamista ulkopuolisilta.
-          </p>
-          <input
-            {...register("kysymys1", { required: true })}
-            name="kysymys1"
-            type="radio"
-            value="B"
-          />
-          <label>Mitä tietosuojalla tarkoitetaan?</label>
-          <p className="answer">
-            Tietosuoja tarkoittaa paikkaa, jossa tieto pysyy suojassa muilta.
-          </p>
-          <input
-            {...register("kysymys2", { required: true })}
-            name="kysymys2"
-            type="radio"
-            value="A"
-          />
-          <p className="answer">
-            Tietosuoja tarkoittaa toimenpiteitä, joilla pyritään varmistamaan
-            henkilötietojen asianmukainen käsittely ja yksityisyyden säilyminen.
-          </p>
-          <input
-            {...register("kysymys2", { required: true })}
-            name="kysymys2"
-            type="radio"
-            value="B"
-          />
-          <label>Minun täytyy itse huolehtia tietosuojastani</label>
-          <p className="answer">Ei</p>
-          <input
-            {...register("kysymys3", { required: true })}
-            name="kysymys3"
-            type="radio"
-            value="A"
-          />
-          <p className="answer">Kyllä</p>
-          <input
-            {...register("kysymys3", { required: true })}
-            name="kysymys3"
-            type="radio"
-            value="B"
-          />
-          <label>
+          <h3>Mitä tietoturvalla tarkoitetaan?</h3>
+          <ul>
+            <li>
+              <input
+                {...register("kysymys1", { required: true })}
+                name="kysymys1"
+                type="radio"
+                value="A"
+                id="kysymys1A"
+              />
+              <label htmlFor="kysymys1A" className="answer">
+                Tietoturva tarkoittaa turvalliseksi luokiteltua tietoa.
+              </label>
+            </li>
+            <li>
+              <input
+                {...register("kysymys1", { required: true })}
+                name="kysymys1"
+                type="radio"
+                value="B"
+                id="kysymys1B"
+              />
+              <label htmlFor="kysymys1B" className="answer">
+                Tietoturva tarkoittaa yrityksen tai palveluntarjoajan tietojen
+                suojaamista ulkopuolisilta.
+              </label>
+            </li>
+          </ul>
+          <h3>Mitä tietosuojalla tarkoitetaan?</h3>
+          <ul>
+            <li>
+              <input
+                {...register("kysymys2", { required: true })}
+                name="kysymys2"
+                type="radio"
+                value="A"
+                id="kysymys2A"
+              />
+              <label htmlFor="kysymys2A" className="answer">
+                Tietosuoja tarkoittaa paikkaa, jossa tieto pysyy suojassa
+                muilta.
+              </label>
+            </li>
+            <li>
+              <input
+                {...register("kysymys2", { required: true })}
+                name="kysymys2"
+                type="radio"
+                value="B"
+                id="kysymys2B"
+              />
+              <label htmlFor="kysymys2B" className="answer">
+                Tietosuoja tarkoittaa toimenpiteitä, joilla pyritään
+                varmistamaan henkilötietojen asianmukainen käsittely ja
+                yksityisyyden säilyminen.
+              </label>
+            </li>
+          </ul>
+          <h3>Minun täytyy itse huolehtia tietosuojastani</h3>
+          <ul>
+            <li>
+              <input
+                {...register("kysymys3", { required: true })}
+                name="kysymys3"
+                type="radio"
+                value="A"
+                id="kysymys3A"
+              />
+              <label htmlFor="kysymys3A" className="answer">
+                Ei
+              </label>
+            </li>
+            <li>
+              <input
+                {...register("kysymys3", { required: true })}
+                name="kysymys3"
+                type="radio"
+                value="B"
+                id="kysymys3B"
+              />
+              <label htmlFor="kysymys3B" className="answer">
+                Kyllä
+              </label>
+            </li>
+          </ul>
+          <h3>
             Pankkivirkailija pyytää sinulta sähköpostilla käyttäjätunnusta ja
             salasanaa pankkipalveluun, jotta hän voi tehdä sinulle ylimääräisen
             talletuksen. Voitko antaa ne?
-          </label>
-          <p className="answer">Ei</p>
-          <input
-            {...register("kysymys4", { required: true })}
-            name="kysymys4"
-            type="radio"
-            value="A"
-          />
-          <p className="answer">Kyllä</p>
-          <input
-            {...register("kysymys4", { required: true })}
-            name="kysymys4"
-            type="radio"
-            value="B"
-          />
-          <label>
+          </h3>
+          <ul>
+            <li>
+              <input
+                {...register("kysymys4", { required: true })}
+                name="kysymys4"
+                type="radio"
+                value="A"
+                id="kysymys4A"
+              />
+              <label htmlFor="kysymys4A" className="answer">
+                Ei
+              </label>
+            </li>
+            <li>
+              <input
+                {...register("kysymys4", { required: true })}
+                name="kysymys4"
+                type="radio"
+                value="B"
+                id="kysymys4B"
+              />
+              <label htmlFor="kysymys4B" className="answer">
+                Kyllä
+              </label>
+            </li>
+          </ul>
+          <h3>
             Pari eri salasanaa riittää kaikille eri käyttäjätileille (esim.
             sähköpostiin, sosiaalisen median kanaville, foorumeille, työnhaun
             sivustoille jne)
-          </label>
-          <p className="answer">Ei</p>
-          <input
-            {...register("kysymys5", { required: true })}
-            name="kysymys5"
-            type="radio"
-            value="A"
-          />
-          <p className="answer">Kyllä</p>
-          <input
-            {...register("kysymys5", { required: true })}
-            name="kysymys5"
-            type="radio"
-            value="B"
-          />
-          <button className="actionButton" type="submit">Lähetä vastaukset</button>
+          </h3>
+          <ul>
+            <li>
+              <input
+                {...register("kysymys5", { required: true })}
+                name="kysymys5"
+                type="radio"
+                value="A"
+                id="kysymys5A"
+              />
+              <label htmlFor="kysymys5A" className="answer">
+                Ei
+              </label>
+            </li>
+            <li>
+              <input
+                {...register("kysymys5", { required: true })}
+                name="kysymys5"
+                type="radio"
+                value="B"
+                id="kysymys5B"
+              />
+              <label htmlFor="kysymys5B" className="answer">
+                Kyllä
+              </label>
+            </li>
+          </ul>
+          <button type="submit">Lähetä vastaukset</button>
         </form>
       </div>
     </div>
