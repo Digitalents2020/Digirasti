@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import "./tietoturva.css";
+import "../../App.css";
 //React Form Hook library documentation: https://github.com/react-hook-form/react-hook-form
 
 const Tietoturva = () => {
@@ -74,7 +74,7 @@ const Tietoturva = () => {
           <p>Kysymys 4: B koska x</p>
           <p>Kysymys 5: B koska x</p>
         </div>
-        <Link to="/tippuvat_kirjaimet" className="NextPrac" role="button">
+        <Link to="/tippuvat_kirjaimet" className="nextPracButton" role="button">
           Seuraava tehtävä
         </Link>
       </div>
@@ -83,7 +83,7 @@ const Tietoturva = () => {
 
   return (
     <div className="form-grid">
-      <h1 className="exercise-header">Tietoturvakysely</h1>
+      <h1 className="pageHeader">Tietoturvakysely</h1>
       <div className="instructions">
         <h2 className="instruction-header">Ohje:</h2>
         <p>
@@ -239,7 +239,7 @@ const Tietoturva = () => {
               </label>
             </li>
           </ul>
-          <button type="submit">Lähetä vastaukset</button>
+          <button className="actionButton" type="submit">Lähetä vastaukset</button>
         </form>
       </div>
     </div>
