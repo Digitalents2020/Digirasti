@@ -104,7 +104,7 @@ export default function DragAndDrop(){
     function nextPract(){
           if(all === 10){
             return (
-              <Link to="/Email" id="ToTheNext" className="NextPrac" role="button" onClick={ClearVariables()}>Seuraava tehtävä</Link>
+              <Link to="/Email" id="ToTheNext" className="nextPracButton" role="button" onClick={ClearVariables()}>Seuraava tehtävä</Link>
             )
           }
         }
