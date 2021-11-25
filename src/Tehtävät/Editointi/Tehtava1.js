@@ -1,24 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
-import "./Tehtava1.css"
-
-  const Button = ( props ) => {
-    return (
-      <button onClick={ props.handleClick }>
-      { props.label }
-      </button>
-    )
-  }
+import "../../App.css"
 
   const Tehtava1 = () => {
     const [ counter, setCounter ] = useState( 0 )
     const [ taskTimer, countTaskTimer ] = useState( '00:00' )
     const [ taskText, setTaskText ] = useState('Helsi8ngin työllisyys4palveluiden tavoittee5na on edistää1 nykyis9tä tehokkaam1min työ3ttömien työnhaki7joiden työllistym9istä ja koulutuks0een ohjaut4umista, sekä tuoda uu6sia ratkai2suja os1aavan työvoiman saatavu8uteen.\n\nSuomal3aisten digitaitojen tärkeys kor6ostuu palveluiden muuttue7ssa s2ähköisiksi. On arvioitu, että noin 7neljänneksellä väestöstä olisi liian heikot digitaido345t.\n\nHelsingin kaupungin työllisyys6palveluiden 7toteuttama Digirasti-hanke tarjoaa helsinkiläisille50 työttö9mille työnhakuun keskittyvää digitaito-opetusta.')
-
-    const textareastyle = {
-		minHeight: '150px',
-        minWidth: '100%'
-    }
 
     setTimeout(() => {
       laskurifunktio()
@@ -73,25 +60,24 @@ import "./Tehtava1.css"
     }
 
     return (
-        <div>
-          <div className="mainPageFrame">
-			<div className="innerPageFrame">
-			  <h1 className="pageHeaderFrame">Editointitehtävä</h1>
-			  <div className="pageInfoFrame">
-				<h2 className="pageInfoTextHeader">Ohje:</h2>
-				<p>Liiku tekstissä nuolinäppäimillä ja poista tekstistä kaikki numerot.</p>
-			  </div>
-			</div>
-			<div>
-			  <p/>
-			  <textarea style={textareastyle} onChange={textChangeEvent} value={taskText} ></textarea>
-			  <Button className="actionButton" handleClick={ tarkistusFunktio } label="Tarkista tulos" value="validateResult" />
-			  <Button className="actionButton" handleClick={ aloitusAlustaFunktio } label="Aloita alusta" value="reset" />
-			</div>
-		  </div>
-          <Link to="/kopiointi" className="NextPrac"
-            role="button">Seuraava tehtävä</Link>
+      <div>
+        <div className="mainPageFrame">
+			    <div className="innerPageFrame">
+			      <h1 className="pageHeader">Muokkaustehtävä</h1>
+			      <div className="pageContentFrame">
+				      <h2 className="pageInfoTextHeader">Ohje:</h2>
+				      <p>Liiku tekstissä nuolinäppäimillä ja poista tekstistä kaikki numerot.</p>
+			      </div>
+			    </div>
+			    <div className="pageContentFrame">
+			      <textarea className="textWritingArea" onChange={textChangeEvent} value={taskText} ></textarea>
+			      <button className="actionButton" onClick={ tarkistusFunktio } value="validateResult">Tarkista tulos</button>
+			      <button className="actionButton" onClick={ aloitusAlustaFunktio } value="reset">Aloita alusta</button>
+			    </div>
+		    </div>
+        <Link to="/kopiointi" className="nextPracButton" role="button">Seuraava tehtävä</Link>
         </div>
     )
   }
+  
   export default Tehtava1

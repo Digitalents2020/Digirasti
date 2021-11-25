@@ -1,5 +1,5 @@
 import React from "react";
-import "./FallingWords.css";
+import "../../App.css";
 import { useState } from "react";
 import Timer from "./Timer";
 import { AnimatePresence, motion } from "framer-motion";
@@ -322,7 +322,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
       return (
         <div className="fallingWords">
           <div className="canvasWords">
-            <h1 className="otsikkoWords">Tippuvat sanat</h1>
+          <h1 className="pageHeader">Tippuvat sanat</h1>
             <div className="containerBlockWords">
               <div className="letterClassWords" id="letterClassWords" style={{borderColor:"#9FC9EB"}}>
                 <Timer
@@ -359,7 +359,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
       return (
         <div className="fallingWords">
           <div className="canvasWords">
-            <h1 className="otsikkoWords">Tippuvat sanat</h1>
+            <h1 className="pageHeader">Tippuvat sanat</h1>
             <div className="containerBlockWords">
               <div className="letterClass_lostWords">
                 <h3 className="letters_lostWords">
@@ -387,7 +387,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
     return (
       <div className="fallingWords">
         <div className="canvasWords">
-          <h1 className="otsikkoWords">Tippuvat sanat</h1>
+          <h1 className="pageHeader">Tippuvat sanat</h1>
           <div className="ohjeWords">
             <h2 className="ohjetxtWords">Ohje:</h2>
             <p>

@@ -26,7 +26,7 @@ const App = () => {
               <Link to="/Tehtava2">Kirjoitustehtävä</Link>
             </li>
             <li>
-              <Link to="/Tehtava1">Editointitehtävä</Link>
+              <Link to="/Tehtava1">Muokkaustehtävä</Link>
             </li>
             <li>
               <Link to="/kopiointi">Kopiointitehtävä</Link>

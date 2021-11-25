@@ -1,5 +1,5 @@
 import React from "react";
-import "./FallingGame.css";
+import "../../App.css";
 import { useState } from "react";
 import Clock from "./Clock";
 import { AnimatePresence, motion } from "framer-motion";
@@ -296,7 +296,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
       return (
         <div className="fallingGame">
           <div className="canvasGame">
-            <h1 className="otsikkoWords">Tippuvat kirjaimet</h1>
+            <h1 className="pageHeader">Tippuvat kirjaimet</h1>
             <div className="containerBlockGame">
               <div className="letterClassGame" id="letterClassGame" style={{borderColor:"#9FC9EB"}}>
                 <Clock
@@ -331,7 +331,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
       return (
         <div className="fallingGame">
           <div className="canvasGame">
-            <h1 className="otsikkoWords">Tippuvat kirjaimet</h1>
+            <h1 className="pageHeader">Tippuvat kirjaimet</h1>
             <div className="containerBlockGame">
               <div className="letterClass_lostGame">
                 <h3 className="letters_lostGame">
@@ -357,7 +357,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
     return (
       <div className="fallingGame">
         <div className="canvasGame">
-          <h1 className="otsikkoGame">Tippuvat kirjaimet</h1>
+          <h1 className="pageHeader">Tippuvat kirjaimet</h1>
           <div className="ohjeGame">
             <h2 className="ohjetxtGame">Ohje:</h2>
             <p>

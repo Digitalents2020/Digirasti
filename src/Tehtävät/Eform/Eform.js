@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Email/common-form.css";
+import "../../App.css";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Form from "./Form";
@@ -98,14 +98,14 @@ const Eform = () => {
                 halutessasi yrittää uudelleen tai klikata "seuraava tehtävä"
                 painiketta.
               </p>
-              <button className="NextPrac" type="button" onClick={refreshPage}>
+              <button className="actionButton" type="button" onClick={refreshPage}>
                 {" "}
                 <span>Yritä uudelleen</span>{" "}
               </button>
             </>
           )}
         </div>
-        <Link to="/Tehtava1" className="NextPrac" role="button">
+        <Link to="/Tehtava1" className="nextPracButton" role="button">
           Seuraava tehtävä
         </Link>
       </div>
@@ -114,7 +114,7 @@ const Eform = () => {
 
   return (
     <div className="form-box">
-      <h5 className="exercise-header">Sähköinen lomake</h5>
+      <h1 className="pageHeader">Sähköinen lomake</h1>
       <div className="instructions">
         <h2 className="instruction-header">Ohje:</h2>
         <p>

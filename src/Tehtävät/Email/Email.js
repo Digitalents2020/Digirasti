@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import "./common-form.css";
+import "../../App.css";
 //React Form Hook library documentation: https://github.com/react-hook-form/react-hook-form
 
 const Email = () => {
@@ -50,14 +50,14 @@ const Email = () => {
                 halutessasi yrittää uudelleen tai klikata "seuraava tehtävä"
                 painiketta.
               </p>
-              <button className="NextPrac" type="button" onClick={refreshPage}>
+              <button className="nextPracButton" type="button" onClick={refreshPage}>
                 {" "}
                 <span>Yritä uudelleen</span>{" "}
               </button>
             </>
           )}
         </div>
-        <Link to="/Eform" className="NextPrac" role="button">
+        <Link to="/Eform" className="nextPracButton" role="button">
           Seuraava tehtävä
         </Link>
       </div>
@@ -71,7 +71,7 @@ const Email = () => {
 
   return (
     <div className="form-box">
-      <h2 className="exercise-header">Sähköposti</h2>
+      <h1 className="pageHeader">Sähköposti</h1>
       <div className="instructions">
         <h2 className="instruction-header">Ohje:</h2>
         <p>
@@ -123,7 +123,7 @@ const Email = () => {
           )}
           <label>Lataa liite</label>
           <input {...register("Attachment")} type="file"></input>
-          <button type="submit">Lähetä</button>
+          <button className="actionButton" type="submit">Lähetä</button>
         </form>
       </div>
     </div>
