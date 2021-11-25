@@ -120,11 +120,6 @@ h2 {
 /* TIETOTURVA STYLES */
 
 .answer {
-  display: block;
-  padding: 0.5rem;
-  margin: 1rem;
-  min-width: 600px;
-  border: 0;
   font-size: 20px;
   text-align: left;
 }
@@ -144,31 +139,41 @@ h2 {
   padding-bottom: 10px;
 }
 
-.form-box {
+.form-grid {
   margin-top: 10px;
   padding: 20px;
 }
 
-.form-box input {
-  display: block;
+.form-grid input {
   padding: 0.5rem;
   margin: 1rem;
-  min-width: 600px;
   border: 0;
   font-size: 20px;
-  text-align: right;
 }
 
-.form-box label {
-  display: block;
-  text-align: left;
-  font-weight: bold;
-  font-size: 20px;
-  margin: 0, 0, 2rem, 0;
+.form-grid label {
+  font-size: 18px;
+  margin: 0 2rem 2rem 0;
 }
 
-.form-box textarea {
+.form-grid textarea {
   height: 15rem;
+}
+
+.form-grid ul {
+  list-style-type: none;
+}
+
+.form-grid h3 {
+  margin: 2rem 0 0 0;
+}
+
+.form-grid-content {
+  padding: 40px;
+  margin: 10px 0;
+  text-align: left;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .instructions {
@@ -890,6 +895,7 @@ select {
 }
 
 .pageHeader {
+  text-align: center;
   display: block;
   padding: 10px;
   background-color: #9FC9EB;
