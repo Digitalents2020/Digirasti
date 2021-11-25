@@ -73,7 +73,7 @@ const Email = () => {
     <div className="form-box">
       <h1 className="pageHeader">Sähköposti</h1>
       <div className="instructions">
-        <h2 className="instruction-header">Ohje:</h2>
+        <h2 className="infoHeader">Ohje:</h2>
         <p>
           Tässä tehtävässä opetellaan sähköpostin kirjoittamista ja
           liittetiedoston liittämistä. Sähköpostissa on aina kolme eri osaa:

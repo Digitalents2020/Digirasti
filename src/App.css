@@ -66,154 +66,22 @@ a:active {
   color: #ffffff;
 }
 
-/* HOME STYLES */
-
-.pageInfoTextHeader {
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
-}
-
-/* TEHTAVA1 STYLES */
-
-.pageInfoTextHeader {
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
-}
-
-/* TEHTAVA2 STYLES */
-
-.pageInfoTextHeader {
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
-}
-
-/* KOPIOINTI STYLES */
-
-input {
-  display: inline-block;
-  border: solid 1px black;
-  min-width: 50px;
-  min-height: 30px;
-  margin: 10px 0 10px 0;
-  text-align: center;
-}
-
-p {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  line-height: 20px;
-}
-
-h2 {
-  margin-top: 20px;
-}
-
-.pageInfoTextHeader {
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
-}
-
 /* TIETOTURVA STYLES */
 
-.answer {
-  font-size: 20px;
-  text-align: left;
-}
-
-.degree {
-  font-size: 20px;
-  text-align: left;
-}
-
-.degree-name {
-  text-align: left;
-}
-
-.error-message {
-  color: #fd4f00;
-  text-align: left;
-  padding-bottom: 10px;
-}
-
-.form-grid {
-  margin-top: 10px;
-  padding: 20px;
-}
-
-.form-grid input {
+.formTietoturva input {
   padding: 0.5rem;
   margin: 1rem;
   border: 0;
   font-size: 20px;
 }
 
-.form-grid label {
+.formTietoturva label {
   font-size: 18px;
   margin: 0 2rem 2rem 0;
 }
 
-.form-grid textarea {
-  height: 15rem;
-}
-
-.form-grid ul {
+.formTietoturva ul {
   list-style-type: none;
-}
-
-.form-grid h3 {
-  margin: 2rem 0 0 0;
-}
-
-.form-grid-content {
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.instructions {
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.instruction-header {
-  color: #fd4f00;
-  padding-bottom: 10px;
-  margin: 0;
-  text-align: left;
-}
-
-.little-header {
-  color: #fd4f00;
-  padding-bottom: 10px;
-}
-
-.form-box radio {
-  display: block;
-  padding: 0.5rem;
-  margin: 1rem;
-  min-width: 600px;
-  border: 0;
-  font-size: 20px;
-  text-align: left;
-}
-
-.success {
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #ffffff;
-  color: #000000;
 }
 
 /* TIPPUVAKIRJAIN STYLES */
@@ -272,12 +140,6 @@ h2 {
   text-align: left;
   background-color: #FFFFFF;
   color: #000000;
-}
-
-.ohjetxtGame {
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
 }
 
 .pisteetGame {
@@ -426,12 +288,6 @@ h2 {
   text-align: left;
   background-color: #FFFFFF;
   color: #000000;
-}
-
-.ohjetxtWords {
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
 }
 
 .pisteetWords {
@@ -599,12 +455,6 @@ border-style: solid;
   color: #000000;
 }
 
-.ohjetxtDrag{
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
-}
-
 .dragObject{
   height: 52px;
   width: 45px;
@@ -691,18 +541,6 @@ border-style: solid;
   color: #000000;
 }
 
-.instruction-header {
-  color: #fd4f00;
-  padding-bottom: 10px;
-  margin: 0;
-  text-align: left;
-}
-
-.little-header {
-  color: #fd4f00;
-  padding-bottom: 10px;
-}
-
 select {
   display: block;
   padding: 0.5rem;
@@ -711,15 +549,6 @@ select {
   border: 0;
   font-size: 20px;
   text-align: left;
-}
-
-.success {
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #ffffff;
-  color: #000000;
 }
 
 .content {
@@ -749,6 +578,11 @@ select {
   text-align: left;
   background-color: #FFFFFF;
   color: #000000;
+}
+
+.infoHeader {
+  color: #FD4F00;
+  padding-bottom: 10px;
 }
 
 /* BUTTONS */
@@ -792,7 +626,6 @@ select {
 /* TEXTAREA */
 
 .textWritingArea {
-  min-height: 350px;
   min-width: 100%;
   resize: none;
   border-color: #9FC9EB;
@@ -800,4 +633,16 @@ select {
   border-width: 5px;
   margin-top: 10px;
   font-size: 1.5em;
+}
+
+.textWriteKirjoitus {
+  min-height: 200px;
+}
+
+.textWriteMuokkaus {
+  min-height: 350px;
+}
+
+.textWriteKopiointi {
+  min-height: 100px;
 }

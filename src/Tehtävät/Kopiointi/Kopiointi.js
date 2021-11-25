@@ -35,13 +35,13 @@ const Kopiointi = () => {
       <div className="innerPageFrame">
         <h1 className="pageHeader">Kopiointitehtävä</h1>
         <div className="pageContentFrame">
-          <h2 className="pageInfoTextHeader">Ohje:</h2>
+          <h2 className="infoHeader">Ohje:</h2>
 			    <p>Kopioi alla oleva teksti alla olevaan tekstikenttään. Voit kopioida tekstiä maalaamalla sen ja joko painamalla pikanäppäimiä <strong>"Ctrl + C"</strong> samaan aikaan, tai painamalla hiiren oikee näppäintä ja valitsemalla <strong>"Kopioi"</strong> valikosta. Voit myös maalata tekstin ja vetää sen tekstikenttään. Tekstin maalaamisen tunnistaa siitä kun se on värjätty siniseksi.</p>
 		    </div>
       </div>
 	    <div className="pageContentFrame">
         <p>{myArray[0]}</p>
-        <input type="text" className="input" placeholder="Liitä teksti tähän" name="copied" onChange={e => setCopied(e.target.value)} />
+        <textarea className="textWritingArea textWriteKopiointi" placeholder="Liitä teksti tähän" name="copied" onChange={e => setCopied(e.target.value)} />
         <br />
         <button className="actionButton" onClick={() => {
           if (copied.trim() === myArray[0]) {
@@ -61,7 +61,7 @@ const Kopiointi = () => {
         <p>Toinen kopioitava teksti, kopioi alla oleva teksti tekstikenttään.</p>
         <br />
         <p>{myArray[1]}</p>
-        <input type="text" className="input" placeholder="Liitä teksti tähän" name="secondCopied" onChange={e => setSecondCopied(e.target.value)} />
+        <textarea type="text" className="textWritingArea textWriteKopiointi" placeholder="Liitä teksti tähän" name="secondCopied" onChange={e => setSecondCopied(e.target.value)} />
         <br />
         <button className="actionButton" onClick={() => {
           if (secondCopied.toString() === myArray[1]) {

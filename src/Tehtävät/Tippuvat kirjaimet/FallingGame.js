@@ -359,7 +359,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
         <div className="canvasGame">
           <h1 className="pageHeader">Tippuvat kirjaimet</h1>
           <div className="ohjeGame">
-            <h2 className="ohjetxtGame">Ohje:</h2>
+            <h2 className="infoHeader">Ohje:</h2>
             <p>
             Paina näppäimistöstäsi niitä kirjaimia, jotka tippuvat alaspäin ruudulla.
             Menetät yhden yrityksen painaessasi väärää kirjainta tai jos kirjain ehtii tippua loppuun asti.

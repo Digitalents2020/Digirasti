@@ -389,7 +389,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
         <div className="canvasWords">
           <h1 className="pageHeader">Tippuvat sanat</h1>
           <div className="ohjeWords">
-            <h2 className="ohjetxtWords">Ohje:</h2>
+            <h2 className="infoHeader">Ohje:</h2>
             <p>
             Kirjoita näppäimistölläsi sama sana, joka tippuu alaspäin ruudulla.
             Kirjoita sana sille varattuun kenttään ja paina näppäimistöstäsi <strong>ENTER</strong> painiketta.
