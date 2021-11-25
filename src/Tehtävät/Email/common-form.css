@@ -1,4 +1,4 @@
-Button {
+/* .actionButton {
   background-color: #0000bf;
   color: #ffffff;
   padding: 10px 22px;
@@ -11,7 +11,7 @@ Button {
   border-radius: 25px;
 }
 
-button:hover {
+.actionButton:hover {
   background-color: #000000;
   color: #ffffff;
 }
@@ -133,4 +133,4 @@ select {
 
 .content {
   z-index: 1;
-}
+} */

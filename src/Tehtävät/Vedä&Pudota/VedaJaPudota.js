@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import './VedaJaPudota.css';
+import '../../App.css';
 import { useState } from "react";
 import RaahattavaObjekti from './RaahattavaObjekti';
 import {Link } from "react-router-dom";
@@ -174,7 +174,7 @@ export default function DragAndDrop(){
   Also calls functions that have win condition checks inside them.*/
   return(
     <div className ="dragCont">
-      <h1 className="headlineDrag">Vedä Ja Pudota</h1>
+      <h1 className="pageHeader">Vedä ja pudota</h1>
       <div className="ohjeDrag">
         <h2 className="ohjetxtDrag">Ohje:</h2>
         <p>Tehtävänäsi on raahata kaikki <strong>hedelmät</strong> koriin ja syöttää <strong>porkkanat</strong> jänikselle.

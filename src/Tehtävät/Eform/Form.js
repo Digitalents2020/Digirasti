@@ -119,7 +119,7 @@ const Form = ({
       )}
       <label htmlFor="Attachment">Lataa liite</label>
       <input {...register("Attachment")} type="file"></input>
-      <button type="submit">Lähetä</button>
+      <button className="actionButton" type="submit">Lähetä</button>
     </form>
   );
 };
