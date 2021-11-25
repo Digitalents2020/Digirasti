@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import "./common-form.css";
+import "../../App.css";
 //React Form Hook library documentation: https://github.com/react-hook-form/react-hook-form
 
 const Email = () => {

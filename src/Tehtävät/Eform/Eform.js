@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Email/common-form.css";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import Form from "./Form";
+import Form from "../../App.css";
 //form is imported from its own separate module
 
 const Eform = () => {
