@@ -162,7 +162,7 @@ function FallingWords() {
                 transitionEnd: { backgroundColor: "#BD2719" },
               }}
               transition={{ duration: animLenght, ease: "linear" }}
-              className="lettersWords"
+              className="lettersGame"
             >
               {letter.substring(2)}
             </motion.div>
@@ -180,13 +180,13 @@ function FallingWords() {
     var div = document.createElement("div");
     div.id = wordToSearch;
     div.innerHTML = wordToSearch.substring(2);
-    div.className = "lettersWords";
+    div.className = "lettersGame";
     div.style.backgroundColor = "#009246";
     var scrolledFromTop = window.pageYOffset;
     var scrolledFromLeft = window.pageXOffset;
     div.style.left = left + scrolledFromLeft + "px";
     div.style.top = top + scrolledFromTop + "px";
-    document.getElementById("letterClassWords").appendChild(div);
+    document.getElementById("gameFrame").appendChild(div);
     setTimeout(function () {
       var myobj = document.getElementById(wordToSearch);
       myobj.remove();
@@ -247,7 +247,7 @@ function FallingWords() {
   function capslockvaroitus() {
     if (capslockpaalla) {
       return (
-        <div className="vinkkiWords" id="vinkkiWords">
+        <div className="vinkkiGame" id="vinkkiGame">
           Laita Caps Lock pois päältä
         </div>
       );
@@ -258,23 +258,23 @@ function FallingWords() {
   After short timeout changes it back to blue*/
   function changeBorder(trueOrfalse) {
     if (trueOrfalse === true) {
-      if (document.getElementById("letterClassWords") != null) {
-        document.getElementById("letterClassWords").style.borderColor =
+      if (document.getElementById("gameFrame") != null) {
+        document.getElementById("gameFrame").style.borderColor =
           "#009246";
         setTimeout(function () {
-          if (document.getElementById("letterClassWords") != null) {
-            document.getElementById("letterClassWords").style.borderColor =
+          if (document.getElementById("gameFrame") != null) {
+            document.getElementById("gameFrame").style.borderColor =
               "#9FC9EB";
           }
         }, 200);
       }
     } else {
-      if (document.getElementById("letterClassWords") != null) {
-        document.getElementById("letterClassWords").style.borderColor =
+      if (document.getElementById("gameFrame") != null) {
+        document.getElementById("gameFrame").style.borderColor =
           "#BD2719";
         setTimeout(function () {
-          if (document.getElementById("letterClassWords") != null) {
-            document.getElementById("letterClassWords").style.borderColor =
+          if (document.getElementById("gameFrame") != null) {
+            document.getElementById("gameFrame").style.borderColor =
               "#9FC9EB";
           }
         }, 200);
@@ -320,11 +320,11 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
   if (start === false) {
     if (lives > 0 && points < 150) {
       return (
-        <div className="fallingWords">
+        <div className="gameContent">
           <div className="canvasWords">
           <h1 className="pageHeader">Tippuvat sanat</h1>
-            <div className="containerBlockWords">
-              <div className="letterClassWords" id="letterClassWords" style={{borderColor:"#9FC9EB"}}>
+            <div className="containerGame">
+              <div className="gameFrame" id="gameFrame" style={{borderColor:"#9FC9EB"}}>
                 <Timer
                   word={newWord}
                   arrayOfWords={arrayOfWords}
@@ -332,9 +332,9 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
                 />
               </div>
               {capslockvaroitus()}
-              <div className="uiDivWords">
-                <p className="uiWords">Pisteet: {points}</p>
-                <p className="uiWords">Yritykset: {lives}</p>
+              <div className="uiDivGame">
+                <p className="uiGame">Pisteet: {points}</p>
+                <p className="uiGame">Yritykset: {lives}</p>
                 <form onSubmit={cleanUpLetter} autocomplete="off">
                   <input
                     className="wordInputWords"
@@ -357,26 +357,26 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
       );
     } else {
       return (
-        <div className="fallingWords">
+        <div className="gameContent">
           <div className="canvasWords">
             <h1 className="pageHeader">Tippuvat sanat</h1>
-            <div className="containerBlockWords">
+            <div className="containerGame">
               <div className="letterClass_lostWords">
-                <h3 className="letters_lostWords">
+                <h3 className="lostGame">
                   {winnerOrLoserCheck()}
                 </h3>
-                <h2 className="pisteetWords">Pisteesi: {points}</h2>
+                <h2 className="pisteetGame">Pisteesi: {points}</h2>
               </div>
               <div className="GameOverButtonsDivWords">
-                <button className="tryWords" onClick={tryAgain}>
+                <button className="actionButton" onClick={tryAgain}>
                   Yritä uudelleen
                 </button>
-                <button className="tryWords" onClick={changeDifficulty}>
+                <button className="actionButton" onClick={changeDifficulty}>
                   Vaihda vaikeusastetta
                 </button>
               </div>
             </div>
-            <Link to="/veda_ja_pudota" className="NextPrac" role="button">
+            <Link to="/veda_ja_pudota" className="nextPracButton" role="button">
               Seuraava tehtävä
             </Link>
           </div>
@@ -385,11 +385,11 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
     }
   } else {
     return (
-      <div className="fallingWords">
+      <div className="gameContent">
         <div className="canvasWords">
           <h1 className="pageHeader">Tippuvat sanat</h1>
-          <div className="ohjeWords">
-            <h2 className="ohjetxtWords">Ohje:</h2>
+          <div className="pageContentFrame">
+            <h2 className="infoHeader">Ohje:</h2>
             <p>
             Kirjoita näppäimistölläsi sama sana, joka tippuu alaspäin ruudulla.
             Kirjoita sana sille varattuun kenttään ja paina näppäimistöstäsi <strong>ENTER</strong> painiketta.
@@ -398,29 +398,29 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <br/><br/> <strong> Onnea peliin!</strong>
             </p>
           </div>
-          <div className="vaikeusTekstiWords">
+          <div className="vaikeusasteGame">
             <b>Valitse vaikeusaste:</b>
             <br />
             <button
-              className="startbtnWords"
+              className="actionButton"
               onClick={() => startGame("helppo")}
             >
               Helppo
             </button>
             <button
-              className="startbtnWords"
+              className="actionButton"
               onClick={() => startGame("normaali")}
             >
               Normaali
             </button>
             <button
-              className="startbtnWords"
+              className="actionButton"
               onClick={() => startGame("vaikea")}
             >
               Vaikea
             </button>
             <button
-              className="startbtnWords"
+              className="actionButton"
               onClick={() => startGame("mahdoton")}
             >
               Mahdoton

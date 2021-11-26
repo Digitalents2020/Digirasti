@@ -84,7 +84,7 @@ const Eform = () => {
     return (
       <div className="form-box">
         <div className="success">
-          <h2 className="little-header">Onnistuit!</h2>
+          <h2 className="infoHeader">Onnistuit!</h2>
           <p>
             Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen! Voit nyt
             siirtyä seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
@@ -92,7 +92,7 @@ const Eform = () => {
           <br></br>
           {!attached && (
             <>
-              <h2 className="little-header">...Mutta</h2>
+              <h2 className="infoHeader">...Mutta</h2>
               <p>
                 Sinulta taisi unohtua liitetiedosto. Ei hätää, voit silti
                 halutessasi yrittää uudelleen tai klikata "seuraava tehtävä"
@@ -115,8 +115,8 @@ const Eform = () => {
   return (
     <div className="form-box">
       <h1 className="pageHeader">Sähköinen lomake</h1>
-      <div className="instructions">
-        <h2 className="instruction-header">Ohje:</h2>
+      <div className="pageContentFrame">
+        <h2 className="infoHeader">Ohje:</h2>
         <p>
           Tässä tehtävässä opetellaan sähköisen lomakkeen täyttämistä ja
           lähettämistä. Sähköisiä lomakkeita on monenlaisia, mutta tässä
@@ -126,7 +126,7 @@ const Eform = () => {
           mitään minnekkään!
         </p>
       </div>
-      <h2 className="little-header">Hakulomake</h2>
+      <h2 className="infoHeader">Hakulomake</h2>
       <br></br>
       <div className="field">
         <Form

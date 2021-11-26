@@ -104,7 +104,7 @@ export default function DragAndDrop(){
     function nextPract(){
           if(all === 10){
             return (
-              <Link to="/Email" id="ToTheNext" className="NextPrac" role="button" onClick={ClearVariables()}>Seuraava tehtävä</Link>
+              <Link to="/Email" id="ToTheNext" className="nextPracButton" role="button" onClick={ClearVariables()}>Seuraava tehtävä</Link>
             )
           }
         }
@@ -173,10 +173,10 @@ export default function DragAndDrop(){
   /*Returns 10 draggable objects and non-draggable rabbit, tree and basket. 
   Also calls functions that have win condition checks inside them.*/
   return(
-    <div className ="dragCont">
+    <div className ="gameContent">
       <h1 className="pageHeader">Vedä ja pudota</h1>
-      <div className="ohjeDrag">
-        <h2 className="ohjetxtDrag">Ohje:</h2>
+      <div className="pageContentFrame">
+        <h2 className="infoHeader">Ohje:</h2>
         <p>Tehtävänäsi on raahata kaikki <strong>hedelmät</strong> koriin ja syöttää <strong>porkkanat</strong> jänikselle.
         <br/><br/>Raahaus: Valitse hiiren vasemmalla painikkeella raahattava kohde, pidä painike pohjassa ja liikuta hiirtä samanaikaisesti.</p>
       </div>

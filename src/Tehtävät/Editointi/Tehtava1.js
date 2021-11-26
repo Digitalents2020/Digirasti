@@ -65,12 +65,12 @@ import "../../App.css"
 			    <div className="innerPageFrame">
 			      <h1 className="pageHeader">Muokkaustehtävä</h1>
 			      <div className="pageContentFrame">
-				      <h2 className="pageInfoTextHeader">Ohje:</h2>
+				      <h2 className="infoHeader">Ohje:</h2>
 				      <p>Liiku tekstissä nuolinäppäimillä ja poista tekstistä kaikki numerot.</p>
 			      </div>
 			    </div>
 			    <div className="pageContentFrame">
-			      <textarea className="textWritingArea" onChange={textChangeEvent} value={taskText} ></textarea>
+			      <textarea className="textWritingArea textWriteMuokkaus" onChange={textChangeEvent} value={taskText} ></textarea>
 			      <button className="actionButton" onClick={ tarkistusFunktio } value="validateResult">Tarkista tulos</button>
 			      <button className="actionButton" onClick={ aloitusAlustaFunktio } value="reset">Aloita alusta</button>
 			    </div>

@@ -63,11 +63,13 @@ const Tietoturva = () => {
   if (submitted) {
     return (
       <div className="form-box">
-        <div className="success">
-          <h2 className="little-header">Tulokset</h2>
-          <p>{points}/5 vastausta oikein.</p>
+        <div className="pageContentFrame">
+          <h2 className="infoHeader">Tulokset</h2>
 
-          <h1>Oikeat vastaukset</h1>
+          <h3>Oikeat vastaukset</h3>
+          <br />
+          <p>{points}/5 vastausta oikein.</p>
+          <br />
           <p>Kysymys 1: A koska x</p>
           <p>Kysymys 2: B koska x</p>
           <p>Kysymys 3: B koska x</p>
@@ -82,15 +84,15 @@ const Tietoturva = () => {
   }
 
   return (
-    <div className="form-grid">
-      <h1 className="pageHeader">Tietoturvakysely</h1>
-      <div className="instructions">
-        <h2 className="instruction-header">Ohje:</h2>
+    <div className="mainPageFrame">
+      <h1 className="pageHeader">Tietoturvatehtävä</h1>
+      <div className="pageContentFrame">
+        <h2 className="infoHeader">Ohje:</h2>
         <p>
           Tässä kyselyssä vastaat viiteen tietoturvaan liittyvään kysymykseen.
         </p>
       </div>
-      <div className="form-grid-content">
+      <div className="pageContentFrame formTietoturva">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h3>Mitä tietoturvalla tarkoitetaan?</h3>
           <ul>
@@ -120,6 +122,8 @@ const Tietoturva = () => {
               </label>
             </li>
           </ul>
+          <br />
+
           <h3>Mitä tietosuojalla tarkoitetaan?</h3>
           <ul>
             <li>
@@ -150,6 +154,8 @@ const Tietoturva = () => {
               </label>
             </li>
           </ul>
+          <br />
+          
           <h3>Minun täytyy itse huolehtia tietosuojastani</h3>
           <ul>
             <li>
@@ -177,6 +183,8 @@ const Tietoturva = () => {
               </label>
             </li>
           </ul>
+          <br />
+
           <h3>
             Pankkivirkailija pyytää sinulta sähköpostilla käyttäjätunnusta ja
             salasanaa pankkipalveluun, jotta hän voi tehdä sinulle ylimääräisen
@@ -208,6 +216,8 @@ const Tietoturva = () => {
               </label>
             </li>
           </ul>
+          <br />
+
           <h3>
             Pari eri salasanaa riittää kaikille eri käyttäjätileille (esim.
             sähköpostiin, sosiaalisen median kanaville, foorumeille, työnhaun

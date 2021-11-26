@@ -66,162 +66,28 @@ a:active {
   color: #ffffff;
 }
 
-/* HOME STYLES */
-
-.pageInfoTextHeader {
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
-}
-
-/* TEHTAVA1 STYLES */
-
-.pageInfoTextHeader {
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
-}
-
-/* TEHTAVA2 STYLES */
-
-.pageInfoTextHeader {
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
-}
-
-/* KOPIOINTI STYLES */
-
-input {
-  display: inline-block;
-  border: solid 1px black;
-  min-width: 50px;
-  min-height: 30px;
-  margin: 10px 0 10px 0;
-  text-align: center;
-}
-
-p {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  line-height: 20px;
-}
-
-h2 {
-  margin-top: 20px;
-}
-
-.pageInfoTextHeader {
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
-}
-
 /* TIETOTURVA STYLES */
 
-.answer {
-  font-size: 20px;
-  text-align: left;
-}
-
-.degree {
-  font-size: 20px;
-  text-align: left;
-}
-
-.degree-name {
-  text-align: left;
-}
-
-.error-message {
-  color: #fd4f00;
-  text-align: left;
-  padding-bottom: 10px;
-}
-
-.form-grid {
-  margin-top: 10px;
-  padding: 20px;
-}
-
-.form-grid input {
+.formTietoturva input {
   padding: 0.5rem;
   margin: 1rem;
   border: 0;
   font-size: 20px;
 }
 
-.form-grid label {
+.formTietoturva label {
   font-size: 18px;
   margin: 0 2rem 2rem 0;
 }
 
-.form-grid textarea {
-  height: 15rem;
-}
-
-.form-grid ul {
+.formTietoturva ul {
   list-style-type: none;
 }
 
-.form-grid h3 {
-  margin: 2rem 0 0 0;
-}
+/* TIPPUVAT STYLES */
 
-.form-grid-content {
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.instructions {
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.instruction-header {
-  color: #fd4f00;
-  padding-bottom: 10px;
-  margin: 0;
-  text-align: left;
-}
-
-.little-header {
-  color: #fd4f00;
-  padding-bottom: 10px;
-}
-
-.form-box radio {
-  display: block;
-  padding: 0.5rem;
-  margin: 1rem;
-  min-width: 600px;
-  border: 0;
-  font-size: 20px;
-  text-align: left;
-}
-
-.success {
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-/* TIPPUVAKIRJAIN STYLES */
-
-.containerBlockGame {
-  margin-top: 10px;
-  padding: 20px;
-  background-color: #FFFFFF;
+.hidebuttonWords {
+  display: none;
 }
 
 .emptyGame {
@@ -229,12 +95,12 @@ h2 {
   color: #FFFFFF;
 }
 
-.fallingGame {
+.gameContent {
   text-align: center;
   margin: 20px 30px 10px;
 }
 
-.letterClassGame{
+.gameFrame {
   display: inline-block;
   background: #FFFFFF;
   height: 550px;
@@ -261,23 +127,8 @@ h2 {
   color: #FFFFFF;
 }
 
-.letters_lostGame {
+.lostGame {
   color: #0000BF;
-}
-
-.ohjeGame {
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
-.ohjetxtGame {
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
 }
 
 .pisteetGame {
@@ -289,45 +140,10 @@ h2 {
   border-width: 2px;
 }
 
-.startbtnGame {
-  background-color: #0000BF; 
-  color: #FFFFFF;
-  padding: 10px 22px;
-  margin: 40px 10px;
-  text-align: center;
-  display: inline-block;
-  font-size: 20px;
-  cursor: pointer;
-  border-style: none;
-  border-radius: 25px; 
-}
-
-.startbtnGame:hover {
-  background-color: #000000;
-}
-
-.tryGame {
-  background-color: #0000BF; 
-  color: #FFFFFF;
-  padding: 10px 22px;
-  margin: 10px;
-  text-align: center;
-  display: inline-block;
-  font-size: 20px;
-  cursor: pointer;
-  border-style: none;
-  border-radius: 25px; 
-}
-
-.tryGame:hover {
-  background-color: #000000;
-}
-
 .uiDivGame {
   display: flex;
   justify-content: center;
 }
-
 
 .hideGame {
   opacity: 0;
@@ -345,154 +161,7 @@ h2 {
   background-color: #FFFFFF;
 }  
 
-.vaikeusTekstiGame{
-  font-size: 20px;
-  display: block;
-  padding: 40px;
-  margin: 10px 0 0;
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
-.vinkkiGame{
-  font-size: 18px;
-  font-weight: 600;
-  color: #BD2719;
-  margin: auto;
-  margin-top: 10px;
-  width: 30%;
-  padding: 10px;
-  border-color: #BD2719;
-  border-width: 5px;
-  border-style: solid;
-}
-
-/* TIPPUVASANA STYLES */
-
-.containerBlockWords {
-  margin-top: 10px;
-  padding: 20px;
-  background-color: #FFFFFF;
-}
-
-.emptyWords{
-  margin: 0px;
-  color: #FFFFFF;
-}
-
-.fallingWords {
-  text-align: center;
-  margin: 20px 30px 10px;
-}
-
-.hidebuttonWords {
-  display: none;
-}
-
-.letterClassWords {
-  display: inline-block;
-  background: #FFFFFF;
-  height: 550px;
-  width: 1000px;
-  border-style: solid;
-  border-width: 5px;
-  border-color: #9FC9EB;
-}
-
-.letters_lostWords {
-  color: #0000BF;
-}
-
-.lettersWords {
-  text-align: center;
-  border-style: none;
-  letter-spacing: 3px;
-  border-radius: 10px;
-  position: absolute;
-  margin: auto;
-  width: 35px;
-  padding: 10px;
-  font-size: 25px;
-  font-weight: 700;
-  display: inline-table;
-  background-color: #FD4F00;
-  color: #FFFFFF;
-}
-
-.ohjeWords {
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
-.ohjetxtWords {
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
-}
-
-.pisteetWords {
-  color: #FD4F00;
-  border-color: #9FC9EB;
-  margin: 30px 50px;
-  padding: 30px;
-  border-style: solid;
-  border-width: 2px;
-}
-
-.startbtnWords {
-  background-color: #0000BF; 
-  color: #FFFFFF;
-  padding: 10px 22px;
-  margin: 40px 10px;
-  text-align: center;
-  display: inline-block;
-  font-size: 20px;
-  cursor: pointer;
-  border-style: none;
-  border-radius: 25px; 
-}
-
-.startbtnWords:hover {
-  background-color: #000000;
-}
-
-.tryWords{
-  background-color: #0000BF; 
-  color: #FFFFFF;
-  padding: 10px 22px;
-  margin: 10px;
-  text-align: center;
-  display: inline-block;
-  font-size: 20px;
-  cursor: pointer;
-  border-style: none;
-  border-radius: 25px; 
-}
-
-.tryWords:hover {
-  background-color: #000000;
-}
-
-.uiDivWords {
-  display: flex;
-  justify-content: center;
-}
-
-.uiWords {
-  display: inline-block;
-  margin: 20px 0;
-  width: 150px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #FD4F00;
-  background-color: #FFFFFF;
-}
-
-.vaikeusTekstiWords {
+.vaikeusasteGame {
   font-size: 20px;
   display: block;
   padding: 40px;
@@ -518,31 +187,20 @@ h2 {
   opacity: 1;
 }
 
-.vinkkiWords{
-font-size: 18px;
-font-weight: 600;
-color: #BD2719;
-margin: auto;
-margin-top: 10px;
-width: 30%;
-padding: 10px;
-border-color: #BD2719;
-border-width: 5px;
-border-style: solid;
+.vinkkiGame {
+  font-size: 18px;
+  font-weight: 600;
+  color: #BD2719;
+  margin: auto;
+  margin-top: 10px;
+  width: 30%;
+  padding: 10px;
+  border-color: #BD2719;
+  border-width: 5px;
+  border-style: solid;
 }
 
 /* VEDAPUDOTA STYLES */
-
-.containerDrag {
-  margin-top: 10px;
-  padding: 20px;
-  background-color: #FFFFFF;
-}
-
-.dragCont {
-  text-align: center;
-  margin: 20px 30px 10px;
-}
 
 .victoryClass{
   height: 200px;
@@ -590,30 +248,11 @@ border-style: solid;
   background-size: cover;
 }
 
-.ohjeDrag{
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
-.ohjetxtDrag{
-  color: #FD4F00;
-  padding-bottom: 10px;
-  margin: 0;
-}
-
-
-.dragObject1{
+.dragObject{
   height: 52px;
   width: 45px;
-  margin-left: 80px;
-  margin-top: 220px;
   border-radius: 25%;
   position: absolute;
-  background-image: url("./Tehtävät/Vedä&Pudota/Pictures/apple.png");
   background-size: cover;
   -webkit-filter: drop-shadow(2px 1px 0 white)
   drop-shadow(-1px 1px 0 white)
@@ -625,185 +264,19 @@ border-style: solid;
   drop-shadow(-1px -1px 0 white);
 }
 
-.dragObject2{
-  height: 52px;
-  width: 45px;
-  margin-left: 95px;
-  margin-top: 50px;
-  border-radius: 25%;
-  position: absolute;
+.apple{
   background-image: url("./Tehtävät/Vedä&Pudota/Pictures/apple.png");
-  background-size: cover;
-  -webkit-filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-  filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-}
-.dragObject3{
-  height: 52px;
-  width: 45px;
-  margin-left: 250px;
-  margin-top: 135px;
-  border-radius: 25%;
-  position: absolute;
-  background-image: url("./Tehtävät/Vedä&Pudota/Pictures/apple.png");
-  background-size: cover;
-  -webkit-filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-  filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-}
-.dragObject4{
-  height: 52px;
-  width: 45px;
-  margin-left: 350px;
-  margin-top: 55px;
-  border-radius: 25%;
-  position: absolute;
-  background-image: url("./Tehtävät/Vedä&Pudota/Pictures/apple.png");
-  background-size: cover;
-  -webkit-filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-  filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
 }
 
-.dragObject5{
-  height: 52px;
-  width: 45px;
-  margin-left: 200px;
-  margin-top: 35px;
-  border-radius: 25%;
-  position: absolute;
+.pear{
   background-image: url("./Tehtävät/Vedä&Pudota/Pictures/Pear.png");
-  background-size: cover;
-  -webkit-filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-  filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
 }
 
-.dragObject6{
-  height: 52px;
-  width: 45px;
-  margin-left: 350px;
-  margin-top: 260px;
-  border-radius: 25%;
-  position: absolute;
-  background-image: url("./Tehtävät/Vedä&Pudota/Pictures/Pear.png");
-  background-size: cover; 
-  -webkit-filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-  filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-}
-
-.dragObject7{
-  height: 52px;
-  width: 45px;
-  margin-left: 450px;
-  margin-top: 170px;
-  border-radius: 25%;
-  position: absolute;
-  background-image: url("./Tehtävät/Vedä&Pudota/Pictures/Pear.png");
-  background-size: cover; 
-  -webkit-filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-  filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-}
-
-.dragObject8{
-  height: 52px;
-  width: 45px;
-  margin-left: 155px;
-  margin-top: 130px;
-  border-radius: 25%;
-  position: absolute;
+.carrot{
   background-image: url("./Tehtävät/Vedä&Pudota/Pictures/carrot.png");
-  background-size: cover;
-  -webkit-filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-  filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-}
-
-.dragObject9{
-  height: 52px;
-  width: 45px;
-  margin-left: 225px;
-  margin-top: 230px;
-  border-radius: 25%;
-  position: absolute;
-  background-image: url("./Tehtävät/Vedä&Pudota/Pictures/carrot.png");
-  background-size: cover;
-  -webkit-filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-  filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-}
-
-.dragObject10{
-  height: 52px;
-  width: 45px;
-  margin-left: 350px;
-  margin-top: 150px;
-  border-radius: 25%;
-  position: absolute;
-  background-image: url("./Tehtävät/Vedä&Pudota/Pictures/carrot.png");
-  background-size: cover;
-  -webkit-filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
-  filter: drop-shadow(2px 1px 0 white)
-  drop-shadow(-1px 1px 0 white)
-  drop-shadow(1px -1px 0 white)
-  drop-shadow(-1px -1px 0 white);
 }
 
 /* FORM STYLES */
-
-.degree {
-  font-size: 20px;
-  text-align: left;
-}
-
-.degree-name {
-  text-align: left;
-}
 
 .error-message {
   color: #fd4f00;
@@ -843,27 +316,6 @@ border-style: solid;
   text-align: left;
 }
 
-.instructions {
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.instruction-header {
-  color: #fd4f00;
-  padding-bottom: 10px;
-  margin: 0;
-  text-align: left;
-}
-
-.little-header {
-  color: #fd4f00;
-  padding-bottom: 10px;
-}
-
 select {
   display: block;
   padding: 0.5rem;
@@ -872,19 +324,6 @@ select {
   border: 0;
   font-size: 20px;
   text-align: left;
-}
-
-.success {
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.content {
-  z-index: 1;
 }
 
 /* CORE ELEMENTS */
@@ -910,6 +349,17 @@ select {
   text-align: left;
   background-color: #FFFFFF;
   color: #000000;
+}
+
+.containerGame {
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #FFFFFF;
+}
+
+.infoHeader {
+  color: #FD4F00;
+  padding-bottom: 10px;
 }
 
 /* BUTTONS */
@@ -953,7 +403,6 @@ select {
 /* TEXTAREA */
 
 .textWritingArea {
-  min-height: 350px;
   min-width: 100%;
   resize: none;
   border-color: #9FC9EB;
@@ -961,4 +410,16 @@ select {
   border-width: 5px;
   margin-top: 10px;
   font-size: 1.5em;
+}
+
+.textWriteKirjoitus {
+  min-height: 200px;
+}
+
+.textWriteMuokkaus {
+  min-height: 350px;
+}
+
+.textWriteKopiointi {
+  min-height: 100px;
 }
