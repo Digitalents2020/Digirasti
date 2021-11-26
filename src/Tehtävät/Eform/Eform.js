@@ -115,7 +115,7 @@ const Eform = () => {
   return (
     <div className="form-box">
       <h1 className="pageHeader">Sähköinen lomake</h1>
-      <div className="instructions">
+      <div className="pageContentFrame">
         <h2 className="infoHeader">Ohje:</h2>
         <p>
           Tässä tehtävässä opetellaan sähköisen lomakkeen täyttämistä ja

@@ -163,7 +163,7 @@ Gets also the position from the deleted letter. After timeout removes the new di
     var scrolledFromLeft = window.pageXOffset;
     div.style.left = left + scrolledFromLeft + "px";
     div.style.top = top + scrolledFromTop + "px";
-    document.getElementById("letterClassGame").appendChild(div);
+    document.getElementById("gameFrame").appendChild(div);
     setTimeout(function () {
       var myobj = document.getElementById(letterToSearch);
       myobj.remove();
@@ -197,12 +197,12 @@ Gets also the position from the deleted letter. After timeout removes the new di
 
       /*Changes the border to reflect if the typed letter exist on the array, to green if it does.
       After short timeout changes it back to blue*/
-      if (document.getElementById("letterClassGame") != null) {
-        document.getElementById("letterClassGame").style.borderColor =
+      if (document.getElementById("gameFrame") != null) {
+        document.getElementById("gameFrame").style.borderColor =
           "#009246";
         setTimeout(function () {
-          if (document.getElementById("letterClassGame") != null) {
-            document.getElementById("letterClassGame").style.borderColor =
+          if (document.getElementById("gameFrame") != null) {
+            document.getElementById("gameFrame").style.borderColor =
               "#9FC9EB";
           }
         }, 200);
@@ -223,12 +223,12 @@ Gets also the position from the deleted letter. After timeout removes the new di
 
       /*Changes the border to reflect if the typed letter exist on the array, to red if it doesnt.
       After short timeout changes it back to blue*/
-      if (document.getElementById("letterClassGame") != null) {
-        document.getElementById("letterClassGame").style.borderColor =
+      if (document.getElementById("gameFrame") != null) {
+        document.getElementById("gameFrame").style.borderColor =
           "#BD2719";
         setTimeout(function () {
-          if (document.getElementById("letterClassGame") != null) {
-            document.getElementById("letterClassGame").style.borderColor =
+          if (document.getElementById("gameFrame") != null) {
+            document.getElementById("gameFrame").style.borderColor =
               "#9FC9EB";
           }
         }, 200);
@@ -294,11 +294,11 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
   if (start === false) {
     if (lives > 0 && points < 50) {
       return (
-        <div className="fallingGame">
+        <div className="gameContent">
           <div className="canvasGame">
             <h1 className="pageHeader">Tippuvat kirjaimet</h1>
-            <div className="containerBlockGame">
-              <div className="letterClassGame" id="letterClassGame" style={{borderColor:"#9FC9EB"}}>
+            <div className="containerGame">
+              <div className="gameFrame" id="gameFrame" style={{borderColor:"#9FC9EB"}}>
                 <Clock
                   letter={newLetter}
                   arrayOfLetters={arrayOfLetters}
@@ -329,24 +329,24 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
       );
     } else {
       return (
-        <div className="fallingGame">
+        <div className="gameContent">
           <div className="canvasGame">
             <h1 className="pageHeader">Tippuvat kirjaimet</h1>
-            <div className="containerBlockGame">
+            <div className="containerGame">
               <div className="letterClass_lostGame">
-                <h3 className="letters_lostGame">
+                <h3 className="lostGame">
                   {winOrLose()}
                 </h3>
                 <h1 className="pisteetGame">Pisteesi: {points}</h1>
               </div>
-              <button className="tryGame" onClick={tryAgain}>
+              <button className="actionButton" onClick={tryAgain}>
                 Yritä uudelleen
               </button>
-              <button className="tryGame" onClick={changeDifficulty}>
+              <button className="actionButton" onClick={changeDifficulty}>
                 Vaihda vaikeusastetta
               </button>
             </div>
-            <Link to="/tippuvat_sanat" className="NextPrac" role="button">
+            <Link to="/tippuvat_sanat" className="nextPracButton" role="button">
               Seuraava tehtävä
             </Link>
           </div>
@@ -355,10 +355,10 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
     }
   } else {
     return (
-      <div className="fallingGame">
+      <div className="gameContent">
         <div className="canvasGame">
           <h1 className="pageHeader">Tippuvat kirjaimet</h1>
-          <div className="ohjeGame">
+          <div className="pageContentFrame">
             <h2 className="infoHeader">Ohje:</h2>
             <p>
             Paina näppäimistöstäsi niitä kirjaimia, jotka tippuvat alaspäin ruudulla.
@@ -369,29 +369,29 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <br/><br/><strong> Onnea peliin!</strong>
             </p>
           </div>
-          <div className="vaikeusTekstiGame">
+          <div className="vaikeusasteGame">
             <b>Valitse vaikeusaste:</b>
             <br />
             <button
-              className="startbtnGame"
+              className="actionButton"
               onClick={() => startGame("helppo")}
             >
               Helppo
             </button>
             <button
-              className="startbtnGame"
+              className="actionButton"
               onClick={() => startGame("normaali")}
             >
               Normaali
             </button>
             <button
-              className="startbtnGame"
+              className="actionButton"
               onClick={() => startGame("vaikea")}
             >
               Vaikea
             </button>
             <button
-              className="startbtnGame"
+              className="actionButton"
               onClick={() => startGame("mahdoton")}
             >
               Mahdoton

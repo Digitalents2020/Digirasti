@@ -84,12 +84,10 @@ a:active {
   list-style-type: none;
 }
 
-/* TIPPUVAKIRJAIN STYLES */
+/* TIPPUVAT STYLES */
 
-.containerBlockGame {
-  margin-top: 10px;
-  padding: 20px;
-  background-color: #FFFFFF;
+.hidebuttonWords {
+  display: none;
 }
 
 .emptyGame {
@@ -97,12 +95,12 @@ a:active {
   color: #FFFFFF;
 }
 
-.fallingGame {
+.gameContent {
   text-align: center;
   margin: 20px 30px 10px;
 }
 
-.letterClassGame{
+.gameFrame {
   display: inline-block;
   background: #FFFFFF;
   height: 550px;
@@ -129,17 +127,8 @@ a:active {
   color: #FFFFFF;
 }
 
-.letters_lostGame {
+.lostGame {
   color: #0000BF;
-}
-
-.ohjeGame {
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #FFFFFF;
-  color: #000000;
 }
 
 .pisteetGame {
@@ -151,45 +140,10 @@ a:active {
   border-width: 2px;
 }
 
-.startbtnGame {
-  background-color: #0000BF; 
-  color: #FFFFFF;
-  padding: 10px 22px;
-  margin: 40px 10px;
-  text-align: center;
-  display: inline-block;
-  font-size: 20px;
-  cursor: pointer;
-  border-style: none;
-  border-radius: 25px; 
-}
-
-.startbtnGame:hover {
-  background-color: #000000;
-}
-
-.tryGame {
-  background-color: #0000BF; 
-  color: #FFFFFF;
-  padding: 10px 22px;
-  margin: 10px;
-  text-align: center;
-  display: inline-block;
-  font-size: 20px;
-  cursor: pointer;
-  border-style: none;
-  border-radius: 25px; 
-}
-
-.tryGame:hover {
-  background-color: #000000;
-}
-
 .uiDivGame {
   display: flex;
   justify-content: center;
 }
-
 
 .hideGame {
   opacity: 0;
@@ -207,148 +161,7 @@ a:active {
   background-color: #FFFFFF;
 }  
 
-.vaikeusTekstiGame{
-  font-size: 20px;
-  display: block;
-  padding: 40px;
-  margin: 10px 0 0;
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
-.vinkkiGame{
-  font-size: 18px;
-  font-weight: 600;
-  color: #BD2719;
-  margin: auto;
-  margin-top: 10px;
-  width: 30%;
-  padding: 10px;
-  border-color: #BD2719;
-  border-width: 5px;
-  border-style: solid;
-}
-
-/* TIPPUVASANA STYLES */
-
-.containerBlockWords {
-  margin-top: 10px;
-  padding: 20px;
-  background-color: #FFFFFF;
-}
-
-.emptyWords{
-  margin: 0px;
-  color: #FFFFFF;
-}
-
-.fallingWords {
-  text-align: center;
-  margin: 20px 30px 10px;
-}
-
-.hidebuttonWords {
-  display: none;
-}
-
-.letterClassWords {
-  display: inline-block;
-  background: #FFFFFF;
-  height: 550px;
-  width: 1000px;
-  border-style: solid;
-  border-width: 5px;
-  border-color: #9FC9EB;
-}
-
-.letters_lostWords {
-  color: #0000BF;
-}
-
-.lettersWords {
-  text-align: center;
-  border-style: none;
-  letter-spacing: 3px;
-  border-radius: 10px;
-  position: absolute;
-  margin: auto;
-  width: 35px;
-  padding: 10px;
-  font-size: 25px;
-  font-weight: 700;
-  display: inline-table;
-  background-color: #FD4F00;
-  color: #FFFFFF;
-}
-
-.ohjeWords {
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
-.pisteetWords {
-  color: #FD4F00;
-  border-color: #9FC9EB;
-  margin: 30px 50px;
-  padding: 30px;
-  border-style: solid;
-  border-width: 2px;
-}
-
-.startbtnWords {
-  background-color: #0000BF; 
-  color: #FFFFFF;
-  padding: 10px 22px;
-  margin: 40px 10px;
-  text-align: center;
-  display: inline-block;
-  font-size: 20px;
-  cursor: pointer;
-  border-style: none;
-  border-radius: 25px; 
-}
-
-.startbtnWords:hover {
-  background-color: #000000;
-}
-
-.tryWords{
-  background-color: #0000BF; 
-  color: #FFFFFF;
-  padding: 10px 22px;
-  margin: 10px;
-  text-align: center;
-  display: inline-block;
-  font-size: 20px;
-  cursor: pointer;
-  border-style: none;
-  border-radius: 25px; 
-}
-
-.tryWords:hover {
-  background-color: #000000;
-}
-
-.uiDivWords {
-  display: flex;
-  justify-content: center;
-}
-
-.uiWords {
-  display: inline-block;
-  margin: 20px 0;
-  width: 150px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #FD4F00;
-  background-color: #FFFFFF;
-}
-
-.vaikeusTekstiWords {
+.vaikeusasteGame {
   font-size: 20px;
   display: block;
   padding: 40px;
@@ -374,31 +187,20 @@ a:active {
   opacity: 1;
 }
 
-.vinkkiWords{
-font-size: 18px;
-font-weight: 600;
-color: #BD2719;
-margin: auto;
-margin-top: 10px;
-width: 30%;
-padding: 10px;
-border-color: #BD2719;
-border-width: 5px;
-border-style: solid;
+.vinkkiGame {
+  font-size: 18px;
+  font-weight: 600;
+  color: #BD2719;
+  margin: auto;
+  margin-top: 10px;
+  width: 30%;
+  padding: 10px;
+  border-color: #BD2719;
+  border-width: 5px;
+  border-style: solid;
 }
 
 /* VEDAPUDOTA STYLES */
-
-.containerDrag {
-  margin-top: 10px;
-  padding: 20px;
-  background-color: #FFFFFF;
-}
-
-.dragCont {
-  text-align: center;
-  margin: 20px 30px 10px;
-}
 
 .victoryClass{
   height: 200px;
@@ -446,15 +248,6 @@ border-style: solid;
   background-size: cover;
 }
 
-.ohjeDrag{
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
 .dragObject{
   height: 52px;
   width: 45px;
@@ -484,15 +277,6 @@ border-style: solid;
 }
 
 /* FORM STYLES */
-
-.degree {
-  font-size: 20px;
-  text-align: left;
-}
-
-.degree-name {
-  text-align: left;
-}
 
 .error-message {
   color: #fd4f00;
@@ -532,15 +316,6 @@ border-style: solid;
   text-align: left;
 }
 
-.instructions {
-  display: block;
-  padding: 40px;
-  margin: 10px 0;
-  text-align: left;
-  background-color: #ffffff;
-  color: #000000;
-}
-
 select {
   display: block;
   padding: 0.5rem;
@@ -549,10 +324,6 @@ select {
   border: 0;
   font-size: 20px;
   text-align: left;
-}
-
-.content {
-  z-index: 1;
 }
 
 /* CORE ELEMENTS */
@@ -578,6 +349,12 @@ select {
   text-align: left;
   background-color: #FFFFFF;
   color: #000000;
+}
+
+.containerGame {
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #FFFFFF;
 }
 
 .infoHeader {

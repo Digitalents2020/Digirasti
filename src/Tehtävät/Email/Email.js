@@ -35,7 +35,7 @@ const Email = () => {
     return (
       <div className="form-box">
         <div className="success">
-          <h2 className="little-header">Onnistuit!</h2>
+          <h2 className="infoHeader">Onnistuit!</h2>
           <p>
             Hienoa! Näin kirjoitat ja lähetät sähköpostin ja lisäät siihen
             liitteen! Voit nyt siirtyä seuraavaan tehtävään tai odottaa ohjaajan
@@ -44,7 +44,7 @@ const Email = () => {
           <br></br>
           {!attached && (
             <>
-              <h2 className="little-header">...Mutta</h2>
+              <h2 className="infoHeader">...Mutta</h2>
               <p>
                 Sinulta taisi unohtua liitetiedosto. Ei hätää, voit silti
                 halutessasi yrittää uudelleen tai klikata "seuraava tehtävä"
@@ -72,7 +72,7 @@ const Email = () => {
   return (
     <div className="form-box">
       <h1 className="pageHeader">Sähköposti</h1>
-      <div className="instructions">
+      <div className="pageContentFrame">
         <h2 className="infoHeader">Ohje:</h2>
         <p>
           Tässä tehtävässä opetellaan sähköpostin kirjoittamista ja
@@ -83,7 +83,7 @@ const Email = () => {
           liittää CV:si sähköpostin liitteeksi!
         </p>
       </div>
-      <p className="instructions">
+      <p className="pageContentFrame">
         Huomioitavaa: Joskus sähköpostien liitteen nappulassa on vain
         paperiliittimen eli klemmarin kuva, älä siis hätäänny, jos tässä
         tehtävässä käytettävää nappia ei tosielämän sähköposteista löydy. Ei
