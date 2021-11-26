@@ -83,7 +83,7 @@ const Eform = () => {
   if (submitted) {
     return (
       <div className="form-box">
-        <div className="success">
+        <div className="pageContentFrame">
           <h2 className="infoHeader">Onnistuit!</h2>
           <p>
             Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen! Voit nyt
@@ -126,9 +126,9 @@ const Eform = () => {
           mitään minnekkään!
         </p>
       </div>
-      <h2 className="infoHeader">Hakulomake</h2>
-      <br></br>
-      <div className="field">
+      <div className="pageContentFrame">
+        <h2 className="infoHeader">Hakulomake</h2>
+        <br />
         <Form
           newFirstName={newFirstName}
           handleFirstNameChange={handleFirstNameChange}

@@ -34,7 +34,7 @@ const Email = () => {
   if (submitted) {
     return (
       <div className="form-box">
-        <div className="success">
+        <div className="pageContentFrame">
           <h2 className="infoHeader">Onnistuit!</h2>
           <p>
             Hienoa! Näin kirjoitat ja lähetät sähköpostin ja lisäät siihen
@@ -50,7 +50,7 @@ const Email = () => {
                 halutessasi yrittää uudelleen tai klikata "seuraava tehtävä"
                 painiketta.
               </p>
-              <button className="nextPracButton" type="button" onClick={refreshPage}>
+              <button className="actionButton" type="button" onClick={refreshPage}>
                 {" "}
                 <span>Yritä uudelleen</span>{" "}
               </button>
@@ -82,18 +82,18 @@ const Email = () => {
           vastaanottajalle esimerkki.makkonen@example.com ja muistathan myös
           liittää CV:si sähköpostin liitteeksi!
         </p>
+        <br />
+        <p>
+          Huomioitavaa: Joskus sähköpostien liitteen nappulassa on vain
+          paperiliittimen eli klemmarin kuva, älä siis hätäänny, jos tässä
+          tehtävässä käytettävää nappia ei tosielämän sähköposteista löydy. Ei
+          huolta, kirjoittamasi hakemus ei oikeasti lähde mihinkään!
+        </p>
       </div>
-      <p className="pageContentFrame">
-        Huomioitavaa: Joskus sähköpostien liitteen nappulassa on vain
-        paperiliittimen eli klemmarin kuva, älä siis hätäänny, jos tässä
-        tehtävässä käytettävää nappia ei tosielämän sähköposteista löydy. Ei
-        huolta, kirjoittamasi hakemus ei oikeasti lähde mihinkään!
-      </p>
-      <br></br>
-      <div className="field">
+      <div className="pageContentFrame">
         <form onSubmit={handleSubmit(submitMessage)}>
           <label>Vastaanottaja</label>
-          <input
+          <input className="textWritingArea textWriteForm"
             {...register("Vastaanottaja", {
               required: true,
               pattern: /esimerkki\.makkonen@example\.com/,
@@ -110,12 +110,12 @@ const Email = () => {
             </p>
           )}
           <label>Aihe</label>
-          <input {...register("Aihe", { required: true })} type="text" />
+          <input className="textWritingArea textWriteForm" {...register("Aihe", { required: true })} type="text" />
           {errors.Aihe?.type === "required" && (
             <p className="error-message">Aihetta ei voi jättää tyhjäksi</p>
           )}
           <label>Viesti</label>
-          <textarea {...register("Viesti", { required: true })} type="text" />
+          <textarea className="textWritingArea textWriteForm" {...register("Viesti", { required: true })} type="text" />
           {errors.Viesti?.type === "required" && (
             <p className="error-message">
               Viestikenttää ei voi jättää tyhjäksi
