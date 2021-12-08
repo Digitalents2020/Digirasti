@@ -26,9 +26,10 @@ const Form = ({
   return (
     <form onSubmit={submitForm}>
       <label htmlFor="FirstName">Etunimi *</label>
-      <input
+      <input 
         {...register("FirstName", { required: true })}
         id="FirstName"
+        className="textWritingArea textWriteForm"
         value={newFirstName}
         onChange={handleFirstNameChange}
         type="text"
@@ -40,6 +41,7 @@ const Form = ({
       <input
         {...register("LastName", { required: true })}
         id="LastName"
+        className="textWritingArea textWriteForm"
         value={newLastName}
         onChange={handleLastNameChange}
         type="text"
@@ -51,6 +53,7 @@ const Form = ({
       <input
         {...register("Email", { required: true })}
         id="Email"
+        className="textWritingArea textWriteForm"
         value={newEmail}
         onChange={handleEmailChange}
         type="email"
@@ -62,6 +65,7 @@ const Form = ({
       <input
         {...register("Number", { required: true })}
         id="Number"
+        className="textWritingArea textWriteForm"
         value={newNumber}
         onChange={handleNumberChange}
         type="text"
@@ -72,18 +76,20 @@ const Form = ({
       <label htmlFor="Work1">Työkokemus 1</label>
       <textarea
         id="Work1"
+        className="textWritingArea textWriteForm"
         value={newWork1}
         onChange={handleWork1Change}
       ></textarea>
       <label htmlFor="Work2">Työkokemus 2</label>
       <textarea
         id="Work2"
+        className="textWritingArea textWriteForm"
         value={newWork2}
         onChange={handleWork2Change}
       ></textarea>
       <label htmlFor="degree">Korkein koulutusaste</label>
       <select
-        className="degree"
+        className="textWritingArea textWriteForm"
         value={newDegree}
         onChange={handleDegreeChange}
       >
@@ -98,8 +104,9 @@ const Form = ({
         <option>Ei mikään näistä (Selitä alempana tarkemmin)</option>
       </select>
       <label htmlFor="degree-name">Tutkintonimike</label>
-      <input
+      <input 
         id="degree-name"
+        className="textWritingArea textWriteForm"
         value={newDegreeName}
         onChange={handleDegreeNameChange}
         type="text"
@@ -111,6 +118,7 @@ const Form = ({
       <textarea
         {...register("About", { required: true })}
         id="About"
+        className="textWritingArea textWriteForm"
         value={newAbout}
         onChange={handleAboutChange}
       ></textarea>
