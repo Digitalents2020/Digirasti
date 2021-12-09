@@ -129,8 +129,6 @@ function FallingWords() {
         timeoutLenght = timeoutLenght - 1000;
         lap++
       }
-
-      console.log(timeoutLenght);
       setTimeout(function () {
         cleanFallenLetter(lett);
       }, timeoutLenght);
@@ -149,7 +147,6 @@ function FallingWords() {
         location = randomIntFromInterval(-380, 370);
         }
       }
-      console.log(animLenght);
       return (
         <AnimatePresence>
           {arrayOfWords.map((letter) => (
@@ -306,8 +303,9 @@ function FallingWords() {
     setState("try");
   }
 
+  //Checks if lives are 0 or if points are 150 or over. Returns string depending the checks.
   function winnerOrLoserCheck(){
-    if(lives===0){
+    if(lives===0 && points < 150){
       return "Valitettavasti yrityksesi loppuivat, voit yrittää uudelleen, vaihtaa vaikeusastetta tai siirtyä seuraavaan tehtävään"
     }else if(points>=150){
       return "Onneksi olkoon, sait vaaditut 150 pistettä, voit yrittää uudelleen toisella vaikeusasteella tai siirtyä seuraavaan tehtävään"

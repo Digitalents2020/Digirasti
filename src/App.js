@@ -13,7 +13,7 @@ import Eform from "./Tehtävät/Eform/Eform";
 
 const App = () => {
   return (
-    <Router>
+    <Router forceRefresh={true}>
       <div className="App">
         <nav>
           <div className="aalto-element" />
