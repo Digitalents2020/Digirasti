@@ -100,11 +100,19 @@ export default function DragAndDrop(){
           }
         }
 
+//When going to next practice, scrolls to the top
+        function scrollTop(){
+         return( setTimeout(() => {
+        window.scrollTo(0, 0)
+        }),6)}
+        
+
         //Checks if win conditions are met, if they are, calls ClearVariables() function
     function nextPract(){
           if(all === 10){
+            ClearVariables()
             return (
-              <Link to="/Email" id="ToTheNext" className="nextPracButton" role="button" onClick={ClearVariables()}>Seuraava tehtävä</Link>
+              <Link to="/Email" id="ToTheNext" className="nextPracButton" role="button" onClick={scrollTop}>Seuraava tehtävä</Link>
             )
           }
         }
