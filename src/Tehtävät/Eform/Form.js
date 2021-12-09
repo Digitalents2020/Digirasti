@@ -26,7 +26,7 @@ const Form = ({
   return (
     <form onSubmit={submitForm}>
       <label htmlFor="FirstName">Etunimi *</label>
-      <input 
+      <input
         {...register("FirstName", { required: true })}
         id="FirstName"
         className="textWritingArea textWriteForm"
@@ -73,7 +73,11 @@ const Form = ({
       {errors.Number?.type === "required" && (
         <p className="error-message">Puhelinnumero on pakollinen tieto</p>
       )}
-      <label htmlFor="Work1">Työkokemus 1</label>
+      <label htmlFor="Work1">
+        {" "}
+        Työkokemus 1 (esimerkki: Myyjä, Ruokakauppa Oy, 01/2010-03/2015,
+        Tehtäviin kuului tuotteiden hyllyttäminen ja kassankäyttö){" "}
+      </label>
       <textarea
         id="Work1"
         className="textWritingArea textWriteForm"
@@ -104,7 +108,7 @@ const Form = ({
         <option>Ei mikään näistä (Selitä alempana tarkemmin)</option>
       </select>
       <label htmlFor="degree-name">Tutkintonimike</label>
-      <input 
+      <input
         id="degree-name"
         className="textWritingArea textWriteForm"
         value={newDegreeName}
@@ -127,7 +131,9 @@ const Form = ({
       )}
       <label htmlFor="Attachment">Lataa liite</label>
       <input {...register("Attachment")} type="file"></input>
-      <button className="actionButton" type="submit">Lähetä</button>
+      <button className="actionButton" type="submit">
+        Lähetä
+      </button>
     </form>
   );
 };
