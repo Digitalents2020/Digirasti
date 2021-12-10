@@ -24,66 +24,45 @@ const Tietoturva = () => {
     let sum = 0;
 
     if (data.kysymys1 === "B") {
-      console.log("Oikein");
       sum += 1;
-    } else {
-      console.log("Väärin");
     }
 
     if (data.kysymys2 === "B") {
-      console.log("Oikein");
       sum += 1;
-    } else {
-      console.log("Väärin");
     }
 
-    if (data.kysymys3 === "B") {
+    if (data.kysymys3 === "A") {
       sum += 1;
-    } else {
-      console.log("Väärin");
     }
+
     if (data.kysymys4 === "A") {
-      console.log("Oikein");
       sum += 1;
-    } else {
-      console.log("Väärin");
     }
+
     if (data.kysymys5 === "A") {
-      console.log("Oikein");
       sum += 1;
-    } else {
-      console.log("Väärin");
     }
+
     if (data.kysymys6 === "B") {
-      console.log("Oikein");
       sum += 1;
-    } else {
-      console.log("Väärin");
     }
+
     if (data.kysymys7 === "A") {
-      console.log("Oikein");
       sum += 1;
-    } else {
-      console.log("Väärin");
     }
+
     if (data.kysymys8 === "B") {
-      console.log("Oikein");
       sum += 1;
-    } else {
-      console.log("Väärin");
     }
+
     if (data.kysymys9 === "A") {
-      console.log("Oikein");
       sum += 1;
-    } else {
-      console.log("Väärin");
     }
+
     if (data.kysymys10 === "B") {
-      console.log("Oikein");
       sum += 1;
-    } else {
-      console.log("Väärin");
     }
+
     setPoints(sum);
     setSubmitted(true);
   };
@@ -100,16 +79,122 @@ const Tietoturva = () => {
           <br />
           <p>{points}/10 vastausta oikein.</p>
           <br />
-          <p>Kysymys 1: A koska x</p>
-          <p>Kysymys 2: B koska x</p>
-          <p>Kysymys 3: B koska x</p>
-          <p>Kysymys 4: B koska x</p>
-          <p>Kysymys 5: B koska x</p>
-          <p>Kysymys 6: B koska x</p>
-          <p>Kysymys 7: B koska x</p>
-          <p>Kysymys 8: B koska x</p>
-          <p>Kysymys 9: B koska x</p>
-          <p>Kysymys 10: B koska x</p>
+          <p>
+            Kysymys 1: Tietoturva tarkoittaa yksilön, yrityksen tai
+            palveluntarjoajan tietojen suojaamista ulkopuolisilta.{" "}
+            <strong>
+              Perustelu: Tietoturva tarkoittaa tiedon luottamuksellisuuden,
+              saatavuuden ja eheyden ylläpitämistä. Sen uhkia ovat mm.
+              huijausyritykset, erilaiset virusohjelmat, luvaton pääsy ja tiedon
+              luvaton käyttö.{" "}
+            </strong>
+          </p>
+          <br></br>
+          <p>
+            Kysymys 2: Tietosuoja tarkoittaa toimenpiteitä, joilla pyritään
+            varmistamaan henkilötietojen asianmukainen käsittely ja
+            yksityisyyden säilyminen.{" "}
+            <strong>
+              Perustelu: Tietosuoja ei viittaa mihinkään tiettyyn paikkaan vaan
+              toimintatapoihin, joilla taataan, että tiedot pysyvät suojassa.
+            </strong>
+          </p>
+          <br></br>
+          <p>
+            Kysymys 3: Ei.{" "}
+            <strong>
+              {" "}
+              Perustelu: Tietosuoja on osa jokaiselle perustuslaissa määriteltyä
+              yksityisyyden suojaa, joka turvaa yksilön vapauksien ja oikeuksien
+              toteutumista henkilötietojen käsittelyssä.
+            </strong>
+          </p>
+          <br></br>
+          <p>
+            Kysymys 4: Ei.{" "}
+            <strong>
+              Perustelu: Pankkivirkailijat tai erilaiset viranomaiset eivät
+              koskaan pyydä sinun käyttäjätunnuksiasi tai salasanaasi mihinkään
+              tarkoitukseen. Tällainen sähköposti on mitä todennäköisimmin
+              huijausyritys. Älä ikinä anna käyttäjätunnustasi ja salasanaasi
+              kenellekään, vaikka niiden pyytäjä vaikuttaisi viralliselta
+              taholta.
+            </strong>
+          </p>
+          <br></br>
+          <p>
+            Kysymys 5: Ei. Perustelu: Jokaiseen salasanalliseen palveluun on
+            ehdottomasti syytä olla käytössä eri salasana. Näin varmistat, että
+            yhden salasanasi joutuessa vääriin käsiin useamman palvelun sisällöt
+            eivät kuitenkaan ole vaarassa.
+          </p>
+          <br></br>
+          <p>
+            Kysymys 6: AC!DC!Thunderstruckki83.{" "}
+            <strong>
+              Perustelu: Mitä pidempi salasana ja mitä enemmän se pitää
+              sisällään isoja kirjaimia, erikoismerkkejä ja numeroita, sen
+              turvallisempi se on. Ylen Digitreenien salasanakoneen mukaan
+              hakkereilla menisi alle sekunti vaihtoehdon c), noin kuusi
+              sekuntia vaihtoehdon a) ja useita satoja vuosia vaihtoehdon b)
+              murtamiseen.
+            </strong>
+          </p>
+          <br></br>
+          <p>
+            Kysymys 7: Evästeillä tarkoitetaan avaamiesi verkkosivustojen luomia
+            tiedostoja, jotka helpottavat netissä liikkumistasi tallentamalla
+            selaustietoja.{" "}
+            <strong>
+              Perustelu: Ole tarkkana siitä, mitä evästeitä ja miltä sivustoilta
+              hyväksyt selaimesi käyttöön. Osa evästeistä on ns. välttämättömiä
+              (eli toiminnallisia tai automaattisia) evästeitä, jotka on
+              hyväksyttävä, että käytettävä sivusto toimisi oikein. Sen lisäksi
+              sivustoilla voi olla ei-pakollisia evästeitä, joilla useimmiten
+              seurataan käyttäjän - eli sinun - käyttäytymistä ja mieltymyksiä.
+              Voit lukea tarkemmin kunkin sivuston evästeistä sivustojen
+              evästeasetusten kautta.
+            </strong>
+          </p>
+          <br></br>
+          <p>
+            Kysymys 8: Kiinnität huomiota viestin ulkoasuun, lähettäjään ja
+            sisältöön. Ohitat viestin roskapostina ja tietojen kalasteluna.
+            <strong>
+              Perustelu: Arvioi aina kriittisesti myös virallisilta
+              vaikuttavilta tahoilta tulevat ilmoitukset sähköpostissa.
+              Erityisesti kirjoitusvirheet ja huono suomen kieli saattavat olla
+              merkkejä erilaisista huijaus- tai kalasteluyrityksistä
+              (“phishing”). Myös erilaisten rahalähetysten ja palkintojen
+              suhteen on syytä muistaa, että sähköpostin maailmassa valitettavan
+              usein viestit, jotka ovat liian hyviä ollakseen totta, eivät sitä
+              ole.
+            </strong>
+          </p>
+          <br></br>
+          <p>
+            Kysymys 9: Tyhjentää selaushistoria.{" "}
+            <strong>
+              Perustelu: Kotikoneella, omalla puhelimella tai tabletilla
+              selaushistorian tyhjentäminen ei ole pakollista, mutta julkisia
+              koneita käyttäessäsi tyhjennä aina selaushistoriasi ja erilaisten
+              verkkopalvelujen kuten sähköpostin salasanat ja käyttäjätunnukset.
+              Jotkut yleisessä käytössä olevat päätteet tyhjentävät nämä tiedot
+              automaattisesti, mutta sen varaan ei koskaan kannata laskea.
+            </strong>
+          </p>
+          <br></br>
+          <p>
+            Kysymys 10: Kirjoittaa itselleen johonkin ylös.{" "}
+            <strong>
+              Perustelu: Muistin avuksi on hyvä, että kirjoitat salasanasi eri
+              palveluihin johonkin ylös. Erittäin tärkeää on kuitenkin muistaa,
+              että salasanoja ja muita kirjautumistietoja, kuten
+              käyttäjätunnusta, ei tule koskaan säilyttää samassa paikassa ja
+              samalla lapulla. Kuka tahansa pystyisi molempien tietojen avulla
+              kirjautumaan tunnuksillasi eri palveluihin.
+            </strong>
+          </p>
         </div>
         <Link to="/tippuvat_kirjaimet" className="nextPracButton" role="button">
           Seuraava tehtävä
