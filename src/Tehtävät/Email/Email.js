@@ -39,10 +39,10 @@ const Email = () => {
           <p>
             Hienoa! Näin kirjoitat ja lähetät sähköpostin ja lisäät siihen
             liitteen! Voit nyt siirtyä seuraavaan tehtävään tai odottaa ohjaajan
-            antamia ohjeita
+            antamia ohjeita.
           </p>
           <br></br>
-          {!attached && (
+          {/*{!attached && (
             <>
               <h2 className="infoHeader">...Mutta</h2>
               <p>
@@ -50,12 +50,16 @@ const Email = () => {
                 halutessasi yrittää uudelleen tai klikata "seuraava tehtävä"
                 painiketta.
               </p>
-              <button className="actionButton" type="button" onClick={refreshPage}>
+              <button
+                className="actionButton"
+                type="button"
+                onClick={refreshPage}
+              >
                 {" "}
                 <span>Yritä uudelleen</span>{" "}
               </button>
             </>
-          )}
+          )}*/}
         </div>
         <Link to="/Eform" className="nextPracButton" role="button">
           Seuraava tehtävä
@@ -75,12 +79,15 @@ const Email = () => {
       <div className="pageContentFrame">
         <h2 className="infoHeader">Ohje:</h2>
         <p>
-          Tässä tehtävässä opetellaan sähköpostin kirjoittamista ja
-          liittetiedoston liittämistä. Sähköpostissa on aina kolme eri osaa:
-          Vastaanottaja, aihe ja itse viesti. Joskus tarpeen on neljäs osa joka
-          on liitetiedosto. Tehtävänäsi on kirjoittaa pienimuotoinen työhakemus
-          vastaanottajalle esimerkki.makkonen@example.com ja muistathan myös
-          liittää CV:si sähköpostin liitteeksi!
+          Tehtävässä harjoitellaan sähköpostiviestin kirjoittamista ja
+          liitetiedoston liittämistä sähköpostiviestiin. Sähköpostissa on aina:
+          Vastaanottaja, aihe ja viesti. Sähköpostiviestiin voi laittaa myös
+          liitetiedoston. Tehtävänäsi on kirjoittaa pienimuotoinen työhakemus.
+          Vastaanottaja: esimerkki.makkonen@example.com Aihe: Työhakemus
+          avoimeen tehtävään Viesti: Aloita viesti tervehdyksellä. Kerro mitä
+          viesti koskee. Kerro myös, että CV on liitteenä. Laita viestiin
+          lopputervehdys ja oma nimesi. Liitä CV:si sähköpostin liitteeksi. Ei
+          huolta, viestisi ei lähde oikeasti mihinkään. Tämä on vain harjoitus.
         </p>
         <br />
         <p>
@@ -93,7 +100,8 @@ const Email = () => {
       <div className="pageContentFrame">
         <form onSubmit={handleSubmit(submitMessage)}>
           <label>Vastaanottaja</label>
-          <input className="textWritingArea textWriteForm"
+          <input
+            className="textWritingArea textWriteForm"
             {...register("Vastaanottaja", {
               required: true,
               pattern: /esimerkki\.makkonen@example\.com/,
@@ -110,12 +118,20 @@ const Email = () => {
             </p>
           )}
           <label>Aihe</label>
-          <input className="textWritingArea textWriteForm" {...register("Aihe", { required: true })} type="text" />
+          <input
+            className="textWritingArea textWriteForm"
+            {...register("Aihe", { required: true })}
+            type="text"
+          />
           {errors.Aihe?.type === "required" && (
             <p className="error-message">Aihetta ei voi jättää tyhjäksi</p>
           )}
           <label>Viesti</label>
-          <textarea className="textWritingArea textWriteForm" {...register("Viesti", { required: true })} type="text" />
+          <textarea
+            className="textWritingArea textWriteForm"
+            {...register("Viesti", { required: true })}
+            type="text"
+          />
           {errors.Viesti?.type === "required" && (
             <p className="error-message">
               Viestikenttää ei voi jättää tyhjäksi
@@ -123,7 +139,9 @@ const Email = () => {
           )}
           <label>Lataa liite</label>
           <input {...register("Attachment")} type="file"></input>
-          <button className="actionButton" type="submit">Lähetä</button>
+          <button className="actionButton" type="submit">
+            Lähetä
+          </button>
         </form>
       </div>
     </div>

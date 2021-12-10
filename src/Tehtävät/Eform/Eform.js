@@ -84,21 +84,23 @@ const Eform = () => {
     return (
       <div className="form-box">
         <div className="pageContentFrame">
-          <h2 className="infoHeader">Onnistuit!</h2>
-          <p>
-            Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen! Voit nyt
-            siirtyä seuraavaan tehtävään tai odottaa ohjaajan antamia ohjeita
-          </p>
+          <h2 className="infoHeader">
+            Sähköinen hakulomake lähetetty onnistuneesti.
+          </h2>
+          <p>Hienoa! Näin kirjoitat ja lähetät sähköisen lomakkeen!</p>
           <br></br>
           {!attached && (
             <>
               <h2 className="infoHeader">...Mutta</h2>
               <p>
-                Sinulta taisi unohtua liitetiedosto. Ei hätää, voit silti
-                halutessasi yrittää uudelleen tai klikata "seuraava tehtävä"
-                painiketta.
+                Sinulta unohtui liitetiedosto. Ei hätää, voit halutessasi
+                yrittää uudelleen tai klikata "Siirry etusivulle" painiketta.
               </p>
-              <button className="actionButton" type="button" onClick={refreshPage}>
+              <button
+                className="actionButton"
+                type="button"
+                onClick={refreshPage}
+              >
                 {" "}
                 <span>Yritä uudelleen</span>{" "}
               </button>
@@ -122,8 +124,11 @@ const Eform = () => {
           lähettämistä. Sähköisiä lomakkeita on monenlaisia, mutta tässä
           harjoitellaan täyttämään mahdollisesti työnhaun yhteydessä vastaan
           tulevaa lomaketta. Huomaathan, että tähdellä merkityt kentät ovat
-          pakollisia. Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä
-          mitään minnekkään!
+          pakollisia.{" "}
+          <strong>
+            Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä mitään
+            minnekkään!
+          </strong>
         </p>
       </div>
       <div className="pageContentFrame">
