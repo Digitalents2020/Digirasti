@@ -1,9 +1,6 @@
 import React from 'react';
 import './App.css';
 import { Link } from "react-router-dom"
-import Video1 from "./Resources/ctrlv_ctrlc.mp4"
-import Video2 from "./Resources/email_anim.mp4"
-import Video3 from "./Resources/mouse_copy.mp4"
 
 const Home = () => {
     return (
@@ -24,17 +21,6 @@ const Home = () => {
 			  <Link to="/Tehtava2" className="nextPracButton"
               role="button">Aloita</Link>
 		  </div>
-		  <div>
-		    <br/>
-			<p/>
-		    <video controls src={Video1} type="video/mp4" width='25%' height='25%'/>
-			<br/>
-			<p/>
-		    <video controls src={Video2} type="video/mp4" width='25%' height='25%'/>
-			<br/>
-			<p/>
-		    <video controls src={Video3} type="video/mp4" width='25%' height='25%'/>
-			</div>
 		</div>
 		
     )

@@ -1,6 +1,9 @@
 import React, { useState } from "react"
 import {Link } from "react-router-dom"
 import "../../App.css"
+import Video1 from "../../Resources/mouse_copy.mp4"
+import Video2 from "../../Resources/ctrlv_ctrlc.mp4"
+
 const myArray = [
   "Helsingin työllisyyspalveluiden tavoitteena on edistää nykyistä tehokkaammin työttömien työnhakijoiden työllistymistä ja koulutukseen ohjautumista, sekä tuoda uusia ratkaisuja osaavan työvoiman saatavuuteen.",
   "Suomalaisten digitaitojen tärkeys korostuu palveluiden muuttuessa sähköisiksi. On arvioitu, että noin neljänneksellä väestöstä olisi liian heikot digitaidot.",
@@ -40,6 +43,7 @@ const Kopiointi = () => {
 			    <p>Kopioi ja liitä teksti sen alla olevaan tyhjään kenttään.<br/><br/>
               <strong>Kopiointi:</strong> Valitse teksti maalaamalla eli kuljettamalla hiirtä sen yli vasen painike alas painettuna. Kun koko kopioitavan tekstin tausta on sininen, paina hiiren oikeaa näppäintä maalatun tekstin päällä. Valitse lisävalikosta "Kopioi". teksti maalaamalla se ja painamalla hiiren oikeaa näppäintä maalatun tekstin päällä ja valitsemalla lisävalikosta “Kopioi”.
               Siirrä kursori (hiiren osoitin) tyhjän laatikon päälle ja paina hiiren oikealla painikkeella ja valitse lisävalikosta "Liitä".</p>
+              <video controls src={Video1} type="video/mp4" width="50%" />
 		    </div>
       </div>
 	    <div className="pageContentFrame">
@@ -66,6 +70,7 @@ const Kopiointi = () => {
           <p>Kopioi ja liitä teksti sen alla olevaan tyhjään kenttään.<br/>
           Kopioi teksti maalaamalla se ja painamalla näppäimiä Ctrl + C samanaikaisesti. 
           Siirrä kursori (hiiren osoitin) tyhjän laatikon päälle ja Liitä teksti laatikkoon klikkaamalla hiirellä ja paina sitten näppäimiä Ctrl + V</p>
+          <video controls src={Video2} type="video/mp4" width="50%"/>
         <br />
 		    </div>
       <div className="pageContentFrame">

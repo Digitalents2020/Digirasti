@@ -49,6 +49,11 @@ a:active {
   background-color: black;
 }
 
+video {
+  margin: 10px 0;
+  border: solid #FD4F00;
+}
+
 .aalto-element {
   background-repeat: repeat-y;
   width: 100%;

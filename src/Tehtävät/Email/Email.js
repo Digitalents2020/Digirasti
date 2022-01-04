@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "../../App.css";
+import Video3 from "../../Resources/email_anim.mp4"
 //React Form Hook library documentation: https://github.com/react-hook-form/react-hook-form
 
 const Email = () => {
@@ -96,6 +97,7 @@ const Email = () => {
           tehtävässä käytettävää nappia ei tosielämän sähköposteista löydy. Ei
           huolta, kirjoittamasi hakemus ei oikeasti lähde mihinkään!
         </p>
+        <video controls src={Video3} type="video/mp4" width="50%" />
       </div>
       <div className="pageContentFrame">
         <form onSubmit={handleSubmit(submitMessage)}>
