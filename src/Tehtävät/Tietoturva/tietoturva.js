@@ -71,7 +71,7 @@ const Tietoturva = () => {
 
   if (submitted) {
     return (
-      <div className="form-box">
+      <div className="mainPageFrame">
         <div className="pageContentFrame">
           <h2 className="infoHeader">Tulokset</h2>
 

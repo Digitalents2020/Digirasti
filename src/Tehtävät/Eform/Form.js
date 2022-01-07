@@ -35,7 +35,7 @@ const Form = ({
         type="text"
       />
       {errors.FirstName?.type === "required" && (
-        <p className="error-message">Etunimi on pakollinen tieto</p>
+        <p className="errorMessage">Etunimi on pakollinen tieto</p>
       )}
       <label htmlFor="LastName">Sukunimi *</label>
       <input
@@ -47,7 +47,7 @@ const Form = ({
         type="text"
       ></input>
       {errors.LastName?.type === "required" && (
-        <p className="error-message">Sukunimi on pakollinen tieto</p>
+        <p className="errorMessage">Sukunimi on pakollinen tieto</p>
       )}
       <label htmlFor="Email">Sähköposti *</label>
       <input
@@ -59,7 +59,7 @@ const Form = ({
         type="email"
       ></input>
       {errors.Email?.type === "required" && (
-        <p className="error-message">Sähköpostiosoite on pakollinen tieto</p>
+        <p className="errorMessage">Sähköpostiosoite on pakollinen tieto</p>
       )}
       <label htmlFor="Number">Puhelinnumero *</label>
       <input
@@ -71,7 +71,7 @@ const Form = ({
         type="text"
       ></input>
       {errors.Number?.type === "required" && (
-        <p className="error-message">Puhelinnumero on pakollinen tieto</p>
+        <p className="errorMessage">Puhelinnumero on pakollinen tieto</p>
       )}
       <label htmlFor="Work1">
         {" "}
@@ -127,7 +127,7 @@ const Form = ({
         onChange={handleAboutChange}
       ></textarea>
       {errors.Number?.type === "required" && (
-        <p className="error-message">Esittely on pakollinen tieto</p>
+        <p className="errorMessage">Esittely on pakollinen tieto</p>
       )}
       <label htmlFor="Attachment">Lataa liite</label>
       <input {...register("Attachment")} type="file"></input>

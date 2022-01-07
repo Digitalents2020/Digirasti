@@ -74,9 +74,9 @@ import "../../App.css"
 			      <button className="actionButton" onClick={ tarkistusFunktio } value="validateResult">Tarkista tulos</button>
 			      <button className="actionButton" onClick={ aloitusAlustaFunktio } value="reset">Aloita alusta</button>
 			    </div>
+          <Link to="/kopiointi" className="nextPracButton" role="button">Seuraava tehtävä</Link>
 		    </div>
-        <Link to="/kopiointi" className="nextPracButton" role="button">Seuraava tehtävä</Link>
-        </div>
+      </div>
     )
   }
   

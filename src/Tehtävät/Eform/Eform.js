@@ -82,7 +82,7 @@ const Eform = () => {
 
   if (submitted) {
     return (
-      <div className="form-box">
+      <div className="mainPageFrame">
         <div className="pageContentFrame">
           <h2 className="infoHeader">
             Sähköinen hakulomake lähetetty onnistuneesti.
@@ -115,7 +115,7 @@ const Eform = () => {
   }
 
   return (
-    <div className="form-box">
+    <div className="mainPageFrame">
       <h1 className="pageHeader">Sähköinen lomake</h1>
       <div className="pageContentFrame">
         <h2 className="infoHeader">Ohje:</h2>
@@ -157,7 +157,6 @@ const Eform = () => {
           register={register}
           errors={errors}
         />
-        <br></br>
       </div>
     </div>
   );

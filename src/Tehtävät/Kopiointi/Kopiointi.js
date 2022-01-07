@@ -92,9 +92,8 @@ const Kopiointi = () => {
         </button>
         {secondText}
 		  </div>
+      <Link to="/tietoturva" className="nextPracButton" role="button">Seuraava tehtävä</Link>
     </div>
-	  <Link to="/tietoturva" className="nextPracButton" role="button">Seuraava tehtävä</Link>
-
 	</div>
   )
 }

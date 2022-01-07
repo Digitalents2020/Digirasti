@@ -26,7 +26,7 @@ nav {
 }
 
 nav h1 {
-  font-size: 1.2em;
+  font-size: 1.4rem;
   margin: 30px;
   text-align: left;
 }
@@ -41,12 +41,17 @@ nav ul li a {
   color: #ffffff;
   text-decoration: none;
   display: block;
-  padding: 5px 30px;
+  padding: 10px 30px;
+  font-size: 1.25rem;
 }
 
 nav ul li a:hover,
 a:active {
   background-color: black;
+}
+
+h3 {
+  font-size: 1.25rem;
 }
 
 video {
@@ -77,11 +82,11 @@ video {
   padding: 0.5rem;
   margin: 1rem;
   border: 0;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .formTietoturva label {
-  font-size: 18px;
+  font-size: 1.25rem;
   margin: 0 2rem 2rem 0;
 }
 
@@ -160,14 +165,14 @@ video {
   display: inline-block;
   margin: 20px 0;
   width: 150px;
-  font-size: 18px;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #FD4F00;
   background-color: #FFFFFF;
 }  
 
 .vaikeusasteGame {
-  font-size: 20px;
+  font-size: 1.25rem;
   display: block;
   padding: 40px;
   margin: 10px 0 0;
@@ -180,7 +185,7 @@ video {
   border-width: 2px;
   border-color: #0000BF;
   border-radius: 0;
-  font-size: large;
+  font-size: 1.25rem;
   font-weight: 800;
   width: 600px;
   margin: 10px;
@@ -188,12 +193,12 @@ video {
 
 .wordInputWords::placeholder {
   color: lightgray;
-  font-size: smaller;
+  /* font-size: 1.25em; */
   opacity: 1;
 }
 
 .vinkkiGame {
-  font-size: 18px;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #BD2719;
   margin: auto;
@@ -283,53 +288,17 @@ video {
 
 /* FORM STYLES */
 
-.error-message {
+.errorMessage {
   color: #fd4f00;
   text-align: left;
   padding-bottom: 10px;
 }
 
-.form-box {
-  margin: 20px 30px 10px;
+label {
+  text-align: left;
+  font-size: 1.25rem;
+  margin: 15px 0 0;
 }
-
-/* .form-box input {
-  display: block;
-  padding: 0.5rem;
-  margin: 1rem;
-  min-width: 600px;
-  border: 0;
-  font-size: 20px;
-  text-align: left;
-} */
-
-.form-box label {
-  display: block;
-  text-align: left;
-  font-size: 20px;
-  margin: 0, 0, 2rem, 0;
-}
-
-/* .form-box textarea {
-  height: 15rem;
-  display: block;
-  padding: 0.5rem;
-  margin: 1rem;
-  min-width: 600px;
-  border: 0;
-  font-size: 20px;
-  text-align: left;
-} */
-
-/* select {
-  display: block;
-  padding: 0.5rem;
-  margin: 1rem;
-  min-width: 600px;
-  border: 0;
-  font-size: 20px;
-  text-align: left;
-} */
 
 /* CORE ELEMENTS */
 
@@ -344,7 +313,7 @@ video {
   padding: 10px;
   background-color: #9FC9EB;
   color: #000000;
-  font-size: 1.5em;
+  font-size: 1.6rem;
 }
 
 .pageContentFrame {
@@ -354,6 +323,7 @@ video {
   text-align: left;
   background-color: #FFFFFF;
   color: #000000;
+  font-size: 1.25rem;
 }
 
 .containerGame {
@@ -365,6 +335,7 @@ video {
 .infoHeader {
   color: #FD4F00;
   padding-bottom: 10px;
+  font-size: 1.4rem;
 }
 
 /* BUTTONS */
@@ -373,10 +344,10 @@ video {
   background-color: #0000BF; 
   color: #FFFFFF;
   padding: 10px 22px;
-  margin: 40px 10px;
+  margin: 40px 10px 10px;
   text-align: center;
   display: inline-block;
-  font-size: 20px;
+  font-size: 1.25rem;
   cursor: pointer;
   border-style: none;
   border-radius: 25px; 
@@ -391,10 +362,10 @@ video {
   border-style: none;
   color: #000000;
   padding: 10px 22px;
-  margin-top: 20px;
+  margin: 20px 0;
   text-align: center;
   display: inline-block;
-  font-size: 20px;
+  font-size: 1.25rem;
   cursor: pointer;
   border-radius: 25px;
   text-decoration: none;
@@ -414,7 +385,7 @@ video {
   border-style: solid;
   border-width: 5px;
   margin-top: 10px;
-  font-size: 1.5em;
+  font-size: 1.25rem;
 }
 
 .textWriteKirjoitus {

@@ -34,7 +34,7 @@ const Email = () => {
 
   if (submitted) {
     return (
-      <div className="form-box">
+      <div className="mainPageFrame">
         <div className="pageContentFrame">
           <h2 className="infoHeader">Onnistuit!</h2>
           <p>
@@ -72,10 +72,10 @@ const Email = () => {
   //Form validation is made by using React Hook Form library
 
   //{...register("Vastaanottaja", { required: true })} The Register handles the input and the "required: true" is for validation and error purposes.
-  //{errors.Vastaanottaja?.type === "required" && (<p className="error-message"> Vastaanottajaa ei voi jättää tyhjäksi </p> In this part we define the type of error and an error message for it, in this case the field cannot be left empty.
+  //{errors.Vastaanottaja?.type === "required" && (<p className="errorMessage"> Vastaanottajaa ei voi jättää tyhjäksi </p> In this part we define the type of error and an error message for it, in this case the field cannot be left empty.
 
   return (
-    <div className="form-box">
+    <div className="mainPageFrame">
       <h1 className="pageHeader">Sähköposti</h1>
       <div className="pageContentFrame">
         <h2 className="infoHeader">Ohje:</h2>
@@ -100,6 +100,7 @@ const Email = () => {
         <video controls src={Video3} type="video/mp4" width="50%" />
       </div>
       <div className="pageContentFrame">
+        <h2 className="infoHeader">Sähköposti</h2>
         <form onSubmit={handleSubmit(submitMessage)}>
           <label>Vastaanottaja</label>
           <input
@@ -110,12 +111,12 @@ const Email = () => {
             })}
           />
           {errors.Vastaanottaja?.type === "pattern" && (
-            <p className="error-message">
+            <p className="errorMessage">
               Tarkistathan kirjoittamasi osoitteen
             </p>
           )}
           {errors.Vastaanottaja?.type === "required" && (
-            <p className="error-message">
+            <p className="errorMessage">
               Vastaanottajaa ei voi jättää tyhjäksi
             </p>
           )}
@@ -126,7 +127,7 @@ const Email = () => {
             type="text"
           />
           {errors.Aihe?.type === "required" && (
-            <p className="error-message">Aihetta ei voi jättää tyhjäksi</p>
+            <p className="errorMessage">Aihetta ei voi jättää tyhjäksi</p>
           )}
           <label>Viesti</label>
           <textarea
@@ -135,7 +136,7 @@ const Email = () => {
             type="text"
           />
           {errors.Viesti?.type === "required" && (
-            <p className="error-message">
+            <p className="errorMessage">
               Viestikenttää ei voi jättää tyhjäksi
             </p>
           )}
