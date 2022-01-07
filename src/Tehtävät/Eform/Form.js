@@ -24,7 +24,7 @@ const Form = ({
   errors,
 }) => {
   return (
-    <form onSubmit={submitForm}>
+    <form className="mailForm" onSubmit={submitForm}>
       <label htmlFor="FirstName">Etunimi *</label>
       <input
         {...register("FirstName", { required: true })}

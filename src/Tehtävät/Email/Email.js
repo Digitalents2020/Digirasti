@@ -101,7 +101,7 @@ const Email = () => {
       </div>
       <div className="pageContentFrame">
         <h2 className="infoHeader">Sähköposti</h2>
-        <form onSubmit={handleSubmit(submitMessage)}>
+        <form class="mailForm" onSubmit={handleSubmit(submitMessage)}>
           <label>Vastaanottaja</label>
           <input
             className="textWritingArea textWriteForm"
