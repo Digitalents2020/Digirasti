@@ -21,7 +21,7 @@ body {
 nav {
   width: 25vw;
   min-height: 100%;
-  background-color: #0618bb;
+  background-color: #0000BF;
   color: #ffffff;
 }
 
@@ -52,11 +52,12 @@ a:active {
 
 h3 {
   font-size: 1.25rem;
+  padding-bottom: 10px;
 }
 
 video {
   margin: 10px 0;
-  border: solid #FD4F00;
+  border: solid 2px #f1f1f1;
 }
 
 .aalto-element {
@@ -79,15 +80,12 @@ video {
 /* TIETOTURVA STYLES */
 
 .formTietoturva input {
-  padding: 0.5rem;
-  margin: 1rem;
-  border: 0;
-  font-size: 1.25rem;
+  margin: 20px;
 }
 
 .formTietoturva label {
   font-size: 1.25rem;
-  margin: 0 2rem 2rem 0;
+  margin: 10px;
 }
 
 .formTietoturva ul {
@@ -171,7 +169,7 @@ video {
   background-color: #FFFFFF;
 }  
 
-.vaikeusasteGame {
+.gameButtonsFrame {
   font-size: 1.25rem;
   display: block;
   padding: 40px;
@@ -288,10 +286,12 @@ video {
 
 /* FORM STYLES */
 
+.correctMessage {
+  color: #009246;
+}
+
 .errorMessage {
-  color: #fd4f00;
-  text-align: left;
-  padding-bottom: 10px;
+  color: #BD2719;
 }
 
 .mailForm label {
@@ -299,6 +299,10 @@ video {
   text-align: left;
   font-size: 1.25rem;
   margin: 15px 0 0;
+}
+
+.fileInput {
+  font-size: 1.25rem;
 }
 
 /* CORE ELEMENTS */
@@ -325,6 +329,7 @@ video {
   background-color: #FFFFFF;
   color: #000000;
   font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 .containerGame {
@@ -337,6 +342,10 @@ video {
   color: #FD4F00;
   padding-bottom: 10px;
   font-size: 1.4rem;
+}
+
+.exerciseHeader {
+  color: #0000BF;
 }
 
 /* BUTTONS */
@@ -380,28 +389,24 @@ video {
 /* TEXTAREA */
 
 .textWritingArea {
-  min-width: 100%;
+  width: 95%;
   resize: none;
   border-color: #9FC9EB;
   border-style: solid;
-  border-width: 5px;
-  margin-top: 10px;
+  border-width: 3px;
   font-size: 1.25rem;
+  line-height: 1.5;
+  padding: 10px;
 }
 
-.textWriteKirjoitus {
-  min-height: 200px;
-}
-
-.textWriteMuokkaus {
-  min-height: 350px;
-}
-
-.textWriteKopiointi {
+.smallTextarea {
   min-height: 100px;
 }
 
-.textWriteForm {
-  border-width: 3px;
-  min-width: 75%;
+.mediumTextarea {
+  min-height: 150px;
+}
+
+.largeTextarea {
+  min-height: 350px;
 }

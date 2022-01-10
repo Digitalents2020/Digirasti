@@ -73,80 +73,123 @@ const Tietoturva = () => {
     return (
       <div className="mainPageFrame">
         <div className="pageContentFrame">
-          <h2 className="infoHeader">Tulokset</h2>
-
-          <h3>Oikeat vastaukset</h3>
-          <br />
+          <h2 className="infoHeader">Tulokset ja oikeat vastaukset</h2>
           <p>{points}/10 vastausta oikein.</p>
           <br />
           <p>
-            Kysymys 1: Tietoturva tarkoittaa yksilön, yrityksen tai
-            palveluntarjoajan tietojen suojaamista ulkopuolisilta.{" "}
+            <h3 className="exerciseHeader">1. Mitä tietoturvalla tarkoitetaan?</h3>
             <strong>
-              Perustelu: Tietoturva tarkoittaa tiedon luottamuksellisuuden,
-              saatavuuden ja eheyden ylläpitämistä. Sen uhkia ovat mm.
-              huijausyritykset, erilaiset virusohjelmat, luvaton pääsy ja tiedon
-              luvaton käyttö.{" "}
+            Oikea vastaus: <br />
             </strong>
+            Tietoturva tarkoittaa yksilön, yrityksen tai
+            palveluntarjoajan tietojen suojaamista ulkopuolisilta.{" "}
+            <br />
+            <strong>
+            Perustelu: <br />
+            </strong>
+            Tietoturva tarkoittaa tiedon luottamuksellisuuden,
+            saatavuuden ja eheyden ylläpitämistä. Sen uhkia ovat mm.
+            huijausyritykset, erilaiset virusohjelmat, luvaton pääsy ja tiedon
+            luvaton käyttö.{" "}
           </p>
-          <br></br>
+          <br />
           <p>
-            Kysymys 2: Tietosuoja tarkoittaa toimenpiteitä, joilla pyritään
+            <h3 className="exerciseHeader">2. Mitä tietosuojalla tarkoitetaan?</h3>
+            <strong>
+            Oikea vastaus: <br />
+            </strong>
+            Tietosuoja tarkoittaa toimenpiteitä, joilla pyritään
             varmistamaan henkilötietojen asianmukainen käsittely ja
             yksityisyyden säilyminen.{" "}
+            <br />
             <strong>
-              Perustelu: Tietosuoja ei viittaa mihinkään tiettyyn paikkaan vaan
-              toimintatapoihin, joilla taataan, että tiedot pysyvät suojassa.
+            Perustelu: <br />
             </strong>
+            Tietosuoja ei viittaa mihinkään tiettyyn paikkaan vaan
+            toimintatapoihin, joilla taataan, että tiedot pysyvät suojassa.
           </p>
-          <br></br>
+          <br />
           <p>
-            Kysymys 3: Ei.{" "}
+            <h3 className="exerciseHeader">3. Minun täytyy itse huolehtia tietosuojastani.</h3>
+            <strong>
+            Oikea vastaus: <br />
+            </strong>
+            Ei.{" "}
+            <br />
             <strong>
               {" "}
-              Perustelu: Tietosuoja on osa jokaiselle perustuslaissa määriteltyä
+              Perustelu: <br />
+              </strong>
+              Tietosuoja on osa jokaiselle perustuslaissa määriteltyä
               yksityisyyden suojaa, joka turvaa yksilön vapauksien ja oikeuksien
               toteutumista henkilötietojen käsittelyssä.
-            </strong>
           </p>
-          <br></br>
+          <br />
           <p>
-            Kysymys 4: Ei.{" "}
+            <h3 className="exerciseHeader">4. Pankkivirkailija pyytää sinulta sähköpostilla käyttäjätunnusta ja salasanaa pankkipalveluun, jotta hän voi tehdä sinulle ylimääräisen talletuksen. Voitko antaa ne?</h3>
             <strong>
-              Perustelu: Pankkivirkailijat tai erilaiset viranomaiset eivät
+            Oikea vastaus: <br />
+            </strong>
+            Ei.{" "}
+            <br />
+            <strong>
+              Perustelu: <br />
+              </strong>
+              Pankkivirkailijat tai erilaiset viranomaiset eivät
               koskaan pyydä sinun käyttäjätunnuksiasi tai salasanaasi mihinkään
               tarkoitukseen. Tällainen sähköposti on mitä todennäköisimmin
               huijausyritys. Älä ikinä anna käyttäjätunnustasi ja salasanaasi
               kenellekään, vaikka niiden pyytäjä vaikuttaisi viralliselta
               taholta.
-            </strong>
           </p>
-          <br></br>
+          <br />
           <p>
-            Kysymys 5: Ei. Perustelu: Jokaiseen salasanalliseen palveluun on
+            <h3 className="exerciseHeader">5. Pari eri salasanaa riittää kaikille eri käyttäjätileille (esim. sähköpostiin, sosiaalisen median kanaville, foorumeille, työnhaun sivustoille jne.).</h3>
+            <strong>
+            Oikea vastaus: <br />
+            </strong>
+            Ei. <br />
+            <strong>
+            Perustelu: <br />
+            </strong>
+            Jokaiseen salasanalliseen palveluun on
             ehdottomasti syytä olla käytössä eri salasana. Näin varmistat, että
             yhden salasanasi joutuessa vääriin käsiin useamman palvelun sisällöt
             eivät kuitenkaan ole vaarassa.
           </p>
-          <br></br>
+          <br />
           <p>
-            Kysymys 6: AC!DC!Thunderstruckki83.{" "}
+            <h3 className="exerciseHeader">6. Mikä seuraavista salasanoista on turvallisin?</h3>
             <strong>
-              Perustelu: Mitä pidempi salasana ja mitä enemmän se pitää
+            Oikea vastaus: <br />
+            </strong>
+            AC!DC!Thunderstruckki83.{" "}
+            <br />
+            <strong>
+              Perustelu: <br />
+              </strong>
+              Mitä pidempi salasana ja mitä enemmän se pitää
               sisällään isoja kirjaimia, erikoismerkkejä ja numeroita, sen
               turvallisempi se on. Ylen Digitreenien salasanakoneen mukaan
               hakkereilla menisi alle sekunti vaihtoehdon c), noin kuusi
               sekuntia vaihtoehdon a) ja useita satoja vuosia vaihtoehdon b)
               murtamiseen.
-            </strong>
           </p>
-          <br></br>
+          <br />
+
           <p>
-            Kysymys 7: Evästeillä tarkoitetaan avaamiesi verkkosivustojen luomia
+            <h3 className="exerciseHeader">7. Mitä tarkoitetaan evästeillä?</h3>
+            <strong>
+            Oikea vastaus: <br />
+            </strong>
+            Evästeillä tarkoitetaan avaamiesi verkkosivustojen luomia
             tiedostoja, jotka helpottavat netissä liikkumistasi tallentamalla
             selaustietoja.{" "}
-            <strong>
-              Perustelu: Ole tarkkana siitä, mitä evästeitä ja miltä sivustoilta
+            <br />
+              <strong>
+              Perustelu: <br />
+              </strong>
+              Ole tarkkana siitä, mitä evästeitä ja miltä sivustoilta
               hyväksyt selaimesi käyttöön. Osa evästeistä on ns. välttämättömiä
               (eli toiminnallisia tai automaattisia) evästeitä, jotka on
               hyväksyttävä, että käytettävä sivusto toimisi oikein. Sen lisäksi
@@ -154,14 +197,21 @@ const Tietoturva = () => {
               seurataan käyttäjän - eli sinun - käyttäytymistä ja mieltymyksiä.
               Voit lukea tarkemmin kunkin sivuston evästeistä sivustojen
               evästeasetusten kautta.
-            </strong>
           </p>
-          <br></br>
+          <br />
+
           <p>
-            Kysymys 8: Kiinnität huomiota viestin ulkoasuun, lähettäjään ja
-            sisältöön. Ohitat viestin roskapostina ja tietojen kalasteluna.
+            <h3 className="exerciseHeader">8. Saat sähköpostiisi postilta ilmoituksen noudettavasta paketista. Viestin suomen kielessä on vähän kirjoitusvirheitä ja sinua pyydetään klikkaamaan siinä olevaa linkkiä. Mitä teet?</h3>
             <strong>
-              Perustelu: Arvioi aina kriittisesti myös virallisilta
+            Oikea vastaus: <br />
+            </strong>
+            Kiinnität huomiota viestin ulkoasuun, lähettäjään ja
+            sisältöön. Ohitat viestin roskapostina ja tietojen kalasteluna.
+            <br />
+            <strong>
+              Perustelu: <br />
+              </strong>
+              Arvioi aina kriittisesti myös virallisilta
               vaikuttavilta tahoilta tulevat ilmoitukset sähköpostissa.
               Erityisesti kirjoitusvirheet ja huono suomen kieli saattavat olla
               merkkejä erilaisista huijaus- tai kalasteluyrityksistä
@@ -169,31 +219,42 @@ const Tietoturva = () => {
               suhteen on syytä muistaa, että sähköpostin maailmassa valitettavan
               usein viestit, jotka ovat liian hyviä ollakseen totta, eivät sitä
               ole.
-            </strong>
           </p>
-          <br></br>
+          <br />
           <p>
-            Kysymys 9: Tyhjentää selaushistoria.{" "}
+            <h3 className="exerciseHeader">9. Kun olet käyttänyt julkista tietokonetta, on lopettaessasi tärkeää</h3>
             <strong>
-              Perustelu: Kotikoneella, omalla puhelimella tai tabletilla
+            Oikea vastaus: <br />
+            </strong>
+            Tyhjentää selaushistoria.{" "}
+            <br />
+            <strong>
+              Perustelu: <br />
+              </strong>
+              Kotikoneella, omalla puhelimella tai tabletilla
               selaushistorian tyhjentäminen ei ole pakollista, mutta julkisia
               koneita käyttäessäsi tyhjennä aina selaushistoriasi ja erilaisten
               verkkopalvelujen kuten sähköpostin salasanat ja käyttäjätunnukset.
               Jotkut yleisessä käytössä olevat päätteet tyhjentävät nämä tiedot
               automaattisesti, mutta sen varaan ei koskaan kannata laskea.
-            </strong>
           </p>
-          <br></br>
+          <br />
           <p>
-            Kysymys 10: Kirjoittaa itselleen johonkin ylös.{" "}
+            <h3 className="exerciseHeader">10. Itse luomasi salasanat eri palveluihin kannattaa</h3>
             <strong>
-              Perustelu: Muistin avuksi on hyvä, että kirjoitat salasanasi eri
+            Oikea vastaus: <br />
+            </strong>
+            Kirjoittaa itselleen johonkin ylös.{" "}
+            <br />
+            <strong>
+              Perustelu: <br />
+              </strong>
+              Muistin avuksi on hyvä, että kirjoitat salasanasi eri
               palveluihin johonkin ylös. Erittäin tärkeää on kuitenkin muistaa,
               että salasanoja ja muita kirjautumistietoja, kuten
               käyttäjätunnusta, ei tule koskaan säilyttää samassa paikassa ja
               samalla lapulla. Kuka tahansa pystyisi molempien tietojen avulla
               kirjautumaan tunnuksillasi eri palveluihin.
-            </strong>
           </p>
         </div>
         <Link to="/tippuvat_kirjaimet" className="nextPracButton" role="button">
@@ -212,7 +273,8 @@ const Tietoturva = () => {
       </div>
       <div className="pageContentFrame formTietoturva">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h3>Mitä tietoturvalla tarkoitetaan?</h3>
+        
+          <h3 className="exerciseHeader">1. Mitä tietoturvalla tarkoitetaan?</h3>
           <ul>
             <li>
               <input
@@ -242,7 +304,7 @@ const Tietoturva = () => {
           </ul>
           <br />
 
-          <h3>Mitä tietosuojalla tarkoitetaan?</h3>
+          <h3 className="exerciseHeader">2. Mitä tietosuojalla tarkoitetaan?</h3>
           <ul>
             <li>
               <input
@@ -274,7 +336,7 @@ const Tietoturva = () => {
           </ul>
           <br />
 
-          <h3>Minun täytyy itse huolehtia tietosuojastani.</h3>
+          <h3 className="exerciseHeader">3. Minun täytyy itse huolehtia tietosuojastani.</h3>
           <ul>
             <li>
               <input
@@ -303,8 +365,8 @@ const Tietoturva = () => {
           </ul>
           <br />
 
-          <h3>
-            Pankkivirkailija pyytää sinulta sähköpostilla käyttäjätunnusta ja
+          <h3 className="exerciseHeader">
+            4. Pankkivirkailija pyytää sinulta sähköpostilla käyttäjätunnusta ja
             salasanaa pankkipalveluun, jotta hän voi tehdä sinulle ylimääräisen
             talletuksen. Voitko antaa ne?
           </h3>
@@ -336,10 +398,10 @@ const Tietoturva = () => {
           </ul>
           <br />
 
-          <h3>
-            Pari eri salasanaa riittää kaikille eri käyttäjätileille (esim.
+          <h3 className="exerciseHeader">
+            5. Pari eri salasanaa riittää kaikille eri käyttäjätileille (esim.
             sähköpostiin, sosiaalisen median kanaville, foorumeille, työnhaun
-            sivustoille jne.)
+            sivustoille jne.).
           </h3>
           <ul>
             <li>
@@ -367,7 +429,9 @@ const Tietoturva = () => {
               </label>
             </li>
           </ul>
-          <h3>Mikä seuraavista salasanoista on turvallisin?</h3>
+          <br />
+
+          <h3 className="exerciseHeader">6. Mikä seuraavista salasanoista on turvallisin?</h3>
           <ul>
             <li>
               <input
@@ -407,7 +471,8 @@ const Tietoturva = () => {
             </li>
           </ul>
           <br />
-          <h3>Mitä tarkoitetaan evästeillä?</h3>
+
+          <h3 className="exerciseHeader">7. Mitä tarkoitetaan evästeillä?</h3>
           <ul>
             <li>
               <input
@@ -450,8 +515,9 @@ const Tietoturva = () => {
             </li>
           </ul>
           <br />
-          <h3>
-            Saat sähköpostiisi postilta ilmoituksen noudettavasta paketista.
+
+          <h3 className="exerciseHeader">
+            8. Saat sähköpostiisi postilta ilmoituksen noudettavasta paketista.
             Viestin suomen kielessä on vähän kirjoitusvirheitä ja sinua
             pyydetään klikkaamaan siinä olevaa linkkiä. Mitä teet?
           </h3>
@@ -499,8 +565,9 @@ const Tietoturva = () => {
             </li>
           </ul>
           <br />
-          <h3>
-            Kun olet käyttänyt julkista tietokonetta, on lopettaessasi tärkeää:
+
+          <h3 className="exerciseHeader">
+            9. Kun olet käyttänyt julkista tietokonetta, on lopettaessasi tärkeää
           </h3>
           <ul>
             <li>
@@ -512,7 +579,7 @@ const Tietoturva = () => {
                 id="kysymys9A"
               />
               <label htmlFor="kysymys9A" className="answer">
-                Tyhjentää selaushistoria.
+                tyhjentää selaushistoria.
               </label>
             </li>
             <li>
@@ -524,7 +591,7 @@ const Tietoturva = () => {
                 id="kysymys9B"
               />
               <label htmlFor="kysymys9B" className="answer">
-                Asentaa koneelle virusturvaohjelma.
+                asentaa koneelle virusturvaohjelma.
               </label>
             </li>
             <li>
@@ -536,13 +603,14 @@ const Tietoturva = () => {
                 id="kysymys9C"
               />
               <label htmlFor="kysymys9C" className="answer">
-                Odottaa 5 minuuttia, että kaikki syöttämäsi tiedot katoavat
+                odottaa 5 minuuttia, että kaikki syöttämäsi tiedot katoavat
                 automaattisesti.
               </label>
             </li>
           </ul>
           <br />
-          <h3>Itse luomasi salasanat eri palveluihin kannattaa</h3>
+
+          <h3 className="exerciseHeader">10. Itse luomasi salasanat eri palveluihin kannattaa</h3>
           <ul>
             <li>
               <input
@@ -553,7 +621,7 @@ const Tietoturva = () => {
                 id="kysymys10A"
               />
               <label htmlFor="kysymys10A" className="answer">
-                Pitää mahdollisimman lyhyinä.
+                pitää mahdollisimman lyhyinä.
               </label>
             </li>
             <li>
@@ -565,7 +633,7 @@ const Tietoturva = () => {
                 id="kysymys10B"
               />
               <label htmlFor="kysymys10B" className="answer">
-                Kirjoittaa itselleen johonkin ylös.
+                kirjoittaa itselleen johonkin ylös.
               </label>
             </li>
             <li>
@@ -577,7 +645,7 @@ const Tietoturva = () => {
                 id="kysymys6C"
               />
               <label htmlFor="kysymys6C" className="answer">
-                Olla aina englanniksi.
+                olla aina englanniksi.
               </label>
             </li>
           </ul>

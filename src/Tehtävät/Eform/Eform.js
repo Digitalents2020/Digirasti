@@ -125,6 +125,7 @@ const Eform = () => {
           harjoitellaan täyttämään mahdollisesti työnhaun yhteydessä vastaan
           tulevaa lomaketta. Huomaathan, että tähdellä merkityt kentät ovat
           pakollisia.{" "}
+          <br /><br />
           <strong>
             Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä mitään
             minnekkään!
@@ -132,8 +133,7 @@ const Eform = () => {
         </p>
       </div>
       <div className="pageContentFrame">
-        <h2 className="infoHeader">Hakulomake</h2>
-        <br />
+        <h3 className="exerciseHeader">Hakulomake</h3>
         <Form
           newFirstName={newFirstName}
           handleFirstNameChange={handleFirstNameChange}

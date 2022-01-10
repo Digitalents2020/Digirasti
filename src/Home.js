@@ -9,7 +9,6 @@ const Home = () => {
 			  <h1 className="pageHeader">Etusivu</h1>
 			  <div className="pageContentFrame">
 			    <h2 className="infoHeader"><p>Tervetuloa Digirastin tehtäväsivuille!</p></h2>
-			    <br></br>
 				<p>Sivun vasemmasta laidasta löydät tehtäviä. Vie hiiren osoitin tehtävän nimen päälle ja klikkaa hiiren vasemmalla painikkeella. Näin siirryt sivustolla eri tehtäviin. Jokaisen tehtävän jälkeen voit painaa alhaalta löytyvää <b>Seuraava tehtävä</b>-painiketta.</p>
 				<br></br>
 				<p>Pääset milloin vain takaisin tälle sivulle painamalla <b>Etusivu</b>-linkkiä sivun vasemmassa laidassa.</p>

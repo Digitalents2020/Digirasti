@@ -29,7 +29,7 @@ const Form = ({
       <input
         {...register("FirstName", { required: true })}
         id="FirstName"
-        className="textWritingArea textWriteForm"
+        className="textWritingArea"
         value={newFirstName}
         onChange={handleFirstNameChange}
         type="text"
@@ -41,7 +41,7 @@ const Form = ({
       <input
         {...register("LastName", { required: true })}
         id="LastName"
-        className="textWritingArea textWriteForm"
+        className="textWritingArea"
         value={newLastName}
         onChange={handleLastNameChange}
         type="text"
@@ -53,7 +53,7 @@ const Form = ({
       <input
         {...register("Email", { required: true })}
         id="Email"
-        className="textWritingArea textWriteForm"
+        className="textWritingArea"
         value={newEmail}
         onChange={handleEmailChange}
         type="email"
@@ -65,7 +65,7 @@ const Form = ({
       <input
         {...register("Number", { required: true })}
         id="Number"
-        className="textWritingArea textWriteForm"
+        className="textWritingArea"
         value={newNumber}
         onChange={handleNumberChange}
         type="text"
@@ -80,20 +80,20 @@ const Form = ({
       </label>
       <textarea
         id="Work1"
-        className="textWritingArea textWriteForm"
+        className="textWritingArea smallTextarea"
         value={newWork1}
         onChange={handleWork1Change}
       ></textarea>
       <label htmlFor="Work2">Työkokemus 2</label>
       <textarea
         id="Work2"
-        className="textWritingArea textWriteForm"
+        className="textWritingArea smallTextarea"
         value={newWork2}
         onChange={handleWork2Change}
       ></textarea>
       <label htmlFor="degree">Korkein koulutusaste</label>
       <select
-        className="textWritingArea textWriteForm"
+        className="textWritingArea"
         value={newDegree}
         onChange={handleDegreeChange}
       >
@@ -110,7 +110,7 @@ const Form = ({
       <label htmlFor="degree-name">Tutkintonimike</label>
       <input
         id="degree-name"
-        className="textWritingArea textWriteForm"
+        className="textWritingArea"
         value={newDegreeName}
         onChange={handleDegreeNameChange}
         type="text"
@@ -122,7 +122,7 @@ const Form = ({
       <textarea
         {...register("About", { required: true })}
         id="About"
-        className="textWritingArea textWriteForm"
+        className="textWritingArea mediumTextarea"
         value={newAbout}
         onChange={handleAboutChange}
       ></textarea>
@@ -130,7 +130,8 @@ const Form = ({
         <p className="errorMessage">Esittely on pakollinen tieto</p>
       )}
       <label htmlFor="Attachment">Lataa liite</label>
-      <input {...register("Attachment")} type="file"></input>
+      <input {...register("Attachment")} type="file" className="fileInput"></input>
+      <br />
       <button className="actionButton" type="submit">
         Lähetä
       </button>

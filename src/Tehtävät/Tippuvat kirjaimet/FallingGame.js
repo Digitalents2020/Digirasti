@@ -331,7 +331,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
         <div className="gameContent">
           <div className="canvasGame">
             <h1 className="pageHeader">Tippuvat kirjaimet</h1>
-            <div className="containerGame">
+            <div className="gameButtonsFrame">
               <div className="letterClass_lostGame">
                 <h3 className="lostGame">
                   {winOrLose()}
@@ -368,7 +368,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
             <br/><br/><strong> Onnea peliin!</strong>
             </p>
           </div>
-          <div className="vaikeusasteGame">
+          <div className="gameButtonsFrame">
             <b>Valitse vaikeusaste:</b>
             <br />
             <button
