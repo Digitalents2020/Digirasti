@@ -82,7 +82,7 @@ const Eform = () => {
 
   if (submitted) {
     return (
-      <div className="form-box">
+      <div className="mainPageFrame">
         <div className="pageContentFrame">
           <h2 className="infoHeader">
             Sähköinen hakulomake lähetetty onnistuneesti.
@@ -115,7 +115,7 @@ const Eform = () => {
   }
 
   return (
-    <div className="form-box">
+    <div className="mainPageFrame">
       <h1 className="pageHeader">Sähköinen lomake</h1>
       <div className="pageContentFrame">
         <h2 className="infoHeader">Ohje:</h2>
@@ -125,6 +125,7 @@ const Eform = () => {
           harjoitellaan täyttämään mahdollisesti työnhaun yhteydessä vastaan
           tulevaa lomaketta. Huomaathan, että tähdellä merkityt kentät ovat
           pakollisia.{" "}
+          <br /><br />
           <strong>
             Ei huolta, tässäkään tehtävässä ei oikeasti lähetetä mitään
             minnekkään!
@@ -132,8 +133,7 @@ const Eform = () => {
         </p>
       </div>
       <div className="pageContentFrame">
-        <h2 className="infoHeader">Hakulomake</h2>
-        <br />
+        <h3 className="exerciseHeader">Hakulomake</h3>
         <Form
           newFirstName={newFirstName}
           handleFirstNameChange={handleFirstNameChange}
@@ -157,7 +157,6 @@ const Eform = () => {
           register={register}
           errors={errors}
         />
-        <br></br>
       </div>
     </div>
   );

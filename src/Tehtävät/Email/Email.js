@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "../../App.css";
+import Video3 from "../../Resources/email_anim.mp4"
 //React Form Hook library documentation: https://github.com/react-hook-form/react-hook-form
 
 const Email = () => {
@@ -33,7 +34,7 @@ const Email = () => {
 
   if (submitted) {
     return (
-      <div className="form-box">
+      <div className="mainPageFrame">
         <div className="pageContentFrame">
           <h2 className="infoHeader">Onnistuit!</h2>
           <p>
@@ -71,74 +72,85 @@ const Email = () => {
   //Form validation is made by using React Hook Form library
 
   //{...register("Vastaanottaja", { required: true })} The Register handles the input and the "required: true" is for validation and error purposes.
-  //{errors.Vastaanottaja?.type === "required" && (<p className="error-message"> Vastaanottajaa ei voi jättää tyhjäksi </p> In this part we define the type of error and an error message for it, in this case the field cannot be left empty.
+  //{errors.Vastaanottaja?.type === "required" && (<p className="errorMessage"> Vastaanottajaa ei voi jättää tyhjäksi </p> In this part we define the type of error and an error message for it, in this case the field cannot be left empty.
 
   return (
-    <div className="form-box">
+    <div className="mainPageFrame">
       <h1 className="pageHeader">Sähköposti</h1>
       <div className="pageContentFrame">
         <h2 className="infoHeader">Ohje:</h2>
         <p>
           Tehtävässä harjoitellaan sähköpostiviestin kirjoittamista ja
-          liitetiedoston liittämistä sähköpostiviestiin. Sähköpostissa on aina:
-          Vastaanottaja, aihe ja viesti. Sähköpostiviestiin voi laittaa myös
-          liitetiedoston. Tehtävänäsi on kirjoittaa pienimuotoinen työhakemus.
-          Vastaanottaja: esimerkki.makkonen@example.com Aihe: Työhakemus
-          avoimeen tehtävään Viesti: Aloita viesti tervehdyksellä. Kerro mitä
+          liitetiedoston liittämistä sähköpostiviestiin. <br />
+          <br />
+          Sähköpostissa on aina <strong>vastaanottaja</strong>, <strong>aihe</strong> ja <strong>viesti</strong>.<br /> 
+          Sähköpostiviestiin voi laittaa myös
+          liitetiedoston.<br /><br />
+          <h3>Liitteen lisäys</h3>
+          <video controls src={Video3} type="video/mp4" width="60%" />
+          <br />
+          Tehtävänäsi on kirjoittaa pienimuotoinen työhakemus.<br /><br />
+          <strong>Vastaanottaja:</strong> esimerkki.makkonen@example.com<br /> 
+          <strong>Aihe:</strong> Työhakemus avoimeen tehtävään<br /> 
+          <strong>Viesti:</strong> Aloita viesti tervehdyksellä. Kerro mitä
           viesti koskee. Kerro myös, että CV on liitteenä. Laita viestiin
           lopputervehdys ja oma nimesi. Liitä CV:si sähköpostin liitteeksi. Ei
           huolta, viestisi ei lähde oikeasti mihinkään. Tämä on vain harjoitus.
         </p>
         <br />
         <p>
-          Huomioitavaa: Joskus sähköpostien liitteen nappulassa on vain
+          <strong>Huomioitavaa:</strong><br />
+          Joskus sähköpostien liitteen nappulassa on vain
           paperiliittimen eli klemmarin kuva, älä siis hätäänny, jos tässä
           tehtävässä käytettävää nappia ei tosielämän sähköposteista löydy. Ei
           huolta, kirjoittamasi hakemus ei oikeasti lähde mihinkään!
         </p>
       </div>
       <div className="pageContentFrame">
-        <form onSubmit={handleSubmit(submitMessage)}>
+        <h3 className="exerciseHeader">Sähköposti</h3>
+        <form class="mailForm" onSubmit={handleSubmit(submitMessage)}>
           <label>Vastaanottaja</label>
           <input
-            className="textWritingArea textWriteForm"
+            className="textWritingArea"
             {...register("Vastaanottaja", {
               required: true,
               pattern: /esimerkki\.makkonen@example\.com/,
             })}
           />
           {errors.Vastaanottaja?.type === "pattern" && (
-            <p className="error-message">
+            <p className="errorMessage">
               Tarkistathan kirjoittamasi osoitteen
             </p>
           )}
           {errors.Vastaanottaja?.type === "required" && (
-            <p className="error-message">
+            <p className="errorMessage">
               Vastaanottajaa ei voi jättää tyhjäksi
             </p>
           )}
           <label>Aihe</label>
           <input
-            className="textWritingArea textWriteForm"
+            className="textWritingArea"
             {...register("Aihe", { required: true })}
             type="text"
           />
           {errors.Aihe?.type === "required" && (
-            <p className="error-message">Aihetta ei voi jättää tyhjäksi</p>
+            <p className="errorMessage">Aihetta ei voi jättää tyhjäksi</p>
           )}
           <label>Viesti</label>
           <textarea
-            className="textWritingArea textWriteForm"
+            className="textWritingArea mediumTextarea"
             {...register("Viesti", { required: true })}
             type="text"
           />
           {errors.Viesti?.type === "required" && (
-            <p className="error-message">
+            <p className="errorMessage">
               Viestikenttää ei voi jättää tyhjäksi
             </p>
           )}
           <label>Lataa liite</label>
-          <input {...register("Attachment")} type="file"></input>
+          <input {...register("Attachment")} type="file" className="fileInput"></input>
+          <br
+          />
           <button className="actionButton" type="submit">
             Lähetä
           </button>

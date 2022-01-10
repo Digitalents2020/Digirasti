@@ -50,8 +50,10 @@ const Tehtava2 = () => {
 				      <p>Kirjoita seuraava teksti alla olevaan kenttään. Teksti antaa sinulle vihjeitä, miten voit toimia, kun kirjoitat tekstiä.</p>
 			      </div>
 			      <div className="pageContentFrame">
+              <h3 className="exerciseHeader">Kirjoitettava teksti:</h3>
 				      <p>Tässä tehtävässä harjoittelen kirjoittamaan tietokoneen näppäimistöllä. Opin käyttämään isoja ja pieniä kirjaimia sekä erikoismerkkejä! Kun olen oppinut kirjoittamaan tietokoneella sujuvasti, voin kirjoittaa työhakemuksen minua kiinnostavaan työpaikkaan. Mistä saisin apua ansioluettelon tekemiseen?</p>
-				      <textarea className="textWritingArea textWriteKirjoitus" onChange={textChangeEvent} value={taskText} placeholder='Klikkaa tähän aloittaaksesi kirjoittamisen' />	  
+              <br />
+				      <textarea className="textWritingArea mediumTextarea" onChange={textChangeEvent} value={taskText} placeholder='Klikkaa tähän aloittaaksesi kirjoittamisen' />	  
 			        <button className="actionButton" onClick={ aloitusAlustaFunktio } type="reset">Aloita alusta</button>
             </div>
 			    </div>

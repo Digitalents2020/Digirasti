@@ -70,13 +70,14 @@ import "../../App.css"
 			      </div>
 			    </div>
 			    <div className="pageContentFrame">
-			      <textarea className="textWritingArea textWriteMuokkaus" onChange={textChangeEvent} value={taskText} ></textarea>
+            <h3 className="exerciseHeader">Muokattava teksti:</h3>
+			      <textarea className="textWritingArea largeTextarea" onChange={textChangeEvent} value={taskText} ></textarea>
 			      <button className="actionButton" onClick={ tarkistusFunktio } value="validateResult">Tarkista tulos</button>
 			      <button className="actionButton" onClick={ aloitusAlustaFunktio } value="reset">Aloita alusta</button>
 			    </div>
+          <Link to="/kopiointi" className="nextPracButton" role="button">Seuraava tehtävä</Link>
 		    </div>
-        <Link to="/kopiointi" className="nextPracButton" role="button">Seuraava tehtävä</Link>
-        </div>
+      </div>
     )
   }
   
