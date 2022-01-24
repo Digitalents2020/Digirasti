@@ -94,7 +94,7 @@ const Eform = () => {
               <h2 className="infoHeader">...Mutta</h2>
               <p>
                 Sinulta unohtui liitetiedosto. Ei hätää, voit halutessasi
-                yrittää uudelleen tai klikata "Siirry etusivulle" painiketta.
+                yrittää uudelleen, jatkaa seuraavaan tehtävään tai siirtyä takaisin etusivulle painamalla <strong>Etusivu</strong> -linkkiä sivun vasemmassa laidassa.
               </p>
               <button
                 className="actionButton"
