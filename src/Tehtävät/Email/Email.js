@@ -43,13 +43,13 @@ const Email = () => {
             antamia ohjeita.
           </p>
           <br></br>
-          {/*{!attached && (
+          {!attached && (
             <>
               <h2 className="infoHeader">...Mutta</h2>
               <p>
-                Sinulta taisi unohtua liitetiedosto. Ei hätää, voit silti
-                halutessasi yrittää uudelleen tai klikata "seuraava tehtävä"
-                painiketta.
+                Sinulta unohtui liitetiedosto. Ei hätää, voit halutessasi
+                yrittää uudelleen, jatkaa seuraavaan tehtävään tai siirtyä takaisin etusivulle 
+                painamalla <strong>Etusivu</strong> -linkkiä sivun vasemmassa laidassa.
               </p>
               <button
                 className="actionButton"
@@ -60,7 +60,7 @@ const Email = () => {
                 <span>Yritä uudelleen</span>{" "}
               </button>
             </>
-          )}*/}
+          )}
         </div>
         <Link to="/Eform" className="nextPracButton" role="button">
           Seuraava tehtävä
@@ -81,29 +81,28 @@ const Email = () => {
         <h2 className="infoHeader">Ohje:</h2>
         <p>
           Tehtävässä harjoitellaan sähköpostiviestin kirjoittamista ja
-          liitetiedoston liittämistä sähköpostiviestiin. <br />
-          <br />
-          Sähköpostissa on aina <strong>vastaanottaja</strong>, <strong>aihe</strong> ja <strong>viesti</strong>.<br /> 
+          liitetiedoston liittämistä sähköpostiviestiin.
+          Sähköpostissa on aina vastaanottaja, aihe ja viesti. 
           Sähköpostiviestiin voi laittaa myös
           liitetiedoston.<br /><br />
           <h3>Liitteen lisäys</h3>
           <video controls src={Video3} type="video/mp4" width="60%" />
           <br />
           Tehtävänäsi on kirjoittaa pienimuotoinen työhakemus.<br /><br />
-          <strong>Vastaanottaja:</strong> esimerkki.makkonen@example.com<br /> 
+          <strong>Vastaanottaja:</strong> esimerkki.makkonen@example.com (kirjoita tämä osoite osoitekenttään)<br /> 
           <strong>Aihe:</strong> Työhakemus avoimeen tehtävään<br /> 
           <strong>Viesti:</strong> Aloita viesti tervehdyksellä. Kerro mitä
           viesti koskee. Kerro myös, että CV on liitteenä. Laita viestiin
-          lopputervehdys ja oma nimesi. Liitä CV:si sähköpostin liitteeksi. Ei
-          huolta, viestisi ei lähde oikeasti mihinkään. Tämä on vain harjoitus.
+          lopputervehdys ja oma nimesi. Liitä CV:si sähköpostin liitteeksi.
         </p>
         <br />
         <p>
           <strong>Huomioitavaa:</strong><br />
           Joskus sähköpostien liitteen nappulassa on vain
           paperiliittimen eli klemmarin kuva, älä siis hätäänny, jos tässä
-          tehtävässä käytettävää nappia ei tosielämän sähköposteista löydy. Ei
-          huolta, kirjoittamasi hakemus ei oikeasti lähde mihinkään!
+          tehtävässä käytettävää nappia ei tosielämän sähköposteista löydy.<br /> 
+          <br />
+          <strong>Ei huolta, kirjoittamasi hakemus ei oikeasti lähde mihinkään!</strong>
         </p>
       </div>
       <div className="pageContentFrame">
