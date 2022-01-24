@@ -283,6 +283,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="A"
                 id="kysymys1A"
+                className="questionRadio"
               />
               <label htmlFor="kysymys1A" className="answer">
                 Tietoturva tarkoittaa turvalliseksi luokiteltua tietoa.
@@ -295,6 +296,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="B"
                 id="kysymys1B"
+                className="questionRadio"
               />
               <label htmlFor="kysymys1B" className="answer">
                 Tietoturva tarkoittaa yrityksen tai palveluntarjoajan tietojen
@@ -313,6 +315,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="A"
                 id="kysymys2A"
+                className="questionRadio"
               />
               <label htmlFor="kysymys2A" className="answer">
                 Tietosuoja tarkoittaa paikkaa, jossa tieto pysyy suojassa
@@ -326,6 +329,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="B"
                 id="kysymys2B"
+                className="questionRadio"
               />
               <label htmlFor="kysymys2B" className="answer">
                 Tietosuoja tarkoittaa toimenpiteitä, joilla pyritään
@@ -345,6 +349,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="A"
                 id="kysymys3A"
+                className="questionRadio"
               />
               <label htmlFor="kysymys3A" className="answer">
                 Ei
@@ -357,6 +362,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="B"
                 id="kysymys3B"
+                className="questionRadio"
               />
               <label htmlFor="kysymys3B" className="answer">
                 Kyllä
@@ -378,6 +384,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="A"
                 id="kysymys4A"
+                className="questionRadio"
               />
               <label htmlFor="kysymys4A" className="answer">
                 Ei
@@ -390,6 +397,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="B"
                 id="kysymys4B"
+                className="questionRadio"
               />
               <label htmlFor="kysymys4B" className="answer">
                 Kyllä
@@ -411,6 +419,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="A"
                 id="kysymys5A"
+                className="questionRadio"
               />
               <label htmlFor="kysymys5A" className="answer">
                 Ei
@@ -423,6 +432,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="B"
                 id="kysymys5B"
+                className="questionRadio"
               />
               <label htmlFor="kysymys5B" className="answer">
                 Kyllä
@@ -440,6 +450,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="A"
                 id="kysymys6A"
+                className="questionRadio"
               />
               <label htmlFor="kysymys6A" className="answer">
                 Jonne12
@@ -452,6 +463,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="B"
                 id="kysymys6B"
+                className="questionRadio"
               />
               <label htmlFor="kysymys6B" className="answer">
                 AC!DC!Thunderstruckki83
@@ -464,6 +476,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="C"
                 id="kysymys6C"
+                className="questionRadio"
               />
               <label htmlFor="kysymys6C" className="answer">
                 password123
@@ -481,6 +494,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="A"
                 id="kysymys7A"
+                className="questionRadio"
               />
               <label htmlFor="kysymys7A" className="answer">
                 Evästeillä tarkoitetaan avaamiesi verkkosivustojen luomia
@@ -495,6 +509,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="B"
                 id="kysymys7B"
+                className="questionRadio"
               />
               <label htmlFor="kysymys7B" className="answer">
                 Evästeillä tarkoitetaan nettisivujen automaattista kääntämistä
@@ -508,6 +523,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="C"
                 id="kysymys7C"
+                className="questionRadio"
               />
               <label htmlFor="kysymys7C" className="answer">
                 Evästeillä tarkoitetaan näppäimistön pikakomentoja.
@@ -529,6 +545,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="A"
                 id="kysymys8A"
+                className="questionRadio"
               />
               <label htmlFor="kysymys8A" className="answer">
                 Klikkaat sähköpostissa olevaa linkkiä ja täytät sinne omat
@@ -542,6 +559,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="B"
                 id="kysymys8B"
+                className="questionRadio"
               />
               <label htmlFor="kysymys8B" className="answer">
                 Kiinnität huomiota viestin ulkoasuun, lähettäjään ja sisältöön.
@@ -555,6 +573,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="C"
                 id="kysymys8C"
+                className="questionRadio"
               />
               <label htmlFor="kysymys8C" className="answer">
                 Muistelet, ettet ole mielestäsi tilannut mitään viime aikoina
@@ -577,6 +596,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="A"
                 id="kysymys9A"
+                className="questionRadio"
               />
               <label htmlFor="kysymys9A" className="answer">
                 tyhjentää selaushistoria.
@@ -589,6 +609,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="B"
                 id="kysymys9B"
+                className="questionRadio"
               />
               <label htmlFor="kysymys9B" className="answer">
                 asentaa koneelle virusturvaohjelma.
@@ -601,6 +622,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="C"
                 id="kysymys9C"
+                className="questionRadio"
               />
               <label htmlFor="kysymys9C" className="answer">
                 odottaa 5 minuuttia, että kaikki syöttämäsi tiedot katoavat
@@ -619,6 +641,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="A"
                 id="kysymys10A"
+                className="questionRadio"
               />
               <label htmlFor="kysymys10A" className="answer">
                 pitää mahdollisimman lyhyinä.
@@ -631,6 +654,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="B"
                 id="kysymys10B"
+                className="questionRadio"
               />
               <label htmlFor="kysymys10B" className="answer">
                 kirjoittaa itselleen johonkin ylös.
@@ -643,6 +667,7 @@ const Tietoturva = () => {
                 type="radio"
                 value="C"
                 id="kysymys6C"
+                className="questionRadio"
               />
               <label htmlFor="kysymys6C" className="answer">
                 olla aina englanniksi.
