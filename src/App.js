@@ -50,6 +50,7 @@ const App = () => {
               <Link to="/Eform">Sähköinen lomake</Link>
             </li>
           </ul>
+          <footer>Digitalents Helsinki</footer>
         </nav>
 
         <div className="content">
