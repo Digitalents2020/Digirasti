@@ -305,7 +305,7 @@ function FallingWords() {
 
   //Checks if lives are 0 or if points are 150 or over. Returns string depending the checks.
   function winnerOrLoserCheck(){
-    if(lives===0 && points < 150){
+    if(points < 150){
       return "Valitettavasti yrityksesi loppuivat, voit yrittää uudelleen, vaihtaa vaikeusastetta tai siirtyä seuraavaan tehtävään"
     }else if(points>=150){
       return "Onneksi olkoon, sait vaaditut 150 pistettä, voit yrittää uudelleen toisella vaikeusasteella tai siirtyä seuraavaan tehtävään"
@@ -333,7 +333,7 @@ otherwise renders game mechanics. If lives hit 0, renders game over menu.*/
               <div className="uiDivGame">
                 <p className="uiGame">Pisteet: {points}</p>
                 <p className="uiGame">Yritykset: {lives}</p>
-                <form onSubmit={cleanUpLetter} autocomplete="off">
+                <form onSubmit={cleanUpLetter} autoComplete="off">
                   <input
                     className="wordInputWords"
                     id="wordInputWords"

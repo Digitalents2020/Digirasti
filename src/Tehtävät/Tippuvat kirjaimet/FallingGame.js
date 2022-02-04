@@ -280,7 +280,7 @@ Gets also the position from the deleted letter. After timeout removes the new di
 
    //Checks if lives are 0 or if points are 50 or over. Returns string depending the checks.
   function winOrLose(){
-    if(lives===0 && points < 50){
+    if(points < 50){
       return "Valitettavasti yrityksesi loppuivat, voit yrittää uudelleen, vaihtaa vaikeusastetta tai siirtyä seuraavaan tehtävään"
     }else if(points >= 50){
       return "Onneksi olkoon, sait vaaditut 50 pistettä, voit yrittää uudelleen toisella vaikeusasteella tai siirtyä seuraavaan tehtävään"
