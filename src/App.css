@@ -89,8 +89,8 @@ video {
 
 .questionRadio {
   vertical-align: middle;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 2.2rem;
+  height: 2.2rem;
 }
 
 .formTietoturva label {
@@ -104,7 +104,15 @@ video {
 .formTietoturva ul {
   list-style-type: none;
 }
-
+.correctTxt {
+  color: green;
+}
+.incorrectTxt {
+  color: red;
+}
+.huomTxt {
+  font-weight: bold;
+}
 /* TIPPUVAT STYLES */
 
 .hidebuttonWords {
@@ -359,7 +367,8 @@ video {
 
 /* BUTTONS */
 
-.actionButton {
+.actionButton,
+.checkButton {
   background-color: #0000bf;
   color: #ffffff;
   padding: 10px 22px;
@@ -372,7 +381,8 @@ video {
   border-radius: 25px;
 }
 
-.actionButton:hover {
+.actionButton:hover,
+.checkButton:hover {
   background-color: #000000;
 }
 

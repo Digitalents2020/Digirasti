@@ -43,7 +43,10 @@ const Tehtava1 = () => {
       let duration = new Date(end - startTime);
       alert(
         `Hienoa! Olet onnistuneesti poistanut kaikki numerot!\n\nAikaa sinulla tähän tehtävään meni ${
-          duration.getMinutes() + ":" + duration.getSeconds()
+          duration.getMinutes() +
+          " minuuttia ja " +
+          duration.getSeconds() +
+          " sekuntia"
         }.`
       );
     } else {
@@ -55,10 +58,10 @@ const Tehtava1 = () => {
     let numero = param.match(/\d+/g);
     if (numero === null) {
       alert(
-        `Hienoa, poistit kaikki numerot. Ikävä kyllä poistit myös muutakin.\nYritä uudelleen ja poista vain numerot!.`
+        `Hienoa, poistit kaikki numerot. Ikävä kyllä poistit myös muutakin.\nYritä uudelleen ja poista vain numerot!`
       );
     } else {
-      alert(`Numeroita on vielä jäljellä, jatka poistamista!.`);
+      alert(`Numeroita on vielä jäljellä, jatka poistamista!`);
     }
   };
 
